@@ -1,0 +1,21 @@
+{
+  "name": "Al-Baghdady Restaurant & Bakery",
+  "short_name": "Al-Baghdady",
+  "description": "Authentic Iraqi cuisine and Arabic bakery in Richardson, TX. Halal certified. Family owned.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#FDF6EC",
+  "theme_color": "#8B1A1A",
+  "icons": [
+    {
+      "src": "/favicon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/favicon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
