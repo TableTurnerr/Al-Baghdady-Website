@@ -28,7 +28,7 @@ export function organizationSchema() {
     name: RESTAURANT.legalName,
     alternateName: ["Al-Baghdady", "Albaghdady", "Salam Grill"],
     url: BASE_URL,
-    logo: `${BASE_URL}/Images/logo.png`,
+    logo: `${BASE_URL}/Images/logo.webp`,
     image: `${BASE_URL}/Images/og-default.jpg`,
     telephone: RESTAURANT.phone,
     email: RESTAURANT.email,
@@ -71,7 +71,7 @@ export function restaurantSchema() {
       `${BASE_URL}/Images/hero-mixed-grill.webp`,
       `${BASE_URL}/Images/bakery-spread.webp`,
     ],
-    logo: `${BASE_URL}/Images/logo.png`,
+    logo: `${BASE_URL}/Images/logo.webp`,
     address: postalAddress,
     geo: {
       "@type": "GeoCoordinates",
