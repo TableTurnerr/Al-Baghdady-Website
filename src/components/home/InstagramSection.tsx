@@ -119,7 +119,7 @@ export default function InstagramSection() {
                       src={post.image}
                       alt={post.caption}
                       sizes="(min-width: 968px) 33vw, (min-width: 640px) 50vw, 100vw"
-                      className="absolute inset-0"
+                      className="w-full h-full"
                       style={{
                         transition: "transform 0.8s cubic-bezier(0.22, 1, 0.36, 1)",
                         transform: isHovered ? "scale(1.06)" : "scale(1)",
