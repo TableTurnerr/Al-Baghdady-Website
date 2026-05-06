@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import { Instagram } from "lucide-react";
 import { RESTAURANT } from "@/data/restaurant";
+import SmartImage from "../shared/SmartImage";
 
 type Post = {
   id: string;
@@ -15,37 +16,37 @@ const POSTS: Post[] = [
   {
     id: "1",
     caption: "Fresh samoon, hot from the stone oven.",
-    image: "/Images/hero.jpg",
+    image: "/Images/hero.webp",
     url: RESTAURANT.socials.instagram,
   },
   {
     id: "2",
     caption: "Mixed grill platter — the table favourite.",
-    image: "/Images/dish-1.jpg",
+    image: "/Images/dish-1.webp",
     url: RESTAURANT.socials.instagram,
   },
   {
     id: "3",
     caption: "Slow-braised tashreeb, the way grandma made it.",
-    image: "/Images/dish-2.jpg",
+    image: "/Images/dish-2.webp",
     url: RESTAURANT.socials.instagram,
   },
   {
     id: "4",
     caption: "Char-grilled kabob, tender every time.",
-    image: "/Images/dish-3.jpg",
+    image: "/Images/dish-3.webp",
     url: RESTAURANT.socials.instagram,
   },
   {
     id: "5",
     caption: "Quzi — slow-roasted lamb on spiced rice.",
-    image: "/Images/dish-4.jpg",
+    image: "/Images/dish-4.webp",
     url: RESTAURANT.socials.instagram,
   },
   {
     id: "6",
     caption: "Kanafa, fresh from the bakery.",
-    image: "/Images/bakery.jpg",
+    image: "/Images/bakery.webp",
     url: RESTAURANT.socials.instagram,
   },
 ];
@@ -114,15 +115,15 @@ export default function InstagramSection() {
                       borderColor: isHovered ? "transparent" : "var(--color-border)",
                     }}
                   >
-                    <div
-                      className="absolute inset-0 bg-cover-center"
+                    <SmartImage
+                      src={post.image}
+                      alt={post.caption}
+                      sizes="(min-width: 968px) 33vw, (min-width: 640px) 50vw, 100vw"
+                      className="absolute inset-0"
                       style={{
-                        backgroundImage: `url('${post.image}')`,
                         transition: "transform 0.8s cubic-bezier(0.22, 1, 0.36, 1)",
                         transform: isHovered ? "scale(1.06)" : "scale(1)",
                       }}
-                      role="img"
-                      aria-label={post.caption}
                     />
 
                     <div

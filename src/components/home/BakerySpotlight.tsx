@@ -1,15 +1,16 @@
 import ThemeBtn from "../shared/ThemeBtn";
+import SmartImage from "../shared/SmartImage";
 
 export default function BakerySpotlight() {
   return (
     <section className="bg-[var(--color-warm-white)] section-pad">
       <div className="container-pad grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
         <div className="card-img rounded-[28px] overflow-hidden aspect-square">
-          <div
-            className="w-full h-full bg-cover-center"
-            style={{ backgroundImage: "url('/Images/bakery.jpg')" }}
-            role="img"
-            aria-label="Fresh-baked Iraqi sweets and samoon at Al-Baghdady bakery"
+          <SmartImage
+            src="/Images/bakery.webp"
+            alt="Fresh-baked Iraqi sweets and samoon at Al-Baghdady bakery"
+            sizes="(min-width: 1024px) 50vw, 100vw"
+            className="w-full h-full"
           />
         </div>
 
