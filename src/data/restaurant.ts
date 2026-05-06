@@ -1,0 +1,75 @@
+export const RESTAURANT = {
+  name: "Al-Baghdady Restaurant",
+  legalName: "Al-Baghdady Restaurant & Bakery",
+  tagline: "Authentic Iraqi Cuisine & Bakery in Richardson, TX",
+  shortDescription:
+    "Family-owned Iraqi restaurant and bakery serving traditional kabob platters, samoon bread, kanafa, baklava and more in Richardson, TX. Halal-certified. Dine-in, takeout, delivery and catering.",
+  longDescription:
+    "Al-Baghdady has been serving the Dallas-Fort Worth community for over a decade with authentic Iraqi cuisine and an in-house Arabic bakery. From mixed grill kabob platters and shawarma wraps to fresh samoon bread baked daily and traditional sweets like kanafa, baklava and ladyfingers, every dish is prepared with traditional Iraqi spices and recipes passed down through generations. Halal across the entire menu and Zabihah-verified.",
+  address: {
+    street: "327-329 N Greenville Ave",
+    city: "Richardson",
+    state: "TX",
+    zip: "75081",
+    country: "US",
+    full: "327-329 N Greenville Ave, Richardson, TX 75081",
+  },
+  geo: {
+    latitude: 32.9582,
+    longitude: -96.7295,
+  },
+  phone: "(972) 238-9200",
+  phoneRaw: "+19722389200",
+  email: "info@al-baghdady.com",
+  url: "https://al-baghdady.com",
+  priceRange: "$$",
+  cuisine: ["Iraqi", "Middle Eastern", "Mediterranean", "Halal", "Arabic"],
+  servesCuisine: "Iraqi",
+  paymentAccepted: "Cash, Credit Card",
+  currenciesAccepted: "USD",
+  hours: [
+    { day: "Monday", open: "11:00", close: "22:00" },
+    { day: "Tuesday", open: "11:00", close: "22:00" },
+    { day: "Wednesday", open: "11:00", close: "22:00" },
+    { day: "Thursday", open: "11:00", close: "22:00" },
+    { day: "Friday", open: "11:00", close: "23:00" },
+    { day: "Saturday", open: "11:00", close: "23:00" },
+    { day: "Sunday", open: "12:00", close: "22:00" },
+  ],
+  ratingValue: 4.4,
+  reviewCount: 1892,
+  socials: {
+    instagram: "https://www.instagram.com/albaghdadyrestaurant/",
+    facebook: "https://www.facebook.com/AlBaghdadyRestaurant/",
+    googleBusinessProfile:
+      "https://www.google.com/maps/place/Al-Baghdady+Restaurant",
+    yelp: "https://www.yelp.com/biz/al-baghdady-restaurant-richardson",
+    doordash: "https://www.doordash.com/store/al-baghdady-restaurant-richardson/",
+    tripadvisor:
+      "https://www.tripadvisor.com/Restaurant_Review-Al-Baghdady-Richardson",
+    zabihah: "https://www.zabihah.com/biz/Richardson/Al-Baghdady-Restaurant",
+  },
+  orderOnline: "https://order.al-baghdady.com",
+  features: [
+    "Halal Certified",
+    "Zabihah Verified",
+    "In-House Arabic Bakery",
+    "Catering Available",
+    "Dine-In",
+    "Takeout",
+    "Delivery",
+    "Family Owned",
+  ],
+  areasServed: [
+    "Richardson",
+    "Plano",
+    "Garland",
+    "Addison",
+    "North Dallas",
+    "Allen",
+    "McKinney",
+    "Far North Dallas",
+  ],
+} as const;
+
+export type RestaurantHours = (typeof RESTAURANT.hours)[number];
