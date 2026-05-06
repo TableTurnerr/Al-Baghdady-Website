@@ -4,6 +4,7 @@ import { breadcrumbSchema } from "@/data/schema";
 import SchemaInjector from "@/components/shared/SchemaInjector";
 import BreadcrumbNav from "@/components/layout/BreadcrumbNav";
 import ThemeBtn from "@/components/shared/ThemeBtn";
+import SmartImage from "@/components/shared/SmartImage";
 
 export const metadata: Metadata = createMetadata({
   title: "The Bakery — Fresh Samoon, Kanafa, Baklava & Iraqi Sweets | Al-Baghdady",
@@ -24,32 +25,32 @@ const ITEMS = [
   {
     name: "Samoon Bread",
     desc: "Iraq's traditional oval-shaped bread, baked fresh in our stone oven throughout the day. Crisp crust, pillowy interior. Sold by the piece or in bulk for parties.",
-    image: "/Images/bakery.jpg",
+    image: "/Images/bakery.webp",
   },
   {
     name: "Kanafa",
     desc: "Shredded phyllo, melted cheese, rose-water syrup, crushed pistachios. The dessert reviewers call the best in Dallas. Made fresh daily — order whole or by the slice.",
-    image: "/Images/dish-1.jpg",
+    image: "/Images/dish-1.webp",
   },
   {
     name: "Baklava",
     desc: "Layers of paper-thin phyllo with walnut, pistachio and honey-syrup. Available by the piece or in mixed trays. A traditional showstopper for Eid, weddings and gifts.",
-    image: "/Images/dish-2.jpg",
+    image: "/Images/dish-2.webp",
   },
   {
     name: "Ladyfingers (Znood Al Sit)",
     desc: "Crispy phyllo rolls filled with sweet cream and dipped in fragrant syrup. A bakery favorite for desserts and dessert trays.",
-    image: "/Images/dish-3.jpg",
+    image: "/Images/dish-3.webp",
   },
   {
     name: "Ma'amoul",
     desc: "Buttery semolina cookies stuffed with date paste, walnut or pistachio. A traditional cookie for Eid and special occasions.",
-    image: "/Images/dish-4.jpg",
+    image: "/Images/dish-4.webp",
   },
   {
     name: "Custom Dessert Trays",
     desc: "Mixed trays of our signature sweets — perfect for parties, weddings, Eid, Ramadan iftar and corporate events. Trays start at $45. Order at least 24 hours ahead.",
-    image: "/Images/hero.jpg",
+    image: "/Images/hero.webp",
   },
 ];
 
@@ -89,11 +90,11 @@ export default function BakeryPage() {
           {ITEMS.map((item) => (
             <article key={item.name} className="card p-0">
               <div className="card-img aspect-[4/3]">
-                <div
-                  className="w-full h-full bg-cover-center"
-                  style={{ backgroundImage: `url('${item.image}')` }}
-                  role="img"
-                  aria-label={item.name}
+                <SmartImage
+                  src={item.image}
+                  alt={item.name}
+                  sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw"
+                  className="w-full h-full"
                 />
               </div>
               <div className="p-6">

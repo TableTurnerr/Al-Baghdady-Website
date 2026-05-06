@@ -4,6 +4,7 @@ import { breadcrumbSchema } from "@/data/schema";
 import SchemaInjector from "@/components/shared/SchemaInjector";
 import BreadcrumbNav from "@/components/layout/BreadcrumbNav";
 import ThemeBtn from "@/components/shared/ThemeBtn";
+import SmartImage from "@/components/shared/SmartImage";
 
 export const metadata: Metadata = createMetadata({
   title: "Iraqi Cuisine Explained — Samoon, Kabob, Masgoof, Kanafa | Al-Baghdady",
@@ -103,19 +104,19 @@ export default function IraqiCuisinePage() {
       <section className="container-pad pb-16 md:pb-24">
         <div className="grid gap-6">
           {DISHES.map((dish, i) => {
-            const images = ["/Images/hero.jpg", "/Images/dish-1.jpg", "/Images/dish-2.jpg", "/Images/dish-3.jpg", "/Images/dish-4.jpg", "/Images/bakery.jpg"];
+            const images = ["/Images/hero.webp", "/Images/dish-1.webp", "/Images/dish-2.webp", "/Images/dish-3.webp", "/Images/dish-4.webp", "/Images/bakery.webp"];
             const reverse = i % 2 === 1;
             return (
               <article
                 key={dish.name}
                 className={`card p-7 md:p-10 grid md:grid-cols-3 gap-7 md:gap-12 items-center ${reverse ? "md:[&>div:first-child]:order-2" : ""}`}
               >
-                <div className="card-img aspect-square rounded-2xl">
-                  <div
-                    className="w-full h-full bg-cover-center"
-                    style={{ backgroundImage: `url('${images[i % images.length]}')` }}
-                    role="img"
-                    aria-label={dish.name}
+                <div className="card-img aspect-square rounded-2xl overflow-hidden">
+                  <SmartImage
+                    src={images[i % images.length]}
+                    alt={dish.name}
+                    sizes="(min-width: 768px) 33vw, 100vw"
+                    className="w-full h-full"
                   />
                 </div>
                 <div className="md:col-span-2">

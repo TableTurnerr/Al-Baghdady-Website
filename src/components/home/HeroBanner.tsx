@@ -1,5 +1,6 @@
 import { Star } from "lucide-react";
 import ThemeBtn from "../shared/ThemeBtn";
+import SmartImage from "../shared/SmartImage";
 import { RESTAURANT } from "@/data/restaurant";
 
 export default function HeroBanner() {
@@ -53,11 +54,12 @@ export default function HeroBanner() {
         </div>
 
         <div className="relative animate-fade-in">
-          <div
-            className="aspect-[4/5] rounded-[28px] overflow-hidden bg-cover-center shadow-[0_30px_80px_-30px_rgba(26,20,16,0.35)]"
-            style={{ backgroundImage: "url('/Images/hero.jpg')" }}
-            role="img"
-            aria-label="Iraqi mixed grill platter at Al-Baghdady Restaurant"
+          <SmartImage
+            src="/Images/hero.webp"
+            alt="Iraqi mixed grill platter at Al-Baghdady Restaurant"
+            priority
+            sizes="(min-width: 1024px) 50vw, 100vw"
+            className="aspect-[4/5] rounded-[28px] shadow-[0_30px_80px_-30px_rgba(26,20,16,0.35)]"
           />
 
           <div className="hidden md:block absolute -bottom-8 -left-8 bg-white border border-[var(--color-border)] rounded-2xl px-5 py-4 shadow-[var(--shadow-lift)]">

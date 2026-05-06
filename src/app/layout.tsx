@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { Inter, Fraunces } from "next/font/google";
 import "@/styles/globals.css";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
@@ -11,6 +12,21 @@ import {
 } from "@/data/schema";
 import { createMetadata } from "@/data/metadata";
 import { RESTAURANT } from "@/data/restaurant";
+
+const inter = Inter({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700", "800"],
+  display: "swap",
+  variable: "--font-inter",
+});
+
+const fraunces = Fraunces({
+  subsets: ["latin"],
+  weight: ["400", "500"],
+  style: ["normal", "italic"],
+  display: "swap",
+  variable: "--font-fraunces",
+});
 
 export const metadata: Metadata = createMetadata({
   title: `${RESTAURANT.name} | Authentic Iraqi Cuisine & Bakery in Richardson, TX`,
@@ -30,14 +46,8 @@ export const metadata: Metadata = createMetadata({
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en">
+    <html lang="en" className={`${inter.variable} ${fraunces.variable}`}>
       <head>
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="" />
-        <link
-          href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;1,9..144,400;1,9..144,500&display=swap"
-          rel="stylesheet"
-        />
         <meta name="theme-color" content="#8B1A1A" />
         <meta name="format-detection" content="telephone=yes" />
         <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />

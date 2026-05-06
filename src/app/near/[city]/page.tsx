@@ -8,6 +8,7 @@ import { RESTAURANT } from "@/data/restaurant";
 import SchemaInjector from "@/components/shared/SchemaInjector";
 import BreadcrumbNav from "@/components/layout/BreadcrumbNav";
 import ThemeBtn from "@/components/shared/ThemeBtn";
+import SmartImage from "@/components/shared/SmartImage";
 
 export function generateStaticParams() {
   return NEIGHBORHOODS.map((n) => ({ city: n.slug }));
@@ -81,14 +82,13 @@ export default async function NeighborhoodPage({
             </div>
           </div>
 
-          <div className="aspect-[4/5] rounded-[var(--radius-section)] overflow-hidden shadow-[0_30px_80px_-30px_rgba(26,20,16,0.35)]">
-            <div
-              className="w-full h-full bg-cover-center"
-              style={{ backgroundImage: "url('/Images/hero.jpg')" }}
-              role="img"
-              aria-label={`Iraqi food served from ${n.city}, ${n.state}`}
-            />
-          </div>
+          <SmartImage
+            src="/Images/hero.webp"
+            alt={`Iraqi food served from ${n.city}, ${n.state}`}
+            priority
+            sizes="(min-width: 1024px) 50vw, 100vw"
+            className="aspect-[4/5] rounded-[var(--radius-section)] shadow-[0_30px_80px_-30px_rgba(26,20,16,0.35)]"
+          />
         </div>
       </section>
 

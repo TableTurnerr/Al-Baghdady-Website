@@ -1,6 +1,8 @@
 ---
 name: commit-changes
 description: Automates the process of committing changes with granular objective-based commits, separate final version bumps, and specialized "Fix" type formatting. Operates autonomously without asking for confirmation.
+user-invocable: true
+argument-hint: "[Merge to release]"
 ---
 
 # Commit Changes Skill

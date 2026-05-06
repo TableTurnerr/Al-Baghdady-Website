@@ -1,6 +1,6 @@
 {
   "name": "al-baghdady-website",
-  "version": "0.1.0",
+  "version": "1.2",
   "private": true,
   "scripts": {
     "dev": "next dev",
@@ -13,7 +13,7 @@
   "dependencies": {
     "framer-motion": "^12.38.0",
     "lucide-react": "^0.460.0",
-    "next": "15.5.7",
+    "next": "15.5.16",
     "react": "19.0.0",
     "react-dom": "19.0.0",
     "sharp": "^0.34.5"
@@ -24,7 +24,7 @@
     "@types/react": "^19.2.14",
     "@types/react-dom": "^19.2.3",
     "eslint": "^9.39.4",
-    "eslint-config-next": "15.5.7",
+    "eslint-config-next": "15.5.16",
     "postcss": "^8.5.14",
     "tailwindcss": "^4.2.4",
     "typescript": "^5.9.3"

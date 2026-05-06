@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { useState, useEffect } from "react";
 import { Menu, X, Phone } from "lucide-react";
 import ThemeBtn from "../shared/ThemeBtn";
@@ -34,9 +35,12 @@ export default function Header() {
       <div className="container-pad flex items-center justify-between h-[72px]">
         <Link href="/" className="flex items-center gap-3 group" aria-label="Al-Baghdady Restaurant home">
           <div className="w-11 h-11 rounded-full overflow-hidden ring-1 ring-[var(--color-border)] transition-transform duration-300 group-hover:scale-105 shrink-0">
-            <img
-              src="/Images/logo.jpg"
+            <Image
+              src="/Images/logo.webp"
               alt="Al-Baghdady Restaurant logo"
+              width={44}
+              height={44}
+              priority
               className="w-full h-full object-cover"
             />
           </div>

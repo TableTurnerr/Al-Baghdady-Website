@@ -4,14 +4,15 @@ import Link from "next/link";
 import { ArrowRight, Hand, ChevronLeft, ChevronRight } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 import { MENU } from "@/data/menu";
+import SmartImage from "../shared/SmartImage";
 
 const DISH_IMAGES = [
-  "/Images/dish-1.jpg",
-  "/Images/dish-2.jpg",
-  "/Images/dish-3.jpg",
-  "/Images/dish-4.jpg",
-  "/Images/hero.jpg",
-  "/Images/bakery.jpg",
+  "/Images/dish-1.webp",
+  "/Images/dish-2.webp",
+  "/Images/dish-3.webp",
+  "/Images/dish-4.webp",
+  "/Images/hero.webp",
+  "/Images/bakery.webp",
 ];
 
 const featured = MENU.flatMap((c) =>
@@ -132,11 +133,11 @@ export default function FeaturedDishes() {
                 className="card shrink-0 w-[280px] md:w-[320px] snap-center"
               >
                 <div className="card-img aspect-[4/3]">
-                  <div
-                    className="w-full h-full bg-cover-center"
-                    style={{ backgroundImage: `url('${DISH_IMAGES[idx % DISH_IMAGES.length]}')` }}
-                    role="img"
-                    aria-label={`${dish.name} at Al-Baghdady`}
+                  <SmartImage
+                    src={DISH_IMAGES[idx % DISH_IMAGES.length]}
+                    alt={`${dish.name} at Al-Baghdady`}
+                    sizes="(min-width: 768px) 320px, 280px"
+                    className="w-full h-full"
                   />
                 </div>
                 <div className="p-6">

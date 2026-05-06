@@ -4,6 +4,7 @@ import { breadcrumbSchema } from "@/data/schema";
 import SchemaInjector from "@/components/shared/SchemaInjector";
 import BreadcrumbNav from "@/components/layout/BreadcrumbNav";
 import ThemeBtn from "@/components/shared/ThemeBtn";
+import SmartImage from "@/components/shared/SmartImage";
 
 export const metadata: Metadata = createMetadata({
   title: "Our Story — Family-Owned Iraqi Restaurant in Richardson | Al-Baghdady",
@@ -33,14 +34,13 @@ export default function OurStoryPage() {
         <div className="eyebrow">Our Story</div>
         <h1 className="mb-8">From Baghdad to Richardson — A Family Recipe</h1>
 
-        <div className="aspect-[16/9] rounded-[var(--radius-section)] overflow-hidden mb-12 shadow-[0_30px_80px_-30px_rgba(26,20,16,0.35)]">
-          <div
-            className="w-full h-full bg-cover-center"
-            style={{ backgroundImage: "url('/Images/hero.jpg')" }}
-            role="img"
-            aria-label="Al-Baghdady Restaurant family kitchen"
-          />
-        </div>
+        <SmartImage
+          src="/Images/hero.webp"
+          alt="Al-Baghdady Restaurant family kitchen"
+          priority
+          sizes="(min-width: 768px) 768px, 100vw"
+          className="aspect-[16/9] rounded-[var(--radius-section)] mb-12 shadow-[0_30px_80px_-30px_rgba(26,20,16,0.35)]"
+        />
 
         <div className="prose-content space-y-6 text-[var(--color-text)] text-lg leading-relaxed">
           <p>
