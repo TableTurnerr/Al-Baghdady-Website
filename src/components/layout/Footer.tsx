@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { RESTAURANT } from "@/data/restaurant";
 
 const QUICK_LINKS = [
@@ -31,8 +32,8 @@ export default function Footer() {
       <div className="container mx-auto">
         <div className="grid grid-cols-1 sm:grid-cols-2 min-h-[100px] lg:grid-cols-3 gap-[10px] lg:gap-8">
           <div className="col-span-2 lg:col-span-1 mx-auto flex flex-row items-center lg:items-start gap-4">
-            <img
-              src="/Images/logo.jpg"
+            <Image
+              src="/Images/logo.webp"
               alt="Al-Baghdady Restaurant logo"
               width={200}
               height={200}
