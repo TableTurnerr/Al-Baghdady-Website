@@ -1,3 +1,5 @@
+import { RESTAURANT } from "./restaurant";
+
 export type FAQ = { question: string; answer: string };
 
 // Inline links use markdown-style syntax: [anchor text](/url/).
@@ -11,12 +13,12 @@ export const FAQS: FAQ[] = [
   {
     question: "Where are you located?",
     answer:
-      "We're at 327-329 N Greenville Ave, Richardson, TX 75081 — minutes from [Plano](/near/plano-tx/), [Garland](/near/garland-tx/), [Addison](/near/addison-tx/) and [North Dallas](/near/north-dallas-tx/). Free parking on site.",
+      `We're at ${RESTAURANT.address.full} — minutes from [Plano](/near/plano-tx/), [Garland](/near/garland-tx/), [Addison](/near/addison-tx/) and [North Dallas](/near/north-dallas-tx/). Free parking on site.`,
   },
   {
     question: "Do you offer catering for weddings and corporate events?",
     answer:
-      "Yes — Al-Baghdady caters weddings, corporate lunches, Ramadan iftars, Eid celebrations and private events across Dallas-Fort Worth. Visit our [Catering page](/catering/) or call (972) 238-9200 to request a quote.",
+      `Yes — Al-Baghdady caters weddings, corporate lunches, Ramadan iftars, Eid celebrations and private events across Dallas-Fort Worth. Visit our [Catering page](/catering/) or call ${RESTAURANT.phone} to request a quote.`,
   },
   {
     question: "What is samoon bread?",
@@ -36,12 +38,12 @@ export const FAQS: FAQ[] = [
   {
     question: "Do you offer delivery?",
     answer:
-      "Yes — order delivery directly through our website or via DoorDash. We deliver across Richardson, [Plano](/near/plano-tx/), [Garland](/near/garland-tx/), [Addison](/near/addison-tx/) and most of [North Dallas](/near/north-dallas-tx/).",
+      "Yes — order delivery directly through our website or via Postmates. We deliver across Richardson, [Plano](/near/plano-tx/), [Garland](/near/garland-tx/), [Addison](/near/addison-tx/) and most of [North Dallas](/near/north-dallas-tx/).",
   },
   {
     question: "Do you take reservations?",
     answer:
-      "Walk-ins are welcome and most parties are seated within 15 minutes. For groups of 8 or more, please call (972) 238-9200 to reserve.",
+      `Walk-ins are welcome and most parties are seated within 15 minutes. For groups of 8 or more, please call ${RESTAURANT.phone} to reserve.`,
   },
   {
     question: "Are you family-friendly?",
@@ -86,7 +88,7 @@ export const FAQS: FAQ[] = [
   {
     question: "Are there really two Al-Baghdady locations?",
     answer:
-      "We have one restaurant and one bakery, both at 327-329 N Greenville Ave [under the same ownership](/our-story/). The [bakery](/bakery/) serves fresh samoon, kanafa and traditional sweets; the [restaurant](/menu/) serves the full menu of Iraqi specialties.",
+      `Our restaurant and bakery share one location at ${RESTAURANT.address.full} [under the same ownership](/our-story/). The [bakery](/bakery/) serves fresh samoon, kanafa and traditional sweets; the [restaurant](/menu/) serves the full menu of Iraqi specialties.`,
   },
   {
     question: "Do you accept large catering orders?",

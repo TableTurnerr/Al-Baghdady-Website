@@ -5,6 +5,7 @@ import SchemaInjector from "@/components/shared/SchemaInjector";
 import BreadcrumbNav from "@/components/layout/BreadcrumbNav";
 import ThemeBtn from "@/components/shared/ThemeBtn";
 import SmartImage from "@/components/shared/SmartImage";
+import { RESTAURANT } from "@/data/restaurant";
 
 export const metadata: Metadata = createMetadata({
   title: "The Bakery — Fresh Samoon, Kanafa, Baklava & Iraqi Sweets | Al-Baghdady",
@@ -114,7 +115,7 @@ export default function BakeryPage() {
           </p>
           <div className="flex flex-wrap gap-3 justify-center">
             <ThemeBtn href="/catering/" variant="primary">Request a Tray</ThemeBtn>
-            <ThemeBtn href="tel:+19722389200" variant="secondary">Call Us</ThemeBtn>
+            <ThemeBtn href={`tel:${RESTAURANT.phoneRaw}`} variant="secondary">Call Us</ThemeBtn>
           </div>
         </div>
       </section>

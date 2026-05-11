@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { RESTAURANT } from "@/data/restaurant";
 
 const EVENT_TYPES = [
   "Wedding",
@@ -28,7 +29,7 @@ Guests: ${data.get("guests")}
 
 Message:
 ${data.get("message")}`;
-    window.location.href = `mailto:info@al-baghdady.com?subject=${encodeURIComponent(
+    window.location.href = `mailto:${RESTAURANT.email}?subject=${encodeURIComponent(
       subject
     )}&body=${encodeURIComponent(body)}`;
     setSubmitted(true);
@@ -43,10 +44,10 @@ ${data.get("message")}`;
         <h3 className="!text-2xl mb-3">Thank you.</h3>
         <p className="text-[var(--color-text-muted)] leading-relaxed">
           Your email client should have opened. If not, please email us directly at{" "}
-          <a href="mailto:info@al-baghdady.com" className="text-[var(--color-primary)] underline">
-            info@al-baghdady.com
+          <a href={`mailto:${RESTAURANT.email}`} className="text-[var(--color-primary)] underline">
+            {RESTAURANT.email}
           </a>{" "}
-          or call (972) 238-9200.
+          or call {RESTAURANT.phone}.
         </p>
       </div>
     );
@@ -109,7 +110,7 @@ ${data.get("message")}`;
       </button>
 
       <p className="text-xs text-[var(--color-text-muted)] text-center">
-        We&apos;ll respond within one business day. For urgent requests, please call (972) 238-9200.
+        We&apos;ll respond within one business day. For urgent requests, please call {RESTAURANT.phone}.
       </p>
     </form>
   );

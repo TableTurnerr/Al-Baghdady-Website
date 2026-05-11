@@ -5,6 +5,7 @@ import SchemaInjector from "@/components/shared/SchemaInjector";
 import BreadcrumbNav from "@/components/layout/BreadcrumbNav";
 import FAQSection from "@/components/home/FAQSection";
 import { FAQS } from "@/data/faqs";
+import { RESTAURANT } from "@/data/restaurant";
 
 export const metadata: Metadata = createMetadata({
   title: "FAQ — Halal, Catering, Bakery & More | Al-Baghdady Restaurant",
@@ -43,8 +44,10 @@ export default function FAQPage() {
         <h1 className="mb-6">Frequently Asked Questions</h1>
         <p className="text-lg text-[var(--color-text-muted)]">
           Everything you might want to know about Al-Baghdady — halal certification, catering, the
-          bakery, traditional Iraqi dishes, hours and more. Can&apos;t find your question? Call us at
-          (972) 238-9200.
+          bakery, traditional Iraqi dishes, hours and more. Can&apos;t find your question? Call us at{" "}
+          <a href={`tel:${RESTAURANT.phoneRaw}`} className="text-[var(--color-primary)] underline">
+            {RESTAURANT.phone}
+          </a>.
         </p>
       </section>
 
