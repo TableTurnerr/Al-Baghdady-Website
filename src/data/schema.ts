@@ -54,11 +54,6 @@ export function websiteSchema() {
     name: RESTAURANT.name,
     description: RESTAURANT.shortDescription,
     publisher: { "@id": `${BASE_URL}/#organization` },
-    potentialAction: {
-      "@type": "SearchAction",
-      target: `${BASE_URL}/search?q={search_term_string}`,
-      "query-input": "required name=search_term_string",
-    },
   };
 }
 
@@ -68,7 +63,7 @@ export function restaurantSchema() {
     "@type": "Restaurant",
     "@id": `${BASE_URL}/#restaurant`,
     name: RESTAURANT.name,
-    alternateName: ["Al-Baghdady", "Albaghdady Restaurant", "Salam Grill"],
+    alternateName: ["Al-Baghdady", "Albaghdady Restaurant"],
     description: RESTAURANT.longDescription,
     url: BASE_URL,
     telephone: RESTAURANT.phone,
@@ -91,7 +86,7 @@ export function restaurantSchema() {
     currenciesAccepted: RESTAURANT.currenciesAccepted,
     openingHoursSpecification,
     hasMenu: `${BASE_URL}/menu/`,
-    acceptsReservations: "True",
+    acceptsReservations: "False",
     areaServed: RESTAURANT.areasServed.map((city) => ({
       "@type": "City",
       name: city,
@@ -114,7 +109,7 @@ export function menuSchema() {
     "@id": `${BASE_URL}/menu/#menu`,
     name: `${RESTAURANT.name} Menu`,
     description:
-      "Authentic Iraqi cuisine: kabob platters, shawarma, traditional specialties, mezze, fresh-baked samoon and Iraqi sweets.",
+      "Authentic Iraqi bakery and breakfast café menu: baklava, kunafa, ladyfingers, samoon, fatayer, manakish and traditional Iraqi breakfast dishes.",
     hasMenuSection: MENU.map((category) => ({
       "@type": "MenuSection",
       name: category.name,
