@@ -13,6 +13,24 @@ export type PageMetaInput = {
   noindex?: boolean;
 };
 
+const BASE_KEYWORDS = [
+  "iraqi restaurant Richardson TX",
+  "halal restaurant Richardson TX",
+  "iraqi bakery Dallas",
+  "arabic bakery Richardson",
+  "samoon bread Dallas",
+  "kanafa Dallas",
+  "iraqi breakfast Richardson",
+  "albaghdady",
+  "al-baghdady bakery",
+  "iraqi cafe Richardson TX",
+  "middle eastern cafe Dallas",
+  "arabic cafe Richardson",
+  "halal cafe near me",
+  "iraqi breakfast cafe DFW",
+  "baghdadi cafe Texas",
+];
+
 export function createMetadata({
   title,
   description,
@@ -31,7 +49,7 @@ export function createMetadata({
     metadataBase: new URL(BASE_URL),
     title: fullTitle,
     description,
-    keywords,
+    keywords: [...BASE_KEYWORDS, ...(keywords ?? [])],
     alternates: { canonical: url },
     robots: noindex
       ? { index: false, follow: false }
@@ -58,7 +76,7 @@ export function createMetadata({
           url: ogImage,
           width: 1200,
           height: 630,
-          alt: RESTAURANT.name,
+          alt: `${RESTAURANT.name} in Richardson, TX — halal Iraqi bakery & breakfast`,
         },
       ],
     },
