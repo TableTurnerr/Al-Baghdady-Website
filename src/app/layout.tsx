@@ -29,7 +29,7 @@ const fraunces = Fraunces({
 });
 
 export const metadata: Metadata = createMetadata({
-  title: `${RESTAURANT.name} | Authentic Iraqi Cuisine & Bakery in Richardson, TX`,
+  title: `${RESTAURANT.name} | ${RESTAURANT.tagline}`,
   description: RESTAURANT.shortDescription,
   path: "/",
   keywords: [
