@@ -26,13 +26,21 @@ export function organizationSchema() {
     "@type": "Organization",
     "@id": `${BASE_URL}/#organization`,
     name: RESTAURANT.legalName,
-    alternateName: ["Al-Baghdady", "Albaghdady", "Salam Grill"],
+    alternateName: [
+      "Al-Baghdady Bakery & Café",
+      "Al-Baghdady Restaurant",
+      "Al-Baghdady",
+      "Albaghdady",
+      "Salam Grill",
+    ],
     url: BASE_URL,
     logo: `${BASE_URL}/Images/logo.webp`,
     image: `${BASE_URL}/Images/og-default.jpg`,
     telephone: RESTAURANT.phone,
     email: RESTAURANT.email,
     address: postalAddress,
+    foundingDate: RESTAURANT.founded,
+    description: `Family-owned Iraqi bakery and breakfast café in Richardson, TX. Founded ${RESTAURANT.founded}; family recipes since ${RESTAURANT.familyRecipeSince}.`,
     sameAs: Object.values(RESTAURANT.socials),
   };
 }
