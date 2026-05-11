@@ -64,6 +64,96 @@ export const MENU: MenuCategory[] = [
     ],
   },
   {
+    id: "iraqi-breakfast",
+    name: "Iraqi Breakfast",
+    description:
+      "Traditional Iraqi breakfast served every day except Monday, 10:00 AM – 12:30 PM. Every plate paired with hot chai and fresh samoon.",
+    image: "/Images/menu/breakfast.webp",
+    items: [
+      {
+        name: "Albaghdady Plate",
+        description:
+          "Our signature breakfast spread. Ground meat kabab, golden potatoes, eggplant tomato stew, and two pieces of handmade kubbah — all on one tray.",
+        price: "$14.99",
+        popular: true,
+      },
+      {
+        name: "Kahi & Qeimar",
+        description:
+          "Iraq's most beloved sweet breakfast. Layers of flaky golden kahi pastry drizzled with syrup, served with rich clotted cream (qeimar).",
+        price: "$8.99",
+        popular: true,
+      },
+      {
+        name: "Baqila",
+        description:
+          "Tender fava beans simmered in their own broth, served with eggs, crispy fried onions, and warm bread soaked in the broth. A national Iraqi tradition.",
+        price: "$9.99",
+        popular: true,
+      },
+      {
+        name: "Kubba",
+        description:
+          "Four hand-rolled pieces of Iraqi kubba — bulgur shells stuffed with seasoned meat, onions, and herbs, fried until golden and crisp.",
+        price: "$8.99",
+      },
+      {
+        name: "Qeimar & Debes",
+        description:
+          "Fresh clotted cream and pure date syrup, served with warm samoon. Simple, ancient, unforgettable.",
+        price: "$7.99",
+      },
+      {
+        name: "Chelfry",
+        description:
+          "Traditional Iraqi morning hash of slow-cooked lamb pieces, golden potatoes, onions, and tomatoes. Bold and warming.",
+        price: "$11.99",
+      },
+      {
+        name: "Omlet",
+        description:
+          "Iraqi-style omelette with ground meat, fresh tomatoes, onions, and eggs cooked together until tender and rich.",
+        price: "$8.99",
+      },
+      {
+        name: "Bastirma",
+        description:
+          "Spiced cured beef sausage sizzled with eggs until the edges crisp. Deep, smoky flavor in every bite.",
+        price: "$9.99",
+      },
+      {
+        name: "Lamb Liver",
+        description:
+          "Fresh lamb liver sautéed with onions and tomatoes until tender. The way Baghdadi mornings have started for generations.",
+        price: "$10.99",
+      },
+      {
+        name: "Beef & Egg",
+        description:
+          "Tender beef shawarma topped with a perfectly cooked egg. Savory, satisfying, ready to fuel your whole morning.",
+        price: "$10.99",
+      },
+      {
+        name: "Potato with Egg",
+        description:
+          "Pan-fried potatoes scrambled with farm-fresh eggs. Simple, comforting, pairs perfectly with hot chai.",
+        price: "$7.99",
+      },
+      {
+        name: "Tomato with Egg",
+        description:
+          "Ripe tomatoes slow-cooked with eggs into a rich, savory scramble. Light, fresh, a Middle Eastern breakfast staple.",
+        price: "$7.99",
+      },
+      {
+        name: "Fried Kabab",
+        description:
+          "Hand-formed patties of seasoned ground meat with fresh parsley and onions, pan-fried golden and crisp.",
+        price: "$9.99",
+      },
+    ],
+  },
+  {
     id: "shawarma-sandwiches",
     name: "Shawarma & Sandwiches",
     description:
@@ -238,6 +328,52 @@ export const MENU: MenuCategory[] = [
         description:
           "Mixed tray of our signature sweets — perfect for parties, weddings and Eid celebrations. Order ahead.",
         price: "From $45",
+      },
+      {
+        name: "Pistachio Baklava",
+        description:
+          "Our most-ordered variety. Generous layers of fresh-ground pistachios between paper-thin phyllo, soaked in just enough syrup.",
+        price: "$3.50 / pc",
+        popular: true,
+      },
+      {
+        name: "Burma",
+        description:
+          "Long, cigar-rolled phyllo packed with pistachios and finished with syrup. Crisp, nutty, and one of the lesser-known Iraqi sweets.",
+        price: "$3.00 / pc",
+      },
+      {
+        name: "Mabrouma",
+        description:
+          "A coiled phyllo pastry layered with pistachios, baked until deep gold. A traditional Iraqi dessert most often spotted on celebration trays.",
+        price: "$3.00 / pc",
+      },
+      {
+        name: "Fatayer — Spinach",
+        description:
+          "Hand-folded savory pies with spinach filling, baked fresh daily. Soft, golden, perfect with chai.",
+        price: "$2.50 / pc",
+        vegetarian: true,
+      },
+      {
+        name: "Fatayer — Cheese",
+        description:
+          "Hand-folded savory pies with cheese filling, baked fresh daily.",
+        price: "$2.50 / pc",
+        vegetarian: true,
+      },
+      {
+        name: "Fatayer — Meat",
+        description:
+          "Hand-folded savory pies with seasoned ground meat, baked fresh daily.",
+        price: "$2.50 / pc",
+      },
+      {
+        name: "Manakish",
+        description:
+          "Flatbread topped with za'atar, cheese, or meat — Middle Eastern breakfast at its most authentic. A weekend staple in our Richardson bakery.",
+        price: "$4.99",
+        popular: true,
       },
     ],
   },
