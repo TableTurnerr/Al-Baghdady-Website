@@ -1,7 +1,16 @@
-import { Star } from "lucide-react";
+import { Star, Sunrise } from "lucide-react";
 import ThemeBtn from "../shared/ThemeBtn";
 import SmartImage from "../shared/SmartImage";
 import { RESTAURANT } from "@/data/restaurant";
+
+function fmtTime(t: string) {
+  const [h, m] = t.split(":").map(Number);
+  const period = h >= 12 ? "PM" : "AM";
+  const hour = h % 12 || 12;
+  return m ? `${hour}:${String(m).padStart(2, "0")} ${period}` : `${hour} ${period}`;
+}
+
+const BREAKFAST_RANGE = `${fmtTime(RESTAURANT.breakfastHours.open)} – ${fmtTime(RESTAURANT.breakfastHours.close)}`;
 
 export default function HeroBanner() {
   return (
@@ -50,6 +59,12 @@ export default function HeroBanner() {
             <div className="font-medium text-[var(--color-text-muted)]">
               ✓ Zabihah Verified Halal
             </div>
+          </div>
+
+          <div className="mt-6 inline-flex items-center gap-2 text-sm">
+            <Sunrise size={16} className="text-[var(--color-gold-dark)]" aria-hidden="true" />
+            <span className="font-semibold text-[var(--color-text)]">{RESTAURANT.breakfastHours.note}</span>
+            <span className="text-[var(--color-text-muted)]">· {BREAKFAST_RANGE}</span>
           </div>
         </div>
 

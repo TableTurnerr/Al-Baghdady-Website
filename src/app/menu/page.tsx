@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Star, Leaf } from "lucide-react";
+import { Star, Leaf, Sunrise } from "lucide-react";
 import { createMetadata } from "@/data/metadata";
 import { MENU } from "@/data/menu";
 import { menuSchema, breadcrumbSchema } from "@/data/schema";
@@ -7,6 +7,15 @@ import SchemaInjector from "@/components/shared/SchemaInjector";
 import BreadcrumbNav from "@/components/layout/BreadcrumbNav";
 import ThemeBtn from "@/components/shared/ThemeBtn";
 import { RESTAURANT } from "@/data/restaurant";
+
+function fmtTime(t: string) {
+  const [h, m] = t.split(":").map(Number);
+  const period = h >= 12 ? "PM" : "AM";
+  const hour = h % 12 || 12;
+  return m ? `${hour}:${String(m).padStart(2, "0")} ${period}` : `${hour} ${period}`;
+}
+
+const BREAKFAST_RANGE = `${fmtTime(RESTAURANT.breakfastHours.open)} – ${fmtTime(RESTAURANT.breakfastHours.close)}`;
 
 export const metadata: Metadata = createMetadata({
   title: "Menu — Iraqi Kabobs, Shawarma, Bakery & More | Al-Baghdady",
@@ -55,6 +64,18 @@ export default function MenuPage() {
               Order Online
             </ThemeBtn>
             <ThemeBtn href="/catering/" variant="secondary">Catering Inquiries</ThemeBtn>
+          </div>
+
+          <div className="mt-8 inline-flex items-start gap-3 rounded-xl border border-[var(--color-gold)]/30 bg-[var(--color-gold)]/[0.07] px-4 py-3">
+            <Sunrise size={18} className="text-[var(--color-gold-dark)] mt-0.5 shrink-0" aria-hidden="true" />
+            <div>
+              <div className="text-[11px] font-semibold uppercase tracking-[0.18em] text-[var(--color-gold-dark)]">
+                Breakfast Service · {BREAKFAST_RANGE}
+              </div>
+              <div className="text-sm text-[var(--color-text)] mt-1 font-medium">
+                {RESTAURANT.breakfastHours.note}
+              </div>
+            </div>
           </div>
         </div>
       </section>
