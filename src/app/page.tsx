@@ -1,4 +1,5 @@
 import HeroBanner from "@/components/home/HeroBanner";
+import PressStrip from "@/components/home/PressStrip";
 import ActionCards from "@/components/home/ActionCards";
 import TrustBar from "@/components/home/TrustBar";
 import FeaturedDishes from "@/components/home/FeaturedDishes";
@@ -19,6 +20,7 @@ export default function HomePage() {
     <>
       <SchemaInjector schema={[restaurantSchema(), faqSchema(HOME_FAQS)]} />
       <HeroBanner />
+      <PressStrip />
       <ActionCards />
       <TrustBar />
       <FeaturedDishes />
