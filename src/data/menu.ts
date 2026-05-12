@@ -281,6 +281,12 @@ export const MENU: MenuCategory[] = [
         vegetarian: true,
         popular: true,
       },
+      {
+        name: "Samosa",
+        description:
+          "Hand-folded and pan-fried golden. Choose from seasoned ground meat or vegetable filling — crispy on the outside, savory inside. Perfect as a quick snack, an appetizer, or by the tray for your next gathering.",
+        price: "$2.50 / pc",
+      },
     ],
   },
   {
@@ -337,6 +343,19 @@ export const MENU: MenuCategory[] = [
         popular: true,
       },
       {
+        name: "Bread Baklava",
+        description:
+          "A Richardson favorite and a signature Iraqi twist on traditional baklava. A golden bread base, soaked in honey syrup, layered with sweet cream and chopped pistachios. Rich, comforting, and one of the most-requested desserts in our case.",
+        price: "$3.50 / pc",
+        popular: true,
+      },
+      {
+        name: "Walnut Baklava",
+        description:
+          "A traditional baklava variety made with fresh walnuts. Layers of paper-thin phyllo, walnuts, and our family's signature honey syrup. The recipe we've been making since 1919.",
+        price: "$3.00 / pc",
+      },
+      {
         name: "Burma",
         description:
           "Long, cigar-rolled phyllo packed with pistachios and finished with syrup. Crisp, nutty, and one of the lesser-known Iraqi sweets.",
@@ -375,6 +394,12 @@ export const MENU: MenuCategory[] = [
         price: "$4.99",
         popular: true,
       },
+      {
+        name: "Awama",
+        description:
+          "Bite-sized fried dough fritters, crisp on the outside, soft inside, soaked in our family's honey syrup. A celebration favorite at every Iraqi gathering — most often spotted on Eid and wedding trays.",
+        price: "$3.00 / pc",
+      },
     ],
   },
   {
@@ -387,6 +412,13 @@ export const MENU: MenuCategory[] = [
         name: "Iraqi Chai",
         description: "Strong black tea with cardamom — served Iraqi-style.",
         price: "$2.99",
+      },
+      {
+        name: "Karak Chai",
+        description:
+          "Our signature variety. Rich, creamy black tea slowly steeped with cardamom, milk, and a touch of sweetness — the way Iraqi mornings are meant to start.",
+        price: "$3.99",
+        popular: true,
       },
       {
         name: "Turkish Coffee",
