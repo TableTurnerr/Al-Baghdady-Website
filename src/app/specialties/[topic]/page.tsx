@@ -11,6 +11,7 @@ import BreadcrumbNav from "@/components/layout/BreadcrumbNav";
 import ThemeBtn from "@/components/shared/ThemeBtn";
 import SmartImage from "@/components/shared/SmartImage";
 import FAQSection from "@/components/home/FAQSection";
+import MenuItemCard from "@/components/menu/MenuItemCard";
 
 type ResolvedRelatedItem = { item: MenuItem; category: MenuCategory };
 
@@ -179,29 +180,12 @@ export default async function SpecialtyPage({
             </div>
             <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
               {related.map(({ item, category }) => (
-                <Link
+                <MenuItemCard
                   key={item.name}
+                  item={item}
+                  categoryLabel={category.name}
                   href="/menu/"
-                  className="card p-6 transition-all duration-500 hover:-translate-y-0.5 hover:shadow-[var(--shadow-lift)]"
-                >
-                  <div className="text-[11px] font-semibold text-[var(--color-text-muted)] uppercase tracking-[0.15em] mb-2">
-                    {category.name}
-                  </div>
-                  <div className="flex items-start justify-between gap-3 mb-2">
-                    <h3
-                      className="text-lg"
-                      style={{ fontFamily: "var(--font-display)", fontWeight: 500 }}
-                    >
-                      {item.name}
-                    </h3>
-                    <div className="font-semibold text-[var(--color-text)] shrink-0">
-                      {item.price}
-                    </div>
-                  </div>
-                  <p className="text-sm text-[var(--color-text-muted)] line-clamp-2 leading-relaxed">
-                    {item.description}
-                  </p>
-                </Link>
+                />
               ))}
             </div>
           </div>
