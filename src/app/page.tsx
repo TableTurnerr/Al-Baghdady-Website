@@ -1,9 +1,10 @@
 import HeroBanner from "@/components/home/HeroBanner";
+import PressStrip from "@/components/home/PressStrip";
 import ActionCards from "@/components/home/ActionCards";
 import TrustBar from "@/components/home/TrustBar";
 import FeaturedDishes from "@/components/home/FeaturedDishes";
 import BakerySpotlight from "@/components/home/BakerySpotlight";
-import SocialProofQuotes from "@/components/home/SocialProofQuotes";
+import Gallery from "@/components/home/Gallery";
 import Reviews from "@/components/home/Reviews";
 import InstagramSection from "@/components/home/InstagramSection";
 import FAQSection from "@/components/home/FAQSection";
@@ -19,11 +20,12 @@ export default function HomePage() {
     <>
       <SchemaInjector schema={[restaurantSchema(), faqSchema(HOME_FAQS)]} />
       <HeroBanner />
+      <PressStrip />
       <ActionCards />
       <TrustBar />
       <FeaturedDishes />
       <BakerySpotlight />
-      <SocialProofQuotes />
+      <Gallery />
       <Reviews />
       <InstagramSection />
       <FAQSection faqs={HOME_FAQS} />

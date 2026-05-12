@@ -4,65 +4,19 @@ import Link from "next/link";
 import { ArrowRight, Hand, ChevronLeft, ChevronRight } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 import SmartImage from "../shared/SmartImage";
+import { MENU } from "@/data/menu";
 
-type FeaturedDish = {
-  name: string;
-  description: string;
-  price: string;
-  category: string;
-  image: string;
-};
-
-const featured: FeaturedDish[] = [
-  {
-    name: "Mixed Sweets Tray",
-    description:
-      "Three-tier copper tray of our signature baklava, ladyfingers and ma'amoul — built for parties, weddings and Eid.",
-    price: "From $45",
-    category: "Bakery & Iraqi Sweets",
-    image: "/Images/dish-1.webp",
-  },
-  {
-    name: "Pistachio Baklava",
-    description:
-      "Crisp phyllo layered with ground Aleppo pistachios and finished with rose-water syrup.",
-    price: "$3.50 / pc",
-    category: "Bakery & Iraqi Sweets",
-    image: "/Images/dish-2.webp",
-  },
-  {
-    name: "Assorted Iraqi Sweets Platter",
-    description:
-      "Znood Al Sit ladyfingers, golden luqaimat and mixed baklava arranged around fresh kashta cream.",
-    price: "From $35",
-    category: "Bakery & Iraqi Sweets",
-    image: "/Images/dish-3.webp",
-  },
-  {
-    name: "Baklava Gift Box",
-    description:
-      "Hand-packed assorted baklava in our signature Al-Baghdady box — ready to gift or take home.",
-    price: "From $24",
-    category: "Bakery & Iraqi Sweets",
-    image: "/Images/dish-4.webp",
-  },
-  {
-    name: "Walnut & Pistachio Baklava",
-    description:
-      "Stacked phyllo with walnut and pistachio filling, baked golden and dusted with crushed pistachio.",
-    price: "$3.50 / pc",
-    category: "Bakery & Iraqi Sweets",
-    image: "/Images/hero.webp",
-  },
-  {
-    name: "Mushabak",
-    description:
-      "Iraqi syrup-soaked fried dough rings, crisp on the outside and dusted with crushed pistachio.",
-    price: "$3.99 / pc",
-    category: "Bakery & Iraqi Sweets",
-    image: "/Images/bakery.webp",
-  },
-];
+const featured = MENU.flatMap((category) =>
+  category.items
+    .filter((item) => item.popular)
+    .map((item) => ({
+      name: item.name,
+      description: item.description,
+      price: item.price,
+      category: category.name,
+      image: item.image,
+    }))
+).slice(0, 6);
 
 export default function FeaturedDishes() {
   const scrollerRef = useRef<HTMLDivElement>(null);
@@ -169,7 +123,7 @@ export default function FeaturedDishes() {
 
           <div
             ref={scrollerRef}
-            className="flex gap-5 md:gap-6 overflow-x-auto hide-scrollbar pb-4 px-[calc((100vw-280px)/2)] md:px-5 snap-x snap-mandatory md:snap-none"
+            className="flex items-start gap-5 md:gap-6 overflow-x-auto hide-scrollbar pb-4 px-[calc((100vw-280px)/2)] md:px-5 snap-x snap-mandatory md:snap-none"
             style={{ scrollBehavior: "auto" }}
           >
             {featured.map((dish) => (
@@ -177,14 +131,16 @@ export default function FeaturedDishes() {
                 key={dish.name}
                 className="card shrink-0 w-[280px] md:w-[320px] snap-center"
               >
-                <div className="card-img aspect-[4/3]">
-                  <SmartImage
-                    src={dish.image}
-                    alt={`${dish.name} at Al-Baghdady`}
-                    sizes="(min-width: 768px) 320px, 280px"
-                    className="w-full h-full"
-                  />
-                </div>
+                {dish.image && (
+                  <div className="card-img aspect-[4/3]">
+                    <SmartImage
+                      src={dish.image}
+                      alt={`${dish.name} at Al-Baghdady`}
+                      sizes="(min-width: 768px) 320px, 280px"
+                      className="w-full h-full"
+                    />
+                  </div>
+                )}
                 <div className="p-6">
                   <div className="text-[11px] font-semibold text-[var(--color-text-muted)] uppercase tracking-[0.15em] mb-2">
                     {dish.category}

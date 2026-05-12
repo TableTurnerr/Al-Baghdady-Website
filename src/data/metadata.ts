@@ -2,7 +2,8 @@ import type { Metadata } from "next";
 import { RESTAURANT } from "./restaurant";
 
 const BASE_URL = RESTAURANT.url;
-const DEFAULT_OG = `${BASE_URL}/Images/og-default.jpg`;
+// TODO: replace with dedicated 1200×630 OG card when client provides a branded version.
+const DEFAULT_OG = `${BASE_URL}/Images/hero.webp`;
 
 export type PageMetaInput = {
   title: string;
@@ -12,6 +13,24 @@ export type PageMetaInput = {
   keywords?: string[];
   noindex?: boolean;
 };
+
+const BASE_KEYWORDS = [
+  "iraqi restaurant Richardson TX",
+  "halal restaurant Richardson TX",
+  "iraqi bakery Dallas",
+  "arabic bakery Richardson",
+  "samoon bread Dallas",
+  "kanafa Dallas",
+  "iraqi breakfast Richardson",
+  "albaghdady",
+  "al-baghdady bakery",
+  "iraqi cafe Richardson TX",
+  "middle eastern cafe Dallas",
+  "arabic cafe Richardson",
+  "halal cafe near me",
+  "iraqi breakfast cafe DFW",
+  "baghdadi cafe Texas",
+];
 
 export function createMetadata({
   title,
@@ -31,7 +50,7 @@ export function createMetadata({
     metadataBase: new URL(BASE_URL),
     title: fullTitle,
     description,
-    keywords,
+    keywords: [...BASE_KEYWORDS, ...(keywords ?? [])],
     alternates: { canonical: url },
     robots: noindex
       ? { index: false, follow: false }
@@ -58,7 +77,7 @@ export function createMetadata({
           url: ogImage,
           width: 1200,
           height: 630,
-          alt: RESTAURANT.name,
+          alt: `${RESTAURANT.name} in Richardson, TX — halal Iraqi bakery & breakfast`,
         },
       ],
     },
@@ -69,7 +88,8 @@ export function createMetadata({
       images: [ogImage],
     },
     icons: {
-      icon: "/favicon.ico",
+      // Next.js auto-discovers src/app/icon.png as the favicon. Listing it explicitly here keeps the metadata honest.
+      icon: "/icon.png",
       apple: "/apple-touch-icon.png",
     },
     manifest: "/manifest.json",

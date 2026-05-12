@@ -1,12 +1,23 @@
 import type { Metadata } from "next";
-import { Star, Leaf } from "lucide-react";
+import { Star, Leaf, Sunrise } from "lucide-react";
 import { createMetadata } from "@/data/metadata";
 import { MENU } from "@/data/menu";
 import { menuSchema, breadcrumbSchema } from "@/data/schema";
 import SchemaInjector from "@/components/shared/SchemaInjector";
 import BreadcrumbNav from "@/components/layout/BreadcrumbNav";
 import ThemeBtn from "@/components/shared/ThemeBtn";
+import QRHover from "@/components/shared/QRHover";
+import CategoryNav from "@/components/menu/CategoryNav";
 import { RESTAURANT } from "@/data/restaurant";
+
+function fmtTime(t: string) {
+  const [h, m] = t.split(":").map(Number);
+  const period = h >= 12 ? "PM" : "AM";
+  const hour = h % 12 || 12;
+  return m ? `${hour}:${String(m).padStart(2, "0")} ${period}` : `${hour} ${period}`;
+}
+
+const BREAKFAST_RANGE = `${fmtTime(RESTAURANT.breakfastHours.open)} – ${fmtTime(RESTAURANT.breakfastHours.close)}`;
 
 export const metadata: Metadata = createMetadata({
   title: "Menu — Iraqi Kabobs, Shawarma, Bakery & More | Al-Baghdady",
@@ -51,33 +62,32 @@ export default function MenuPage() {
             entire menu, with fresh samoon bread baked throughout the day in our in-house bakery.
           </p>
           <div className="flex flex-wrap gap-3 mt-6">
-            <ThemeBtn href={RESTAURANT.orderOnline} external variant="primary">
-              Order Online
-            </ThemeBtn>
+            <QRHover value={RESTAURANT.orderOnline}>
+              <ThemeBtn href={RESTAURANT.orderOnline} external variant="primary">
+                Order Online
+              </ThemeBtn>
+            </QRHover>
             <ThemeBtn href="/catering/" variant="secondary">Catering Inquiries</ThemeBtn>
+          </div>
+
+          <div className="mt-8 inline-flex items-start gap-3 rounded-xl border border-[var(--color-gold)]/30 bg-[var(--color-gold)]/[0.07] px-4 py-3">
+            <Sunrise size={18} className="text-[var(--color-gold-dark)] mt-0.5 shrink-0" aria-hidden="true" />
+            <div>
+              <div className="text-[11px] font-semibold uppercase tracking-[0.18em] text-[var(--color-gold-dark)]">
+                Breakfast Service · {BREAKFAST_RANGE}
+              </div>
+              <div className="text-sm text-[var(--color-text)] mt-1 font-medium">
+                {RESTAURANT.breakfastHours.note}
+              </div>
+            </div>
           </div>
         </div>
       </section>
 
-      <nav className="sticky top-[72px] bg-white/85 backdrop-blur-md z-30 border-b border-[var(--color-border)]">
-        <div className="container-pad">
-          <ul className="flex gap-2 overflow-x-auto py-3 -mx-5 px-5 scroll-snap-x">
-            {MENU.map((category) => (
-              <li key={category.id}>
-                <a
-                  href={`#${category.id}`}
-                  className="px-4 py-2 rounded-full border border-[var(--color-border)] text-sm font-medium text-[var(--color-text)] hover:bg-[var(--color-text)] hover:text-white hover:border-[var(--color-text)] transition-all duration-300 whitespace-nowrap"
-                >
-                  {category.name}
-                </a>
-              </li>
-            ))}
-          </ul>
-        </div>
-      </nav>
+      <CategoryNav categories={MENU.map(({ id, name }) => ({ id, name }))} />
 
       {MENU.map((category) => (
-        <section key={category.id} id={category.id} className="container-pad section-pad scroll-mt-32">
+        <section key={category.id} id={category.id} className="container-pad section-pad scroll-mt-[152px]">
           <header className="mb-10 max-w-2xl">
             <h2 className="mb-3">{category.name}</h2>
             <p className="text-[var(--color-text-muted)]">{category.description}</p>
@@ -89,15 +99,13 @@ export default function MenuPage() {
                 key={item.name}
                 className="rounded-2xl border border-[var(--color-border)] bg-white p-6 transition-all duration-500 hover:border-transparent hover:shadow-[var(--shadow-lift)] hover:-translate-y-0.5"
               >
-                <div className="flex items-start justify-between gap-4 mb-3">
-                  <h3 className="text-lg" style={{ fontFamily: "var(--font-display)", fontWeight: 500 }}>
-                    {item.name}
-                  </h3>
-                  <div className="font-semibold text-[var(--color-text)] shrink-0">{item.price}</div>
-                </div>
-                <p className="text-sm text-[var(--color-text-muted)] leading-relaxed mb-4">
+                <h3 className="text-lg mb-3" style={{ fontFamily: "var(--font-display)", fontWeight: 500 }}>
+                  {item.name}
+                </h3>
+                <p className="text-sm text-[var(--color-text-muted)] leading-relaxed mb-2">
                   {item.description}
                 </p>
+                <div className="text-sm font-semibold text-[var(--color-text)] mb-4">{item.price}</div>
                 <div className="flex items-center gap-1.5 flex-wrap">
                   {item.popular && (
                     <span className="inline-flex items-center gap-1 text-[10px] font-semibold px-2.5 py-1 rounded-full bg-[var(--color-gold)]/15 text-[var(--color-gold-dark)] uppercase tracking-wider">

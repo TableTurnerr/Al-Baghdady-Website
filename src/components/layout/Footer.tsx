@@ -1,16 +1,17 @@
 import Link from "next/link";
 import Image from "next/image";
+import QRHover from "../shared/QRHover";
 import { RESTAURANT } from "@/data/restaurant";
 
 const QUICK_LINKS = [
   { href: "/", label: "Home" },
   { href: "/menu/", label: "Menu" },
+  { href: "/specialties/", label: "Specialties" },
   { href: "/our-story/", label: "Our Story" },
   { href: "/iraqi-cuisine/", label: "Iraqi Cuisine" },
   { href: "/bakery/", label: "Bakery" },
   { href: "/catering/", label: "Catering" },
-  { href: "/faq/", label: "FAQ" },
-  { href: "/reviews/", label: "Reviews" },
+  { href: "/?review=open", label: "Leave a Review" },
 ];
 
 export default function Footer() {
@@ -20,12 +21,12 @@ export default function Footer() {
       style={{ background: "var(--color-text)", color: "rgba(255,255,255,0.78)" }}
     >
       <div
-        className="text-4xl sm:text-5xl md:text-6xl w-full text-white leading-none"
+        className="text-4xl sm:text-5xl md:text-6xl w-full text-white leading-none text-center"
         style={{ letterSpacing: "-0.04em", fontWeight: 700 }}
       >
         Al-Baghdady
       </div>
-      <div className="mt-3 mb-10 max-w-4xl text-sm md:text-base leading-relaxed" style={{ color: "rgba(255,255,255,0.62)" }}>
+      <div className="mt-3 mb-10 max-w-4xl mx-auto text-sm md:text-base leading-relaxed text-center" style={{ color: "rgba(255,255,255,0.62)" }}>
         Authentic Iraqi cuisine in the heart of Richardson, Texas. From char-grilled kabob platters and slow-braised tashreeb to fresh-baked samoon and traditional Iraqi sweets, every dish is rooted in family recipes carried from Baghdad to Dallas. Halal across the entire menu, Zabihah verified, with an in-house bakery firing fresh bread and kanafa throughout the day. Whether you&apos;re here for a quick lunch, a family dinner, or catering for a hundred guests, we&apos;re glad you found us. Come hungry — leave full.
       </div>
 
@@ -107,18 +108,22 @@ export default function Footer() {
                 <div className="text-base font-semibold mb-[22px] text-white tracking-tight">Contact Us</div>
                 <div className="text-sm" style={{ color: "rgba(255,255,255,0.62)" }}>
                   <div className="flex flex-col items-center gap-[10px]">
-                    <a
-                      href={`tel:${RESTAURANT.phoneRaw}`}
-                      className="hover:text-[var(--color-gold)] hover:underline cursor-pointer transition-colors"
-                    >
-                      {RESTAURANT.phone}
-                    </a>
-                    <a
-                      href={`mailto:${RESTAURANT.email}`}
-                      className="hover:text-[var(--color-gold)] hover:underline cursor-pointer transition-colors"
-                    >
-                      {RESTAURANT.email}
-                    </a>
+                    <QRHover value={`tel:${RESTAURANT.phoneRaw}`}>
+                      <a
+                        href={`tel:${RESTAURANT.phoneRaw}`}
+                        className="hover:text-[var(--color-gold)] hover:underline cursor-pointer transition-colors"
+                      >
+                        {RESTAURANT.phone}
+                      </a>
+                    </QRHover>
+                    <QRHover value={`mailto:${RESTAURANT.email}`}>
+                      <a
+                        href={`mailto:${RESTAURANT.email}`}
+                        className="hover:text-[var(--color-gold)] hover:underline cursor-pointer transition-colors"
+                      >
+                        {RESTAURANT.email}
+                      </a>
+                    </QRHover>
                     <span className="max-w-[220px] leading-snug">{RESTAURANT.address.full}</span>
                   </div>
                 </div>
@@ -133,6 +138,7 @@ export default function Footer() {
                       <Link
                         key={l.href}
                         href={l.href}
+                        scroll={l.href === "/?review=open" ? false : undefined}
                         className="hover:text-[var(--color-gold)] transition-colors cursor-pointer"
                       >
                         <span className="hover:underline">{l.label}</span>

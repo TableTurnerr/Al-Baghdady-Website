@@ -13,6 +13,7 @@ type Props = {
   className?: string;
   external?: boolean;
   ariaLabel?: string;
+  scroll?: boolean;
 };
 
 const variantClass: Record<Variant, string> = {
@@ -30,6 +31,7 @@ export default function ThemeBtn({
   className = "",
   external = false,
   ariaLabel,
+  scroll,
 }: Props) {
   const cls = `${variantClass[variant]} ${className}`;
 
@@ -55,7 +57,7 @@ export default function ThemeBtn({
       );
     }
     return (
-      <Link href={href} className={cls} aria-label={ariaLabel}>
+      <Link href={href} scroll={scroll} className={cls} aria-label={ariaLabel}>
         {content}
       </Link>
     );

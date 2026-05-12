@@ -26,13 +26,22 @@ export function organizationSchema() {
     "@type": "Organization",
     "@id": `${BASE_URL}/#organization`,
     name: RESTAURANT.legalName,
-    alternateName: ["Al-Baghdady", "Albaghdady", "Salam Grill"],
+    alternateName: [
+      "Al-Baghdady Bakery & Café",
+      "Al-Baghdady Restaurant",
+      "Al-Baghdady",
+      "Albaghdady",
+      "Salam Grill",
+    ],
     url: BASE_URL,
     logo: `${BASE_URL}/Images/logo.webp`,
-    image: `${BASE_URL}/Images/og-default.jpg`,
+    // TODO: replace with dedicated 1200×630 OG card when client provides.
+    image: `${BASE_URL}/Images/hero.webp`,
     telephone: RESTAURANT.phone,
     email: RESTAURANT.email,
     address: postalAddress,
+    foundingDate: RESTAURANT.founded,
+    description: `Family-owned Iraqi bakery and breakfast café in Richardson, TX. Founded ${RESTAURANT.founded}; family recipes since ${RESTAURANT.familyRecipeSince}.`,
     sameAs: Object.values(RESTAURANT.socials),
   };
 }
@@ -46,11 +55,6 @@ export function websiteSchema() {
     name: RESTAURANT.name,
     description: RESTAURANT.shortDescription,
     publisher: { "@id": `${BASE_URL}/#organization` },
-    potentialAction: {
-      "@type": "SearchAction",
-      target: `${BASE_URL}/search?q={search_term_string}`,
-      "query-input": "required name=search_term_string",
-    },
   };
 }
 
@@ -60,16 +64,16 @@ export function restaurantSchema() {
     "@type": "Restaurant",
     "@id": `${BASE_URL}/#restaurant`,
     name: RESTAURANT.name,
-    alternateName: ["Al-Baghdady", "Albaghdady Restaurant", "Salam Grill"],
+    alternateName: ["Al-Baghdady", "Albaghdady Restaurant"],
     description: RESTAURANT.longDescription,
     url: BASE_URL,
     telephone: RESTAURANT.phone,
     email: RESTAURANT.email,
     priceRange: RESTAURANT.priceRange,
+    // TODO: swap to real food photography (1200×800 each) once client provides.
     image: [
-      `${BASE_URL}/Images/og-default.jpg`,
-      `${BASE_URL}/Images/hero-mixed-grill.webp`,
-      `${BASE_URL}/Images/bakery-spread.webp`,
+      `${BASE_URL}/Images/hero.webp`,
+      `${BASE_URL}/Images/bakery.webp`,
     ],
     logo: `${BASE_URL}/Images/logo.webp`,
     address: postalAddress,
@@ -83,7 +87,7 @@ export function restaurantSchema() {
     currenciesAccepted: RESTAURANT.currenciesAccepted,
     openingHoursSpecification,
     hasMenu: `${BASE_URL}/menu/`,
-    acceptsReservations: "True",
+    acceptsReservations: "False",
     areaServed: RESTAURANT.areasServed.map((city) => ({
       "@type": "City",
       name: city,
@@ -106,7 +110,7 @@ export function menuSchema() {
     "@id": `${BASE_URL}/menu/#menu`,
     name: `${RESTAURANT.name} Menu`,
     description:
-      "Authentic Iraqi cuisine: kabob platters, shawarma, traditional specialties, mezze, fresh-baked samoon and Iraqi sweets.",
+      "Authentic Iraqi bakery and breakfast café menu: baklava, kunafa, ladyfingers, samoon, fatayer, manakish and traditional Iraqi breakfast dishes.",
     hasMenuSection: MENU.map((category) => ({
       "@type": "MenuSection",
       name: category.name,
@@ -167,7 +171,7 @@ export function localBusinessSchema() {
     "@type": "LocalBusiness",
     "@id": `${BASE_URL}/#localbusiness`,
     name: RESTAURANT.name,
-    image: `${BASE_URL}/Images/og-default.jpg`,
+    image: `${BASE_URL}/Images/hero.webp`,
     telephone: RESTAURANT.phone,
     address: postalAddress,
     geo: {

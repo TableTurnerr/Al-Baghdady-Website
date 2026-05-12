@@ -8,6 +8,7 @@ import { RESTAURANT } from "@/data/restaurant";
 import SchemaInjector from "@/components/shared/SchemaInjector";
 import BreadcrumbNav from "@/components/layout/BreadcrumbNav";
 import ThemeBtn from "@/components/shared/ThemeBtn";
+import QRHover from "@/components/shared/QRHover";
 import SmartImage from "@/components/shared/SmartImage";
 
 export function generateStaticParams() {
@@ -78,7 +79,9 @@ export default async function NeighborhoodPage({
             </div>
             <div className="flex flex-wrap gap-3">
               <ThemeBtn href="/menu/" variant="primary">View Menu</ThemeBtn>
-              <ThemeBtn href={RESTAURANT.orderOnline} external variant="secondary">Order Delivery</ThemeBtn>
+              <QRHover value={RESTAURANT.orderOnline}>
+                <ThemeBtn href={RESTAURANT.orderOnline} external variant="secondary">Order Delivery</ThemeBtn>
+              </QRHover>
             </div>
           </div>
 

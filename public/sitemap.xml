@@ -2,19 +2,19 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://al-baghdady.com/</loc>
-    <lastmod>2026-05-06</lastmod>
+    <lastmod>2026-05-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://al-baghdady.com/menu/</loc>
-    <lastmod>2026-05-06</lastmod>
+    <lastmod>2026-05-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://al-baghdady.com/our-story/</loc>
-    <lastmod>2026-05-06</lastmod>
+    <lastmod>2026-05-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -26,67 +26,139 @@
   </url>
   <url>
     <loc>https://al-baghdady.com/bakery/</loc>
-    <lastmod>2026-05-06</lastmod>
+    <lastmod>2026-05-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://al-baghdady.com/catering/</loc>
-    <lastmod>2026-05-06</lastmod>
+    <lastmod>2026-05-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://al-baghdady.com/faq/</loc>
-    <lastmod>2026-05-06</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://al-baghdady.com/reviews/</loc>
-    <lastmod>2026-05-06</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
     <loc>https://al-baghdady.com/near/plano-tx/</loc>
-    <lastmod>2026-05-06</lastmod>
+    <lastmod>2026-05-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://al-baghdady.com/near/garland-tx/</loc>
-    <lastmod>2026-05-06</lastmod>
+    <lastmod>2026-05-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://al-baghdady.com/near/addison-tx/</loc>
-    <lastmod>2026-05-06</lastmod>
+    <lastmod>2026-05-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://al-baghdady.com/near/north-dallas-tx/</loc>
-    <lastmod>2026-05-06</lastmod>
+    <lastmod>2026-05-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://al-baghdady.com/near/allen-tx/</loc>
-    <lastmod>2026-05-06</lastmod>
+    <lastmod>2026-05-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://al-baghdady.com/near/mckinney-tx/</loc>
-    <lastmod>2026-05-06</lastmod>
+    <lastmod>2026-05-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://al-baghdady.com/near/far-north-dallas-tx/</loc>
-    <lastmod>2026-05-06</lastmod>
+    <lastmod>2026-05-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://al-baghdady.com/near/irving-tx/</loc>
+    <lastmod>2026-05-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://al-baghdady.com/near/frisco-tx/</loc>
+    <lastmod>2026-05-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://al-baghdady.com/specialties/</loc>
+    <lastmod>2026-05-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://al-baghdady.com/specialties/bread/</loc>
+    <lastmod>2026-05-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://al-baghdady.com/specialties/chai/</loc>
+    <lastmod>2026-05-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://al-baghdady.com/specialties/burma/</loc>
+    <lastmod>2026-05-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://al-baghdady.com/specialties/lady-fingers/</loc>
+    <lastmod>2026-05-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://al-baghdady.com/specialties/samosa/</loc>
+    <lastmod>2026-05-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://al-baghdady.com/specialties/kunafa/</loc>
+    <lastmod>2026-05-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://al-baghdady.com/specialties/baklava/</loc>
+    <lastmod>2026-05-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://al-baghdady.com/specialties/breakfast/</loc>
+    <lastmod>2026-05-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://al-baghdady.com/specialties/manakish/</loc>
+    <lastmod>2026-05-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://al-baghdady.com/specialties/fatayer/</loc>
+    <lastmod>2026-05-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://al-baghdady.com/specialties/halal-food/</loc>
+    <lastmod>2026-05-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>

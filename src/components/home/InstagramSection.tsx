@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import { Instagram } from "lucide-react";
 import { RESTAURANT } from "@/data/restaurant";
 import SmartImage from "../shared/SmartImage";
+import QRHover from "../shared/QRHover";
 
 type Post = {
   id: string;
@@ -74,7 +75,7 @@ export default function InstagramSection() {
     : -1;
 
   return (
-    <section className="bg-[var(--color-warm-white)] section-pad">
+    <section className="section-pad">
       <div className="container-pad">
         <div className="text-center mb-12 max-w-2xl mx-auto">
           <div className="eyebrow">@albaghdadyrestaurant</div>
@@ -176,15 +177,17 @@ export default function InstagramSection() {
         </div>
 
         <div className="text-center mt-12">
-          <a
-            href={RESTAURANT.socials.instagram}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 text-sm font-semibold text-[var(--color-text)] link-underline"
-          >
-            <Instagram size={16} strokeWidth={1.75} />
-            Follow @albaghdadyrestaurant
-          </a>
+          <QRHover value={RESTAURANT.socials.instagram}>
+            <a
+              href={RESTAURANT.socials.instagram}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 text-sm font-semibold text-[var(--color-text)] link-underline"
+            >
+              <Instagram size={16} strokeWidth={1.75} />
+              Follow @albaghdadyrestaurant
+            </a>
+          </QRHover>
         </div>
       </div>
     </section>

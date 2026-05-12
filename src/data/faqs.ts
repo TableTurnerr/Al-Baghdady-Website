@@ -1,3 +1,5 @@
+import { RESTAURANT } from "./restaurant";
+
 export type FAQ = { question: string; answer: string };
 
 // Inline links use markdown-style syntax: [anchor text](/url/).
@@ -6,42 +8,42 @@ export const FAQS: FAQ[] = [
   {
     question: "Is everything on your menu halal?",
     answer:
-      "Yes. Every meat dish at Al-Baghdady is 100% halal and Zabihah-verified. We source only from halal-certified suppliers and [our entire kitchen is halal](/our-story/).",
+      "Yes. Every dish at Al-Baghdady is 100% [halal and Zabihah-verified](/specialties/halal-food/). We source only from halal-certified suppliers, and [our entire kitchen is halal](/our-story/).",
   },
   {
     question: "Where are you located?",
     answer:
-      "We're at 327-329 N Greenville Ave, Richardson, TX 75081 — minutes from [Plano](/near/plano-tx/), [Garland](/near/garland-tx/), [Addison](/near/addison-tx/) and [North Dallas](/near/north-dallas-tx/). Free parking on site.",
+      `We're at ${RESTAURANT.address.full} — minutes from [Plano](/near/plano-tx/), [Garland](/near/garland-tx/), [Addison](/near/addison-tx/), [North Dallas](/near/north-dallas-tx/), [Irving](/near/irving-tx/) and [Frisco](/near/frisco-tx/). Free parking on site.`,
   },
   {
     question: "Do you offer catering for weddings and corporate events?",
     answer:
-      "Yes — Al-Baghdady caters weddings, corporate lunches, Ramadan iftars, Eid celebrations and private events across Dallas-Fort Worth. Visit our [Catering page](/catering/) or call (972) 238-9200 to request a quote.",
+      `Yes — Al-Baghdady caters weddings, corporate lunches, Ramadan iftars, Eid celebrations and private events across DFW. We're especially known for [baklava and kunafa trays](/specialties/baklava/), [fatayer boxes](/specialties/fatayer/) and full Iraqi sweets spreads. Visit our [Catering page](/catering/) or call ${RESTAURANT.phone} for a quote.`,
   },
   {
     question: "What is samoon bread?",
     answer:
-      "Samoon is the traditional Iraqi oval-shaped bread, with a crisp crust and pillowy interior. We bake it fresh in our [in-house stone oven](/bakery/) throughout the day. It's the perfect partner to [kabob, shawarma and dips](/menu/).",
+      "Samoon is the traditional Iraqi oval-shaped bread, with a crisp crust and pillowy interior. We bake it fresh [in our tandoor](/specialties/bread/) throughout the day. It's the perfect partner to chai, baklava and our [Iraqi breakfast plates](/specialties/breakfast/).",
   },
   {
     question: "What is kanafa?",
     answer:
-      "Kanafa is a beloved Iraqi-Levantine dessert — shredded phyllo dough layered with melted cheese, soaked in rose-water syrup and topped with crushed pistachios. We make it fresh in [our bakery](/bakery/) daily.",
+      "Kanafa (also spelled kunafa) is a beloved Iraqi-Levantine dessert — shredded phyllo dough layered with melted cheese, soaked in syrup and topped with crushed pistachios. We make [our kanafa fresh to order](/specialties/kunafa/) so it arrives hot from the oven.",
   },
   {
     question: "Do you have a bakery on site?",
     answer:
-      "Yes. [Our in-house bakery](/bakery/) makes fresh samoon bread, kanafa, baklava, ladyfingers (znood al sit), ma'amoul and [custom dessert trays for parties and Eid](/catering/).",
+      "Yes. [Our in-house bakery](/bakery/) makes fresh [samoon](/specialties/bread/), [kunafa](/specialties/kunafa/), [baklava](/specialties/baklava/), [ladyfingers (znood al sit)](/specialties/lady-fingers/), burma, mabrouma, [fatayer](/specialties/fatayer/) and [manakish](/specialties/manakish/) — all from family recipes since 1919. Custom trays available for [catering](/catering/).",
   },
   {
     question: "Do you offer delivery?",
     answer:
-      "Yes — order delivery directly through our website or via DoorDash. We deliver across Richardson, [Plano](/near/plano-tx/), [Garland](/near/garland-tx/), [Addison](/near/addison-tx/) and most of [North Dallas](/near/north-dallas-tx/).",
+      "Yes — order delivery directly through our website or via Postmates. We deliver across Richardson, [Plano](/near/plano-tx/), [Garland](/near/garland-tx/), [Addison](/near/addison-tx/) and most of [North Dallas](/near/north-dallas-tx/).",
   },
   {
     question: "Do you take reservations?",
     answer:
-      "Walk-ins are welcome and most parties are seated within 15 minutes. For groups of 8 or more, please call (972) 238-9200 to reserve.",
+      `We don't take reservations — Al-Baghdady is walk-ins only. Most parties are seated within 15 minutes. For large catering or group orders, please call ${RESTAURANT.phone}.`,
   },
   {
     question: "Are you family-friendly?",
@@ -64,9 +66,9 @@ export const FAQS: FAQ[] = [
       "Yes — we make [custom trays of baklava, kanafa, ladyfingers and ma'amoul](/bakery/) for [weddings, Eid and Ramadan](/catering/) and any celebration. Trays start at $45. Call ahead at least 24 hours.",
   },
   {
-    question: "What time do you serve dinner?",
+    question: "What are your hours?",
     answer:
-      "We're open 11 AM to 10 PM Sunday-Thursday, and 11 AM to 11 PM Friday-Saturday. Sunday opens at 12 PM.",
+      "We're open Tuesday through Thursday and Sunday from 10 AM to 9 PM, Friday and Saturday from 10 AM to 10 PM, and Monday from 11 AM to 9 PM. [Iraqi breakfast](/menu/) is served every day except Monday, 10:00 AM – 12:30 PM.",
   },
   {
     question: "Do you offer gluten-free options?",
@@ -81,12 +83,12 @@ export const FAQS: FAQ[] = [
   {
     question: "Do you serve breakfast?",
     answer:
-      "We open at 11 AM with a [full lunch and dinner menu](/menu/). For Iraqi-style breakfast and traditional bakery items, [our bakery](/bakery/) offers fresh samoon and pastries throughout the day.",
+      "Yes — [Iraqi breakfast](/menu/) is one of our specialties. Every day except Monday, from 10:00 AM to 12:30 PM, we serve traditional breakfast plates like Albaghdady Plate, Kahi & Qeimar, Baqila, fresh Kubba and warm samoon from our tandoor, all paired with hot chai. Walk in any morning Tue–Sun.",
   },
   {
     question: "Are there really two Al-Baghdady locations?",
     answer:
-      "We have one restaurant and one bakery, both at 327-329 N Greenville Ave [under the same ownership](/our-story/). The [bakery](/bakery/) serves fresh samoon, kanafa and traditional sweets; the [restaurant](/menu/) serves the full menu of Iraqi specialties.",
+      `Our restaurant and bakery share one location at ${RESTAURANT.address.full} [under the same ownership](/our-story/). The [bakery](/bakery/) serves fresh samoon, kanafa and traditional sweets; the [restaurant](/menu/) serves the full menu of Iraqi specialties.`,
   },
   {
     question: "Do you accept large catering orders?",
