@@ -6,6 +6,7 @@ type SmartImageProps = {
   src: string;
   alt: string;
   priority?: boolean;
+  fetchPriority?: "high" | "low" | "auto";
   className?: string;
   style?: React.CSSProperties;
   sizes?: string;
@@ -16,6 +17,7 @@ export default function SmartImage({
   src,
   alt,
   priority = false,
+  fetchPriority,
   className = "",
   style,
   sizes = "100vw",
@@ -49,7 +51,7 @@ export default function SmartImage({
         alt={alt}
         loading={priority ? "eager" : "lazy"}
         decoding="async"
-        fetchPriority={priority ? "high" : "auto"}
+        fetchPriority={fetchPriority ?? (priority ? "high" : "auto")}
         sizes={sizes}
         onLoad={() => setLoaded(true)}
         onError={() => setLoaded(true)}
