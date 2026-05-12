@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { createMetadata } from "@/data/metadata";
 import { breadcrumbSchema } from "@/data/schema";
 import SchemaInjector from "@/components/shared/SchemaInjector";
@@ -6,11 +7,33 @@ import BreadcrumbNav from "@/components/layout/BreadcrumbNav";
 import ThemeBtn from "@/components/shared/ThemeBtn";
 import SmartImage from "@/components/shared/SmartImage";
 import { RESTAURANT } from "@/data/restaurant";
+import { MENU } from "@/data/menu";
+import { SPECIALTIES } from "@/data/specialties";
+
+const BAKERY_CATEGORY_IMAGE = "/Images/menu/bakery-sweets.webp";
+
+const featuredBakeryItems = (
+  MENU.find((c) => c.id === "bakery-sweets")?.items.filter((i) => i.popular) ?? []
+).slice(0, 6);
+
+const BAKERY_SPECIALTY_SLUGS = [
+  "baklava",
+  "kunafa",
+  "burma",
+  "lady-fingers",
+  "manakish",
+  "fatayer",
+  "bread",
+] as const;
+
+const bakerySpecialties = BAKERY_SPECIALTY_SLUGS
+  .map((slug) => SPECIALTIES.find((s) => s.slug === slug))
+  .filter((s): s is NonNullable<typeof s> => s !== undefined);
 
 export const metadata: Metadata = createMetadata({
-  title: "The Bakery — Fresh Samoon, Kanafa, Baklava & Iraqi Sweets | Al-Baghdady",
+  title: "Our Bakery — Fresh Iraqi Sweets, Bread & Breakfast Since 1919 | Al-Baghdady",
   description:
-    "In-house Arabic bakery in Richardson TX — fresh samoon bread, kanafa, baklava, ladyfingers (znood al sit), ma'amoul and custom dessert trays for weddings, Eid and parties.",
+    "In-house Arabic bakery in Richardson, TX. Fresh samoon from the tandoor, kunafa, baklava, ladyfingers (znood al sit), burma, fatayer, manakish — baked daily using family recipes from Baghdad since 1919.",
   path: "/bakery/",
   keywords: [
     "kanafa dallas",
@@ -21,39 +44,6 @@ export const metadata: Metadata = createMetadata({
     "custom dessert tray dallas",
   ],
 });
-
-const ITEMS = [
-  {
-    name: "Samoon Bread",
-    desc: "Iraq's traditional oval-shaped bread, baked fresh in our stone oven throughout the day. Crisp crust, pillowy interior. Sold by the piece or in bulk for parties.",
-    image: "/Images/bakery.webp",
-  },
-  {
-    name: "Kanafa",
-    desc: "Shredded phyllo, melted cheese, rose-water syrup, crushed pistachios. The dessert reviewers call the best in Dallas. Made fresh daily — order whole or by the slice.",
-    image: "/Images/dish-1.webp",
-  },
-  {
-    name: "Baklava",
-    desc: "Layers of paper-thin phyllo with walnut, pistachio and honey-syrup. Available by the piece or in mixed trays. A traditional showstopper for Eid, weddings and gifts.",
-    image: "/Images/dish-2.webp",
-  },
-  {
-    name: "Ladyfingers (Znood Al Sit)",
-    desc: "Crispy phyllo rolls filled with sweet cream and dipped in fragrant syrup. A bakery favorite for desserts and dessert trays.",
-    image: "/Images/dish-3.webp",
-  },
-  {
-    name: "Ma'amoul",
-    desc: "Buttery semolina cookies stuffed with date paste, walnut or pistachio. A traditional cookie for Eid and special occasions.",
-    image: "/Images/dish-4.webp",
-  },
-  {
-    name: "Custom Dessert Trays",
-    desc: "Mixed trays of our signature sweets — perfect for parties, weddings, Eid, Ramadan iftar and corporate events. Trays start at $45. Order at least 24 hours ahead.",
-    image: "/Images/hero.webp",
-  },
-];
 
 export default function BakeryPage() {
   return (
@@ -72,37 +62,70 @@ export default function BakeryPage() {
       />
 
       <section className="container-pad py-10 md:py-16 max-w-3xl">
-        <div className="eyebrow">In-House Arabic Bakery</div>
-        <h1 className="mb-6">The Bakery — Fresh Iraqi Sweets, Daily</h1>
-        <p className="text-lg text-[var(--color-text-muted)] mb-4">
-          Our bakery is open every day, turning out fresh samoon bread, sticky-cheese kanafa, layered
-          baklava, ladyfingers and ma&apos;amoul cookies. Everything is made on site using traditional
-          Iraqi recipes — no shortcuts, no shipped-in trays.
+        <div className="eyebrow">Four Generations · Since 1919</div>
+        <h1 className="mb-6">Our Bakery — Fresh Iraqi Sweets, Bread &amp; Breakfast</h1>
+        <p className="text-lg text-[var(--color-text-muted)] mb-4 leading-relaxed">
+          Our in-house bakery is the heart of Albaghdady. Every morning we fire up the tandoor for fresh samoon, layer phyllo for kunafa and baklava, hand-roll burma and ladyfingers, and hand-fold fatayer and manakish — all from the recipes our family has been baking since 1919.
         </p>
-        <p className="text-base text-[var(--color-text-muted)]">
-          We&apos;re one of the few restaurants in Dallas with a full Arabic bakery under the same
-          roof. Stop in to grab a fresh loaf of samoon, a slice of kanafa, or order a custom tray
-          for your next celebration.
+        <p className="text-base text-[var(--color-text-muted)] leading-relaxed">
+          Stop in for a warm samoon, pick up a tray of mixed sweets, or order ahead for your next celebration. Everything is baked the day you eat it.
         </p>
       </section>
 
       <section className="container-pad pb-16 md:pb-24">
+        <h2 className="mb-8">What&apos;s in the case today.</h2>
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {ITEMS.map((item) => (
+          {featuredBakeryItems.map((item) => (
             <article key={item.name} className="card p-0">
               <div className="card-img aspect-[4/3]">
                 <SmartImage
-                  src={item.image}
+                  src={item.image ?? BAKERY_CATEGORY_IMAGE}
                   alt={item.name}
                   sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw"
                   className="w-full h-full"
                 />
               </div>
               <div className="p-6">
-                <h2 className="!text-xl mb-2">{item.name}</h2>
-                <p className="text-sm text-[var(--color-text-muted)] leading-relaxed">{item.desc}</p>
+                <h3
+                  className="text-xl mb-2"
+                  style={{ fontFamily: "var(--font-display)", fontWeight: 500 }}
+                >
+                  {item.name}
+                </h3>
+                <p className="text-sm text-[var(--color-text-muted)] leading-relaxed">
+                  {item.description}
+                </p>
               </div>
             </article>
+          ))}
+        </div>
+
+        <div className="mt-20 max-w-3xl">
+          <h2 className="mb-3">Browse our specialties</h2>
+          <p className="text-[var(--color-text-muted)] mb-8 leading-relaxed">
+            Each one has its own page — story, recipe, and how to order.
+          </p>
+        </div>
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+          {bakerySpecialties.map((s) => (
+            <Link
+              key={s.slug}
+              href={`/specialties/${s.slug}/`}
+              className="card p-6 transition-all duration-500 hover:-translate-y-0.5 hover:shadow-[var(--shadow-lift)]"
+            >
+              <h3
+                className="text-lg mb-2"
+                style={{ fontFamily: "var(--font-display)", fontWeight: 500 }}
+              >
+                {s.name}
+              </h3>
+              <p className="text-sm text-[var(--color-text-muted)] line-clamp-2 leading-relaxed mb-3">
+                {s.primaryBlock.body}
+              </p>
+              <span className="text-sm font-medium text-[var(--color-primary)]">
+                View →
+              </span>
+            </Link>
           ))}
         </div>
 

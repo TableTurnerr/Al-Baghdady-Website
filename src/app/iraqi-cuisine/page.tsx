@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { createMetadata } from "@/data/metadata";
 import { breadcrumbSchema } from "@/data/schema";
 import SchemaInjector from "@/components/shared/SchemaInjector";
@@ -7,9 +8,9 @@ import ThemeBtn from "@/components/shared/ThemeBtn";
 import SmartImage from "@/components/shared/SmartImage";
 
 export const metadata: Metadata = createMetadata({
-  title: "Iraqi Cuisine Explained — Samoon, Kabob, Masgoof, Kanafa | Al-Baghdady",
+  title: "Iraqi Cuisine Guide — Samoon, Masgoof, Kanafa, Baklava | Al-Baghdady",
   description:
-    "A guide to authentic Iraqi cuisine — samoon bread, char-grilled kabob, traditional masgoof, tashreeb, dolma, quzi, kanafa and more. Served daily at Al-Baghdady Richardson TX.",
+    "A guide to authentic Iraqi cuisine — samoon bread, masgoof, tashreeb, quzi, dolma, Iraqi biryani, kanafa, baklava and more. Served daily at our Iraqi bakery and breakfast café in Richardson, TX.",
   path: "/iraqi-cuisine/",
   keywords: [
     "best iraqi food dallas",
@@ -20,6 +21,16 @@ export const metadata: Metadata = createMetadata({
     "iraqi sweets dallas",
   ],
 });
+
+const SPECIALTY_LINKS: Record<string, { href: string; label: string }> = {
+  "Samoon": { href: "/specialties/bread/", label: "Read more about our samoon →" },
+  "Kanafa": { href: "/specialties/kunafa/", label: "Read more about our kunafa →" },
+  "Baklava": { href: "/specialties/baklava/", label: "Read more about our baklava →" },
+  "Ladyfingers (Znood Al Sit)": {
+    href: "/specialties/lady-fingers/",
+    label: "Read more about our ladyfingers →",
+  },
+};
 
 const DISHES = [
   {
@@ -91,13 +102,10 @@ export default function IraqiCuisinePage() {
       />
 
       <section className="container-pad py-10 md:py-16 max-w-3xl">
-        <div className="eyebrow">A Guide to Iraqi Cuisine</div>
-        <h1 className="mb-6">Real Iraqi Food, Explained</h1>
-        <p className="text-lg text-[var(--color-text-muted)]">
-          Iraqi cuisine has its own distinct character — heavier on slow-cooked stews, traditional
-          grilled fish, unique breads and spice blends rooted in the heritage of Mesopotamia. While
-          there&apos;s overlap with Lebanese and Mediterranean cuisines, dishes like masgoof, samoon
-          and Iraqi biryani are uniquely ours. Here&apos;s a guide to what we serve.
+        <div className="eyebrow">From Baghdad to Richardson</div>
+        <h1 className="mb-6">Iraqi Cuisine — A Guide to the Foods of Baghdad</h1>
+        <p className="text-lg text-[var(--color-text-muted)] leading-relaxed">
+          Iraqi cuisine is its own world. Distinct breads like samoon, slow-cooked stews, traditional grilled fish, and a bakery tradition stretching back centuries — all rooted in Mesopotamia. While Iraqi food shares some dishes with neighboring cuisines, the techniques, spice blends, and family recipes carry their own heritage. Here&apos;s a guide to what we serve at Albaghdady.
         </p>
       </section>
 
@@ -106,6 +114,7 @@ export default function IraqiCuisinePage() {
           {DISHES.map((dish, i) => {
             const images = ["/Images/hero.webp", "/Images/dish-1.webp", "/Images/dish-2.webp", "/Images/dish-3.webp", "/Images/dish-4.webp", "/Images/bakery.webp"];
             const reverse = i % 2 === 1;
+            const specialtyLink = SPECIALTY_LINKS[dish.name];
             return (
               <article
                 key={dish.name}
@@ -126,14 +135,23 @@ export default function IraqiCuisinePage() {
                   <h2 className="!text-2xl md:!text-3xl mb-3">{dish.name}</h2>
                   <div className="text-[var(--color-primary)] font-medium mb-4">{dish.summary}</div>
                   <p className="text-[var(--color-text-muted)] leading-relaxed">{dish.body}</p>
+                  {specialtyLink && (
+                    <Link
+                      href={specialtyLink.href}
+                      className="text-sm font-medium text-[var(--color-primary)] hover:underline mt-3 inline-flex"
+                    >
+                      {specialtyLink.label}
+                    </Link>
+                  )}
                 </div>
               </article>
             );
           })}
         </div>
 
-        <div className="text-center mt-16">
+        <div className="text-center mt-16 flex flex-wrap gap-3 justify-center">
           <ThemeBtn href="/menu/" variant="primary">See Everything on the Menu</ThemeBtn>
+          <ThemeBtn href="/specialties/" variant="secondary">Explore Our Specialties</ThemeBtn>
         </div>
       </section>
     </>
