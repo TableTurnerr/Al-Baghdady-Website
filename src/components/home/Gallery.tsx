@@ -12,32 +12,32 @@ type GalleryImage = {
 
 const IMAGES: GalleryImage[] = [
   {
-    src: "/Images/gallery/baklava-pistachio-copper.jpg",
+    src: "/Images/gallery/baklava-pistachio-copper.webp",
     alt: "Pistachio baklava layered on a hammered copper dish, surrounded by raw pistachios",
     caption: "Pistachio baklava — our four-generation signature",
   },
   {
-    src: "/Images/gallery/sweets-platter-lamps.jpg",
+    src: "/Images/gallery/sweets-platter-lamps.webp",
     alt: "A large oval platter of mixed Iraqi baklava and bird's nest pastries in the bakery window",
     caption: "Assorted baklava platter, fresh from the oven",
   },
   {
-    src: "/Images/gallery/baklava-pistachio-plate.jpg",
+    src: "/Images/gallery/baklava-pistachio-plate.webp",
     alt: "Pistachio baklava plated on a green ceramic dish beside Turkish mosaic lamps",
     caption: "Hand-cut, hand-rolled, glazed in syrup",
   },
   {
-    src: "/Images/gallery/zalabia-rings.jpg",
+    src: "/Images/gallery/zalabia-rings.webp",
     alt: "Two golden zalabia rings, crisp and syrup-soaked, plated on green ceramic",
     caption: "Zalabia rings — crisp outside, syrup-soaked through",
   },
   {
-    src: "/Images/gallery/baklava-tiered-tray.jpg",
+    src: "/Images/gallery/baklava-tiered-tray.webp",
     alt: "A three-tier copper stand of mixed Iraqi sweets served with a small pot of qahwa",
     caption: "Tiered trays built for the table — perfect for catering",
   },
   {
-    src: "/Images/gallery/baklava-boxed.jpg",
+    src: "/Images/gallery/baklava-boxed.webp",
     alt: "A boxed Al-Baghdady bakery selection next to a plate of fresh pistachio baklava",
     caption: "Boxed and ready to take home, in any size",
   },
