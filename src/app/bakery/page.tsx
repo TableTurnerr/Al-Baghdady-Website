@@ -4,6 +4,7 @@ import { breadcrumbSchema } from "@/data/schema";
 import SchemaInjector from "@/components/shared/SchemaInjector";
 import BreadcrumbNav from "@/components/layout/BreadcrumbNav";
 import ThemeBtn from "@/components/shared/ThemeBtn";
+import QRHover from "@/components/shared/QRHover";
 import SmartImage from "@/components/shared/SmartImage";
 import { RESTAURANT } from "@/data/restaurant";
 
@@ -115,7 +116,9 @@ export default function BakeryPage() {
           </p>
           <div className="flex flex-wrap gap-3 justify-center">
             <ThemeBtn href="/catering/" variant="primary">Request a Tray</ThemeBtn>
-            <ThemeBtn href={`tel:${RESTAURANT.phoneRaw}`} variant="secondary">Call Us</ThemeBtn>
+            <QRHover value={`tel:${RESTAURANT.phoneRaw}`}>
+              <ThemeBtn href={`tel:${RESTAURANT.phoneRaw}`} variant="secondary">Call Us</ThemeBtn>
+            </QRHover>
           </div>
         </div>
       </section>

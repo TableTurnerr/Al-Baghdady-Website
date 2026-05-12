@@ -6,6 +6,7 @@ import { menuSchema, breadcrumbSchema } from "@/data/schema";
 import SchemaInjector from "@/components/shared/SchemaInjector";
 import BreadcrumbNav from "@/components/layout/BreadcrumbNav";
 import ThemeBtn from "@/components/shared/ThemeBtn";
+import QRHover from "@/components/shared/QRHover";
 import CategoryNav from "@/components/menu/CategoryNav";
 import { RESTAURANT } from "@/data/restaurant";
 
@@ -61,9 +62,11 @@ export default function MenuPage() {
             entire menu, with fresh samoon bread baked throughout the day in our in-house bakery.
           </p>
           <div className="flex flex-wrap gap-3 mt-6">
-            <ThemeBtn href={RESTAURANT.orderOnline} external variant="primary">
-              Order Online
-            </ThemeBtn>
+            <QRHover value={RESTAURANT.orderOnline}>
+              <ThemeBtn href={RESTAURANT.orderOnline} external variant="primary">
+                Order Online
+              </ThemeBtn>
+            </QRHover>
             <ThemeBtn href="/catering/" variant="secondary">Catering Inquiries</ThemeBtn>
           </div>
 

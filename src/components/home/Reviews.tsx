@@ -1,11 +1,12 @@
 import { Star } from "lucide-react";
 import ThemeBtn from "../shared/ThemeBtn";
+import QRHover from "../shared/QRHover";
 import { REVIEWS } from "@/data/reviews";
 import { RESTAURANT } from "@/data/restaurant";
 
 export default function Reviews() {
   return (
-    <section className="bg-white section-pad">
+    <section className="bg-[var(--color-warm-white)] section-pad">
       <div className="container-pad">
         <div className="text-center max-w-2xl mx-auto mb-14">
           <div className="eyebrow">Customer Reviews</div>
@@ -51,10 +52,20 @@ export default function Reviews() {
           ))}
         </div>
 
-        <div className="text-center mt-12">
-          <ThemeBtn href={RESTAURANT.socials.googleBusinessProfile} external variant="secondary">
-            Read All Reviews on Google
-          </ThemeBtn>
+        <div className="flex flex-col items-center justify-center gap-3 mt-12">
+          <QRHover value={`${RESTAURANT.url}/?review=open`}>
+            <ThemeBtn href="/?review=open" variant="primary" scroll={false}>
+              Leave a Review
+            </ThemeBtn>
+          </QRHover>
+          <a
+            href={RESTAURANT.socials.googleBusinessProfile}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-sm text-[var(--color-primary)] underline underline-offset-2 hover:opacity-75 transition-opacity"
+          >
+            Read all reviews on Google
+          </a>
         </div>
       </div>
     </section>

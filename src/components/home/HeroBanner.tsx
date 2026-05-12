@@ -1,6 +1,7 @@
 import { Star, Sunrise } from "lucide-react";
 import ThemeBtn from "../shared/ThemeBtn";
 import SmartImage from "../shared/SmartImage";
+import QRHover from "../shared/QRHover";
 import { RESTAURANT } from "@/data/restaurant";
 
 function fmtTime(t: string) {
@@ -38,9 +39,11 @@ export default function HeroBanner() {
 
           <div className="flex flex-wrap gap-3 mb-10">
             <ThemeBtn href="/menu/" variant="primary">View Menu</ThemeBtn>
-            <ThemeBtn href={RESTAURANT.orderOnline} external variant="secondary">
-              Order Online
-            </ThemeBtn>
+            <QRHover value={RESTAURANT.orderOnline}>
+              <ThemeBtn href={RESTAURANT.orderOnline} external variant="secondary">
+                Order Online
+              </ThemeBtn>
+            </QRHover>
           </div>
 
           <div className="flex items-center gap-6 flex-wrap text-sm">

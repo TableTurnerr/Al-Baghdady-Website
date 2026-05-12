@@ -5,6 +5,7 @@ import Image from "next/image";
 import { useState, useEffect } from "react";
 import { Menu, X, Phone } from "lucide-react";
 import ThemeBtn from "../shared/ThemeBtn";
+import QRHover from "../shared/QRHover";
 import { RESTAURANT } from "@/data/restaurant";
 
 const NAV_LINKS = [
@@ -40,7 +41,6 @@ export default function Header() {
               alt="Al-Baghdady Restaurant logo"
               width={44}
               height={44}
-              priority
               className="w-full h-full object-cover"
             />
           </div>
@@ -67,16 +67,20 @@ export default function Header() {
         </nav>
 
         <div className="hidden lg:flex items-center gap-5">
-          <a
-            href={`tel:${RESTAURANT.phoneRaw}`}
-            className="flex items-center gap-2 text-sm font-medium text-[var(--color-text)] hover:text-[var(--color-primary)] transition-colors"
-          >
-            <Phone size={15} strokeWidth={1.75} aria-hidden="true" />
-            {RESTAURANT.phone}
-          </a>
-          <ThemeBtn href={RESTAURANT.orderOnline} external variant="primary">
-            Order Online
-          </ThemeBtn>
+          <QRHover value={`tel:${RESTAURANT.phoneRaw}`}>
+            <a
+              href={`tel:${RESTAURANT.phoneRaw}`}
+              className="flex items-center gap-2 text-sm font-medium text-[var(--color-text)] hover:text-[var(--color-primary)] transition-colors"
+            >
+              <Phone size={15} strokeWidth={1.75} aria-hidden="true" />
+              {RESTAURANT.phone}
+            </a>
+          </QRHover>
+          <QRHover value={RESTAURANT.orderOnline}>
+            <ThemeBtn href={RESTAURANT.orderOnline} external variant="primary">
+              Order Online
+            </ThemeBtn>
+          </QRHover>
         </div>
 
         <button
@@ -112,12 +116,14 @@ export default function Header() {
               {link.label}
             </Link>
           ))}
-          <a
-            href={`tel:${RESTAURANT.phoneRaw}`}
-            className="py-3 flex items-center gap-2 text-base font-medium border-b border-[var(--color-border)]"
-          >
-            <Phone size={16} /> {RESTAURANT.phone}
-          </a>
+          <QRHover value={`tel:${RESTAURANT.phoneRaw}`} block>
+            <a
+              href={`tel:${RESTAURANT.phoneRaw}`}
+              className="py-3 flex items-center gap-2 text-base font-medium border-b border-[var(--color-border)]"
+            >
+              <Phone size={16} /> {RESTAURANT.phone}
+            </a>
+          </QRHover>
           <ThemeBtn href={RESTAURANT.orderOnline} external variant="primary" className="mt-4 justify-center">
             Order Online
           </ThemeBtn>

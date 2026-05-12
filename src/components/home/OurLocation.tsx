@@ -1,5 +1,6 @@
 import { MapPin, Phone, Clock } from "lucide-react";
 import ThemeBtn from "../shared/ThemeBtn";
+import QRHover from "../shared/QRHover";
 import { RESTAURANT } from "@/data/restaurant";
 
 const DIRECTIONS = `https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(
@@ -36,9 +37,11 @@ export default function OurLocation() {
               <MapPin size={18} strokeWidth={1.75} className="text-[var(--color-primary)] shrink-0 mt-1" />
               <div>
                 <div className="text-[11px] font-semibold uppercase tracking-[0.18em] text-[var(--color-text-muted)] mb-1.5">Address</div>
-                <div className="text-[var(--color-text)] leading-relaxed">
-                  {RESTAURANT.address.full}
-                </div>
+                <QRHover value={DIRECTIONS}>
+                  <span className="text-[var(--color-text)] leading-relaxed">
+                    {RESTAURANT.address.full}
+                  </span>
+                </QRHover>
               </div>
             </div>
 
@@ -46,12 +49,14 @@ export default function OurLocation() {
               <Phone size={18} strokeWidth={1.75} className="text-[var(--color-primary)] shrink-0 mt-1" />
               <div>
                 <div className="text-[11px] font-semibold uppercase tracking-[0.18em] text-[var(--color-text-muted)] mb-1.5">Call</div>
-                <a
-                  href={`tel:${RESTAURANT.phoneRaw}`}
-                  className="text-[var(--color-text)] hover:text-[var(--color-primary)] transition-colors"
-                >
-                  {RESTAURANT.phone}
-                </a>
+                <QRHover value={`tel:${RESTAURANT.phoneRaw}`}>
+                  <a
+                    href={`tel:${RESTAURANT.phoneRaw}`}
+                    className="text-[var(--color-text)] hover:text-[var(--color-primary)] transition-colors"
+                  >
+                    {RESTAURANT.phone}
+                  </a>
+                </QRHover>
               </div>
             </div>
 
@@ -68,9 +73,11 @@ export default function OurLocation() {
             </div>
 
             <div className="mt-auto pt-2">
-              <ThemeBtn href={DIRECTIONS} external variant="primary" className="w-full justify-center">
-                Get Directions
-              </ThemeBtn>
+              <QRHover value={DIRECTIONS} block>
+                <ThemeBtn href={DIRECTIONS} external variant="primary" className="w-full justify-center">
+                  Get Directions
+                </ThemeBtn>
+              </QRHover>
             </div>
           </div>
         </div>
