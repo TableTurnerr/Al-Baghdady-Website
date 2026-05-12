@@ -2,6 +2,8 @@
 
 Production-ready static Next.js 15 website for Al-Baghdady Restaurant & Bakery (Richardson, TX). Built with maximum SEO in mind — comprehensive JSON-LD structured data, per-page metadata, sitemap, and content targeting 38+ keywords from the internal SEO report.
 
+_For template usage and onboarding a new client, see [`docs/TEMPLATE.md`](docs/TEMPLATE.md)._
+
 ## Stack
 
 - Next.js 15 (App Router) · static export
