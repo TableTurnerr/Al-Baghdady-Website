@@ -14,7 +14,7 @@ const featured = MENU.flatMap((category) =>
       description: item.description,
       price: item.price,
       category: category.name,
-      image: item.image ?? category.image,
+      image: item.image,
     }))
 ).slice(0, 6);
 
@@ -123,7 +123,7 @@ export default function FeaturedDishes() {
 
           <div
             ref={scrollerRef}
-            className="flex gap-5 md:gap-6 overflow-x-auto hide-scrollbar pb-4 px-[calc((100vw-280px)/2)] md:px-5 snap-x snap-mandatory md:snap-none"
+            className="flex items-start gap-5 md:gap-6 overflow-x-auto hide-scrollbar pb-4 px-[calc((100vw-280px)/2)] md:px-5 snap-x snap-mandatory md:snap-none"
             style={{ scrollBehavior: "auto" }}
           >
             {featured.map((dish) => (
@@ -131,14 +131,16 @@ export default function FeaturedDishes() {
                 key={dish.name}
                 className="card shrink-0 w-[280px] md:w-[320px] snap-center"
               >
-                <div className="card-img aspect-[4/3]">
-                  <SmartImage
-                    src={dish.image}
-                    alt={`${dish.name} at Al-Baghdady`}
-                    sizes="(min-width: 768px) 320px, 280px"
-                    className="w-full h-full"
-                  />
-                </div>
+                {dish.image && (
+                  <div className="card-img aspect-[4/3]">
+                    <SmartImage
+                      src={dish.image}
+                      alt={`${dish.name} at Al-Baghdady`}
+                      sizes="(min-width: 768px) 320px, 280px"
+                      className="w-full h-full"
+                    />
+                  </div>
+                )}
                 <div className="p-6">
                   <div className="text-[11px] font-semibold text-[var(--color-text-muted)] uppercase tracking-[0.15em] mb-2">
                     {dish.category}
