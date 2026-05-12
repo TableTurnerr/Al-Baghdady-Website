@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import { createMetadata } from "@/data/metadata";
-import { breadcrumbSchema } from "@/data/schema";
+import { breadcrumbSchema, faqSchema } from "@/data/schema";
 import { SPECIALTIES, type Specialty } from "@/data/specialties";
 import { MENU, type MenuItem, type MenuCategory } from "@/data/menu";
 import { RESTAURANT } from "@/data/restaurant";
@@ -10,6 +10,7 @@ import SchemaInjector from "@/components/shared/SchemaInjector";
 import BreadcrumbNav from "@/components/layout/BreadcrumbNav";
 import ThemeBtn from "@/components/shared/ThemeBtn";
 import SmartImage from "@/components/shared/SmartImage";
+import FAQSection from "@/components/home/FAQSection";
 
 type ResolvedRelatedItem = { item: MenuItem; category: MenuCategory };
 
@@ -109,6 +110,7 @@ export default async function SpecialtyPage({
     ]),
     articleSchema(specialty),
     ...(itemList ? [itemList] : []),
+    ...(specialty.faqs && specialty.faqs.length > 0 ? [faqSchema(specialty.faqs)] : []),
   ];
 
   return (
@@ -214,6 +216,14 @@ export default async function SpecialtyPage({
           </p>
         </div>
       </section>
+
+      {specialty.faqs && specialty.faqs.length > 0 && (
+        <FAQSection
+          faqs={specialty.faqs}
+          eyebrow={`Common questions about ${specialty.name.toLowerCase()}`}
+          title="Frequently asked questions."
+        />
+      )}
 
       <section className="container-pad section-pad text-center max-w-2xl mx-auto">
         <div className="flex flex-wrap gap-3 justify-center">

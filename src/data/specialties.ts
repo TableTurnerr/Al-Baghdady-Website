@@ -11,6 +11,8 @@ export type Specialty = {
   pickupBlock: { heading: string; body: string };
   image?: string;
   relatedMenuItemNames?: string[];
+  /** Optional per-specialty FAQs. Each pair renders inline on the topic page and is injected as FAQPage JSON-LD. */
+  faqs?: { question: string; answer: string }[];
 };
 
 export const SPECIALTIES: Specialty[] = [
@@ -40,6 +42,23 @@ export const SPECIALTIES: Specialty[] = [
     },
     image: "/Images/specialties/bread.webp",
     relatedMenuItemNames: ["Samoon Bread"],
+    faqs: [
+      {
+        question: "What is samoon?",
+        answer:
+          "Samoon is the traditional Iraqi oval-shaped bread — diamond-faceted, baked at high heat in a tandoor until the crust is crisp and the inside stays pillowy and soft. We bake fresh samoon throughout the day at Albaghdady.",
+      },
+      {
+        question: "Is your samoon vegan?",
+        answer:
+          "Yes — our samoon is made with flour, water, salt and yeast. No eggs, no dairy, no animal fat. It pairs beautifully with chai, fresh stews, dips, and our [Iraqi breakfast plates](/specialties/breakfast/).",
+      },
+      {
+        question: "Do you sell samoon to take home?",
+        answer:
+          "Yes, you can buy fresh samoon by the loaf for pickup or delivery. Order online or stop by — every loaf is baked the day you eat it.",
+      },
+    ],
   },
   {
     slug: "chai",
@@ -67,6 +86,23 @@ export const SPECIALTIES: Specialty[] = [
     },
     image: "/Images/specialties/chai.webp",
     relatedMenuItemNames: ["Iraqi Chai", "Karak Chai"],
+    faqs: [
+      {
+        question: "What's the difference between Iraqi chai and karak chai?",
+        answer:
+          "Iraqi chai is a strong black tea steeped slowly with cardamom and a touch of sweetness — sipped clear from small glass cups. Karak chai adds milk and more spice to make a rich, creamy variation popular across the Gulf.",
+      },
+      {
+        question: "Do you serve chai all day?",
+        answer:
+          "Yes — chai is the heart of every Iraqi morning, afternoon and evening. Walk in any time we're open for a freshly brewed cup, or pair it with our [Iraqi breakfast](/specialties/breakfast/).",
+      },
+      {
+        question: "Can I order chai for delivery?",
+        answer:
+          "Yes, both Iraqi chai and karak chai are available for pickup and delivery across Richardson and the Dallas area.",
+      },
+    ],
   },
   {
     slug: "burma",
@@ -94,6 +130,23 @@ export const SPECIALTIES: Specialty[] = [
     },
     image: "/Images/specialties/burma.webp",
     relatedMenuItemNames: ["Burma"],
+    faqs: [
+      {
+        question: "What is burma made of?",
+        answer:
+          "Burma is layers of crisp, paper-thin phyllo rolled cigar-style around fresh-ground pistachios, baked golden, then finished with our family's signature honey syrup. Light, nutty, crisp throughout.",
+      },
+      {
+        question: "How is burma different from baklava?",
+        answer:
+          "Both use phyllo and pistachios, but burma is cigar-rolled and crisper, while [baklava](/specialties/baklava/) is layered flat and slightly softer. Burma is one of the lesser-known Iraqi sweets — an instant favorite for anyone who tries it.",
+      },
+      {
+        question: "Can I order a burma tray for an event?",
+        answer:
+          "Yes — burma is a popular addition to our custom dessert trays for Eid, weddings and Ramadan iftars. Order ahead through our [catering page](/catering/).",
+      },
+    ],
   },
   {
     slug: "lady-fingers",
@@ -121,6 +174,23 @@ export const SPECIALTIES: Specialty[] = [
     },
     image: "/Images/specialties/lady-fingers.webp",
     relatedMenuItemNames: ["Ladyfingers (Znood Al Sit)"],
+    faqs: [
+      {
+        question: "What are lady fingers (znood al sit)?",
+        answer:
+          "Lady fingers — known in Arabic as znood al sit, which translates to the lady's arms — are delicate phyllo rolls wrapped around fresh pistachios, baked deep golden, then dipped in our signature honey syrup. Lighter than [baklava](/specialties/baklava/), twice as elegant.",
+      },
+      {
+        question: "Are lady fingers nut-free?",
+        answer:
+          "No — our lady fingers contain fresh pistachios. If you need a nut-free dessert, our [samoon](/specialties/bread/), kunafa cheese filling and select bakery items are nut-free; please ask when ordering.",
+      },
+      {
+        question: "Can I order lady fingers by the tray?",
+        answer:
+          "Yes, lady fingers are a staple in our custom dessert trays and are also available by the piece. Order ahead through our [catering page](/catering/).",
+      },
+    ],
   },
   {
     slug: "samosa",
@@ -148,6 +218,23 @@ export const SPECIALTIES: Specialty[] = [
     },
     image: "/Images/specialties/samosa.webp",
     relatedMenuItemNames: ["Samosa"],
+    faqs: [
+      {
+        question: "Are your samosas baked or fried?",
+        answer:
+          "Our samosas are hand-folded then pan-fried until the outside is crisp and golden, with the seasoned filling tender inside.",
+      },
+      {
+        question: "What fillings are available?",
+        answer:
+          "We offer both meat (seasoned ground beef with onions and spices) and vegetable (potato, peas and spices) samosas — perfect together for a mixed appetizer tray.",
+      },
+      {
+        question: "Can I order samosa trays for an event?",
+        answer:
+          "Yes — samosa platters are one of our most-requested appetizer trays for catering and corporate events. Order through our [catering page](/catering/).",
+      },
+    ],
   },
   {
     slug: "kunafa",
@@ -175,6 +262,23 @@ export const SPECIALTIES: Specialty[] = [
     },
     image: "/Images/specialties/kunafa.webp",
     relatedMenuItemNames: ["Kanafa"],
+    faqs: [
+      {
+        question: "Is kunafa served hot?",
+        answer:
+          "Yes — we make kunafa fresh to order so it arrives hot from the oven. The cheese is stretchy, the phyllo is crisp, the syrup is warm. That's how it's meant to be eaten.",
+      },
+      {
+        question: "How is kunafa pronounced — kunafa, kanafa, or knafeh?",
+        answer:
+          "All three are correct — they're regional spellings of the same dessert. We use Kanafa on the menu following Iraqi spelling, though we accept all variations.",
+      },
+      {
+        question: "Can I order kunafa for delivery?",
+        answer:
+          "Yes, kunafa is available for pickup and delivery, though we recommend pickup for the best out-of-the-oven experience. Available across Richardson, [Plano](/near/plano-tx/), [Garland](/near/garland-tx/) and the greater Dallas area.",
+      },
+    ],
   },
   {
     slug: "baklava",
@@ -206,6 +310,23 @@ export const SPECIALTIES: Specialty[] = [
       "Pistachio Baklava",
       "Bread Baklava",
       "Walnut Baklava",
+    ],
+    faqs: [
+      {
+        question: "What kinds of baklava do you make?",
+        answer:
+          "We make three varieties: Pistachio Baklava (our most-ordered, made with fresh-ground pistachios), Walnut Baklava (a traditional richer variety), and Bread Baklava (our signature Iraqi twist with a golden bread base, sweet cream and chopped pistachios). All baked fresh in our [in-house bakery](/bakery/).",
+      },
+      {
+        question: "How long does your baklava stay fresh?",
+        answer:
+          "Our baklava is best within 5–7 days at room temperature in a sealed container. For longer storage, refrigerate up to 2 weeks. For events, we recommend buying it the day of or one day prior.",
+      },
+      {
+        question: "Do you offer baklava trays for catering?",
+        answer:
+          "Yes — assorted baklava trays are one of our most-requested items for Eid, weddings, Ramadan iftars and corporate events. Custom sizes available; order at least 24 hours ahead through our [catering page](/catering/).",
+      },
     ],
   },
   {
@@ -239,6 +360,22 @@ export const SPECIALTIES: Specialty[] = [
       "Baqila (باقلاء بالدهن)",
       "Kubba (كبة)",
     ],
+    faqs: [
+      {
+        question: "When do you serve Iraqi breakfast?",
+        answer: "Every day except Monday, 10:00 AM – 12:30 PM. Walk-ins welcome.",
+      },
+      {
+        question: "What's in the Albaghdady Plate?",
+        answer:
+          "Our signature breakfast spread — tender ground meat kabab, golden potatoes, eggplant tomato stew, and two pieces of handmade kubbah, all on one tray. A full Iraqi feast before noon.",
+      },
+      {
+        question: "Do you serve Kahi & Qeimar?",
+        answer:
+          "Yes — Kahi & Qeimar is Iraq's most beloved sweet breakfast. Layers of flaky golden kahi pastry drizzled with syrup, served with rich clotted cream (qeimar). A morning indulgence our [family has been making since 1919](/our-story/).",
+      },
+    ],
   },
   {
     slug: "manakish",
@@ -266,6 +403,23 @@ export const SPECIALTIES: Specialty[] = [
     },
     image: "/Images/specialties/manakish.webp",
     relatedMenuItemNames: ["Manakish"],
+    faqs: [
+      {
+        question: "What toppings are on your manakish?",
+        answer:
+          "We make three classic varieties: za'atar (the traditional thyme-and-sesame blend), cheese, and seasoned meat — all on soft, golden flatbread baked fresh.",
+      },
+      {
+        question: "Is manakish a breakfast food?",
+        answer:
+          "Traditionally yes — manakish is a Middle Eastern breakfast staple, especially za'atar manakish paired with [chai](/specialties/chai/). But it's served all day at Albaghdady.",
+      },
+      {
+        question: "Can I order manakish for an event?",
+        answer:
+          "Yes, manakish platters are great for breakfast catering, corporate events and large family gatherings. Order ahead through our [catering page](/catering/).",
+      },
+    ],
   },
   {
     slug: "fatayer",
@@ -293,6 +447,23 @@ export const SPECIALTIES: Specialty[] = [
     },
     image: "/Images/specialties/fatayer.webp",
     relatedMenuItemNames: ["Fatayer — Spinach", "Fatayer — Cheese", "Fatayer — Meat"],
+    faqs: [
+      {
+        question: "What fillings does fatayer come in?",
+        answer:
+          "We hand-fold three varieties: spinach (sabanekh, vegetarian), cheese (vegetarian), and seasoned ground meat. All baked fresh daily.",
+      },
+      {
+        question: "Is fatayer vegetarian?",
+        answer:
+          "Two of our three fatayer varieties — spinach and cheese — are fully vegetarian. The meat fatayer contains seasoned ground beef.",
+      },
+      {
+        question: "Can I order a fatayer box for an event?",
+        answer:
+          "Yes, fatayer boxes are popular for office breakfasts, Ramadan iftars, and family gatherings. Mix-and-match any varieties; order ahead via our [catering page](/catering/).",
+      },
+    ],
   },
   {
     slug: "halal-food",
@@ -324,6 +495,23 @@ export const SPECIALTIES: Specialty[] = [
       "Baklava (Mixed Tray)",
       "Manakish",
       "Kanafa",
+    ],
+    faqs: [
+      {
+        question: "Is everything on your menu halal?",
+        answer:
+          "Yes — every dish at Albaghdady is 100% halal and Zabihah-verified. From our bakery to every item on the breakfast and main menus, every ingredient is sourced and prepared to traditional halal standards.",
+      },
+      {
+        question: "Are you Zabihah certified?",
+        answer:
+          "Yes, our kitchen is Zabihah-verified halal. You'll find us listed on Zabihah.com along with reviews from the Muslim community in Richardson and the greater DFW area.",
+      },
+      {
+        question: "Do you offer halal catering for large events?",
+        answer:
+          "Yes — we cater fully halal events of every size, from corporate lunches and Ramadan iftars to weddings of 200+ guests. All catering uses the same halal sourcing as our restaurant. See our [catering page](/catering/).",
+      },
     ],
   },
 ];
