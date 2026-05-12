@@ -4,7 +4,7 @@ export default function PressStrip() {
   const { text, source } = RESTAURANT.pressQuote;
 
   return (
-    <section className="bg-[var(--color-sand)] border-y border-[var(--color-border)]">
+    <section className="bg-[var(--color-sand)] border-y border-[var(--color-border)] mb-5 md:mb-7">
       <div className="container-pad py-8 md:py-10">
         <div className="flex flex-col md:flex-row items-center justify-center gap-3 md:gap-6 text-center md:text-left">
           <span
