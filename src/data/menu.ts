@@ -71,82 +71,82 @@ export const MENU: MenuCategory[] = [
     image: "/Images/menu/breakfast.webp",
     items: [
       {
-        name: "Albaghdady Plate",
+        name: "Albaghdady Plate (طبق البغدادي)",
         description:
           "Our signature breakfast spread. Ground meat kabab, golden potatoes, eggplant tomato stew, and two pieces of handmade kubbah — all on one tray.",
         price: "$14.99",
         popular: true,
       },
       {
-        name: "Kahi & Qeimar",
+        name: "Kahi & Qeimar (كاهي وقيمر)",
         description:
           "Iraq's most beloved sweet breakfast. Layers of flaky golden kahi pastry drizzled with syrup, served with rich clotted cream (qeimar).",
         price: "$8.99",
         popular: true,
       },
       {
-        name: "Baqila",
+        name: "Baqila (باقلاء بالدهن)",
         description:
           "Tender fava beans simmered in their own broth, served with eggs, crispy fried onions, and warm bread soaked in the broth. A national Iraqi tradition.",
         price: "$9.99",
         popular: true,
       },
       {
-        name: "Kubba",
+        name: "Kubba (كبة)",
         description:
           "Four hand-rolled pieces of Iraqi kubba — bulgur shells stuffed with seasoned meat, onions, and herbs, fried until golden and crisp.",
         price: "$8.99",
       },
       {
-        name: "Qeimar & Debes",
+        name: "Qeimar & Debes (قيمر ودبس)",
         description:
           "Fresh clotted cream and pure date syrup, served with warm samoon. Simple, ancient, unforgettable.",
         price: "$7.99",
       },
       {
-        name: "Chelfry",
+        name: "Chelfry (جلفراي)",
         description:
           "Traditional Iraqi morning hash of slow-cooked lamb pieces, golden potatoes, onions, and tomatoes. Bold and warming.",
         price: "$11.99",
       },
       {
-        name: "Omlet",
+        name: "Omlet (مخلمة)",
         description:
           "Iraqi-style omelette with ground meat, fresh tomatoes, onions, and eggs cooked together until tender and rich.",
         price: "$8.99",
       },
       {
-        name: "Bastirma",
+        name: "Bastirma (باسترما بالبيض)",
         description:
           "Spiced cured beef sausage sizzled with eggs until the edges crisp. Deep, smoky flavor in every bite.",
         price: "$9.99",
       },
       {
-        name: "Lamb Liver",
+        name: "Lamb Liver (معلاك غنم)",
         description:
           "Fresh lamb liver sautéed with onions and tomatoes until tender. The way Baghdadi mornings have started for generations.",
         price: "$10.99",
       },
       {
-        name: "Beef & Egg",
+        name: "Beef & Egg (لحم وبيض)",
         description:
           "Tender beef shawarma topped with a perfectly cooked egg. Savory, satisfying, ready to fuel your whole morning.",
         price: "$10.99",
       },
       {
-        name: "Potato with Egg",
+        name: "Potato with Egg (بطاطا مع بيض)",
         description:
           "Pan-fried potatoes scrambled with farm-fresh eggs. Simple, comforting, pairs perfectly with hot chai.",
         price: "$7.99",
       },
       {
-        name: "Tomato with Egg",
+        name: "Tomato with Egg (طماطم مع بيض)",
         description:
           "Ripe tomatoes slow-cooked with eggs into a rich, savory scramble. Light, fresh, a Middle Eastern breakfast staple.",
         price: "$7.99",
       },
       {
-        name: "Fried Kabab",
+        name: "Fried Kabab (كباب عروق)",
         description:
           "Hand-formed patties of seasoned ground meat with fresh parsley and onions, pan-fried golden and crisp.",
         price: "$9.99",
