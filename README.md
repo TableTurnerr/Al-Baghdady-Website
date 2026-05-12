@@ -12,7 +12,7 @@ _For template usage and onboarding a new client, see [`docs/TEMPLATE.md`](docs/T
 - Framer Motion (animations)
 - Lucide React (icons)
 
-## Routes (15)
+## Routes (14)
 
 | Route | Purpose |
 |-------|---------|
@@ -22,7 +22,6 @@ _For template usage and onboarding a new client, see [`docs/TEMPLATE.md`](docs/T
 | `/iraqi-cuisine/` | Guide to Iraqi dishes (samoon, masgoof, tashreeb, quzi, kanafa…) |
 | `/bakery/` | In-house Arabic bakery |
 | `/catering/` | Catering inquiry form (mailto submission) |
-| `/faq/` | 20 FAQs with FAQPage schema |
 | `/reviews/` | Press quotes + customer reviews |
 | `/near/plano-tx/` | Plano hub page |
 | `/near/garland-tx/` | Garland hub page |

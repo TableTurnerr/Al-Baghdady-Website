@@ -77,7 +77,7 @@ Each entry creates a page at `/near/[slug]/`. Same data-driven pattern as specia
 
 ### `src/data/faqs.ts`
 
-Array of `{ question, answer }` objects. Drives both the `/faq/` page and the homepage FAQ section. The homepage shows `FAQS.slice(0, 6)`; the FAQ page shows all. JSON-LD FAQPage schema is auto-generated.
+Array of `{ question, answer }` objects. Drives the homepage FAQ section (`FAQS.slice(0, 6)`). JSON-LD FAQPage schema is auto-generated on the homepage via `faqSchema(HOME_FAQS)`. Entries 7+ stay in the data file as a reservoir — surface them later by raising the slice index, or render a topic-specific subset inside individual `/specialties/[topic]/` pages.
 
 ### `src/data/reviews.ts`
 
@@ -195,7 +195,6 @@ Deploy `/out` to Cloudflare Pages, Netlify, Vercel, or any static host. No envir
       /bakery/             ← curated showcase
       /iraqi-cuisine/      ← educational encyclopedia (this name is brand-specific; future clients may rename)
       /catering/           ← catering inquiry form
-      /faq/                ← all FAQs
       /reviews/            ← all reviews
       /near/[city]/        ← geographic SEO landing pages (one per neighborhood)
       /specialties/        ← specialty index
