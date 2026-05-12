@@ -36,19 +36,20 @@ export const RESTAURANT = {
   familyRecipeSince: "1919",
 
   hours: [
-    { day: "Monday",    open: "11:00", close: "21:00" },
-    { day: "Tuesday",   open: "10:00", close: "21:00" },
-    { day: "Wednesday", open: "10:00", close: "21:00" },
-    { day: "Thursday",  open: "10:00", close: "21:00" },
-    { day: "Friday",    open: "10:00", close: "22:00" },
-    { day: "Saturday",  open: "10:00", close: "22:00" },
-    { day: "Sunday",    open: "10:00", close: "21:00" },
+    { day: "Monday",    open: "10:00", close: "22:00" },
+    { day: "Tuesday",   open: "10:00", close: "22:00" },
+    { day: "Wednesday", open: "10:00", close: "22:00" },
+    { day: "Thursday",  open: "10:00", close: "22:00" },
+    { day: "Friday",    open: "10:00", close: "23:00" },
+    { day: "Saturday",  open: "10:00", close: "23:00" },
+    { day: "Sunday",    open: "10:00", close: "22:00" },
   ],
 
   breakfastHours: {
     note: "Iraqi breakfast served every day except Monday",
     open: "10:00",
     close: "12:30",
+    closedDays: ["Monday"] as string[],
   },
 
   ratingValue: 4.4,
