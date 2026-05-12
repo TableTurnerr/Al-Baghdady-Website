@@ -21,9 +21,9 @@ export const RESTAURANT = {
     longitude: -96.7295,
   },
 
-  phone: "(469) 547-2042",
-  phoneRaw: "+14695472042",
-  email: "albaghdady.bakery@gmail.com",
+  phone: process.env.NEXT_PUBLIC_PHONE ?? "(469) 547-2042",
+  phoneRaw: process.env.NEXT_PUBLIC_PHONE_RAW ?? "+14695472042",
+  email: process.env.NEXT_PUBLIC_EMAIL ?? "albaghdady.bakery@gmail.com",
   url: "https://al-baghdady.com",
 
   priceRange: "$$",
@@ -56,22 +56,17 @@ export const RESTAURANT = {
 
   socials: {
     instagram:
-      "https://www.instagram.com/albaghdadyrestaurant/",
+      process.env.NEXT_PUBLIC_INSTAGRAM_URL ?? "https://www.instagram.com/albaghdadyrestaurant/",
     facebook:
-      "https://www.facebook.com/AlBaghdadyRestaurant/",
+      process.env.NEXT_PUBLIC_FACEBOOK_URL ?? "https://www.facebook.com/AlBaghdadyRestaurant/",
     googleBusinessProfile:
-      "https://www.google.com/maps/place/Al-Baghdady+Restaurant",
-    yelp:
-      "https://www.yelp.com/biz/al-baghdady-restaurant-richardson",
-    postmates:
-      "https://www.postmates.com/store/al-baghdady-restaurant-richardson",
-    tripadvisor:
-      "https://www.tripadvisor.com/Restaurant_Review-Al-Baghdady-Richardson",
-    zabihah:
-      "https://www.zabihah.com/biz/Richardson/Al-Baghdady-Restaurant",
+      process.env.NEXT_PUBLIC_GOOGLE_BUSINESS_URL ?? "https://www.google.com/maps/place/Al-Baghdady+Restaurant",
+    googleReview:
+      process.env.NEXT_PUBLIC_GOOGLE_REVIEW_URL ?? "https://www.google.com/maps/place/Al-Baghdady+Restaurant",
   },
 
-  orderOnline: "https://order.al-baghdady.com",
+  orderOnline:
+    process.env.NEXT_PUBLIC_ORDER_ONLINE_URL ?? "https://zingmyorder.com/restaurants/al-baghdady-bakery-and-cafe-327-n-greenville-ave-richardson-tx-75081-usa-4llydt",
 
   features: [
     "Halal Certified",
