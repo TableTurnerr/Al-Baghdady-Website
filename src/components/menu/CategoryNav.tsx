@@ -73,13 +73,13 @@ export default function CategoryNav({ categories }: Props) {
                   aria-current={isActive ? "true" : undefined}
                   style={
                     isActive
-                      ? { background: "var(--color-text)", color: "#fff", borderColor: "var(--color-text)" }
+                      ? { background: "var(--color-primary)", color: "#fff", borderColor: "var(--color-primary)" }
                       : undefined
                   }
                   className={`px-4 py-2 rounded-full border text-sm font-medium transition-all duration-300 whitespace-nowrap ${
                     isActive
                       ? ""
-                      : "border-[var(--color-border)] text-[var(--color-text)] hover:bg-[var(--color-text)] hover:text-white hover:border-[var(--color-text)]"
+                      : "border-[var(--color-border)] text-[var(--color-text)] hover:bg-[var(--color-primary)] hover:!text-white hover:border-[var(--color-primary)]"
                   }`}
                 >
                   {category.name}
