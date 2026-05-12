@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Star, Leaf, Sunrise } from "lucide-react";
+import { Sunrise } from "lucide-react";
 import { createMetadata } from "@/data/metadata";
 import { MENU } from "@/data/menu";
 import { menuSchema, breadcrumbSchema } from "@/data/schema";
@@ -8,6 +8,7 @@ import BreadcrumbNav from "@/components/layout/BreadcrumbNav";
 import ThemeBtn from "@/components/shared/ThemeBtn";
 import QRHover from "@/components/shared/QRHover";
 import CategoryNav from "@/components/menu/CategoryNav";
+import MenuItemCard from "@/components/menu/MenuItemCard";
 import { RESTAURANT } from "@/data/restaurant";
 
 function fmtTime(t: string) {
@@ -95,33 +96,7 @@ export default function MenuPage() {
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
             {category.items.map((item) => (
-              <article
-                key={item.name}
-                className="rounded-2xl border border-[var(--color-border)] bg-white p-6 transition-all duration-500 hover:border-transparent hover:shadow-[var(--shadow-lift)] hover:-translate-y-0.5"
-              >
-                <h3 className="text-lg mb-3" style={{ fontFamily: "var(--font-display)", fontWeight: 500 }}>
-                  {item.name}
-                </h3>
-                <p className="text-sm text-[var(--color-text-muted)] leading-relaxed mb-2">
-                  {item.description}
-                </p>
-                <div className="text-sm font-semibold text-[var(--color-text)] mb-4">{item.price}</div>
-                <div className="flex items-center gap-1.5 flex-wrap">
-                  {item.popular && (
-                    <span className="inline-flex items-center gap-1 text-[10px] font-semibold px-2.5 py-1 rounded-full bg-[var(--color-gold)]/15 text-[var(--color-gold-dark)] uppercase tracking-wider">
-                      <Star size={10} className="fill-current" /> Popular
-                    </span>
-                  )}
-                  {item.vegetarian && (
-                    <span className="inline-flex items-center gap-1 text-[10px] font-semibold px-2.5 py-1 rounded-full bg-green-50 text-green-800 uppercase tracking-wider">
-                      <Leaf size={10} /> Vegetarian
-                    </span>
-                  )}
-                  <span className="text-[10px] font-semibold text-[var(--color-text-muted)] uppercase tracking-wider px-2.5 py-1">
-                    Halal
-                  </span>
-                </div>
-              </article>
+              <MenuItemCard key={item.name} item={item} />
             ))}
           </div>
         </section>
