@@ -37,18 +37,6 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://al-baghdady.com/faq/</loc>
-    <lastmod>2026-05-12</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://al-baghdady.com/reviews/</loc>
-    <lastmod>2026-05-06</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
     <loc>https://al-baghdady.com/near/plano-tx/</loc>
     <lastmod>2026-05-12</lastmod>
     <changefreq>monthly</changefreq>
