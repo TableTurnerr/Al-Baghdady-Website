@@ -2,7 +2,8 @@ import type { Metadata } from "next";
 import { RESTAURANT } from "./restaurant";
 
 const BASE_URL = RESTAURANT.url;
-const DEFAULT_OG = `${BASE_URL}/Images/og-default.jpg`;
+// TODO: replace with dedicated 1200×630 OG card when client provides a branded version.
+const DEFAULT_OG = `${BASE_URL}/Images/hero.webp`;
 
 export type PageMetaInput = {
   title: string;
@@ -87,7 +88,8 @@ export function createMetadata({
       images: [ogImage],
     },
     icons: {
-      icon: "/favicon.ico",
+      // Next.js auto-discovers src/app/icon.png as the favicon. Listing it explicitly here keeps the metadata honest.
+      icon: "/icon.png",
       apple: "/apple-touch-icon.png",
     },
     manifest: "/manifest.json",

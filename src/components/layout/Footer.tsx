@@ -6,6 +6,7 @@ import { RESTAURANT } from "@/data/restaurant";
 const QUICK_LINKS = [
   { href: "/", label: "Home" },
   { href: "/menu/", label: "Menu" },
+  { href: "/specialties/", label: "Specialties" },
   { href: "/our-story/", label: "Our Story" },
   { href: "/iraqi-cuisine/", label: "Iraqi Cuisine" },
   { href: "/bakery/", label: "Bakery" },

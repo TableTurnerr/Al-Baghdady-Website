@@ -35,7 +35,8 @@ export function organizationSchema() {
     ],
     url: BASE_URL,
     logo: `${BASE_URL}/Images/logo.webp`,
-    image: `${BASE_URL}/Images/og-default.jpg`,
+    // TODO: replace with dedicated 1200×630 OG card when client provides.
+    image: `${BASE_URL}/Images/hero.webp`,
     telephone: RESTAURANT.phone,
     email: RESTAURANT.email,
     address: postalAddress,
@@ -69,10 +70,10 @@ export function restaurantSchema() {
     telephone: RESTAURANT.phone,
     email: RESTAURANT.email,
     priceRange: RESTAURANT.priceRange,
+    // TODO: swap to real food photography (1200×800 each) once client provides.
     image: [
-      `${BASE_URL}/Images/og-default.jpg`,
-      `${BASE_URL}/Images/hero-mixed-grill.webp`,
-      `${BASE_URL}/Images/bakery-spread.webp`,
+      `${BASE_URL}/Images/hero.webp`,
+      `${BASE_URL}/Images/bakery.webp`,
     ],
     logo: `${BASE_URL}/Images/logo.webp`,
     address: postalAddress,
@@ -170,7 +171,7 @@ export function localBusinessSchema() {
     "@type": "LocalBusiness",
     "@id": `${BASE_URL}/#localbusiness`,
     name: RESTAURANT.name,
-    image: `${BASE_URL}/Images/og-default.jpg`,
+    image: `${BASE_URL}/Images/hero.webp`,
     telephone: RESTAURANT.phone,
     address: postalAddress,
     geo: {
