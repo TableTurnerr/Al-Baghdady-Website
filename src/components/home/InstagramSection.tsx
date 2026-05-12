@@ -11,44 +11,45 @@ type Post = {
   caption: string;
   image: string;
   url: string;
+  coAuthor?: string;
 };
 
 const POSTS: Post[] = [
   {
     id: "1",
-    caption: "Fresh samoon, hot from the stone oven.",
-    image: "/Images/hero.webp",
-    url: RESTAURANT.socials.instagram,
+    caption: "#dfweats #foodiefinds #yum #delicious #explore #followforfollowback",
+    image: "/Images/instagram/post-1.webp",
+    url: "https://www.instagram.com/p/DGElI-UOZ5q/",
   },
   {
     id: "2",
-    caption: "Mixed grill platter — the table favourite.",
-    image: "/Images/dish-1.webp",
-    url: RESTAURANT.socials.instagram,
+    caption: "Albaghdady Bakery & Sweets Richardson, TX Fresh, authentic",
+    image: "/Images/instagram/post-2.webp",
+    url: "https://www.instagram.com/p/DXb1QfjtwdQ/",
   },
   {
     id: "3",
-    caption: "Slow-braised tashreeb, the way grandma made it.",
-    image: "/Images/dish-2.webp",
-    url: RESTAURANT.socials.instagram,
+    caption: "This is where to get authentic middle eastern",
+    image: "/Images/instagram/post-3.webp",
+    url: "https://www.instagram.com/p/C7XimM_vLn0/",
   },
   {
     id: "4",
-    caption: "Char-grilled kabob, tender every time.",
-    image: "/Images/dish-3.webp",
-    url: RESTAURANT.socials.instagram,
+    caption: "IRAQI BREAKFAST DFW — We went back",
+    image: "/Images/instagram/post-4.webp",
+    url: "https://www.instagram.com/p/DRh6XRJiWNa/",
   },
   {
     id: "5",
-    caption: "Quzi — slow-roasted lamb on spiced rice.",
-    image: "/Images/dish-4.webp",
-    url: RESTAURANT.socials.instagram,
+    caption: "Albaghdady is now serving authentic Iraqi breakfast",
+    image: "/Images/instagram/post-5.webp",
+    url: "https://www.instagram.com/p/DRcx94JjmSW/",
   },
   {
     id: "6",
-    caption: "Kanafa, fresh from the bakery.",
-    image: "/Images/bakery.webp",
-    url: RESTAURANT.socials.instagram,
+    caption: "Richardson, TX — We are back",
+    image: "/Images/instagram/post-6.webp",
+    url: "https://www.instagram.com/p/DRK_1-FEZbU/",
   },
 ];
 
@@ -156,7 +157,11 @@ export default function InstagramSection() {
                       }}
                     >
                       <div className="text-[10px] font-semibold uppercase tracking-[0.2em] text-white/70 mb-1.5">
-                        @albaghdadyrestaurant
+                        {post.coAuthor
+                          ? `@albaghdadyrestaurant & @${post.coAuthor}`.length <= 38
+                            ? `@albaghdadyrestaurant & @${post.coAuthor}`
+                            : `@${post.coAuthor}`
+                          : "@albaghdadyrestaurant"}
                       </div>
                       <div
                         className="leading-snug transition-all duration-400"
