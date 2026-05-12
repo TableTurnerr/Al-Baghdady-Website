@@ -12,7 +12,15 @@ npm run serve-out    # serve the built /out directory locally
 npm run lint         # next lint
 ```
 
-There is no test suite. Verification is done by running `npm run build` (lint + type-check + SSG of all 15 routes) and visually checking pages with `serve-out`.
+There is no test suite. Verification is done by running `npm run build` (lint + type-check + static export of all routes — currently `/`, `/menu/`, `/bakery/`, `/catering/`, `/iraqi-cuisine/`, `/our-story/`, plus 7 `/near/[city]/` pages) and visually checking with `serve-out`.
+
+### Environment
+
+Copy `.env.local.example` → `.env.local`. Required public env vars:
+
+- `NEXT_PUBLIC_TURNSTILE_SITE_KEY` — Cloudflare Turnstile site key gating the review-submission modal. Test key `1x00000000000000000000AA` always passes.
+- `NEXT_PUBLIC_REVIEW_API_URL` + `NEXT_PUBLIC_REVIEW_API_KEY` — TableTurnerr ParentSite endpoint where `ReviewModal` POSTs submissions.
+- `NEXT_PUBLIC_PHONE`, `NEXT_PUBLIC_PHONE_RAW`, `NEXT_PUBLIC_EMAIL`, social URLs, `NEXT_PUBLIC_ORDER_ONLINE_URL` — surfaced via `restaurant.ts` and used throughout. All are public (`NEXT_PUBLIC_*`) because this is a fully static export — no server runtime exists to hold secrets.
 
 ## Architecture
 
@@ -24,9 +32,9 @@ Edit data once and it propagates across pages, JSON-LD schema, sitemap and foote
 
 1. **`restaurant.ts`** — NAP, hours, socials, geo, areas served, ratingValue/reviewCount. Imported by nearly every component.
 2. **`menu.ts`** — Categories with items. Drives `/menu`, homepage `FeaturedDishes` (filters `popular: true`), and `Menu` JSON-LD.
-3. **`faqs.ts`** — Single FAQ array. Homepage shows `FAQS.slice(0, 6)`; `/faq` shows all. Both inject `FAQPage` schema.
+3. **`faqs.ts`** — Single FAQ array. The standalone `/faq` route was removed; the homepage `FAQSection` shows `FAQS.slice(0, 6)` and injects `FAQPage` schema.
 4. **`neighborhoods.ts`** — Configs for `/near/[city]` dynamic route. `generateStaticParams()` reads this array.
-5. **`reviews.ts`** — Curated quotes (review submission is not implemented).
+5. **`reviews.ts`** — Curated quotes shown on the homepage `Reviews` section. Live review *submission* is implemented via `ReviewModal` + Cloudflare Turnstile → POST to `NEXT_PUBLIC_REVIEW_API_URL` (TableTurnerr ParentSite); curated quotes in this file are the editorially-controlled set rendered on the page.
 6. **`schema.ts`** — Pure functions returning JSON-LD objects (`organizationSchema`, `restaurantSchema`, `menuSchema`, `faqSchema`, `breadcrumbSchema`, etc.). All schema is generated from the data files above.
 7. **`metadata.ts`** — `createMetadata()` factory that returns Next.js `Metadata`. Every page calls this — never hand-roll metadata.
 
@@ -45,6 +53,8 @@ Static export means `output: 'export'` + `trailingSlash: true` in `next.config.t
 
 `/near/[city]` is the only dynamic route. It uses `generateStaticParams()` from `NEIGHBORHOODS` to pre-render all 7 neighborhood pages at build time.
 
+App Router error boundaries are wired up: `app/error.tsx` (per-segment runtime errors), `app/global-error.tsx` (root-level fallback), and `app/not-found.tsx` (404). Keep these branded and on-theme — they are the only non-success states users see.
+
 ### Styling
 
 Tailwind CSS 4 with custom theme tokens in `/src/styles/globals.css` (`@theme` block). The design system is a **light theme only** — cream/sand backgrounds, maroon (`--color-primary: #8B1A1A`) and gold (`--color-gold: #C9A84C`) accents. Reusable utility classes: `.btn-primary`, `.btn-secondary`, `.btn-gold`, `.card`, `.container-pad`, `.section-pad`, `.eyebrow`. Prefer these over inline Tailwind for spacing/buttons to keep visual consistency.
@@ -53,16 +63,25 @@ Tailwind CSS 4 with custom theme tokens in `/src/styles/globals.css` (`@theme` b
 
 ### Component structure
 
-- `/src/components/layout/` — `Header`, `Footer`, `BreadcrumbNav` (used on every page)
-- `/src/components/home/` — Homepage sections (also reused: `FAQSection` on `/faq`, `Reviews` on `/reviews`)
-- `/src/components/shared/` — `ThemeBtn`, `SchemaInjector`
-- `/src/components/catering/` — `CateringForm` (mailto-based, no backend)
+- `/src/components/layout/` — `Header`, `Footer`, `BreadcrumbNav` (used on every page).
+- `/src/components/home/` — Homepage sections: `HeroBanner`, `ActionCards`, `TrustBar`, `FeaturedDishes`, `BakerySpotlight`, `Gallery`, `Reviews`, `FAQSection`, `OurLocation`, `PressStrip`, `InstagramSection`.
+- `/src/components/shared/` — `SchemaInjector`, `SmartImage`, `Turnstile`, `ThemeBtn`, `QRHover`, `TabTitleHandler`.
+- `/src/components/reviews/` — `ReviewModal` (submission form, gated by `Turnstile`, POSTs to the TableTurnerr ParentSite API).
+- `/src/components/catering/` — `CateringForm` (mailto-based, no backend).
+- `/src/components/menu/` — `CategoryNav` (client component extracted so the menu page can stay a server component).
 
-`Header.tsx` and `FAQSection.tsx` are `"use client"` (state). Most pages and sections are server components.
+Most pages and sections are server components. Mark `"use client"` only when interactivity or browser-only APIs are needed (`Header`, `FAQSection`, `CategoryNav`, `ReviewModal`, `Turnstile`, `SmartImage`, `QRHover`, `TabTitleHandler`).
 
 ### Image handling
 
-Images are currently rendered as styled placeholder `<div>` blocks (gradient backgrounds with the dish/page initial). Real photos go in `/public/Images/` — see README for the full path list. When swapping in real images, replace the placeholder div with `<Image>` from `next/image` (note: `next.config.ts` has `images.unoptimized: true` because static export disables the Image optimization API).
+Real photos live under `/public/Images/` (including `/public/Images/gallery/`). The standard renderer is **`SmartImage`** (`/src/components/shared/SmartImage.tsx`) — a `"use client"` component that wraps a plain `<img>` with a shimmer skeleton, lazy/eager loading via the `priority` prop, and a `fetchPriority` hint. It deliberately does **not** use `next/image` because the static export disables the Image optimization API (`next.config.ts` has `images.unoptimized: true`); any image processing happens at build time via `sharp`. Prefer `SmartImage` over raw `<img>` so the loading shimmer stays consistent.
+
+### Notable dependencies
+
+- `framer-motion` — animations on hero, gallery, modal transitions.
+- `lucide-react` — icon set used across nav, cards, forms.
+- `qrcode.react` — renders the QR code surfaced by `QRHover` (hover-to-reveal "scan to view menu/order").
+- `sharp` — build-time image processing for the static export.
 
 ### Brand consolidation context
 
