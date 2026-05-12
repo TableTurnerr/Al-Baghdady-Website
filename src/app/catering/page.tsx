@@ -9,7 +9,7 @@ import CateringForm from "@/components/catering/CateringForm";
 export const metadata: Metadata = createMetadata({
   title: "Iraqi Catering Dallas — Halal Weddings, Corporate, Eid | Al-Baghdady",
   description:
-    "Halal Iraqi catering across Dallas-Fort Worth. Weddings, corporate lunches, Ramadan iftars, Eid parties. Mixed grill, kabob, biryani, kanafa trays. 20-500+ guests.",
+    "Authentic Iraqi dessert catering across DFW — baklava trays, kunafa platters, fatayer boxes, ladyfingers, samoon, and full sweets spreads for Eid, weddings, Ramadan iftars and corporate events. Halal certified. 48-hour notice for large events.",
   path: "/catering/",
   keywords: [
     "iraqi catering dallas",
@@ -22,12 +22,12 @@ export const metadata: Metadata = createMetadata({
 });
 
 const SERVICES = [
-  "Wedding banquets — kabob, biryani, dolma, custom dessert trays",
-  "Corporate lunches — boxed meals, buffet setups, healthy halal options",
-  "Ramadan iftars — full traditional spread, ready at sunset",
-  "Eid celebrations — sweets trays, full menu catering",
-  "Baby showers, graduations & private events",
-  "Drop-off and full-service options available",
+  "Eid celebrations — assorted baklava and kunafa trays, full sweets spreads",
+  "Weddings & engagements — custom dessert tables, ladyfingers, burma, mabrouma",
+  "Ramadan iftars — full Iraqi spread ready at sunset, samoon, fatayer, manakish",
+  "Corporate lunches — breakfast catering, dessert boxes, halal-friendly options",
+  "Family gatherings — baklava trays, kunafa platters, fatayer boxes (cheese, spinach, meat)",
+  "Delivery across Richardson, Plano, Garland, Addison, Carrollton, Frisco, and greater DFW",
 ];
 
 const STEPS = [
@@ -66,11 +66,12 @@ export default function CateringPage() {
 
       <section className="container-pad py-10 md:py-16 max-w-3xl">
         <div className="eyebrow">Catering</div>
-        <h1 className="mb-6">Halal Iraqi Catering, From 20 to 500+ Guests</h1>
-        <p className="text-lg text-[var(--color-text-muted)]">
-          Al-Baghdady caters weddings, corporate lunches, Ramadan iftars, Eid celebrations and
-          private events across Dallas-Fort Worth. Our menu is fully halal and Zabihah-verified —
-          mixed grill platters, biryani, dolma, mezze spreads and bakery dessert trays.
+        <h1 className="mb-6">Iraqi Dessert Catering in Dallas — Authentic Kunafa, Baklava Trays and More</h1>
+        <p className="text-lg text-[var(--color-text-muted)] mb-5 leading-relaxed">
+          Sweets, savories, and trays that make the event. For sixteen years, Albaghdady has catered Middle Eastern desserts and Iraqi savories all across Richardson, Texas — Eid celebrations, weddings, engagement parties, Ramadan iftars, corporate lunches, and family gatherings of every size. If it&apos;s worth celebrating, it&apos;s worth doing right.
+        </p>
+        <p className="text-lg text-[var(--color-text-muted)] leading-relaxed">
+          Our catering menu spans the full range of what we bake fresh in-house: assorted baklava trays, kunafa platters, ladyfingers, burma, fatayer (cheese, spinach, meat), manakish, samoon, and full Iraqi sweets spreads with mabrouma, awama, and the rest of our family menu. Everything is made the day of your event. Nothing is frozen, nothing is pre-packed, nothing tastes like it sat on a shelf.
         </p>
       </section>
 
@@ -103,6 +104,10 @@ export default function CateringPage() {
                 </div>
               ))}
             </div>
+
+            <p className="mt-8 text-sm italic text-[var(--color-text-muted)]">
+              Catering minimums apply. Please order at least 48 hours in advance for large events.
+            </p>
           </div>
 
           <div>

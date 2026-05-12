@@ -15,16 +15,10 @@ export default function BakerySpotlight() {
         </div>
 
         <div>
-          <div className="eyebrow">In-House Arabic Bakery</div>
-          <h2 className="mb-6">Fresh samoon, kanafa<br />& Iraqi sweets — baked daily.</h2>
-          <p className="text-lg text-[var(--color-text-muted)] mb-5 leading-relaxed">
-            Our bakery turns out warm samoon bread, sticky-cheese kanafa, layered baklava,
-            ladyfingers (znood al sit) and ma&apos;amoul cookies — all made from traditional
-            Iraqi recipes.
-          </p>
-          <p className="text-base text-[var(--color-text-muted)] mb-8 leading-relaxed">
-            Need a custom dessert tray for a wedding, Eid celebration or office event? We make
-            them to order. Reviewers consistently call our kanafa and baklava &ldquo;the best in Dallas.&rdquo;
+          <div className="eyebrow">Since 1919 · Four Generations</div>
+          <h2 className="mb-6">A dessert for every craving.</h2>
+          <p className="text-lg text-[var(--color-text-muted)] mb-8 leading-relaxed">
+            Our menu is built on the authentic Iraqi recipes our family has baked for four generations. From kunafa, manakish, ladyfingers, and fatayer to the baklava that put our name on the map, every item is made the same way it&apos;s been made since 1919.
           </p>
           <div className="flex flex-wrap gap-3">
             <ThemeBtn href="/bakery/" variant="primary">Explore the Bakery</ThemeBtn>
