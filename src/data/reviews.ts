@@ -10,7 +10,7 @@ export const REVIEWS: Review[] = [
   {
     author: "Ahmed K.",
     rating: 5,
-    text: "Best Iraqi food in Dallas — maybe the entire US. The mixed grill platter is unreal and the samoon bread is the real thing. Reminds me of home in Baghdad.",
+    text: "Best Iraqi bakery in Dallas — maybe the entire US. The samoon is the real deal, baked fresh in the tandoor every morning. Reminds me of home in Baghdad.",
     source: "Google",
   },
   {
@@ -22,25 +22,25 @@ export const REVIEWS: Review[] = [
   {
     author: "Omar A.",
     rating: 5,
-    text: "Authentic Iraqi spices, juicy kabobs, and fresh samoon out of the oven. The masgoof is a must-try if you've never had traditional Iraqi grilled fish.",
+    text: "Authentic Iraqi breakfast done right. Kahi & qeimar that tastes exactly like my mom's, fresh samoon, hot karak chai — this is what Sunday mornings should be.",
     source: "Google",
   },
   {
     author: "Fatima R.",
     rating: 5,
-    text: "We catered our wedding through Al-Baghdady for 200+ guests. Everything was perfect — kabobs, biryani, dolma, the whole spread. Halal and incredible quality.",
+    text: "We catered our daughter's wedding through Albaghdady — baklava trays, kunafa platters, and a full custom dessert spread for 200+ guests. Every tray was perfect. Multiple aunts have asked for the bakery's number.",
     source: "Google",
   },
   {
     author: "David L.",
     rating: 5,
-    text: "Tried this place on a recommendation and now we drive 40 minutes from Frisco every weekend. The lamb chops and quzi are perfection.",
+    text: "Tried this place on a recommendation and now we drive 40 minutes from Frisco every weekend. The pistachio baklava and bread baklava are perfection, and the breakfast plates are unreal.",
     source: "Google",
   },
   {
     author: "Layla H.",
     rating: 5,
-    text: "Warm hospitality, traditional decor and food that tastes exactly like my grandmother used to make. The dolma and tashreeb take me back.",
+    text: "Warm hospitality, traditional decor, and food that tastes exactly like my grandmother used to make. The baqila for breakfast and ladyfingers in the afternoon take me back.",
     source: "Google",
   },
 ];
