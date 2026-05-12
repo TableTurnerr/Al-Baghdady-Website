@@ -53,17 +53,22 @@ npm run serve-out    # serve the built static site
 
 ## Replace Before Launch
 
-Photography is currently rendered as styled placeholder blocks. Drop real images at:
+**Present in the repo (placeholders):**
 
-- `/public/Images/hero-mixed-grill.webp` (hero, 1200×1500+)
-- `/public/Images/og-default.jpg` (1200×630, default OG)
-- `/public/Images/bakery-spread.webp` (square, bakery spotlight)
-- `/public/Images/our-story.webp` (16:9, our story)
-- `/public/Images/menu/*.webp` (per category — kabob-platters, shawarma, traditional, appetizers, bakery, beverages)
-- `/public/Images/icon-192.png`, `/public/Images/icon-512.png` (PWA icons)
-- `/public/Images/logo.png` (used in Organization schema)
+- `/public/Images/hero.webp`
+- `/public/Images/bakery.webp`
+- `/public/Images/logo.webp`
+- `/public/apple-touch-icon.png`
+- `/src/app/icon.png` (Next.js auto-favicon)
 
-Then replace the placeholder `<div>` blocks in HeroBanner, BakerySpotlight, FeaturedDishes, etc. with `<Image>` components.
+**Pending client delivery:**
+
+- `/public/Images/og-default.jpg` (1200×630 dedicated social sharing card)
+- `/public/favicon.ico` (full favicon set)
+- `/public/Images/icon-192.png` and `/public/Images/icon-512.png` (PWA icons)
+- Real food photography for individual menu items and specialties (currently using `hero.webp` and `bakery.webp` as universal fallbacks; the TODO swap-in points are flagged in `metadata.ts` and `schema.ts`)
+
+Until those land, the code gracefully falls back to existing files (hero.webp for OG, Next's icon.png for favicon).
 
 ## Data — Single Source of Truth
 

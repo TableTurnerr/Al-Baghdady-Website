@@ -117,9 +117,13 @@ Required image paths:
 
 All images: WebP preferred (smaller, modern). JPEG fallback acceptable for OG card.
 
+> **Fallback behavior:** If the dedicated OG card (`og-default.jpg`) is not yet supplied by the client, `metadata.ts` and `schema.ts` fall back to `/Images/hero.webp`. Swap sites are marked with `TODO` comments at every reference. Replacing the file is a drop-in operation — no code change needed.
+
 ### `/public/favicon.ico` and `/public/apple-touch-icon.png`
 
 Standard favicon set. Use a favicon generator (realfavicongenerator.net) and drop the generated files into `/public/`.
+
+> **Fallback behavior:** Next.js auto-discovers `src/app/icon.png` and serves it as the favicon. If you don't ship a `/public/favicon.ico`, the site still has a working browser tab icon via this convention. For broadest browser support though, dropping in a multi-resolution `favicon.ico` is preferred.
 
 ## Adding / Removing Pages
 

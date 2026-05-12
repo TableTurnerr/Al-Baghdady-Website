@@ -31,7 +31,8 @@ function absoluteUrl(path: string) {
 }
 
 function articleSchema(specialty: Specialty) {
-  const image = specialty.image ?? "/Images/og-default.jpg";
+  // TODO: swap to dedicated specialty image when client provides.
+  const image = specialty.image ?? "/Images/hero.webp";
   return {
     "@context": "https://schema.org",
     "@type": "Article",
