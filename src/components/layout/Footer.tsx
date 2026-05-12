@@ -10,7 +10,6 @@ const QUICK_LINKS = [
   { href: "/iraqi-cuisine/", label: "Iraqi Cuisine" },
   { href: "/bakery/", label: "Bakery" },
   { href: "/catering/", label: "Catering" },
-  { href: "/faq/", label: "FAQ" },
   { href: "/reviews/", label: "Reviews" },
 ];
 
