@@ -18,7 +18,7 @@ export const NEIGHBORHOODS: Neighborhood[] = [
     slug: "plano-tx",
     city: "Plano",
     state: "TX",
-    metaTitle: "Iraqi Restaurant Plano TX | Al-Baghdady — Halal Kabob & Bakery",
+    metaTitle: "Iraqi Restaurant Plano TX — Halal Bakery | Al-Baghdady",
     metaDescription:
       "Authentic Iraqi food, halal kabobs and fresh kanafa for Plano residents. Al-Baghdady is a 12-minute drive from Plano with delivery available.",
     keywords: [
@@ -45,8 +45,7 @@ export const NEIGHBORHOODS: Neighborhood[] = [
     slug: "garland-tx",
     city: "Garland",
     state: "TX",
-    metaTitle:
-      "Iraqi Bakery & Café Garland TX | Al-Baghdady — Halal Iraqi Food",
+    metaTitle: "Iraqi Bakery Garland TX — Halal Sweets | Al-Baghdady",
     metaDescription:
       "Authentic Iraqi bakery and breakfast café near Garland TX. Fresh baklava, kunafa, ladyfingers, samoon and traditional Iraqi breakfast. Halal certified.",
     keywords: [
@@ -73,8 +72,7 @@ export const NEIGHBORHOODS: Neighborhood[] = [
     slug: "addison-tx",
     city: "Addison",
     state: "TX",
-    metaTitle:
-      "Halal Restaurant Addison TX | Al-Baghdady Iraqi Cuisine & Bakery",
+    metaTitle: "Halal Restaurant Addison TX — Iraqi & Bakery | Al-Baghdady",
     metaDescription:
       "Halal Iraqi restaurant 9 minutes from Addison. Authentic kabobs, shawarma, fresh samoon and the best kanafa in DFW.",
     keywords: [
@@ -101,7 +99,7 @@ export const NEIGHBORHOODS: Neighborhood[] = [
     slug: "north-dallas-tx",
     city: "North Dallas",
     state: "TX",
-    metaTitle: "Iraqi Food North Dallas | Al-Baghdady Halal Restaurant & Bakery",
+    metaTitle: "Iraqi Food North Dallas — Halal Bakery | Al-Baghdady",
     metaDescription:
       "Authentic Iraqi food in North Dallas. Halal kabobs, traditional masgoof, fresh samoon and the best kanafa in Dallas.",
     keywords: [
@@ -128,7 +126,7 @@ export const NEIGHBORHOODS: Neighborhood[] = [
     slug: "allen-tx",
     city: "Allen",
     state: "TX",
-    metaTitle: "Kabob Restaurant Allen TX | Al-Baghdady — Halal Iraqi Cuisine",
+    metaTitle: "Halal Kabob Restaurant Allen TX | Al-Baghdady",
     metaDescription:
       "Char-grilled halal kabobs, shawarma and fresh Iraqi sweets for Allen TX. 22 minutes from Allen with full catering.",
     keywords: [
@@ -154,8 +152,7 @@ export const NEIGHBORHOODS: Neighborhood[] = [
     slug: "mckinney-tx",
     city: "McKinney",
     state: "TX",
-    metaTitle:
-      "Middle Eastern Restaurant McKinney TX | Al-Baghdady Iraqi & Bakery",
+    metaTitle: "Iraqi Restaurant McKinney TX — Halal Bakery | Al-Baghdady",
     metaDescription:
       "Authentic Iraqi and Middle Eastern food for McKinney TX. Halal kabobs, fresh samoon, kanafa and full catering.",
     keywords: [
@@ -182,8 +179,7 @@ export const NEIGHBORHOODS: Neighborhood[] = [
     slug: "far-north-dallas-tx",
     city: "Far North Dallas",
     state: "TX",
-    metaTitle:
-      "Best Iraqi Food Near Me | Al-Baghdady — Far North Dallas Halal Restaurant",
+    metaTitle: "Iraqi Food Far North Dallas — Halal | Al-Baghdady",
     metaDescription:
       "Searching for the best Iraqi food near you in Far North Dallas? Al-Baghdady serves 1,892-review halal Iraqi food and a full Arabic bakery.",
     keywords: [
@@ -210,7 +206,7 @@ export const NEIGHBORHOODS: Neighborhood[] = [
     slug: "irving-tx",
     city: "Irving",
     state: "TX",
-    metaTitle: "Iraqi Bakery Irving TX | Al-Baghdady — Halal Iraqi Sweets & Breakfast",
+    metaTitle: "Iraqi Bakery Irving TX — Halal Sweets | Al-Baghdady",
     metaDescription:
       "Authentic Iraqi bakery and breakfast café serving Irving TX. Fresh baklava, kunafa, samoon and traditional Iraqi breakfast. Halal certified.",
     keywords: [
@@ -231,10 +227,38 @@ export const NEIGHBORHOODS: Neighborhood[] = [
     popularDishes: ["Baklava", "Kanafa", "Kahi & Qeimar", "Fatayer"],
   },
   {
+    slug: "carrollton-tx",
+    city: "Carrollton",
+    state: "TX",
+    metaTitle: "Iraqi Bakery Carrollton TX — Halal Sweets | Al-Baghdady",
+    metaDescription:
+      "Authentic Iraqi bakery and breakfast café serving Carrollton TX. Fresh baklava, kunafa, samoon, ladyfingers and traditional Iraqi breakfast. 100% halal, Zabihah-verified.",
+    keywords: [
+      "iraqi bakery carrollton tx",
+      "halal restaurant carrollton",
+      "iraqi food carrollton",
+      "middle eastern food carrollton",
+      "arabic sweets carrollton",
+      "baklava carrollton tx",
+      "kunafa carrollton",
+      "iraqi breakfast carrollton",
+      "halal cafe carrollton",
+      "iraqi catering carrollton",
+    ],
+    heroHeadline: "Halal Iraqi Bakery & Café for Carrollton",
+    heroSubheadline:
+      "20 minutes from Carrollton. Fresh baklava, kunafa, samoon and Iraqi breakfast — delivered across Carrollton daily.",
+    driveTime: "20 minutes from Carrollton",
+    intro:
+      "Carrollton's halal-conscious diners and Middle Eastern food lovers drive to Al-Baghdady for the real thing — Iraqi bakery from a family who's been doing this since 1919. We deliver across Carrollton and cater all kinds of events.",
+    body: "Carrollton has plenty of Mediterranean and Indo-Pak options, but authentic Iraqi cuisine is rare — and that's where Al-Baghdady fills the gap. Our in-house bakery turns out fresh samoon from the tandoor, paper-thin baklava layered with pistachios, kunafa made to order, fatayer (cheese, spinach, meat), manakish, and the Iraqi sweets you can't find anywhere else in DFW: mabrouma, burma, ladyfingers (znood al sit), bird's nest, awama (luqaimat). Every morning except Monday we serve a full traditional Iraqi breakfast — Albaghdady Plate, Kahi & Qeimar, Baqila, Kubba — paired with hot karak chai. Halal across the entire menu, Zabihah-verified. We cater weddings, Eid celebrations, Ramadan iftars and corporate events throughout Carrollton.",
+    popularDishes: ["Baklava", "Kanafa", "Fatayer", "Custom Dessert Tray"],
+  },
+  {
     slug: "frisco-tx",
     city: "Frisco",
     state: "TX",
-    metaTitle: "Iraqi Bakery Frisco TX | Al-Baghdady — Halal Iraqi Sweets & Breakfast",
+    metaTitle: "Iraqi Bakery Frisco TX — Halal Sweets | Al-Baghdady",
     metaDescription:
       "Authentic Iraqi bakery and breakfast café serving Frisco TX. Fresh baklava, kunafa, samoon and traditional Iraqi breakfast. Halal certified.",
     keywords: [
