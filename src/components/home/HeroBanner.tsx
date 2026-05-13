@@ -19,7 +19,7 @@ export default function HeroBanner() {
     <section className="relative bg-white">
       <div className="container-pad relative grid gap-12 lg:grid-cols-2 lg:gap-20 items-center pt-12 pb-16 md:pt-24 md:pb-28">
         <div className="animate-fade-up">
-          <div className="eyebrow">Iraqi Bakery &amp; Café · Halal · Family-Owned Since 2009</div>
+          <div className="eyebrow">Iraqi Bakery &amp; Café · Halal · Family-Owned Since 2012</div>
           <h1 className="mb-7">
             The most{" "}
             <em
@@ -31,7 +31,7 @@ export default function HeroBanner() {
             Baklava<br />in All of Richardson, Texas
           </h1>
           <p className="text-lg text-[var(--color-text-muted)] max-w-xl mb-10 leading-relaxed">
-            Located in the heart of Richardson, TX, Albaghdady has been a family-run Iraqi bakery and cafe since 2009 — serving authentic Iraqi sweets, like our authentic baklava, our family has perfected since 1919.
+            Located in the heart of Richardson, TX, Albaghdady has been a family-run Iraqi bakery and cafe since 2012 — serving authentic Iraqi sweets, like our authentic baklava, our family has perfected since 1919.
           </p>
 
           <div className="flex flex-wrap gap-3 mb-10">
