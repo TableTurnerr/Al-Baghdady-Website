@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Sunrise } from "lucide-react";
 import { createMetadata } from "@/data/metadata";
 import { MENU } from "@/data/menu";
-import { menuSchema, breadcrumbSchema } from "@/data/schema";
+import { menuSchema, breadcrumbSchema, webPageSchema } from "@/data/schema";
 import SchemaInjector from "@/components/shared/SchemaInjector";
 import BreadcrumbNav from "@/components/layout/BreadcrumbNav";
 import ThemeBtn from "@/components/shared/ThemeBtn";
@@ -45,6 +45,13 @@ export default function MenuPage() {
             { name: "Home", url: "/" },
             { name: "Menu", url: "/menu/" },
           ]),
+          webPageSchema({
+            url: "/menu/",
+            name: "Menu — Iraqi Kabobs, Shawarma, Bakery & More | Al-Baghdady",
+            description:
+              "Browse the full Al-Baghdady menu — char-grilled kabob platters, shawarma, traditional Iraqi specialties, mezze, fresh samoon bread and Iraqi sweets. Halal certified, Richardson TX.",
+            primaryImage: "/Images/menu/bakery.webp",
+          }),
         ]}
       />
       <BreadcrumbNav

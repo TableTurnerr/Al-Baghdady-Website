@@ -1,8 +1,9 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { notFound } from "next/navigation";
 import { MapPin, Clock, Star } from "lucide-react";
 import { createMetadata } from "@/data/metadata";
-import { breadcrumbSchema, restaurantSchema } from "@/data/schema";
+import { breadcrumbSchema, restaurantSchema, webPageSchema } from "@/data/schema";
 import { NEIGHBORHOODS } from "@/data/neighborhoods";
 import { RESTAURANT } from "@/data/restaurant";
 import SchemaInjector from "@/components/shared/SchemaInjector";
@@ -50,6 +51,12 @@ export default async function NeighborhoodPage({
             { name: "Service Areas", url: "/" },
             { name: n.city, url: `/near/${n.slug}/` },
           ]),
+          webPageSchema({
+            url: `/near/${n.slug}/`,
+            name: n.metaTitle,
+            description: n.metaDescription,
+            primaryImage: "/Images/hero.webp",
+          }),
         ]}
       />
       <BreadcrumbNav
@@ -130,6 +137,34 @@ export default async function NeighborhoodPage({
             Get Directions
           </ThemeBtn>
           <ThemeBtn href="/catering/" variant="secondary">Catering for {n.city}</ThemeBtn>
+        </div>
+      </section>
+
+      <section className="bg-[var(--color-warm-white)] section-pad">
+        <div className="container-pad max-w-5xl">
+          <h2 className="mb-3 text-center">Other DFW Neighborhoods We Serve</h2>
+          <p className="text-center text-[var(--color-text-muted)] mb-8">
+            Authentic Iraqi food, halal bakery and catering — across the metroplex.
+          </p>
+          <div className="flex flex-wrap gap-2 justify-center">
+            {NEIGHBORHOODS.filter((other) => other.slug !== n.slug).map((other) => (
+              <Link
+                key={other.slug}
+                href={`/near/${other.slug}/`}
+                className="px-4 py-2 rounded-full border border-[var(--color-border)] bg-white text-sm font-medium text-[var(--color-text)] hover:border-[var(--color-primary)] hover:text-[var(--color-primary)] transition-colors"
+              >
+                Iraqi food in {other.city}
+              </Link>
+            ))}
+          </div>
+          <div className="text-center mt-8">
+            <Link
+              href="/near/"
+              className="text-sm font-medium text-[var(--color-primary)] hover:underline"
+            >
+              View all service areas →
+            </Link>
+          </div>
         </div>
       </section>
     </>

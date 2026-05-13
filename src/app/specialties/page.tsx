@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { createMetadata } from "@/data/metadata";
-import { breadcrumbSchema } from "@/data/schema";
+import { breadcrumbSchema, webPageSchema } from "@/data/schema";
 import { SPECIALTIES } from "@/data/specialties";
 import { RESTAURANT } from "@/data/restaurant";
 import SchemaInjector from "@/components/shared/SchemaInjector";
@@ -48,6 +48,12 @@ export default function SpecialtiesIndexPage() {
             { name: "Specialties", url: "/specialties/" },
           ]),
           specialtiesListSchema(),
+          webPageSchema({
+            url: "/specialties/",
+            name: "Our Specialties — Iraqi Sweets, Breakfast & Halal Café",
+            description: `Explore our specialties — baklava, kunafa, ladyfingers, fatayer, manakish, Iraqi breakfast and more. Hand-baked daily at ${RESTAURANT.name} in ${RESTAURANT.address.city}, ${RESTAURANT.address.state}.`,
+            primaryImage: "/Images/gallery/sweets-platter-lamps.webp",
+          }),
         ]}
       />
       <BreadcrumbNav

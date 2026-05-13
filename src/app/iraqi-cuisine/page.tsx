@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { createMetadata } from "@/data/metadata";
-import { breadcrumbSchema } from "@/data/schema";
+import { breadcrumbSchema, webPageSchema } from "@/data/schema";
 import SchemaInjector from "@/components/shared/SchemaInjector";
 import BreadcrumbNav from "@/components/layout/BreadcrumbNav";
 import ThemeBtn from "@/components/shared/ThemeBtn";
@@ -89,10 +89,19 @@ export default function IraqiCuisinePage() {
   return (
     <>
       <SchemaInjector
-        schema={breadcrumbSchema([
-          { name: "Home", url: "/" },
-          { name: "Iraqi Cuisine", url: "/iraqi-cuisine/" },
-        ])}
+        schema={[
+          breadcrumbSchema([
+            { name: "Home", url: "/" },
+            { name: "Iraqi Cuisine", url: "/iraqi-cuisine/" },
+          ]),
+          webPageSchema({
+            url: "/iraqi-cuisine/",
+            name: "Iraqi Cuisine Guide — Samoon, Masgoof, Kanafa, Baklava | Al-Baghdady",
+            description:
+              "A guide to authentic Iraqi cuisine — samoon bread, masgoof, tashreeb, quzi, dolma, Iraqi biryani, kanafa, baklava and more. Served daily at our Iraqi bakery and breakfast café in Richardson, TX.",
+            primaryImage: "/Images/hero.webp",
+          }),
+        ]}
       />
       <BreadcrumbNav
         items={[

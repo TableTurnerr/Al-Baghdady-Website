@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { createMetadata } from "@/data/metadata";
-import { breadcrumbSchema } from "@/data/schema";
+import { breadcrumbSchema, webPageSchema } from "@/data/schema";
 import SchemaInjector from "@/components/shared/SchemaInjector";
 import BreadcrumbNav from "@/components/layout/BreadcrumbNav";
 import ThemeBtn from "@/components/shared/ThemeBtn";
@@ -11,7 +11,7 @@ import { RESTAURANT } from "@/data/restaurant";
 import { MENU } from "@/data/menu";
 import { SPECIALTIES } from "@/data/specialties";
 
-const BAKERY_CATEGORY_IMAGE = "/Images/menu/bakery-sweets.webp";
+const BAKERY_CATEGORY_IMAGE = "/Images/gallery/baklava-tiered-tray.webp";
 
 const featuredBakeryItems = (
   MENU.find((c) => c.id === "bakery-sweets")?.items.filter((i) => i.popular) ?? []
@@ -32,7 +32,7 @@ const bakerySpecialties = BAKERY_SPECIALTY_SLUGS
   .filter((s): s is NonNullable<typeof s> => s !== undefined);
 
 export const metadata: Metadata = createMetadata({
-  title: "Our Bakery — Fresh Iraqi Sweets, Bread & Breakfast Since 1919 | Al-Baghdady",
+  title: "Iraqi Bakery Richardson TX — Fresh Sweets & Bread | Al-Baghdady",
   description:
     "In-house Arabic bakery in Richardson, TX. Fresh samoon from the tandoor, kunafa, baklava, ladyfingers (znood al sit), burma, fatayer, manakish — baked daily using family recipes from Baghdad since 1919.",
   path: "/bakery/",
@@ -50,10 +50,19 @@ export default function BakeryPage() {
   return (
     <>
       <SchemaInjector
-        schema={breadcrumbSchema([
-          { name: "Home", url: "/" },
-          { name: "Bakery", url: "/bakery/" },
-        ])}
+        schema={[
+          breadcrumbSchema([
+            { name: "Home", url: "/" },
+            { name: "Bakery", url: "/bakery/" },
+          ]),
+          webPageSchema({
+            url: "/bakery/",
+            name: "Iraqi Bakery Richardson TX — Fresh Sweets & Bread | Al-Baghdady",
+            description:
+              "In-house Arabic bakery in Richardson, TX. Fresh samoon from the tandoor, kunafa, baklava, ladyfingers (znood al sit), burma, fatayer, manakish — baked daily using family recipes from Baghdad since 1919.",
+            primaryImage: "/Images/gallery/baklava-pistachio-copper.webp",
+          }),
+        ]}
       />
       <BreadcrumbNav
         items={[
