@@ -45,7 +45,7 @@ export const SPECIALTIES: Specialty[] = [
       body: "Want fresh Iraqi bread without the wait? We offer convenient pickup and delivery for our handmade tandoor bread across Richardson and the greater Dallas area. Order online for quick same-day pickup, or have our warm samoon delivered straight to your door. Authentic Iraqi bread, freshly baked, ready when you are.",
     },
     image: "/Images/bakery.webp",
-    relatedMenuItemNames: ["Samoon Bread"],
+    relatedMenuItemNames: ["Iraqi Samoon (4 pc)", "Tandoor Bread (6 pc)", "Iraqi Bread (3 pc)"],
     faqs: [
       {
         question: "What is samoon?",
@@ -89,7 +89,7 @@ export const SPECIALTIES: Specialty[] = [
       body: "Craving real Iraqi chai? Skip the line and order our chai for pickup or delivery anywhere in Richardson and the Dallas area. Whether it's classic black tea or our signature karak chai, enjoy the bold flavors of authentic Iraqi tea from the comfort of your home. Order online for fast, hassle-free service.",
     },
     image: "/Images/gallery/baklava-pistachio-plate.webp",
-    relatedMenuItemNames: ["Iraqi Chai", "Karak Chai"],
+    relatedMenuItemNames: ["Karak Chai"],
     faqs: [
       {
         question: "What's the difference between Iraqi chai and karak chai?",
@@ -104,7 +104,7 @@ export const SPECIALTIES: Specialty[] = [
       {
         question: "Can I order chai for delivery?",
         answer:
-          "Yes, both Iraqi chai and karak chai are available for pickup and delivery across Richardson and the Dallas area.",
+          "Yes — our karak chai is available for pickup and delivery across Richardson and the Dallas area.",
       },
     ],
   },
@@ -133,7 +133,7 @@ export const SPECIALTIES: Specialty[] = [
       body: "Craving burma? We offer pickup and delivery for our fresh-baked burma across Richardson and the greater Dallas area. Enjoy the crisp, nutty taste of authentic Middle Eastern desserts from the comfort of your home. Order online for fast pickup, or have our handmade burma delivered straight to your door.",
     },
     image: "/Images/specialties/burma.webp",
-    relatedMenuItemNames: ["Burma"],
+    relatedMenuItemNames: ["Burma (Turkish Style)"],
     faqs: [
       {
         question: "What is burma made of?",
@@ -302,7 +302,7 @@ export const SPECIALTIES: Specialty[] = [
     heroHeadline: "Authentic baklava in Richardson, TX",
     primaryBlock: {
       heading: "Indulge in 100-Year-Old Iraqi Baklava",
-      body: "Baklava, the crown of Middle Eastern desserts, is what our family has been baking since 1919. Our handmade baklava layers paper-thin phyllo with fresh pistachios and walnuts, soaked in our signature honey syrup. Choose from pistachio baklava, walnut baklava, or our signature bread baklava — every piece carries four generations of Iraqi tradition. Try authentic Iraqi baklava in Richardson today.",
+      body: "Baklava, the crown of Middle Eastern desserts, is what our family has been baking since 1919. Our handmade baklava layers paper-thin phyllo with fresh pistachios and walnuts, soaked in our signature honey syrup. Choose from pistachio baklava, walnut baklava, or our mixed baklava tray — every piece carries four generations of Iraqi tradition. Try authentic Iraqi baklava in Richardson today.",
     },
     pickupBlock: {
       heading: "Convenient Pickup and Delivery Options for Fresh Baklava",
@@ -310,16 +310,15 @@ export const SPECIALTIES: Specialty[] = [
     },
     image: "/Images/specialties/baklava.webp",
     relatedMenuItemNames: [
-      "Baklava (Mixed Tray)",
+      "Mixed Baklava",
       "Pistachio Baklava",
-      "Bread Baklava",
       "Walnut Baklava",
     ],
     faqs: [
       {
         question: "What kinds of baklava do you make?",
         answer:
-          "We make three varieties: Pistachio Baklava (our most-ordered, made with fresh-ground pistachios), Walnut Baklava (a traditional richer variety), and Bread Baklava (our signature Iraqi twist with a golden bread base, sweet cream and chopped pistachios). All baked fresh in our [in-house bakery](/bakery/).",
+          "We make three varieties: Pistachio Baklava (our most-ordered, made with fresh-ground pistachios), Walnut Baklava (a traditional richer variety), and Mixed Baklava (a tray combining our walnut and pistachio varieties). All baked fresh in our [in-house bakery](/bakery/).",
       },
       {
         question: "How long does your baklava stay fresh?",
@@ -474,7 +473,7 @@ export const SPECIALTIES: Specialty[] = [
     name: "Halal Food",
     metaTitle: "Halal Food in Richardson, TX | Al-Baghdady — Iraqi Bakery & Café",
     metaDescription:
-      "Every dish 100% halal — Iraqi bakery, breakfast, sweets, and kabab. Zabihah-verified family bakery in Richardson, TX since 2012.",
+      "Every dish 100% halal — Iraqi bakery, breakfast, and sweets. Zabihah-verified family bakery in Richardson, TX since 2012.",
     keywords: [
       "halal food richardson tx",
       "halal restaurant richardson",
@@ -491,12 +490,12 @@ export const SPECIALTIES: Specialty[] = [
     },
     pickupBlock: {
       heading: "Convenient Pickup and Delivery Options for Halal Food",
-      body: "Looking for halal food in Richardson? We offer pickup and delivery for our full halal menu — Iraqi sweets, breakfast plates, kabab, and bakery favorites — across Richardson and the Dallas area. Enjoy authentic halal Middle Eastern sweets and breakfast from the comfort of your home. Order online for fast pickup or doorstep delivery.",
+      body: "Looking for halal food in Richardson? We offer pickup and delivery for our full halal menu — Iraqi sweets, breakfast plates, and bakery favorites — across Richardson and the Dallas area. Enjoy authentic halal Middle Eastern sweets and breakfast from the comfort of your home. Order online for fast pickup or doorstep delivery.",
     },
     image: "/Images/specialties/halal-food.webp",
     relatedMenuItemNames: [
       "Albaghdady Plate (طبق البغدادي)",
-      "Baklava (Mixed Tray)",
+      "Mixed Baklava",
       "Manakish",
       "Kanafa",
     ],

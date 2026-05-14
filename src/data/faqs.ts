@@ -53,17 +53,17 @@ export const FAQS: FAQ[] = [
   {
     question: "Do you have vegetarian options?",
     answer:
-      "Yes. Our hummus, baba ganoush, tabouleh, falafel, mutabbal and [mezze platters](/menu/) are all vegetarian. Many can be made vegan on request.",
+      "Yes. Our spinach and cheese fatayer, cheese manakish, chickpea soup (leblebi), and the full bakery case of baklava, kunafa and Iraqi sweets are all vegetarian. Several can be made vegan on request.",
   },
   {
     question: "What's the difference between Iraqi and Mediterranean food?",
     answer:
-      "Iraqi cuisine has its own distinct character — heavier on slow-cooked stews like tashreeb, dolma and quzi, traditional grilled fish (masgoof), unique breads like samoon, and spice blends rooted in Mesopotamian cooking. While there's overlap with Lebanese and Mediterranean food, [dishes like masgoof, samoon and Iraqi biryani](/iraqi-cuisine/) are uniquely ours.",
+      "Iraqi cuisine has its own distinct character — unique breads like samoon and tandoor bread, a beloved morning tradition of kahi & qeimar and baqila, and a bakery heritage of mabrouma, burma and bird's nest rooted in Mesopotamian baking. While there's overlap with Lebanese and Mediterranean sweets, [dishes like samoon, kahi and mabrouma](/iraqi-cuisine/) are uniquely Iraqi.",
   },
   {
     question: "Do you offer custom dessert trays for parties?",
     answer:
-      "Yes — we make [custom trays of baklava, kanafa, ladyfingers and ma'amoul](/bakery/) for [weddings, Eid and Ramadan](/catering/) and any celebration. Trays start at $45. Call ahead at least 24 hours.",
+      "Yes — we make [custom trays of baklava, kanafa, mabrouma and ladyfingers](/bakery/) for [weddings, Eid and Ramadan](/catering/) and any celebration. Call ahead at least 24 hours.",
   },
   {
     question: "What are your hours?",
@@ -73,7 +73,7 @@ export const FAQS: FAQ[] = [
   {
     question: "Do you offer gluten-free options?",
     answer:
-      "Our [grilled kabobs and shawarma plates](/menu/) and most appetizers can be served without bread. Please let your server know about allergies and we'll accommodate where possible.",
+      "We're a traditional bakery, so most of what we make is built on wheat flour. Please let our team know about any allergies and we'll happily talk through ingredients and point you toward what works.",
   },
   {
     question: "Where can I park?",
@@ -101,8 +101,8 @@ export const FAQS: FAQ[] = [
       "Fresh samoon comes out of [our stone oven](/bakery/) every few hours, all day long. You can buy loaves to take home or have it served warm with your meal.",
   },
   {
-    question: "What is masgoof?",
+    question: "What is mabrouma?",
     answer:
-      "Masgoof is Iraq's national dish — a freshwater fish that's butterflied, seasoned with tamarind, salt and pepper, then slow-cooked over an open fire. It's a centerpiece dish for special occasions and one of the [most authentic Iraqi specialties](/iraqi-cuisine/) we serve.",
+      "Mabrouma is one of the showpiece sweets in our [bakery case](/bakery/) — long strands of phyllo coiled tight around fresh pistachios, baked deep gold and finished with syrup. We make it plain, with cream, and in a premium pistachio-loaded version.",
   },
 ];

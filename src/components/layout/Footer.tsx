@@ -28,7 +28,7 @@ export default function Footer() {
         Al-Baghdady
       </div>
       <div className="mt-3 mb-10 max-w-4xl mx-auto text-sm md:text-base leading-relaxed text-center" style={{ color: "rgba(255,255,255,0.62)" }}>
-        Authentic Iraqi cuisine in the heart of Richardson, Texas. From char-grilled kabob platters and slow-braised tashreeb to fresh-baked samoon and traditional Iraqi sweets, every dish is rooted in family recipes carried from Baghdad to Dallas. Halal across the entire menu, Zabihah verified, with an in-house bakery firing fresh bread and kanafa throughout the day. Whether you&apos;re here for a quick lunch, a family dinner, or catering for a hundred guests, we&apos;re glad you found us. Come hungry — leave full.
+        An authentic Iraqi bakery and breakfast café in the heart of Richardson, Texas. From traditional Iraqi breakfast and fresh-baked samoon to baklava, kunafa, mabrouma and our family&apos;s Iraqi sweets, every item is rooted in recipes carried from Baghdad to Dallas. Halal across the entire menu, Zabihah verified, with an in-house bakery firing fresh bread and pastries throughout the day. Whether you&apos;re here for a morning chai, a box of sweets, or catering for a hundred guests, we&apos;re glad you found us. Come hungry — leave full.
       </div>
 
       <div className="container mx-auto">
