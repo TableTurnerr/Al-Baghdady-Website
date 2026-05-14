@@ -329,7 +329,7 @@ export function cateringServiceSchema(input: CateringServiceInput = {}) {
     description = "Authentic Iraqi and Middle Eastern catering across the Dallas-Fort Worth metroplex — baklava and kunafa trays, fatayer and manakish boxes, ladyfingers, burma, mabrouma, awama, full Iraqi sweets spreads, and savory platters for Eid, weddings, Ramadan iftars, engagements, corporate lunches and family gatherings. Halal certified, Zabihah-verified. 48-hour notice for large events.",
     areaServedCities = RESTAURANT.areasServed as unknown as string[],
     offerings = [
-      "Baklava trays (pistachio, walnut, mixed, bread baklava)",
+      "Baklava trays (pistachio, walnut, mixed)",
       "Kunafa platters",
       "Fatayer boxes (cheese, spinach, meat)",
       "Manakish trays",

@@ -69,7 +69,7 @@ export const SPECIALTIES: Specialty[] = [
     name: "Chai",
     metaTitle: "Chai in Richardson, TX | Al-Baghdady — Iraqi Bakery & Café",
     metaDescription:
-      "Traditional Iraqi chai brewed the old way — cardamom, slow-steeped. Classic black or creamy karak. Pickup and delivery across Richardson, TX.",
+      "Traditional Iraqi karak chai brewed the old way — black tea slow-steeped with cardamom, milk and a touch of sweetness. Pickup and delivery across Richardson, TX.",
     keywords: [
       "iraqi chai richardson",
       "karak chai richardson tx",
@@ -82,11 +82,11 @@ export const SPECIALTIES: Specialty[] = [
     heroHeadline: "Chai in Richardson, TX",
     primaryBlock: {
       heading: "Sip Hot Chai in Richardson",
-      body: "Chai is the heart of every Iraqi morning, and ours is brewed the traditional way — strong black tea steeped slowly with cardamom and a touch of sweetness. Whether you choose our classic black tea or our rich, creamy karak chai, every cup is poured with the same care our family has used for four generations. Try our authentic Iraqi chai today.",
+      body: "Chai is the heart of every Iraqi morning, and ours is brewed the traditional way — strong black tea steeped slowly with cardamom, milk and a touch of sweetness into a rich, creamy karak. Every cup is poured with the same care our family has used for four generations. Try our authentic Iraqi karak chai today.",
     },
     pickupBlock: {
       heading: "Convenient Pickup and Delivery Options for Iraqi Chai",
-      body: "Craving real Iraqi chai? Skip the line and order our chai for pickup or delivery anywhere in Richardson and the Dallas area. Whether it's classic black tea or our signature karak chai, enjoy the bold flavors of authentic Iraqi tea from the comfort of your home. Order online for fast, hassle-free service.",
+      body: "Craving real Iraqi chai? Skip the line and order our signature karak chai for pickup or delivery anywhere in Richardson and the Dallas area. Enjoy the bold, creamy flavors of authentic Iraqi tea from the comfort of your home. Order online for fast, hassle-free service.",
     },
     image: "/Images/gallery/baklava-pistachio-plate.webp",
     relatedMenuItemNames: ["Karak Chai"],
@@ -295,7 +295,7 @@ export const SPECIALTIES: Specialty[] = [
       "iraqi baklava dallas",
       "pistachio baklava richardson",
       "walnut baklava dallas",
-      "bread baklava richardson",
+      "mixed baklava richardson",
       "halal baklava richardson",
     ],
     heroEyebrow: "OUR FLAGSHIP",
