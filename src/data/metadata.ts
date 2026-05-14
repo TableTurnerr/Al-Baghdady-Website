@@ -15,8 +15,8 @@ export type PageMetaInput = {
 };
 
 const BASE_KEYWORDS = [
-  "iraqi restaurant Richardson TX",
-  "halal restaurant Richardson TX",
+  "iraqi bakery Richardson TX",
+  "halal bakery Richardson TX",
   "iraqi bakery Dallas",
   "arabic bakery Richardson",
   "samoon bread Dallas",
