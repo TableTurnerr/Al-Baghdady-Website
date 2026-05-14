@@ -1,15 +1,15 @@
 import type { Metadata } from "next";
 import { createMetadata } from "@/data/metadata";
-import { breadcrumbSchema } from "@/data/schema";
+import { articleSchema, breadcrumbSchema, webPageSchema } from "@/data/schema";
 import SchemaInjector from "@/components/shared/SchemaInjector";
 import BreadcrumbNav from "@/components/layout/BreadcrumbNav";
 import ThemeBtn from "@/components/shared/ThemeBtn";
 import SmartImage from "@/components/shared/SmartImage";
 
 export const metadata: Metadata = createMetadata({
-  title: "Our Story — 100 Years of Iraqi Baking, From Baghdad to Richardson | Al-Baghdady",
+  title: "Our Story — From Baghdad, 1919 to Richardson | Al-Baghdady",
   description:
-    "Our family's bakery began in Baghdad in 1919. Master baker Salah Hassan brought four generations of Iraqi tradition to Richardson, TX in 2009. The 100-year story behind every loaf.",
+    "Our family's bakery began in Baghdad in 1919. Master baker Salah Hassan brought four generations of Iraqi tradition to Richardson, TX in 2012. The 100-year story behind every loaf.",
   path: "/our-story/",
   keywords: ["al-baghdady restaurant story", "iraqi family restaurant dallas", "authentic iraqi cuisine richardson"],
 });
@@ -18,10 +18,29 @@ export default function OurStoryPage() {
   return (
     <>
       <SchemaInjector
-        schema={breadcrumbSchema([
-          { name: "Home", url: "/" },
-          { name: "Our Story", url: "/our-story/" },
-        ])}
+        schema={[
+          breadcrumbSchema([
+            { name: "Home", url: "/" },
+            { name: "Our Story", url: "/our-story/" },
+          ]),
+          webPageSchema({
+            url: "/our-story/",
+            name: "Our Story — From Baghdad, 1919 to Richardson | Al-Baghdady",
+            description:
+              "Our family's bakery began in Baghdad in 1919. Master baker Salah Hassan brought four generations of Iraqi tradition to Richardson, TX in 2012. The 100-year story behind every loaf.",
+            primaryImage: "/Images/hero.webp",
+          }),
+          articleSchema({
+            url: "/our-story/",
+            headline:
+              "100 Years of Iraqi Baking: From Baghdad, 1919 to Richardson, Texas",
+            description:
+              "The story of Al-Baghdady — a family bakery that began in Baghdad in 1919, brought to Richardson, TX in 2012 by master baker Salah Hassan, carrying four generations of Iraqi recipes for samoon, baklava, kunafa, and ladyfingers.",
+            image: "/Images/hero.webp",
+            datePublished: "2012-01-01",
+            authorName: "Salah Hassan",
+          }),
+        ]}
       />
       <BreadcrumbNav
         items={[
@@ -58,7 +77,7 @@ export default function OurStoryPage() {
             Our father and master baker Salah Hassan, grew up learning about our traditional recipes and has been perfecting his craft for 50 years, following in the footsteps of his father. As D Magazine noted, he &lsquo;quietly turns out his wares&rsquo; with a skill that only comes from a lifetime of tradition. When you visit, you aren&apos;t just getting bread; you&apos;re getting a century of expertise from a true professional.
           </p>
           <p>
-            In 2009, he brought the family trade to Texas, opening a small storefront on Greenville Avenue in Richardson — two parking spots and a counter — and began to bake the way our family has always baked.
+            In 2012, he brought the family trade to Texas, opening a small storefront on Greenville Avenue in Richardson — two parking spots and a counter — and began to bake the way our family has always baked.
           </p>
 
           <h2 className="!mt-12 !mb-4">ضيافة — The Reason We Bake</h2>
@@ -68,7 +87,7 @@ export default function OurStoryPage() {
 
           <h2 className="!mt-12 !mb-4">Taste of Iraq in the Heart of Dallas, Texas</h2>
           <p>
-            For over fifteen years now, our small breakfast place beside the barber shop has been a quiet landmark — a place loyal customers drive across Greenville Ave for, and where new neighbors discover their first bite of real Iraqi baking.
+            For over a decade now, our small breakfast place beside the barber shop has been a quiet landmark — a place loyal customers drive across Greenville Ave for, and where new neighbors discover their first bite of real Iraqi baking.
           </p>
 
           <h2 className="!mt-12 !mb-4">Come See Us in the Morning, When the Bread is Hottest</h2>

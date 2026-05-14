@@ -1,87 +1,104 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { createMetadata } from "@/data/metadata";
-import { breadcrumbSchema } from "@/data/schema";
+import { breadcrumbSchema, webPageSchema } from "@/data/schema";
 import SchemaInjector from "@/components/shared/SchemaInjector";
 import BreadcrumbNav from "@/components/layout/BreadcrumbNav";
 import ThemeBtn from "@/components/shared/ThemeBtn";
 import SmartImage from "@/components/shared/SmartImage";
 
 export const metadata: Metadata = createMetadata({
-  title: "Iraqi Cuisine Guide — Samoon, Masgoof, Kanafa, Baklava | Al-Baghdady",
+  title: "Iraqi Cuisine Guide — Samoon, Kanafa, Baklava, Breakfast | Al-Baghdady",
   description:
-    "A guide to authentic Iraqi cuisine — samoon bread, masgoof, tashreeb, quzi, dolma, Iraqi biryani, kanafa, baklava and more. Served daily at our Iraqi bakery and breakfast café in Richardson, TX.",
+    "A guide to the Iraqi bakery and breakfast tradition — samoon bread, kahi & qeimar, baqila, kubba, kanafa, baklava, mabrouma, ladyfingers, fatayer and manakish. Baked fresh daily at our Iraqi bakery and breakfast café in Richardson, TX.",
   path: "/iraqi-cuisine/",
   keywords: [
-    "best iraqi food dallas",
-    "traditional iraqi food near me",
+    "iraqi bakery dallas",
+    "iraqi breakfast richardson",
     "samoon bread dallas",
-    "masgoof dallas",
     "iraqi cuisine guide",
     "iraqi sweets dallas",
+    "kanafa richardson",
   ],
 });
 
 const SPECIALTY_LINKS: Record<string, { href: string; label: string }> = {
   "Samoon": { href: "/specialties/bread/", label: "Read more about our samoon →" },
+  "Kahi & Qeimar": {
+    href: "/specialties/breakfast/",
+    label: "Read more about our Iraqi breakfast →",
+  },
   "Kanafa": { href: "/specialties/kunafa/", label: "Read more about our kunafa →" },
   "Baklava": { href: "/specialties/baklava/", label: "Read more about our baklava →" },
+  "Burma": { href: "/specialties/burma/", label: "Read more about our burma →" },
   "Ladyfingers (Znood Al Sit)": {
     href: "/specialties/lady-fingers/",
     label: "Read more about our ladyfingers →",
   },
+  "Fatayer": { href: "/specialties/fatayer/", label: "Read more about our fatayer →" },
+  "Manakish": { href: "/specialties/manakish/", label: "Read more about our manakish →" },
 };
 
 const DISHES = [
   {
     name: "Samoon",
     summary: "Iraq's traditional oval-shaped bread.",
-    body: "Samoon is what holds an Iraqi meal together. It's an oval-shaped, diamond-faceted bread baked at high heat — crisp on the outside, pillowy and chewy inside. We bake fresh samoon throughout the day in our in-house stone oven. It's the perfect partner to kabob, shawarma, hummus, baba ganoush, and especially tashreeb (where torn samoon soaks up rich braised lamb broth).",
+    body: "Samoon is what holds an Iraqi table together. It's an oval-shaped, diamond-faceted bread baked at high heat — crisp on the outside, pillowy and chewy inside. We bake fresh samoon throughout the day in our in-house stone oven. It's the perfect partner to a breakfast plate, a piece of baklava, or a glass of hot chai.",
   },
   {
-    name: "Kabob & Mixed Grill",
-    summary: "Char-grilled meats, marinated in traditional Iraqi spices.",
-    body: "Iraqi kabob is distinctive — ground meats (beef, lamb or chicken) seasoned with fresh herbs and spices, hand-shaped onto skewers, and char-grilled over open flame until smoky and juicy. Our mixed grill platter brings together beef kabob, lamb kabob, chicken tikka and chicken kabob, served with basmati rice, samoon and grilled vegetables. It's the centerpiece of any Iraqi feast.",
+    name: "Kahi & Qeimar",
+    summary: "Iraq's most beloved sweet breakfast.",
+    body: "Kahi is flaky, golden, layered pastry — shatteringly crisp, brushed with syrup — and qeimar is the rich clotted cream served alongside it. Together they're the breakfast Iraqis grew up on. We make kahi fresh every morning; it's the first thing many of our regulars order.",
   },
   {
-    name: "Masgoof",
-    summary: "Iraq's national dish — traditional grilled fish.",
-    body: "Masgoof is the dish Iraqis travel home for. A whole freshwater fish is butterflied, seasoned with tamarind and salt, and slow-cooked vertically beside an open fire until the skin chars and the flesh is meltingly tender. It's a dish for celebrations, gatherings, and anyone who wants to taste Iraq the way it's been eaten for centuries. We're one of the only restaurants in Dallas serving it.",
+    name: "Baqila",
+    summary: "Fava beans simmered in their own broth.",
+    body: "Baqila bil-dihin is a national Iraqi breakfast tradition — tender fava beans slow-simmered in their own broth, served with eggs, crispy fried onions, and warm bread soaked in the broth. Warming, humble, and deeply satisfying.",
   },
   {
-    name: "Tashreeb",
-    summary: "Slow-braised lamb served over torn samoon bread.",
-    body: "Tashreeb is comfort food, Iraqi-style. We slow-braise lamb until it falls apart, then ladle the rich broth over torn pieces of samoon bread. The bread soaks up everything — fat, spices, broth — and turns into something between a stew and a bread pudding. It's the dish you ask your grandmother to make.",
-  },
-  {
-    name: "Quzi",
-    summary: "Slow-roasted lamb shank on spiced rice.",
-    body: "Quzi is the showstopper. A whole lamb shank, slow-roasted until the meat falls off the bone, served on a bed of fragrant basmati rice studded with raisins, pine nuts and toasted almonds. It's a wedding dish, a holiday dish, a 'we're celebrating something' dish.",
-  },
-  {
-    name: "Dolma",
-    summary: "Stuffed vegetables in tomato broth.",
-    body: "Iraqi dolma is a labor of love. Grape leaves, peppers, onions, zucchini and sometimes tomato are hollowed out and stuffed with a seasoned mixture of rice, ground lamb, herbs and spices, then slow-cooked together in a tomato broth. The flavors meld for hours. We make it every single day.",
-  },
-  {
-    name: "Iraqi Biryani",
-    summary: "Layered basmati with chicken or lamb.",
-    body: "Different from Indian biryani — Iraqi biryani is gentler in heat but rich in spice, with long-grain basmati rice layered with chicken or lamb, raisins, almonds and a unique Iraqi spice blend. Often served at celebrations and large family gatherings.",
+    name: "Kubba",
+    summary: "Bulgur shells stuffed with spiced meat.",
+    body: "Iraqi kubba is hand-rolled — a bulgur shell wrapped around seasoned ground meat, onions and herbs, then fried until golden and crisp. We serve it as a breakfast plate or a sandwich, and it's just as good torn into a bowl of sour kibbeh broth.",
   },
   {
     name: "Kanafa",
     summary: "Sticky cheese pastry soaked in syrup.",
-    body: "Kanafa is the dessert that's having a moment everywhere — and we've been making it the right way for years. Shredded phyllo dough, melted cheese, rose-water syrup and crushed pistachios. The trick is the contrast: crispy top, gooey cheese center, syrupy sweetness. Reviewers consistently call ours the best in Dallas.",
+    body: "Kanafa is the dessert that's having a moment everywhere — and we've been making it the right way for years. Shredded phyllo dough, melted cheese, rose-water syrup and crushed pistachios. The trick is the contrast: crispy top, gooey cheese center, syrupy sweetness.",
   },
   {
     name: "Baklava",
     summary: "Layered phyllo with nuts and honey.",
-    body: "Our baklava is made fresh in the bakery — paper-thin phyllo layered with walnut, pistachio and honey-syrup. We sell it by the piece or by the tray (perfect for parties, Eid, weddings).",
+    body: "Our baklava is made fresh in the bakery — paper-thin phyllo layered with walnut or pistachio and our family's honey syrup. We sell it by the piece or by the tray, perfect for parties, Eid and weddings. The recipe has been in our family since 1919.",
+  },
+  {
+    name: "Mabrouma",
+    summary: "Coiled phyllo packed with pistachios.",
+    body: "Mabrouma is the showpiece of the Iraqi sweets case — long strands of phyllo coiled tight around fresh pistachios, baked deep gold and finished with syrup. We make it plain, with cream, and in a premium pistachio-loaded version.",
+  },
+  {
+    name: "Burma",
+    summary: "Cigar-rolled phyllo with pistachios.",
+    body: "Burma is rolled phyllo, packed end to end with pistachios and finished with syrup — crisp, nutty, and one of the lesser-known Iraqi sweets worth seeking out. Cut into rounds, it's a favorite on celebration trays.",
   },
   {
     name: "Ladyfingers (Znood Al Sit)",
     summary: "Crispy phyllo rolls filled with sweet cream.",
-    body: "Crispy phyllo rolls stuffed with sweet cream and dipped in fragrant syrup. Light, crunchy and beautifully sweet. A bakery favorite.",
+    body: "Znood al sit — literally 'the lady's arms' — are crisp phyllo rolls stuffed with sweet cream and dipped in fragrant syrup. Light, crunchy and beautifully sweet. A bakery-case favorite.",
+  },
+  {
+    name: "Awama",
+    summary: "Bite-sized fried dough fritters in syrup.",
+    body: "Awama (luqaimat) are little fried dough fritters — crisp outside, soft inside, soaked in our family's honey syrup. A celebration favorite at every Iraqi gathering, most often spotted on Eid and wedding trays.",
+  },
+  {
+    name: "Fatayer",
+    summary: "Hand-folded savory pies.",
+    body: "Fatayer are hand-folded savory pies, baked fresh daily — spinach, cheese or seasoned meat tucked into soft, golden dough. Perfect with chai, by the box for an office breakfast, or by the tray for a gathering.",
+  },
+  {
+    name: "Manakish",
+    summary: "Hand-stretched flatbread, baked to order.",
+    body: "Manakish is hand-stretched flatbread topped with za'atar, cheese, or meat — Middle Eastern breakfast at its most authentic. A weekend staple in our Richardson bakery, baked fresh on the spot.",
   },
 ];
 
@@ -89,10 +106,19 @@ export default function IraqiCuisinePage() {
   return (
     <>
       <SchemaInjector
-        schema={breadcrumbSchema([
-          { name: "Home", url: "/" },
-          { name: "Iraqi Cuisine", url: "/iraqi-cuisine/" },
-        ])}
+        schema={[
+          breadcrumbSchema([
+            { name: "Home", url: "/" },
+            { name: "Iraqi Cuisine", url: "/iraqi-cuisine/" },
+          ]),
+          webPageSchema({
+            url: "/iraqi-cuisine/",
+            name: "Iraqi Cuisine Guide — Samoon, Kanafa, Baklava, Breakfast | Al-Baghdady",
+            description:
+              "A guide to the Iraqi bakery and breakfast tradition — samoon, kahi & qeimar, baqila, kubba, kanafa, baklava, mabrouma, ladyfingers, fatayer and manakish, baked fresh daily in Richardson, TX.",
+            primaryImage: "/Images/hero.webp",
+          }),
+        ]}
       />
       <BreadcrumbNav
         items={[
@@ -103,9 +129,9 @@ export default function IraqiCuisinePage() {
 
       <section className="container-pad py-10 md:py-16 max-w-3xl">
         <div className="eyebrow">From Baghdad to Richardson</div>
-        <h1 className="mb-6">Iraqi Cuisine — A Guide to the Foods of Baghdad</h1>
+        <h1 className="mb-6">Iraqi Cuisine — A Guide to the Iraqi Bakery &amp; Breakfast Tradition</h1>
         <p className="text-lg text-[var(--color-text-muted)] leading-relaxed">
-          Iraqi cuisine is its own world. Distinct breads like samoon, slow-cooked stews, traditional grilled fish, and a bakery tradition stretching back centuries — all rooted in Mesopotamia. While Iraqi food shares some dishes with neighboring cuisines, the techniques, spice blends, and family recipes carry their own heritage. Here&apos;s a guide to what we serve at Albaghdady.
+          Iraqi cuisine is its own world — distinct breads like samoon, a beloved morning tradition of kahi, qeimar and baqila, and a bakery heritage of baklava, kanafa and mabrouma stretching back over a century. The techniques, spice blends, and family recipes carry their own Baghdadi heritage. Here&apos;s a guide to what we bake fresh every day at Albaghdady.
         </p>
       </section>
 

@@ -15,21 +15,28 @@ export type PageMetaInput = {
 };
 
 const BASE_KEYWORDS = [
-  "iraqi restaurant Richardson TX",
-  "halal restaurant Richardson TX",
+  "iraqi bakery Richardson TX",
+  "halal bakery Richardson TX",
   "iraqi bakery Dallas",
   "arabic bakery Richardson",
   "samoon bread Dallas",
   "kanafa Dallas",
   "iraqi breakfast Richardson",
   "albaghdady",
+  "al-baghdady",
+  "al baghdady",
   "al-baghdady bakery",
+  "al baghdady bakery and cafe",
+  "al baghdady richardson",
   "iraqi cafe Richardson TX",
   "middle eastern cafe Dallas",
   "arabic cafe Richardson",
   "halal cafe near me",
+  "halal breakfast Dallas",
   "iraqi breakfast cafe DFW",
   "baghdadi cafe Texas",
+  "zabihah verified Richardson",
+  "iraqi catering Dallas",
 ];
 
 export function createMetadata({
@@ -42,7 +49,10 @@ export function createMetadata({
 }: PageMetaInput): Metadata {
   const url = path.startsWith("http") ? path : `${BASE_URL}${path}`;
   const fullTitle =
-    title.includes(RESTAURANT.name) || title.includes("Al-Baghdady")
+    title.includes(RESTAURANT.name) ||
+    title.includes("Al-Baghdady") ||
+    title.includes("Al Baghdady") ||
+    title.includes("Albaghdady")
       ? title
       : `${title} | ${RESTAURANT.name}`;
 

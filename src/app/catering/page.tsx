@@ -1,13 +1,17 @@
 import type { Metadata } from "next";
 import { Check } from "lucide-react";
 import { createMetadata } from "@/data/metadata";
-import { breadcrumbSchema } from "@/data/schema";
+import {
+  breadcrumbSchema,
+  cateringServiceSchema,
+  webPageSchema,
+} from "@/data/schema";
 import SchemaInjector from "@/components/shared/SchemaInjector";
 import BreadcrumbNav from "@/components/layout/BreadcrumbNav";
 import CateringForm from "@/components/catering/CateringForm";
 
 export const metadata: Metadata = createMetadata({
-  title: "Iraqi Catering Dallas — Halal Weddings, Corporate, Eid | Al-Baghdady",
+  title: "Iraqi Catering Dallas — Halal Weddings, Eid | Al-Baghdady",
   description:
     "Authentic Iraqi dessert catering across DFW — baklava trays, kunafa platters, fatayer boxes, ladyfingers, samoon, and full sweets spreads for Eid, weddings, Ramadan iftars and corporate events. Halal certified. 48-hour notice for large events.",
   path: "/catering/",
@@ -52,10 +56,20 @@ export default function CateringPage() {
   return (
     <>
       <SchemaInjector
-        schema={breadcrumbSchema([
-          { name: "Home", url: "/" },
-          { name: "Catering", url: "/catering/" },
-        ])}
+        schema={[
+          breadcrumbSchema([
+            { name: "Home", url: "/" },
+            { name: "Catering", url: "/catering/" },
+          ]),
+          cateringServiceSchema(),
+          webPageSchema({
+            url: "/catering/",
+            name: "Iraqi Catering Dallas — Halal Weddings, Eid | Al-Baghdady",
+            description:
+              "Authentic Iraqi dessert and savory catering across DFW — baklava trays, kunafa platters, fatayer boxes, manakish, ladyfingers, samoon and full Iraqi sweets spreads for Eid, weddings, Ramadan iftars and corporate events. Halal certified.",
+            primaryImage: "/Images/gallery/sweets-platter-lamps.webp",
+          }),
+        ]}
       />
       <BreadcrumbNav
         items={[
@@ -68,7 +82,7 @@ export default function CateringPage() {
         <div className="eyebrow">Catering</div>
         <h1 className="mb-6">Iraqi Dessert Catering in Dallas — Authentic Kunafa, Baklava Trays and More</h1>
         <p className="text-lg text-[var(--color-text-muted)] mb-5 leading-relaxed">
-          Sweets, savories, and trays that make the event. For sixteen years, Albaghdady has catered Middle Eastern desserts and Iraqi savories all across Richardson, Texas — Eid celebrations, weddings, engagement parties, Ramadan iftars, corporate lunches, and family gatherings of every size. If it&apos;s worth celebrating, it&apos;s worth doing right.
+          Sweets, savories, and trays that make the event. For over a decade, Albaghdady has catered Middle Eastern desserts and Iraqi savories all across Richardson, Texas — Eid celebrations, weddings, engagement parties, Ramadan iftars, corporate lunches, and family gatherings of every size. If it&apos;s worth celebrating, it&apos;s worth doing right.
         </p>
         <p className="text-lg text-[var(--color-text-muted)] leading-relaxed">
           Our catering menu spans the full range of what we bake fresh in-house: assorted baklava trays, kunafa platters, ladyfingers, burma, fatayer (cheese, spinach, meat), manakish, samoon, and full Iraqi sweets spreads with mabrouma, awama, and the rest of our family menu. Everything is made the day of your event. Nothing is frozen, nothing is pre-packed, nothing tastes like it sat on a shelf.

@@ -41,6 +41,21 @@ const IMAGES: GalleryImage[] = [
     alt: "A boxed Al-Baghdady bakery selection next to a plate of fresh pistachio baklava",
     caption: "Boxed and ready to take home, in any size",
   },
+  {
+    src: "/Images/gallery/dessert-tray-box.webp",
+    alt: "An Al-Baghdady catering box with compartments of mixed baklava, pistachio rolls and Iraqi sweets",
+    caption: "Custom dessert trays, boxed for celebrations",
+  },
+  {
+    src: "/Images/gallery/zalabia-tray.webp",
+    alt: "A heaped tray of golden zalabia rings dusted with crushed pistachio",
+    caption: "Fresh zalabia rings, by the trayful",
+  },
+  {
+    src: "/Images/gallery/ladyfingers-pistachio.webp",
+    alt: "Crisp phyllo ladyfinger rolls dusted with pistachio on a ridged glass plate",
+    caption: "Ladyfingers — rolled, fried crisp, dusted with pistachio",
+  },
 ];
 
 const SPANS = [
@@ -50,6 +65,9 @@ const SPANS = [
   "lg:col-span-1",
   "lg:col-span-2",
   "lg:col-span-2",
+  "lg:col-span-2",
+  "lg:col-span-1",
+  "lg:col-span-1",
 ];
 
 export default function Gallery() {

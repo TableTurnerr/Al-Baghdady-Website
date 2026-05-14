@@ -2,6 +2,7 @@ import { Star, Sunrise } from "lucide-react";
 import ThemeBtn from "../shared/ThemeBtn";
 import SmartImage from "../shared/SmartImage";
 import QRHover from "../shared/QRHover";
+import HeroStatusBadge from "./HeroStatusBadge";
 import { RESTAURANT } from "@/data/restaurant";
 
 function fmtTime(t: string) {
@@ -13,16 +14,12 @@ function fmtTime(t: string) {
 
 const BREAKFAST_RANGE = `${fmtTime(RESTAURANT.breakfastHours.open)} – ${fmtTime(RESTAURANT.breakfastHours.close)}`;
 
-const DAY_NAMES = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"] as const;
-const TODAY_HOURS = RESTAURANT.hours.find((h) => h.day === DAY_NAMES[new Date().getDay()]) ?? RESTAURANT.hours[0];
-const TODAY_RANGE = `${fmtTime(TODAY_HOURS.open)} – ${fmtTime(TODAY_HOURS.close)}`;
-
 export default function HeroBanner() {
   return (
     <section className="relative bg-white">
       <div className="container-pad relative grid gap-12 lg:grid-cols-2 lg:gap-20 items-center pt-12 pb-16 md:pt-24 md:pb-28">
         <div className="animate-fade-up">
-          <div className="eyebrow">Iraqi Bakery &amp; Café · Halal · Family-Owned Since 2009</div>
+          <div className="eyebrow">Iraqi Bakery &amp; Café · Halal · Family-Owned Since 2012</div>
           <h1 className="mb-7">
             The most{" "}
             <em
@@ -34,7 +31,7 @@ export default function HeroBanner() {
             Baklava<br />in All of Richardson, Texas
           </h1>
           <p className="text-lg text-[var(--color-text-muted)] max-w-xl mb-10 leading-relaxed">
-            Located in the heart of Richardson, TX, Albaghdady has been a family-run Iraqi bakery and cafe since 2009 — serving authentic Iraqi sweets, like our authentic baklava, our family has perfected since 1919.
+            Located in the heart of Richardson, TX, Albaghdady has been a family-run Iraqi bakery and cafe since 2012 — serving authentic Iraqi sweets, like our authentic baklava, our family has perfected since 1919.
           </p>
 
           <div className="flex flex-wrap gap-3 mb-10">
@@ -77,20 +74,13 @@ export default function HeroBanner() {
         <div className="relative animate-fade-in">
           <SmartImage
             src="/Images/hero.webp"
-            alt="Iraqi mixed grill platter at Al-Baghdady Restaurant"
+            alt="Fresh pistachio baklava on a plate at Al-Baghdady, an Iraqi bakery in Richardson, TX"
             priority
             sizes="(min-width: 1024px) 50vw, 100vw"
             className="aspect-[4/5] rounded-[28px] shadow-[0_30px_80px_-30px_rgba(26,20,16,0.35)]"
           />
 
-          <div className="hidden md:block absolute -bottom-8 -left-8 bg-white border border-[var(--color-border)] rounded-2xl px-5 py-4 shadow-[var(--shadow-lift)]">
-            <div className="text-[10px] font-semibold uppercase tracking-[0.2em] text-[var(--color-text-muted)] mb-1">
-              Open Today
-            </div>
-            <div className="font-semibold text-[var(--color-text)] text-[1.05rem]">
-              {TODAY_RANGE}
-            </div>
-          </div>
+          <HeroStatusBadge />
 
           <div className="hidden md:flex absolute -top-6 -right-6 bg-[var(--color-primary)] text-white rounded-full w-28 h-28 items-center justify-center text-center px-4 shadow-[var(--shadow-lift)]">
             <div>

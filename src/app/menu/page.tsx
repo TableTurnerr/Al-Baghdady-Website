@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Sunrise } from "lucide-react";
 import { createMetadata } from "@/data/metadata";
 import { MENU } from "@/data/menu";
-import { menuSchema, breadcrumbSchema } from "@/data/schema";
+import { menuSchema, breadcrumbSchema, webPageSchema } from "@/data/schema";
 import SchemaInjector from "@/components/shared/SchemaInjector";
 import BreadcrumbNav from "@/components/layout/BreadcrumbNav";
 import ThemeBtn from "@/components/shared/ThemeBtn";
@@ -21,15 +21,15 @@ function fmtTime(t: string) {
 const BREAKFAST_RANGE = `${fmtTime(RESTAURANT.breakfastHours.open)} – ${fmtTime(RESTAURANT.breakfastHours.close)}`;
 
 export const metadata: Metadata = createMetadata({
-  title: "Menu — Iraqi Kabobs, Shawarma, Bakery & More | Al-Baghdady",
+  title: "Menu — Iraqi Bakery, Breakfast & Sweets | Al-Baghdady",
   description:
-    "Browse the full Al-Baghdady menu — char-grilled kabob platters, shawarma, traditional Iraqi specialties, mezze, fresh samoon bread and Iraqi sweets. Halal certified, Richardson TX.",
+    "Browse the Al-Baghdady menu — traditional Iraqi breakfast, fresh samoon and tandoor bread, manakish and fatayer, baklava, kunafa, mabrouma and Iraqi sweets. 100% halal, Richardson TX.",
   path: "/menu/",
   keywords: [
     "al baghdady menu",
-    "iraqi food menu dallas",
-    "halal kabob menu richardson",
-    "iraqi restaurant menu",
+    "iraqi bakery menu dallas",
+    "iraqi breakfast menu richardson",
+    "halal bakery menu",
     "samoon bread",
     "kanafa menu",
   ],
@@ -45,6 +45,13 @@ export default function MenuPage() {
             { name: "Home", url: "/" },
             { name: "Menu", url: "/menu/" },
           ]),
+          webPageSchema({
+            url: "/menu/",
+            name: "Menu — Iraqi Bakery, Breakfast & Sweets | Al-Baghdady",
+            description:
+              "Browse the Al-Baghdady menu — traditional Iraqi breakfast, fresh samoon and tandoor bread, manakish and fatayer, baklava, kunafa, mabrouma and Iraqi sweets. 100% halal, Richardson TX.",
+            primaryImage: "/Images/menu/bakery-sweets.webp",
+          }),
         ]}
       />
       <BreadcrumbNav

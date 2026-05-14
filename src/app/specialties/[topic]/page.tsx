@@ -2,7 +2,12 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import { createMetadata } from "@/data/metadata";
-import { breadcrumbSchema, faqSchema } from "@/data/schema";
+import {
+  articleSchema,
+  breadcrumbSchema,
+  faqSchema,
+  webPageSchema,
+} from "@/data/schema";
 import { SPECIALTIES, type Specialty } from "@/data/specialties";
 import { MENU, type MenuItem, type MenuCategory } from "@/data/menu";
 import { RESTAURANT } from "@/data/restaurant";
@@ -30,22 +35,6 @@ function resolveRelatedItems(names: string[] | undefined): ResolvedRelatedItem[]
 
 function absoluteUrl(path: string) {
   return path.startsWith("http") ? path : `${RESTAURANT.url}${path}`;
-}
-
-function articleSchema(specialty: Specialty) {
-  // TODO: swap to dedicated specialty image when client provides.
-  const image = specialty.image ?? "/Images/hero.webp";
-  return {
-    "@context": "https://schema.org",
-    "@type": "Article",
-    "@id": `${RESTAURANT.url}/specialties/${specialty.slug}/#article`,
-    headline: specialty.heroHeadline,
-    description: specialty.primaryBlock.body,
-    image: absoluteUrl(image),
-    publisher: { "@id": `${RESTAURANT.url}/#organization` },
-    author: { "@id": `${RESTAURANT.url}/#organization` },
-    mainEntityOfPage: `${RESTAURANT.url}/specialties/${specialty.slug}/`,
-  };
 }
 
 function relatedItemsSchema(specialty: Specialty, related: ResolvedRelatedItem[]) {
@@ -103,13 +92,26 @@ export default async function SpecialtyPage({
 
   const related = resolveRelatedItems(specialty.relatedMenuItemNames);
   const itemList = relatedItemsSchema(specialty, related);
+  const url = `/specialties/${specialty.slug}/`;
+  const image = specialty.image ?? "/Images/hero.webp";
   const schemas = [
     breadcrumbSchema([
       { name: "Home", url: "/" },
       { name: "Specialties", url: "/specialties/" },
-      { name: specialty.name, url: `/specialties/${specialty.slug}/` },
+      { name: specialty.name, url },
     ]),
-    articleSchema(specialty),
+    webPageSchema({
+      url,
+      name: specialty.metaTitle,
+      description: specialty.metaDescription,
+      primaryImage: image,
+    }),
+    articleSchema({
+      url,
+      headline: specialty.heroHeadline,
+      description: specialty.primaryBlock.body,
+      image,
+    }),
     ...(itemList ? [itemList] : []),
     ...(specialty.faqs && specialty.faqs.length > 0 ? [faqSchema(specialty.faqs)] : []),
   ];
