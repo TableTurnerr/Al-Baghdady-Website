@@ -15,8 +15,10 @@ export type Specialty = {
   faqs?: { question: string; answer: string }[];
 };
 
-// `image` fields currently reuse photos from /Images/ and /Images/gallery/ as placeholders.
-// Replace each with a dedicated /Images/specialties/<slug>.webp once the client provides photos.
+// baklava, burma, lady-fingers, and halal-food have dedicated photos in /Images/specialties/.
+// The rest (bread, chai, samosa, kunafa, breakfast, manakish, fatayer) reuse /Images/ and
+// /Images/gallery/ photos as placeholders — swap to /Images/specialties/<slug>.webp as the
+// client provides real photography.
 export const SPECIALTIES: Specialty[] = [
   {
     slug: "bread",
@@ -130,7 +132,7 @@ export const SPECIALTIES: Specialty[] = [
       heading: "Convenient Pickup and Delivery Options for Fresh Burma",
       body: "Craving burma? We offer pickup and delivery for our fresh-baked burma across Richardson and the greater Dallas area. Enjoy the crisp, nutty taste of authentic Middle Eastern desserts from the comfort of your home. Order online for fast pickup, or have our handmade burma delivered straight to your door.",
     },
-    image: "/Images/gallery/baklava-pistachio-copper.webp",
+    image: "/Images/specialties/burma.webp",
     relatedMenuItemNames: ["Burma"],
     faqs: [
       {
@@ -174,7 +176,7 @@ export const SPECIALTIES: Specialty[] = [
       heading: "Convenient Pickup and Delivery Options for Lady Fingers",
       body: "Craving lady fingers? We offer convenient pickup and delivery for our fresh-made lady fingers across Richardson and the Dallas area. Enjoy the crisp phyllo and fresh pistachio flavor of authentic Iraqi desserts from your home. Order online for quick pickup or doorstep delivery.",
     },
-    image: "/Images/gallery/zalabia-rings.webp",
+    image: "/Images/specialties/lady-fingers.webp",
     relatedMenuItemNames: ["Ladyfingers (Znood Al Sit)"],
     faqs: [
       {
@@ -306,7 +308,7 @@ export const SPECIALTIES: Specialty[] = [
       heading: "Convenient Pickup and Delivery Options for Fresh Baklava",
       body: "Craving fresh baklava? We offer pickup and delivery for our handmade baklava across Richardson, Plano, and the greater Dallas area. Enjoy the crisp phyllo, fresh nuts, and rich honey syrup of authentic Iraqi baklava from the comfort of your home. Order online for fast pickup, or have our fresh baklava delivered straight to your door.",
     },
-    image: "/Images/gallery/baklava-tiered-tray.webp",
+    image: "/Images/specialties/baklava.webp",
     relatedMenuItemNames: [
       "Baklava (Mixed Tray)",
       "Pistachio Baklava",
@@ -491,7 +493,7 @@ export const SPECIALTIES: Specialty[] = [
       heading: "Convenient Pickup and Delivery Options for Halal Food",
       body: "Looking for halal food in Richardson? We offer pickup and delivery for our full halal menu — Iraqi sweets, breakfast plates, kabab, and bakery favorites — across Richardson and the Dallas area. Enjoy authentic halal Middle Eastern sweets and breakfast from the comfort of your home. Order online for fast pickup or doorstep delivery.",
     },
-    image: "/Images/hero.webp",
+    image: "/Images/specialties/halal-food.webp",
     relatedMenuItemNames: [
       "Albaghdady Plate (طبق البغدادي)",
       "Baklava (Mixed Tray)",

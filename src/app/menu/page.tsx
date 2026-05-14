@@ -50,7 +50,7 @@ export default function MenuPage() {
             name: "Menu — Iraqi Kabobs, Shawarma, Bakery & More | Al-Baghdady",
             description:
               "Browse the full Al-Baghdady menu — char-grilled kabob platters, shawarma, traditional Iraqi specialties, mezze, fresh samoon bread and Iraqi sweets. Halal certified, Richardson TX.",
-            primaryImage: "/Images/menu/bakery.webp",
+            primaryImage: "/Images/menu/bakery-sweets.webp",
           }),
         ]}
       />
