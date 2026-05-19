@@ -31,21 +31,26 @@ const fraunces = Fraunces({
   variable: "--font-fraunces",
 });
 
-export const metadata: Metadata = createMetadata({
-  title: `${RESTAURANT.name} | ${RESTAURANT.tagline}`,
-  description: RESTAURANT.shortDescription,
-  path: "/",
-  keywords: [
-    "iraqi restaurant richardson",
-    "halal restaurant richardson",
-    "best iraqi food dallas",
-    "samoon bread dallas",
-    "kanafa dallas",
-    "middle eastern food richardson",
-    "al-baghdady restaurant",
-    "iraqi catering dallas",
-  ],
-});
+export const metadata: Metadata = {
+  ...createMetadata({
+    title: `${RESTAURANT.name} | ${RESTAURANT.tagline}`,
+    description: RESTAURANT.shortDescription,
+    path: "/",
+    keywords: [
+      "iraqi restaurant richardson",
+      "halal restaurant richardson",
+      "best iraqi food dallas",
+      "samoon bread dallas",
+      "kanafa dallas",
+      "middle eastern food richardson",
+      "al-baghdady restaurant",
+      "iraqi catering dallas",
+    ],
+  }),
+  verification: {
+    google: "gdvR3vN6gKvH94UVAPAPNJneEfsZEht3EajCXPhBfQo",
+  },
+};
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
