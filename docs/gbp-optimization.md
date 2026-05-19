@@ -186,6 +186,23 @@ Even one post a week meaningfully bumps engagement signals.
 
 ---
 
+## 10a. Women-owned attestation — REQUIRES OWNER LOGIN
+
+Al-Baghdady is owned by **Shahad** (woman-owned business). When her credentials are active in GBP:
+
+1. Edit profile → From the business → "Identifies as women-owned" → Yes
+2. A dialog will appear asking her to attest:
+   - At least 51% owned by women
+   - Women hold management control
+   - The business operates independently
+3. Tick all three boxes, save.
+
+The dialog only opens when the **legal owner** is signed in. Managers and editors only see plain Yes/No buttons and trigger an "Inapplicable" save error. This is why I temporarily set women-owned to No during initial setup — it's a 2-minute task for Shahad to flip back on the right way.
+
+This is high-value SEO — Google promotes women-owned businesses with a visible badge in the Knowledge Panel and search results.
+
+---
+
 ## 10. Reviews — the long game
 
 Current: 1,892 reviews, 4.4 stars. Healthy.

@@ -74,7 +74,7 @@ export default function HeroBanner() {
         <div className="relative animate-fade-in">
           <SmartImage
             src="/Images/hero.webp"
-            alt="Iraqi mixed grill platter at Al-Baghdady Restaurant"
+            alt="Fresh pistachio baklava on a plate at Al-Baghdady, an Iraqi bakery in Richardson, TX"
             priority
             sizes="(min-width: 1024px) 50vw, 100vw"
             className="aspect-[4/5] rounded-[28px] shadow-[0_30px_80px_-30px_rgba(26,20,16,0.35)]"

@@ -53,7 +53,7 @@ export const RESTAURANT = {
   },
 
   ratingValue: 4.4,
-  reviewCount: 1892,
+  reviewCount: 1899,
 
   socials: {
     instagram:
