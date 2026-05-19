@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Suspense } from "react";
+import Script from "next/script";
 import { Inter, Fraunces } from "next/font/google";
 import "@/styles/globals.css";
 import Header from "@/components/layout/Header";
@@ -59,6 +60,18 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <link rel="manifest" href="/manifest.json" />
       </head>
       <body>
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-45CDCLQ387"
+          strategy="afterInteractive"
+        />
+        <Script id="gtag-init" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-45CDCLQ387');
+          `}
+        </Script>
         <SchemaInjector
           schema={[organizationSchema(), websiteSchema(), localBusinessSchema()]}
         />
