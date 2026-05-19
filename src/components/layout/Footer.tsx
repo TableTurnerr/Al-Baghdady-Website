@@ -1,7 +1,8 @@
 import Link from "next/link";
-import Image from "next/image";
 import QRHover from "../shared/QRHover";
+import FooterLogo from "./FooterLogo";
 import { RESTAURANT } from "@/data/restaurant";
+import pkg from "../../../package.json";
 
 const QUICK_LINKS = [
   { href: "/", label: "Home" },
@@ -34,13 +35,7 @@ export default function Footer() {
       <div className="container mx-auto">
         <div className="grid grid-cols-1 sm:grid-cols-2 min-h-[100px] lg:grid-cols-3 gap-[10px] lg:gap-8">
           <div className="col-span-2 lg:col-span-1 mx-auto flex flex-row items-center lg:items-start gap-4">
-            <Image
-              src="/Images/logo.webp"
-              alt="Al-Baghdady Restaurant logo"
-              width={200}
-              height={200}
-              className="object-cover w-auto h-[160px] md:h-[200px] aspect-square rounded-full ring-1 ring-white/10"
-            />
+            <FooterLogo version={pkg.version} />
             <div className="flex h-[120px] justify-evenly gap-[10px] flex-col my-auto max-w-100">
               <a
                 href={RESTAURANT.socials.instagram}
