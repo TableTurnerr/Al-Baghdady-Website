@@ -18,10 +18,18 @@ export const metadata: Metadata = createMetadata({
   keywords: [
     "iraqi catering dallas",
     "halal catering richardson",
+    "halal catering near me",
     "wedding catering dallas halal",
+    "eid catering dallas",
+    "ramadan iftar catering dallas",
     "office lunch catering richardson",
     "middle eastern catering dallas",
+    "arabic catering dallas",
+    "baklava catering dallas",
+    "kunafa catering dallas",
+    "dessert catering dallas",
     "arabic dessert tray dallas",
+    "iraqi sweets tray catering",
   ],
 });
 

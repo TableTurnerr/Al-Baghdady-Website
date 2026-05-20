@@ -30,8 +30,14 @@ export const metadata: Metadata = createMetadata({
     "iraqi bakery menu dallas",
     "iraqi breakfast menu richardson",
     "halal bakery menu",
-    "samoon bread",
+    "baklava menu",
     "kanafa menu",
+    "kunafa menu",
+    "fatayer menu",
+    "manakish menu",
+    "samoon bread",
+    "iraqi sweets menu",
+    "arabic bakery menu dallas",
   ],
 });
 

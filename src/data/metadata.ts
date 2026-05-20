@@ -15,28 +15,66 @@ export type PageMetaInput = {
 };
 
 const BASE_KEYWORDS = [
-  "iraqi bakery Richardson TX",
-  "halal bakery Richardson TX",
-  "iraqi bakery Dallas",
-  "arabic bakery Richardson",
-  "samoon bread Dallas",
-  "kanafa Dallas",
-  "iraqi breakfast Richardson",
+  // Brand variants
   "albaghdady",
   "al-baghdady",
   "al baghdady",
   "al-baghdady bakery",
   "al baghdady bakery and cafe",
   "al baghdady richardson",
+
+  // Bakery + halal (local intent)
+  "iraqi bakery Richardson TX",
+  "iraqi bakery Dallas",
+  "halal bakery Richardson TX",
+  "halal bakery Dallas",
+  "halal bakery near me",
+  "arabic bakery Richardson",
+  "middle eastern bakery Dallas",
+  "halal cake shop near me",
+  "zabihah verified Richardson",
+
+  // Cafe
   "iraqi cafe Richardson TX",
   "middle eastern cafe Dallas",
   "arabic cafe Richardson",
   "halal cafe near me",
+  "baghdadi cafe Texas",
+
+  // Breakfast + catering
+  "iraqi breakfast Richardson",
   "halal breakfast Dallas",
   "iraqi breakfast cafe DFW",
-  "baghdadi cafe Texas",
-  "zabihah verified Richardson",
   "iraqi catering Dallas",
+
+  // Baklava family
+  "baklava",
+  "baklawa",
+  "baklava near me",
+  "pistachio baklava",
+  "turkish baklava",
+  "baklava bakery",
+  "baklava dessert",
+
+  // Kanafa / Kunafa / Knafeh
+  "kanafa",
+  "kanafa Dallas",
+  "kunafa",
+  "kunafa Dallas",
+  "knafeh",
+
+  // Other core dishes
+  "fatayer",
+  "manakish",
+  "manakeesh",
+  "iraqi samoon",
+  "samoon bread Dallas",
+  "halal bread",
+
+  // Sweets category
+  "iraqi sweets Dallas",
+  "arabic sweets Dallas",
+  "middle eastern sweets Richardson",
 ];
 
 export function createMetadata({
