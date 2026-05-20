@@ -17,10 +17,19 @@ export const metadata: Metadata = createMetadata({
   keywords: [
     "iraqi specialties dallas",
     "iraqi sweets richardson",
+    "arabic sweets dallas",
     "iraqi bakery menu",
     "middle eastern bakery richardson",
     "halal sweets richardson",
+    "halal sweets dallas",
     "iraqi food menu dallas",
+    "baklava richardson",
+    "kanafa richardson",
+    "kunafa richardson",
+    "manakish dallas",
+    "fatayer dallas",
+    "burma dallas",
+    "lady fingers dessert",
   ],
 });
 
@@ -65,7 +74,7 @@ export default function SpecialtiesIndexPage() {
 
       <section className="container-pad py-12 md:py-20 max-w-3xl">
         <div className="eyebrow">Our Craft</div>
-        <h1 className="mb-6">Our Specialties</h1>
+        <h1 className="mb-6">Our Iraqi Bakery &amp; Breakfast Specialties</h1>
         <p className="text-lg text-[var(--color-text-muted)] leading-relaxed">
           Hand-baked daily — the dishes our family has made since {RESTAURANT.familyRecipeSince}.
         </p>
@@ -105,7 +114,7 @@ export default function SpecialtiesIndexPage() {
                   {s.primaryBlock.body}
                 </p>
                 <span className="link-underline text-[var(--color-text)] font-medium text-sm inline-flex items-center gap-1">
-                  Learn more <ArrowRight size={14} />
+                  Learn more about {s.name} <ArrowRight size={14} />
                 </span>
               </div>
             </Link>

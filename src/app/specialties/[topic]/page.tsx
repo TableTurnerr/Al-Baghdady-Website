@@ -17,6 +17,7 @@ import ThemeBtn from "@/components/shared/ThemeBtn";
 import SmartImage from "@/components/shared/SmartImage";
 import FAQSection from "@/components/home/FAQSection";
 import MenuItemCard from "@/components/menu/MenuItemCard";
+import PickupDeliveryCTA from "@/components/shared/PickupDeliveryCTA";
 
 type ResolvedRelatedItem = { item: MenuItem; category: MenuCategory };
 
@@ -194,14 +195,7 @@ export default async function SpecialtyPage({
         </section>
       )}
 
-      <section className="bg-[var(--color-warm-white)] section-pad">
-        <div className="container-pad max-w-3xl">
-          <h2 className="mb-6">{specialty.pickupBlock.heading}</h2>
-          <p className="text-lg text-[var(--color-text-muted)] leading-relaxed">
-            {specialty.pickupBlock.body}
-          </p>
-        </div>
-      </section>
+      <PickupDeliveryCTA itemName={specialty.name} />
 
       {specialty.faqs && specialty.faqs.length > 0 && (
         <FAQSection

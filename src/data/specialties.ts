@@ -8,17 +8,13 @@ export type Specialty = {
   heroHeadline: string;
   heroSubheadline?: string;
   primaryBlock: { heading: string; body: string };
-  pickupBlock: { heading: string; body: string };
   image?: string;
   relatedMenuItemNames?: string[];
   /** Optional per-specialty FAQs. Each pair renders inline on the topic page and is injected as FAQPage JSON-LD. */
   faqs?: { question: string; answer: string }[];
 };
 
-// baklava, burma, lady-fingers, and halal-food have dedicated photos in /Images/specialties/.
-// The rest (bread, chai, samosa, kunafa, breakfast, manakish, fatayer) reuse /Images/ and
-// /Images/gallery/ photos as placeholders — swap to /Images/specialties/<slug>.webp as the
-// client provides real photography.
+// All 11 specialty slugs have dedicated photos in /Images/specialties/<slug>.webp.
 export const SPECIALTIES: Specialty[] = [
   {
     slug: "bread",
@@ -28,11 +24,15 @@ export const SPECIALTIES: Specialty[] = [
       "Fresh Iraqi samoon bread baked daily in our traditional tandoor — crisp outside, soft inside. Pickup and delivery across Richardson and Dallas.",
     keywords: [
       "iraqi bread richardson tx",
+      "iraqi bread dallas",
       "samoon bread dallas",
       "tandoor bread richardson",
       "fresh baked bread richardson",
       "halal bread richardson",
+      "halal bread shop richardson",
       "arabic bread dallas",
+      "arabic flatbread dallas",
+      "iraqi samoon richardson",
     ],
     heroEyebrow: "FRESH DAILY",
     heroHeadline: "Authentic bread in Richardson, TX",
@@ -40,11 +40,7 @@ export const SPECIALTIES: Specialty[] = [
       heading: "Fresh Baked Bread From Iraq, Baked Daily in Our Tandoor",
       body: "Iraqi bread, especially our handmade samoon, is a daily staple at Albaghdady. Our bread is baked fresh every morning in a traditional tandoor — diamond-shaped, crisp on the outside, soft and chewy inside. Perfect with chai for breakfast, paired with stews and dips, or enjoyed warm on its own. Try our authentic Iraqi bread today and taste a hundred years of family baking tradition.",
     },
-    pickupBlock: {
-      heading: "Convenient Pickup and Delivery Options for Fresh Bread",
-      body: "Want fresh Iraqi bread without the wait? We offer convenient pickup and delivery for our handmade tandoor bread across Richardson and the greater Dallas area. Order online for quick same-day pickup, or have our warm samoon delivered straight to your door. Authentic Iraqi bread, freshly baked, ready when you are.",
-    },
-    image: "/Images/bakery.webp",
+    image: "/Images/specialties/bread.webp",
     relatedMenuItemNames: ["Iraqi Samoon (4 pc)", "Tandoor Bread (6 pc)", "Iraqi Bread (3 pc)"],
     faqs: [
       {
@@ -62,6 +58,12 @@ export const SPECIALTIES: Specialty[] = [
         answer:
           "Yes, you can buy fresh samoon by the loaf for pickup or delivery. Order online or stop by — every loaf is baked the day you eat it.",
       },
+      // DRAFT (2026-05-20) — keyword-coverage FAQ (halal bread / halal bread shop). Pending Hasham/client brand-voice review.
+      {
+        question: "Is your bread halal?",
+        answer:
+          "Yes — all our bread is halal. Our samoon and tandoor breads are made with simple halal ingredients (flour, water, salt, yeast) and baked fresh daily. Albaghdady is a Zabihah-verified halal bakery, so the halal bread you pick up here meets traditional standards.",
+      },
     ],
   },
   {
@@ -73,9 +75,12 @@ export const SPECIALTIES: Specialty[] = [
     keywords: [
       "iraqi chai richardson",
       "karak chai richardson tx",
+      "karak chai dallas",
       "middle eastern tea dallas",
       "cardamom tea richardson",
       "arabic chai dallas",
+      "iraqi tea dallas",
+      "masala chai richardson",
       "halal cafe richardson",
     ],
     heroEyebrow: "BREWED THE OLD WAY",
@@ -84,11 +89,7 @@ export const SPECIALTIES: Specialty[] = [
       heading: "Sip Hot Chai in Richardson",
       body: "Chai is the heart of every Iraqi morning, and ours is brewed the traditional way — strong black tea steeped slowly with cardamom, milk and a touch of sweetness into a rich, creamy karak. Every cup is poured with the same care our family has used for four generations. Try our authentic Iraqi karak chai today.",
     },
-    pickupBlock: {
-      heading: "Convenient Pickup and Delivery Options for Iraqi Chai",
-      body: "Craving real Iraqi chai? Skip the line and order our signature karak chai for pickup or delivery anywhere in Richardson and the Dallas area. Enjoy the bold, creamy flavors of authentic Iraqi tea from the comfort of your home. Order online for fast, hassle-free service.",
-    },
-    image: "/Images/gallery/baklava-pistachio-plate.webp",
+    image: "/Images/specialties/chai.webp",
     relatedMenuItemNames: ["Karak Chai"],
     faqs: [
       {
@@ -117,20 +118,20 @@ export const SPECIALTIES: Specialty[] = [
     keywords: [
       "iraqi burma richardson",
       "burma dessert richardson tx",
+      "turkish burma dallas",
+      "mabrouma dallas",
+      "pistachio burma richardson",
       "middle eastern dessert dallas",
       "phyllo dessert richardson",
       "pistachio dessert dallas",
       "iraqi sweets richardson",
+      "arabic sweets dallas",
     ],
     heroEyebrow: "HAND-ROLLED",
     heroHeadline: "Handmade Burma in Richardson, TX",
     primaryBlock: {
       heading: "Try Iraqi Burma Hand-Rolled at Our Bakery",
       body: "Burma, a beloved Middle Eastern dessert, is a must-try at our bakery. Our handmade burma is rolled cigar-thin from layers of crisp phyllo, packed with fresh pistachios, baked golden, and finished with our family's signature honey syrup. Perfect with chai or as a dessert tray centerpiece. Experience the authentic Iraqi flavors that have made our burma a Richardson favorite.",
-    },
-    pickupBlock: {
-      heading: "Convenient Pickup and Delivery Options for Fresh Burma",
-      body: "Craving burma? We offer pickup and delivery for our fresh-baked burma across Richardson and the greater Dallas area. Enjoy the crisp, nutty taste of authentic Middle Eastern desserts from the comfort of your home. Order online for fast pickup, or have our handmade burma delivered straight to your door.",
     },
     image: "/Images/specialties/burma.webp",
     relatedMenuItemNames: ["Burma (Turkish Style)"],
@@ -160,21 +161,22 @@ export const SPECIALTIES: Specialty[] = [
       "Iraqi Znood El Sit ladyfingers — delicate phyllo, fresh pistachios, honey syrup. Hand-rolled daily. Pickup and delivery across Richardson, TX.",
     keywords: [
       "lady fingers dessert richardson",
+      "lady fingers dallas",
+      "ladyfingers dessert dallas",
       "znood al sit dallas",
+      "znood el sit richardson",
       "iraqi ladyfingers richardson tx",
+      "pistachio lady fingers dallas",
       "phyllo lady fingers richardson",
       "middle eastern dessert dallas",
       "iraqi sweets richardson",
+      "arabic sweets dallas",
     ],
     heroEyebrow: "HAND-FOLDED",
     heroHeadline: "Lady fingers in Richardson, TX",
     primaryBlock: {
       heading: "Try Our Iraqi Lady Fingers (Znood El Sit)",
       body: "Lady fingers, known in Arabic as Znood El Sit, are one of Iraq's most elegant desserts. Our hand-rolled lady fingers are made from delicate phyllo, filled with fresh pistachios, baked deep golden, and dipped in our signature honey syrup. Light, crisp, and unforgettable. Try our authentic lady fingers today and taste a century of Iraqi family baking.",
-    },
-    pickupBlock: {
-      heading: "Convenient Pickup and Delivery Options for Lady Fingers",
-      body: "Craving lady fingers? We offer convenient pickup and delivery for our fresh-made lady fingers across Richardson and the Dallas area. Enjoy the crisp phyllo and fresh pistachio flavor of authentic Iraqi desserts from your home. Order online for quick pickup or doorstep delivery.",
     },
     image: "/Images/specialties/lady-fingers.webp",
     relatedMenuItemNames: ["Ladyfingers (Znood Al Sit)"],
@@ -205,8 +207,13 @@ export const SPECIALTIES: Specialty[] = [
     keywords: [
       "iraqi samosa richardson tx",
       "best samosa texas",
+      "best samosa dallas",
+      "fried samosa richardson",
       "middle eastern samosa dallas",
       "halal samosa richardson",
+      "halal samosa dallas",
+      "vegetarian samosa richardson",
+      "meat samosa dallas",
       "samosa near me",
       "appetizer richardson",
     ],
@@ -216,11 +223,7 @@ export const SPECIALTIES: Specialty[] = [
       heading: "Satisfy Your Cravings with Crispy Iraqi Samosas",
       body: "Samosa, a beloved Middle Eastern appetizer, is a must-try at Albaghdady. Our golden, crispy samosas are hand-folded and filled with savory seasoned meat or vegetables — perfect as a quick snack, an appetizer, or a tray for your next gathering. Try our handmade samosas today and experience authentic Iraqi flavors.",
     },
-    pickupBlock: {
-      heading: "Convenient Pickup and Delivery Options for Samosas",
-      body: "Craving samosas? We offer pickup and delivery for our crispy, hand-folded samosas across Richardson and the Dallas area. Enjoy authentic Iraqi flavors from the comfort of your home — order online for quick pickup or have our fresh samosas delivered straight to your door.",
-    },
-    image: "/Images/hero.webp",
+    image: "/Images/specialties/samosa.webp",
     relatedMenuItemNames: ["Samosa"],
     faqs: [
       {
@@ -248,11 +251,19 @@ export const SPECIALTIES: Specialty[] = [
       "Hot, fresh kunafa made to order — shredded phyllo, melted cheese, warm honey syrup. Pickup and delivery across Richardson and Dallas.",
     keywords: [
       "kunafa richardson tx",
+      "kunafa dallas",
+      "kunafa near me",
+      "kanafa richardson",
+      "kanafa dallas",
       "knafeh dallas",
+      "knafeh richardson tx",
       "iraqi kunafa richardson",
+      "cheese kunafa dallas",
       "hot kunafa near me",
       "best kunafa dallas",
+      "pistachio kunafa richardson",
       "middle eastern dessert dallas",
+      "arabic sweets dallas",
     ],
     heroEyebrow: "MADE TO ORDER",
     heroHeadline: "Delicious kunafa in Richardson, TX",
@@ -260,11 +271,7 @@ export const SPECIALTIES: Specialty[] = [
       heading: "Hot, Fresh Kunafa — Ready To Order",
       body: "Kunafa is one of the Middle East's most-loved desserts, and we make ours the way it's meant to be eaten — hot from the oven. Our handmade kunafa layers shredded phyllo with melted cheese, finished with warm honey syrup and chopped pistachios. Stretchy, fragrant, and made fresh to order. Try our authentic Iraqi kunafa today.",
     },
-    pickupBlock: {
-      heading: "Convenient Pickup and Delivery Options for Fresh Kunafa",
-      body: "Craving kunafa? We offer pickup and delivery for our fresh-made kunafa across Richardson and the Dallas area. Enjoy the warm, gooey flavors of authentic Middle Eastern desserts from your home. Order online for quick pickup, or have our fresh kunafa delivered straight to your door.",
-    },
-    image: "/Images/gallery/sweets-platter-lamps.webp",
+    image: "/Images/specialties/kunafa.webp",
     relatedMenuItemNames: ["Kanafa"],
     faqs: [
       {
@@ -292,21 +299,32 @@ export const SPECIALTIES: Specialty[] = [
       "100-year-old Iraqi baklava — paper-thin phyllo, fresh pistachios and walnuts, signature honey syrup. Pickup and delivery across Richardson, TX.",
     keywords: [
       "authentic baklava richardson tx",
+      "baklava richardson",
+      "baklava dallas",
+      "baklava near me",
+      "baklawa dallas",
       "iraqi baklava dallas",
+      "turkish baklava dallas",
+      "greek baklava dessert",
+      "baklava filo",
+      "baklava filo pastry",
+      "filo baklava richardson",
       "pistachio baklava richardson",
       "walnut baklava dallas",
       "mixed baklava richardson",
+      "best baklava dallas",
+      "baklava cake",
+      "baklava pastry",
+      "baklava dessert dallas",
+      "baklava bakery richardson",
+      "baklava cafe dallas",
       "halal baklava richardson",
     ],
     heroEyebrow: "OUR FLAGSHIP",
     heroHeadline: "Authentic baklava in Richardson, TX",
     primaryBlock: {
       heading: "Indulge in 100-Year-Old Iraqi Baklava",
-      body: "Baklava, the crown of Middle Eastern desserts, is what our family has been baking since 1919. Our handmade baklava layers paper-thin phyllo with fresh pistachios and walnuts, soaked in our signature honey syrup. Choose from pistachio baklava, walnut baklava, or our mixed baklava tray — every piece carries four generations of Iraqi tradition. Try authentic Iraqi baklava in Richardson today.",
-    },
-    pickupBlock: {
-      heading: "Convenient Pickup and Delivery Options for Fresh Baklava",
-      body: "Craving fresh baklava? We offer pickup and delivery for our handmade baklava across Richardson, Plano, and the greater Dallas area. Enjoy the crisp phyllo, fresh nuts, and rich honey syrup of authentic Iraqi baklava from the comfort of your home. Order online for fast pickup, or have our fresh baklava delivered straight to your door.",
+      body: "Baklava, the crown of Middle Eastern desserts, is what our family has been baking since 1919. Our handmade baklava layers paper-thin filo (phyllo) pastry with fresh pistachios and walnuts, soaked in our signature honey syrup. Choose from pistachio baklava, walnut baklava, or our mixed baklava tray — every piece carries four generations of Iraqi tradition. Try authentic Iraqi baklava in Richardson today.",
     },
     image: "/Images/specialties/baklava.webp",
     relatedMenuItemNames: [
@@ -330,6 +348,12 @@ export const SPECIALTIES: Specialty[] = [
         answer:
           "Yes — assorted baklava trays are one of our most-requested items for Eid, weddings, Ramadan iftars and corporate events. Custom sizes available; order at least 24 hours ahead through our [catering page](/catering/).",
       },
+      // DRAFT (2026-05-20) — keyword-coverage FAQ (greek/turkish baklava, filo/phyllo). Pending Hasham/client brand-voice review.
+      {
+        question: "Is baklava Greek, Turkish, or Iraqi — and is it filo or phyllo?",
+        answer:
+          "Baklava is shared across the Middle East and Mediterranean, so you'll see Greek baklava, Turkish baklava, and Arab versions, each a little different. Ours is Iraqi-style: paper-thin filo (also spelled phyllo) pastry layered with fresh pistachios and walnuts and our family's honey syrup. Whatever you call it, it's the baklava our family has baked since 1919.",
+      },
     ],
   },
   {
@@ -340,11 +364,19 @@ export const SPECIALTIES: Specialty[] = [
       "Authentic Iraqi breakfast in Richardson — Kahi & Qeimar, Baqila, Kubba, Albaghdady Plate, samoon and chai. Every morning except Monday.",
     keywords: [
       "iraqi breakfast richardson tx",
+      "iraqi breakfast dallas",
       "middle eastern breakfast dallas",
       "halal breakfast richardson",
+      "halal breakfast dallas",
+      "traditional iraqi breakfast",
       "traditional breakfast near me",
       "iraqi breakfast cafe",
+      "iraqi breakfast plate",
+      "albaghdady plate",
+      "kahi and qeimar dallas",
+      "baqila richardson",
       "best breakfast richardson",
+      "arabic breakfast dallas",
     ],
     heroEyebrow: "EVERY MORNING EXCEPT MONDAY",
     heroHeadline: "Traditional breakfast place in Richardson, TX",
@@ -352,11 +384,7 @@ export const SPECIALTIES: Specialty[] = [
       heading: "Start Your Day with Iraqi Breakfast",
       body: "Iraqi breakfast is a tradition all its own, and at Albaghdady, we serve it the way it's been made for generations. From Kahi & Qeimar and Baqila to fresh Kubba, the famous Albaghdady Plate, and warm samoon from our tandoor, our breakfast menu features authentic plates and sandwiches paired with hot chai. Stop in any morning except Monday for an authentic Iraqi breakfast in Richardson.",
     },
-    pickupBlock: {
-      heading: "Convenient Pickup and Delivery Options for Iraqi Breakfast",
-      body: "Looking for a quick Iraqi breakfast? We offer pickup and delivery for our breakfast plates and sandwiches across Richardson and the Dallas area. Enjoy authentic Iraqi flavors from the comfort of your home — order online for fast pickup or have your breakfast delivered fresh to your door.",
-    },
-    image: "/Images/hero.webp",
+    image: "/Images/specialties/breakfast.webp",
     relatedMenuItemNames: [
       "Albaghdady Plate (طبق البغدادي)",
       "Kahi & Qeimar (كاهي وقيمر)",
@@ -388,8 +416,14 @@ export const SPECIALTIES: Specialty[] = [
       "Manakish baked fresh daily — za'atar, cheese, or meat on soft golden flatbread. Pickup and delivery across Richardson and Dallas.",
     keywords: [
       "manakish richardson tx",
+      "manakish dallas",
+      "manakeesh dallas",
+      "manakeesh richardson",
       "zaatar manakish dallas",
+      "cheese manakish richardson",
+      "meat manakish dallas",
       "iraqi manakish richardson",
+      "lebanese manakish dallas",
       "middle eastern flatbread dallas",
       "halal manakish near me",
       "arabic flatbread richardson",
@@ -400,11 +434,7 @@ export const SPECIALTIES: Specialty[] = [
       heading: "Baked-the-Old-Way Manakish",
       body: "Manakish, a Middle Eastern breakfast favorite, is baked fresh at Albaghdady every day. Our handmade manakish features soft, golden flatbread topped with za'atar, melted cheese, or seasoned meat — the perfect savory pairing with hot chai. Try our authentic manakish today for a taste of traditional Middle Eastern flavors.",
     },
-    pickupBlock: {
-      heading: "Convenient Pickup and Delivery Options for Manakish",
-      body: "Craving manakish? We offer pickup and delivery for our fresh-baked manakish across Richardson and the Dallas area. Enjoy the warm, savory taste of authentic Middle Eastern flatbread from the comfort of your home. Order online for quick pickup or have your manakish delivered fresh to your door.",
-    },
-    image: "/Images/bakery.webp",
+    image: "/Images/specialties/manakish.webp",
     relatedMenuItemNames: ["Manakish"],
     faqs: [
       {
@@ -432,10 +462,17 @@ export const SPECIALTIES: Specialty[] = [
       "Hand-folded fatayer baked fresh daily — spinach, cheese, or seasoned meat. Pickup and delivery across Richardson and the Dallas area.",
     keywords: [
       "fatayer richardson tx",
+      "fatayer dallas",
+      "fatayer near me",
       "spinach fatayer dallas",
       "cheese fatayer richardson",
       "meat fatayer richardson",
+      "lebanese fatayer dallas",
+      "arabic fatayer richardson",
       "middle eastern pastry dallas",
+      "spinach pies dallas",
+      "cheese pies richardson",
+      "savory pies dallas",
       "iraqi savory pies richardson",
     ],
     heroEyebrow: "HAND-FOLDED, BAKED FRESH",
@@ -444,11 +481,7 @@ export const SPECIALTIES: Specialty[] = [
       heading: "Hand-Folded Fatayer, Baked Fresh Daily",
       body: "Fatayer, a beloved Middle Eastern savory pastry, is hand-folded and baked fresh at Albaghdady every day. Our authentic fatayer comes filled with spinach (sabanekh), cheese, or seasoned ground meat — soft, golden, and perfect with chai. Try our handmade fatayer today for a true taste of Middle Eastern tradition.",
     },
-    pickupBlock: {
-      heading: "Convenient Pickup and Delivery Options for Fatayer",
-      body: "Craving fatayer? We offer pickup and delivery for our hand-folded fatayer across Richardson and the Dallas area. Enjoy authentic Middle Eastern flavors from the comfort of your home — order online for quick pickup or have your fresh fatayer delivered straight to your door.",
-    },
-    image: "/Images/bakery.webp",
+    image: "/Images/specialties/fatayer.webp",
     relatedMenuItemNames: ["Fatayer — Spinach", "Fatayer — Cheese", "Fatayer — Meat"],
     faqs: [
       {
@@ -476,10 +509,16 @@ export const SPECIALTIES: Specialty[] = [
       "Every dish 100% halal — Iraqi bakery, breakfast, and sweets. Zabihah-verified family bakery in Richardson, TX since 2012.",
     keywords: [
       "halal food richardson tx",
+      "halal food dallas",
+      "halal food near me",
       "halal restaurant richardson",
+      "halal restaurant near me",
       "halal cafe richardson",
+      "halal certified food dallas",
       "zabihah verified richardson",
+      "zabihah halal dallas",
       "middle eastern halal dallas",
+      "arabic halal food richardson",
       "iraqi halal food richardson",
     ],
     heroEyebrow: "ZABIHAH VERIFIED",
@@ -487,10 +526,6 @@ export const SPECIALTIES: Specialty[] = [
     primaryBlock: {
       heading: "Best Halal and Middle Eastern Cuisine",
       body: "At Albaghdady, every dish on our menu is 100% halal. From our bakery to every item on the breakfast menu, every ingredient is sourced and prepared to traditional halal standards. Experience authentic halal Middle Eastern cuisine made by a family bakery serving Richardson since 2012.",
-    },
-    pickupBlock: {
-      heading: "Convenient Pickup and Delivery Options for Halal Food",
-      body: "Looking for halal food in Richardson? We offer pickup and delivery for our full halal menu — Iraqi sweets, breakfast plates, and bakery favorites — across Richardson and the Dallas area. Enjoy authentic halal Middle Eastern sweets and breakfast from the comfort of your home. Order online for fast pickup or doorstep delivery.",
     },
     image: "/Images/specialties/halal-food.webp",
     relatedMenuItemNames: [
