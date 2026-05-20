@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Suspense } from "react";
+import Script from "next/script";
 import { Inter, Fraunces } from "next/font/google";
 import "@/styles/globals.css";
 import Header from "@/components/layout/Header";
@@ -30,35 +31,41 @@ const fraunces = Fraunces({
   variable: "--font-fraunces",
 });
 
-export const metadata: Metadata = createMetadata({
-  title: `${RESTAURANT.name} | ${RESTAURANT.tagline}`,
-  description: RESTAURANT.shortDescription,
-  path: "/",
-  keywords: [
-    "iraqi restaurant richardson",
-    "halal restaurant richardson",
-    "halal restaurant near me",
-    "best iraqi food dallas",
-    "baklava dallas",
-    "baklava near me",
-    "kanafa dallas",
-    "kunafa dallas",
-    "fatayer richardson",
-    "manakish dallas",
-    "samoon bread dallas",
-    "iraqi sweets dallas",
-    "arabic sweets dallas",
-    "middle eastern food richardson",
-    "halal bakery near me",
-    "al-baghdady restaurant",
-    "iraqi catering dallas",
-  ],
-});
+export const metadata: Metadata = {
+  ...createMetadata({
+    title: `${RESTAURANT.name} | ${RESTAURANT.tagline}`,
+    description: RESTAURANT.shortDescription,
+    path: "/",
+    keywords: [
+      "iraqi restaurant richardson",
+      "halal restaurant richardson",
+      "halal restaurant near me",
+      "best iraqi food dallas",
+      "baklava dallas",
+      "baklava near me",
+      "kanafa dallas",
+      "kunafa dallas",
+      "fatayer richardson",
+      "manakish dallas",
+      "samoon bread dallas",
+      "iraqi sweets dallas",
+      "arabic sweets dallas",
+      "middle eastern food richardson",
+      "halal bakery near me",
+      "al-baghdady restaurant",
+      "iraqi catering dallas",
+    ],
+  }),
+  verification: {
+    google: "gdvR3vN6gKvH94UVAPAPNJneEfsZEht3EajCXPhBfQo",
+  },
+};
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en" className={`${inter.variable} ${fraunces.variable}`}>
       <head>
+        <script dangerouslySetInnerHTML={{ __html: `(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-NT4P77JT');` }} />
         <meta name="theme-color" content="#8B1A1A" />
         <meta name="format-detection" content="telephone=yes" />
         <link rel="icon" href="/favicon.ico" sizes="any" />
@@ -68,6 +75,19 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <link rel="manifest" href="/manifest.json" />
       </head>
       <body>
+        <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NT4P77JT" height="0" width="0" style={{display:'none',visibility:'hidden'}}></iframe></noscript>
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-45CDCLQ387"
+          strategy="afterInteractive"
+        />
+        <Script id="gtag-init" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-45CDCLQ387');
+          `}
+        </Script>
         <SchemaInjector
           schema={[organizationSchema(), websiteSchema(), localBusinessSchema()]}
         />
