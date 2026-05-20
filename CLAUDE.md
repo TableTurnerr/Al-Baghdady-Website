@@ -12,7 +12,7 @@ npm run serve-out    # serve the built /out directory locally
 npm run lint         # next lint
 ```
 
-There is no test suite. Verification is done by running `npm run build` (lint + type-check + static export of all routes — currently `/`, `/menu/`, `/bakery/`, `/catering/`, `/iraqi-cuisine/`, `/our-story/`, plus 7 `/near/[city]/` pages) and visually checking with `serve-out`.
+There is no test suite. Verification is done by running `npm run build` (lint + type-check + static export of all routes — currently `/`, `/menu/`, `/bakery/`, `/catering/`, `/iraqi-cuisine/`, `/our-story/`, `/near/` plus all 10 `/near/[city]/` pages, and `/specialties/` plus all 11 `/specialties/[topic]/` pages) and visually checking with `serve-out`.
 
 ### Environment
 
@@ -45,13 +45,13 @@ The site exists to fix a 16/100 SEO grader score (see `we-need-to-replicate-jazz
 - Every page must inject relevant JSON-LD via `<SchemaInjector>` (`/src/components/shared/SchemaInjector.tsx`). Schema arrays render multiple `<script type="application/ld+json">` tags.
 - Every page must use `createMetadata()` for `<title>`, description, canonical, OG, Twitter.
 - Every page should render `<BreadcrumbNav>` which auto-injects `BreadcrumbList` schema.
-- New routes must be added to `/public/sitemap.xml` manually (it is a static file, not generated).
+- The sitemap is generated at build time by `/src/app/sitemap.ts` from the data layer (`RESTAURANT.url`, `NEIGHBORHOODS`, `SPECIALTIES`, and a static route list). New static routes need to be added to that file's `STATIC_ROUTES` array; new dynamic routes should be sourced from their data file. Do not edit `/public/sitemap.xml` — it has been removed in favor of build-time generation.
 
 ### Routing
 
 Static export means `output: 'export'` + `trailingSlash: true` in `next.config.ts`. All internal links must include the trailing slash (e.g. `/menu/`, not `/menu`) — this is consistent throughout the codebase.
 
-`/near/[city]` is the only dynamic route. It uses `generateStaticParams()` from `NEIGHBORHOODS` to pre-render all 7 neighborhood pages at build time.
+Dynamic routes: `/near/[city]` reads from `NEIGHBORHOODS` (10 cities) and `/specialties/[topic]` reads from `SPECIALTIES` (11 topics). Both use `generateStaticParams()` to pre-render at build time. The future `/[dish]-in-[city]/` mesh route will read from `DISHES` × `NEIGHBORHOODS` gated by a `MATRIX_ALLOWLIST` constant.
 
 App Router error boundaries are wired up: `app/error.tsx` (per-segment runtime errors), `app/global-error.tsx` (root-level fallback), and `app/not-found.tsx` (404). Keep these branded and on-theme — they are the only non-success states users see.
 
@@ -59,7 +59,7 @@ App Router error boundaries are wired up: `app/error.tsx` (per-segment runtime e
 
 Tailwind CSS 4 with custom theme tokens in `/src/styles/globals.css` (`@theme` block). The design system is a **light theme only** — cream/sand backgrounds, maroon (`--color-primary: #8B1A1A`) and gold (`--color-gold: #C9A84C`) accents. Reusable utility classes: `.btn-primary`, `.btn-secondary`, `.btn-gold`, `.card`, `.container-pad`, `.section-pad`, `.eyebrow`. Prefer these over inline Tailwind for spacing/buttons to keep visual consistency.
 
-`Playfair Display` is loaded from Google Fonts and used for all headings (set inline via `style={{ fontFamily: 'var(--font-display)' }}` because Tailwind 4's `@theme` font tokens aren't picked up automatically by class names in this setup).
+`Inter` (body) and `Fraunces` (display, headings) are loaded via `next/font` in `src/app/layout.tsx`. Headings reference the display font inline via `style={{ fontFamily: 'var(--font-display)' }}` because Tailwind 4's `@theme` font tokens aren't picked up automatically by class names in this setup.
 
 ### Component structure
 
