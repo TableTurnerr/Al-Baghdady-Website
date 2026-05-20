@@ -6,6 +6,8 @@ export const RESTAURANT = {
     "Family-owned Iraqi bakery and breakfast café in Richardson, TX — serving authentic baklava, kunafa, samoon, ladyfingers, and traditional Iraqi breakfast since 2012, with family recipes dating back to Baghdad, 1919. Halal. Dine-in, takeout, delivery and catering.",
   longDescription:
     "Al-Baghdady has been serving the Dallas-Fort Worth community since 2012 with authentic Iraqi sweets and an in-house Arabic bakery rooted in over a century of family tradition. Our master baker Salah Hassan has spent 50 years perfecting the recipes his father passed down — baklava, kunafa, ladyfingers, burma, fatayer, and fresh samoon baked daily in our tandoor. Every morning except Monday, we serve a full traditional Iraqi breakfast: Kahi & Qeimar, Baqila, Kubba, the Albaghdady Plate, and more — paired with hot chai, the way Baghdad intended. Halal across the entire menu and Zabihah-verified.",
+  footerDescription:
+    "An authentic Iraqi bakery and breakfast café in the heart of Richardson, Texas. From traditional Iraqi breakfast and fresh-baked samoon to baklava, kunafa, mabrouma and our family's Iraqi sweets, every item is rooted in recipes carried from Baghdad to Dallas. Halal across the entire menu, Zabihah verified, with an in-house bakery firing fresh bread and pastries throughout the day. Whether you're here for a morning chai, a box of sweets, or catering for a hundred guests, we're glad you found us. Come hungry — leave full.",
 
   address: {
     street: "327 N Greenville Ave",
