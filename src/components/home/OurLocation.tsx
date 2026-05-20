@@ -7,6 +7,18 @@ const DIRECTIONS = `https://www.google.com/maps/dir/?api=1&destination=${encodeU
   RESTAURANT.address.full
 )}`;
 
+function formatHour(time: string): string {
+  const hour = parseInt(time.split(":")[0], 10);
+  if (hour === 0) return "12 AM";
+  if (hour === 12) return "12 PM";
+  return hour < 12 ? `${hour} AM` : `${hour - 12} PM`;
+}
+
+// Day index in RESTAURANT.hours: 0=Mon, 1=Tue, 2=Wed, 3=Thu, 4=Fri, 5=Sat, 6=Sun.
+const WEEKDAY = RESTAURANT.hours[0];
+const FRIDAY = RESTAURANT.hours[4];
+const SUNDAY = RESTAURANT.hours[6];
+
 export default function OurLocation() {
   return (
     <section className="bg-white section-pad">
@@ -65,9 +77,9 @@ export default function OurLocation() {
               <div>
                 <div className="text-[11px] font-semibold uppercase tracking-[0.18em] text-[var(--color-text-muted)] mb-1.5">Hours</div>
                 <div className="text-[var(--color-text)] space-y-1 text-sm">
-                  <div>Mon–Thu &nbsp;·&nbsp; 11 AM – 10 PM</div>
-                  <div>Fri–Sat &nbsp;·&nbsp; 11 AM – 11 PM</div>
-                  <div>Sunday &nbsp;·&nbsp; 12 PM – 10 PM</div>
+                  <div>Mon–Thu &nbsp;·&nbsp; {formatHour(WEEKDAY.open)} – {formatHour(WEEKDAY.close)}</div>
+                  <div>Fri–Sat &nbsp;·&nbsp; {formatHour(FRIDAY.open)} – {formatHour(FRIDAY.close)}</div>
+                  <div>Sunday &nbsp;·&nbsp; {formatHour(SUNDAY.open)} – {formatHour(SUNDAY.close)}</div>
                 </div>
               </div>
             </div>
