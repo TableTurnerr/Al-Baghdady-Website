@@ -5,7 +5,7 @@ export default function PressStrip() {
 
   return (
     <section className="bg-[var(--color-sand)] border-y border-[var(--color-border)] mb-5 md:mb-7">
-      <div className="container-pad py-8 md:py-10">
+      <div className="container-pad py-6 md:py-8">
         <div className="flex flex-col md:flex-row items-center justify-center gap-3 md:gap-6 text-center md:text-left">
           <span
             className="text-[var(--color-gold)] text-4xl md:text-5xl leading-none italic shrink-0"
