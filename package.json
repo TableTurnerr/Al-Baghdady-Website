@@ -1,6 +1,6 @@
 {
   "name": "al-baghdady-website",
-  "version": "1.33",
+  "version": "1.35",
   "private": true,
   "scripts": {
     "dev": "next dev",

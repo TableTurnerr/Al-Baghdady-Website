@@ -15,10 +15,17 @@ export const metadata: Metadata = createMetadata({
   keywords: [
     "iraqi bakery dallas",
     "iraqi breakfast richardson",
-    "samoon bread dallas",
     "iraqi cuisine guide",
+    "iraqi food dallas",
     "iraqi sweets dallas",
+    "samoon bread dallas",
+    "baklava richardson",
     "kanafa richardson",
+    "kunafa richardson",
+    "manakish dallas",
+    "fatayer dallas",
+    "traditional iraqi food",
+    "middle eastern cuisine richardson",
   ],
 });
 

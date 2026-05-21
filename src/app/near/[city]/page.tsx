@@ -48,7 +48,7 @@ export default async function NeighborhoodPage({
           restaurantSchema(),
           breadcrumbSchema([
             { name: "Home", url: "/" },
-            { name: "Service Areas", url: "/" },
+            { name: "Service Areas", url: "/near/" },
             { name: n.city, url: `/near/${n.slug}/` },
           ]),
           webPageSchema({
@@ -62,6 +62,7 @@ export default async function NeighborhoodPage({
       <BreadcrumbNav
         items={[
           { name: "Home", url: "/" },
+          { name: "Service Areas", url: "/near/" },
           { name: n.city, url: `/near/${n.slug}/` },
         ]}
       />
@@ -94,7 +95,7 @@ export default async function NeighborhoodPage({
 
           <SmartImage
             src="/Images/hero.webp"
-            alt={`Iraqi food served from ${n.city}, ${n.state}`}
+            alt={`Iraqi bakery and sweets at ${RESTAURANT.name}, serving ${n.city}, ${n.state}`}
             priority
             sizes="(min-width: 1024px) 50vw, 100vw"
             className="aspect-[4/5] rounded-[var(--radius-section)] shadow-[0_30px_80px_-30px_rgba(26,20,16,0.35)]"

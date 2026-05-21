@@ -51,7 +51,7 @@ export default function OurStoryPage() {
 
       <section className="container-pad py-12 md:py-20 max-w-3xl">
         <div className="eyebrow">Our Story</div>
-        <h1 className="mb-8">The 100-Year Story of Dallas&apos;s BEST Iraqi Bakery and Breakfast Café</h1>
+        <h1 className="mb-8">The 100-Year Story of Dallas&apos;s Best Iraqi Bakery and Breakfast Café</h1>
 
         <SmartImage
           src="/Images/hero.webp"

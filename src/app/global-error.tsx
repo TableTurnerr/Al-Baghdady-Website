@@ -3,6 +3,7 @@
 import { useEffect } from "react";
 import Link from "next/link";
 import QRHover from "@/components/shared/QRHover";
+import { RESTAURANT } from "@/data/restaurant";
 
 type Props = {
   error: Error & { digest?: string };
@@ -142,9 +143,9 @@ export default function GlobalError({ error, reset }: Props) {
             </Link>
           </div>
 
-          <QRHover value="tel:+14695472042">
+          <QRHover value={`tel:${RESTAURANT.phoneRaw}`}>
             <a
-              href="tel:+14695472042"
+              href={`tel:${RESTAURANT.phoneRaw}`}
               style={{
                 display: "inline-block",
                 marginTop: "2rem",
@@ -154,7 +155,7 @@ export default function GlobalError({ error, reset }: Props) {
                 textDecoration: "none",
               }}
             >
-              Or call us at (469) 547-2042
+              Or call us at {RESTAURANT.phone}
             </a>
           </QRHover>
         </main>

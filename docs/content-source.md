@@ -16,7 +16,7 @@ The phone number in this doc (`+1 469-954-5674`) is **stale**. Hisham confirmed 
 ### WELCOME TO ALBAGHDADY
 **Tagline:** Come for breakfast. Leave with baklava!
 
-Located in the heart of Richardson, TX, Albaghdady has been a family-run Iraqi bakery and cafe since 2009 — serving authentic Iraqi sweets, like our authentic baklava, our family has perfected since 1919. Visit and enjoy the perks of Traditional Iraqi desserts, a cozy breakfast spot, fresh-baked sweets, and the baklava that's been in our family for four generations.
+Located in the heart of Richardson, TX, Albaghdady has been a family-run Iraqi bakery and cafe since 2012 — serving authentic Iraqi sweets, like our authentic baklava, our family has perfected since 1919. Visit and enjoy the perks of Traditional Iraqi desserts, a cozy breakfast spot, fresh-baked sweets, and the baklava that's been in our family for four generations.
 
 > "This hole-in-the-wall bakery in Richardson is a treasure." — D Magazine
 
@@ -72,7 +72,7 @@ The recipes have passed from one generation to the next — same techniques, sam
 
 Our father and master baker Salah Hassan, grew up learning about our traditional recipes and has been perfecting his craft for 50 years, following in the footsteps of his father. As D Magazine noted, he 'quietly turns out his wares' with a skill that only comes from a lifetime of tradition. When you visit, you aren't just getting bread; you're getting a century of expertise from a true professional.
 
-In 2009, he brought the family trade to Texas, opening a small storefront on Greenville Avenue in Richardson — two parking spots and a counter — and began to bake the way our family has always baked.
+In 2012, he brought the family trade to Texas, opening a small storefront on Greenville Avenue in Richardson — two parking spots and a counter — and began to bake the way our family has always baked.
 
 ### ضيافة — The Reason We Bake
 
@@ -264,7 +264,7 @@ Craving fatayer? We offer pickup and delivery for our hand-folded fatayer across
 ### 11. Halal Food — Halal food in Richardson, TX
 
 **Best Halal and Middle Eastern Cuisine**
-At Albaghdady, every dish on our menu is 100% halal. From our bakery to every item on the breakfast menu, every ingredient is sourced and prepared to traditional halal standards. Experience authentic halal Middle Eastern cuisine made by a family bakery serving Richardson since 2009.
+At Albaghdady, every dish on our menu is 100% halal. From our bakery to every item on the breakfast menu, every ingredient is sourced and prepared to traditional halal standards. Experience authentic halal Middle Eastern cuisine made by a family bakery serving Richardson since 2012.
 
 **Convenient Pickup and Delivery Options for Halal Food**
-Looking for halal food in Richardson? We offer pickup and delivery for our full halal menu — Iraqi sweets, breakfast plates, kabab, and bakery favorites — across Richardson and the Dallas area. Enjoy authentic halal Middle Eastern sweets and breakfast from the comfort of your home. Order online for fast pickup or doorstep delivery.
+Looking for halal food in Richardson? We offer pickup and delivery for our full halal menu — Iraqi sweets, breakfast plates, and bakery favorites — across Richardson and the Dallas area. Enjoy authentic halal Middle Eastern sweets and breakfast from the comfort of your home. Order online for fast pickup or doorstep delivery.
