@@ -26,11 +26,11 @@ export default function Reviews() {
           </div>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
-          {REVIEWS.map((r, i) => (
+        <div className="flex flex-wrap justify-center gap-5">
+          {[...REVIEWS].sort((a, b) => b.text.length - a.text.length).map((r, i) => (
             <article
               key={r.author}
-              className={`rounded-2xl border border-[var(--color-border)] bg-white p-7 transition-all duration-500 hover:border-transparent hover:shadow-[var(--shadow-lift)] hover:-translate-y-1${i >= 3 ? " hidden md:block" : ""}`}
+              className={`flex flex-col w-full md:w-[calc(50%-10px)] lg:w-[calc(33.333%-14px)] rounded-2xl border border-[var(--color-border)] bg-white p-7 transition-all duration-500 hover:border-transparent hover:shadow-[var(--shadow-lift)] hover:-translate-y-1${i >= 3 ? " hidden md:flex" : ""}`}
             >
               <div className="flex mb-4">
                 {Array.from({ length: r.rating }).map((_, i) => (
@@ -41,7 +41,7 @@ export default function Reviews() {
                   />
                 ))}
               </div>
-              <blockquote className="text-[var(--color-text)] mb-5 leading-relaxed text-[0.97rem]">
+              <blockquote className="flex-1 text-[var(--color-text)] mb-5 leading-relaxed text-[0.97rem]">
                 &ldquo;{r.text}&rdquo;
               </blockquote>
               <div className="flex items-center justify-between pt-4 border-t border-[var(--color-border)]">
