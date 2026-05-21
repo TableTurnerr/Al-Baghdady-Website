@@ -30,6 +30,7 @@ export const MENU: MenuCategory[] = [
           "Our signature breakfast spread. Ground meat kabab, golden potatoes, eggplant tomato stew, and two pieces of handmade kubbah — all on one tray.",
         price: "$23.99",
         popular: true,
+        image: "/Images/specialties/albaghdady-plate.webp",
       },
       {
         name: "Kahi & Qeimar (كاهي وقيمر)",
@@ -37,6 +38,7 @@ export const MENU: MenuCategory[] = [
           "Iraq's most beloved sweet breakfast. Layers of flaky golden kahi pastry drizzled with syrup, served with rich clotted cream (qeimar).",
         price: "$12.99",
         popular: true,
+        image: "/Images/specialties/kahi-qeimar.webp",
       },
       {
         name: "Baqila (باقلاء بالدهن)",
@@ -44,6 +46,7 @@ export const MENU: MenuCategory[] = [
           "Tender fava beans simmered in their own broth, served with eggs, crispy fried onions, and warm bread soaked in the broth. A national Iraqi tradition.",
         price: "$14.99 / plate",
         popular: true,
+        image: "/Images/specialties/breakfast.webp",
       },
       {
         name: "Kubba (كبة)",
@@ -138,6 +141,7 @@ export const MENU: MenuCategory[] = [
           "Our classic coiled phyllo pastry filled with luscious sweet cream and pistachios, baked until golden.",
         price: "$20.00",
         popular: true,
+        image: "/Images/specialties/burma.webp",
       },
       {
         name: "Pistachio Baklava",
@@ -145,6 +149,7 @@ export const MENU: MenuCategory[] = [
           "Our most-ordered variety. Generous layers of fresh-ground pistachios between paper-thin phyllo, soaked in just enough syrup.",
         price: "$17.99",
         popular: true,
+        image: "/Images/gallery/baklava-pistachio-plate.webp",
       },
       {
         name: "Mixed Baklava",
@@ -152,6 +157,7 @@ export const MENU: MenuCategory[] = [
           "Layers of phyllo, walnut, pistachio and honey. A mixed selection of our house baklava varieties.",
         price: "$17.99",
         popular: true,
+        image: "/Images/gallery/baklava-tiered-tray.webp",
       },
       {
         name: "Walnut Baklava",
@@ -165,11 +171,12 @@ export const MENU: MenuCategory[] = [
           "Sticky shredded phyllo with melted cheese, soaked in rose-water syrup and topped with crushed pistachios.",
         price: "$15.00",
         popular: true,
+        image: "/Images/specialties/kunafa.webp",
       },
       {
         name: "Ladyfingers (Znood Al Sit)",
         description:
-          "Crispy phyllo rolls filled with sweet cream and dipped in syrup.",
+          "Znood Al Sit — crisp phyllo rolls filled with sweet cream and dipped in our family's honey syrup, finished with pistachios. One of Iraq's most elegant desserts.",
         price: "$12.00",
       },
       {
@@ -199,26 +206,30 @@ export const MENU: MenuCategory[] = [
           "Iraq's traditional oval-shaped bread, baked fresh in our stone oven throughout the day.",
         price: "$4.49",
         popular: true,
+        image: "/Images/specialties/bread.webp",
       },
       {
         name: "Tandoor Bread (6 pc)",
         description:
-          "Traditional flatbread baked in our tandoor oven. Soft, chewy, and perfect with any meal.",
+          "Traditional Iraqi flatbread baked in our clay tandoor until soft, chewy, and lightly charred. The everyday bread of Iraq — perfect with stews, dips, breakfast plates, or warm on its own.",
         price: "$6.99",
       },
       {
         name: "Iraqi Bread (3 pc)",
-        description: "Classic Iraqi-style round bread, baked fresh daily.",
+        description:
+          "Classic round Iraqi-style bread, hand-shaped and baked fresh daily in our Richardson bakery. Soft and warm — perfect for scooping stews, dips, and qeimar.",
         price: "$3.99",
       },
       {
         name: "Bread (1 pc)",
-        description: "Single piece of freshly baked bread.",
+        description:
+          "A single piece of our freshly baked halal Iraqi bread — warm from the oven, ready to pair with any breakfast plate or dip.",
         price: "$1.99",
       },
       {
         name: "Samoon (1 pc)",
-        description: "Single piece of our signature Iraqi samoon bread.",
+        description:
+          "A single piece of our signature Iraqi samoon — the diamond-shaped tandoor bread, crisp outside and pillowy soft inside, baked fresh throughout the day.",
         price: "$1.25",
       },
     ],
@@ -236,6 +247,7 @@ export const MENU: MenuCategory[] = [
           "Flatbread topped with za'atar, cheese, or meat — Middle Eastern breakfast at its most authentic. A weekend staple in our Richardson bakery.",
         price: "$3.50",
         popular: true,
+        image: "/Images/specialties/manakish.webp",
       },
       {
         name: "Fatayer — Spinach",
@@ -247,14 +259,14 @@ export const MENU: MenuCategory[] = [
       {
         name: "Fatayer — Cheese",
         description:
-          "Hand-folded savory pies with cheese filling, baked fresh daily.",
+          "Hand-folded savory pies stuffed with melted cheese, baked fresh daily until soft and golden. A vegetarian favorite, perfect with hot chai.",
         price: "$3.50 / pc",
         vegetarian: true,
       },
       {
         name: "Fatayer — Meat",
         description:
-          "Hand-folded savory pies with seasoned ground meat, baked fresh daily.",
+          "Hand-folded savory pies filled with seasoned ground meat, onions and spices, baked fresh daily until golden. A hearty Middle Eastern classic.",
         price: "$3.50 / pc",
       },
     ],
@@ -294,7 +306,7 @@ export const MENU: MenuCategory[] = [
       {
         name: "Egg Roll",
         description:
-          "Crispy rolled pastry with a savory filling, fried golden and served hot.",
+          "Crispy hand-rolled pastry with a savory filling, fried golden and served hot — a quick, crunchy bite or party-tray favorite.",
         price: "$1.99 / pc",
       },
     ],
@@ -311,6 +323,7 @@ export const MENU: MenuCategory[] = [
           "Our signature variety. Rich, creamy black tea slowly steeped with cardamom, milk, and a touch of sweetness — the way Iraqi mornings are meant to start.",
         price: "$3.99",
         popular: true,
+        image: "/Images/specialties/chai.webp",
       },
       {
         name: "Yemeni Coffee",
