@@ -104,7 +104,7 @@ export default function BakeryPage() {
               <div className="card-img aspect-[4/3]">
                 <SmartImage
                   src={item.image ?? BAKERY_CATEGORY_IMAGE}
-                  alt={item.name}
+                  alt={`${item.name} — fresh-baked Iraqi bakery sweets at Al-Baghdady in Richardson, TX`}
                   sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw"
                   className="w-full h-full"
                 />
@@ -151,6 +151,32 @@ export default function BakeryPage() {
               </span>
             </Link>
           ))}
+        </div>
+
+        {/* DRAFT (2026-05-21) — topical SEO content for the bakery page. Pending Hasham/client brand-voice review. */}
+        <div className="mt-20 max-w-3xl">
+          <div className="eyebrow">Our Bakery</div>
+          <h2 className="mb-5">An Authentic Iraqi &amp; Arabic Bakery in Richardson, TX</h2>
+          <div className="space-y-4 text-[var(--color-text-muted)] leading-relaxed">
+            <p>
+              At Al-Baghdady, every tray of{" "}
+              <Link href="/specialties/baklava/" className="link-underline text-[var(--color-text)]">baklava</Link>,{" "}
+              <Link href="/specialties/kunafa/" className="link-underline text-[var(--color-text)]">kunafa</Link> and{" "}
+              <Link href="/specialties/burma/" className="link-underline text-[var(--color-text)]">burma</Link> is baked in-house from
+              recipes our family has carried from Baghdad since 1919. Master baker Salah Hassan layers
+              paper-thin phyllo by hand, grinds fresh pistachios and walnuts daily, and finishes each batch
+              with our signature honey syrup — the way an Iraqi bakery is meant to.
+            </p>
+            <p>
+              Looking for a halal cake shop or Arabic bakery near you in the Dallas–Fort Worth area? Our case
+              is stocked fresh every day with pistachio and walnut baklava, cream-filled mabrouma,{" "}
+              <Link href="/specialties/lady-fingers/" className="link-underline text-[var(--color-text)]">znood al sit ladyfingers</Link>,
+              bird&apos;s nest, awama and dehena, alongside fresh-baked{" "}
+              <Link href="/specialties/bread/" className="link-underline text-[var(--color-text)]">samoon and tandoor bread</Link>.
+              Whether you want a single piece with your chai or a full sweets tray for Eid, a wedding or a
+              Ramadan iftar, everything is 100% halal and Zabihah-verified.
+            </p>
+          </div>
         </div>
 
         <div className="bg-[var(--color-warm-white)] rounded-[var(--radius-section)] p-10 md:p-16 mt-16 text-center border border-[var(--color-border)]">

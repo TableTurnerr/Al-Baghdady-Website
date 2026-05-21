@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { Check } from "lucide-react";
 import { createMetadata } from "@/data/metadata";
 import {
@@ -135,6 +136,33 @@ export default function CateringPage() {
           <div>
             <CateringForm />
           </div>
+        </div>
+      </section>
+
+      {/* DRAFT (2026-05-21) — topical SEO content + internal links for the catering page. Pending Hasham/client brand-voice review. */}
+      <section className="container-pad pb-16 max-w-3xl">
+        <div className="eyebrow">Catering Across DFW</div>
+        <h2 className="mb-5">Halal Iraqi &amp; Middle Eastern Catering for Every Occasion</h2>
+        <div className="space-y-4 text-[var(--color-text-muted)] leading-relaxed">
+          <p>
+            From intimate family gatherings to weddings of several hundred guests, Al-Baghdady caters
+            authentic Iraqi and Middle Eastern food across Richardson, Plano, Garland, Allen, Frisco,
+            Carrollton and the wider Dallas–Fort Worth area. Our most-requested trays are assorted{" "}
+            <Link href="/specialties/baklava/" className="link-underline text-[var(--color-text)]">baklava</Link>, hot{" "}
+            <Link href="/specialties/kunafa/" className="link-underline text-[var(--color-text)]">kunafa</Link>,{" "}
+            <Link href="/specialties/burma/" className="link-underline text-[var(--color-text)]">burma</Link> and{" "}
+            <Link href="/specialties/lady-fingers/" className="link-underline text-[var(--color-text)]">ladyfingers</Link>, but we
+            build the full spread to fit your event.
+          </p>
+          <p>
+            Planning an Eid celebration, Ramadan iftar or engagement party? Pair a sweets tray with savory{" "}
+            <Link href="/specialties/fatayer/" className="link-underline text-[var(--color-text)]">fatayer</Link> and{" "}
+            <Link href="/specialties/manakish/" className="link-underline text-[var(--color-text)]">manakish</Link>, fresh{" "}
+            <Link href="/specialties/bread/" className="link-underline text-[var(--color-text)]">samoon</Link>, and urns of cardamom{" "}
+            <Link href="/specialties/chai/" className="link-underline text-[var(--color-text)]">karak chai</Link>. Browse the full{" "}
+            <Link href="/menu/" className="link-underline text-[var(--color-text)]">menu</Link> for ideas, then send your date and
+            guest count above — everything is baked the day of your event and is 100% halal and Zabihah-verified.
+          </p>
         </div>
       </section>
     </>

@@ -156,7 +156,7 @@ export default function IraqiCuisinePage() {
                 <div className="card-img aspect-square rounded-2xl overflow-hidden">
                   <SmartImage
                     src={images[i % images.length]}
-                    alt={dish.name}
+                    alt={`${dish.name} — authentic Iraqi dish at Al-Baghdady, halal bakery & café in Richardson, TX`}
                     sizes="(min-width: 768px) 33vw, 100vw"
                     className="w-full h-full"
                   />
@@ -180,6 +180,23 @@ export default function IraqiCuisinePage() {
               </article>
             );
           })}
+        </div>
+
+        {/* DRAFT (2026-05-21) — closing topical content + internal links. Pending Hasham/client brand-voice review. */}
+        <div className="max-w-3xl mt-20">
+          <div className="eyebrow">Visit Us</div>
+          <h2 className="mb-5">Taste Authentic Iraqi Cuisine in Richardson, TX</h2>
+          <p className="text-[var(--color-text-muted)] leading-relaxed">
+            Every dish in this guide is baked or cooked fresh at Al-Baghdady, a family-run halal Iraqi
+            bakery and breakfast café in Richardson serving the greater Dallas–Fort Worth area. Stop in for
+            a traditional{" "}
+            <Link href="/specialties/breakfast/" className="link-underline text-[var(--color-text)]">Iraqi breakfast</Link> with hot{" "}
+            <Link href="/specialties/chai/" className="link-underline text-[var(--color-text)]">karak chai</Link>, take home a box of{" "}
+            <Link href="/specialties/baklava/" className="link-underline text-[var(--color-text)]">baklava</Link> and{" "}
+            <Link href="/specialties/kunafa/" className="link-underline text-[var(--color-text)]">kunafa</Link>, or order a full Iraqi
+            spread for your next event through our{" "}
+            <Link href="/catering/" className="link-underline text-[var(--color-text)]">catering</Link> team. Come hungry — leave full.
+          </p>
         </div>
 
         <div className="text-center mt-16 flex flex-wrap gap-3 justify-center">

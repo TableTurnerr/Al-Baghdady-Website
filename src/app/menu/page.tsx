@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { Sunrise } from "lucide-react";
 import { createMetadata } from "@/data/metadata";
 import { MENU } from "@/data/menu";
@@ -114,6 +115,44 @@ export default function MenuPage() {
           </div>
         </section>
       ))}
+
+      {/* DRAFT (2026-05-21) — topical SEO content + internal links to specialty pages. Pending Hasham/client brand-voice review. */}
+      <section className="container-pad section-pad border-t border-[var(--color-border)]">
+        <div className="max-w-3xl">
+          <div className="eyebrow">More About Our Kitchen</div>
+          <h2 className="mb-5">Authentic Iraqi Bakery &amp; Breakfast in Richardson, TX</h2>
+          <div className="space-y-4 text-[var(--color-text-muted)] leading-relaxed">
+            <p>
+              Al-Baghdady is a family-run halal Iraqi bakery and breakfast café in Richardson, serving
+              the Dallas–Fort Worth area with recipes carried from Baghdad. Every morning our bakers fire
+              fresh{" "}
+              <Link href="/specialties/bread/" className="link-underline text-[var(--color-text)]">samoon and tandoor bread</Link>, hand-fold{" "}
+              <Link href="/specialties/fatayer/" className="link-underline text-[var(--color-text)]">fatayer</Link>, and stretch{" "}
+              <Link href="/specialties/manakish/" className="link-underline text-[var(--color-text)]">manakish</Link> — the savory
+              backbone of a traditional Iraqi breakfast.
+            </p>
+            <p>
+              Our in-house bakery is best known for Iraqi sweets: paper-thin{" "}
+              <Link href="/specialties/baklava/" className="link-underline text-[var(--color-text)]">baklava</Link> layered with
+              pistachios and walnuts, hot{" "}
+              <Link href="/specialties/kunafa/" className="link-underline text-[var(--color-text)]">kunafa</Link> with melted cheese
+              and syrup, cigar-rolled{" "}
+              <Link href="/specialties/burma/" className="link-underline text-[var(--color-text)]">burma</Link>, and cream-filled{" "}
+              <Link href="/specialties/lady-fingers/" className="link-underline text-[var(--color-text)]">ladyfingers (znood al sit)</Link>.
+              Pair any of them with a glass of cardamom{" "}
+              <Link href="/specialties/chai/" className="link-underline text-[var(--color-text)]">karak chai</Link>.
+            </p>
+            <p>
+              Come in for a sit-down{" "}
+              <Link href="/specialties/breakfast/" className="link-underline text-[var(--color-text)]">Iraqi breakfast</Link> — Kahi
+              &amp; Qeimar, Baqila, Kubba and the signature Albaghdady Plate — or order baklava and kunafa
+              trays for pickup, delivery and{" "}
+              <Link href="/catering/" className="link-underline text-[var(--color-text)]">catering</Link> across Richardson, Plano,
+              Garland and the wider DFW area. Every item on our menu is 100% halal and Zabihah-verified.
+            </p>
+          </div>
+        </div>
+      </section>
     </>
   );
 }
