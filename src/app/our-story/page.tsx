@@ -55,7 +55,7 @@ export default function OurStoryPage() {
 
         <SmartImage
           src="/Images/hero.webp"
-          alt="Al-Baghdady Restaurant family kitchen"
+          alt="The Al-Baghdady family kitchen — four generations of Iraqi bakers behind the baklava, kunafa and samoon served in Richardson, TX"
           priority
           sizes="(min-width: 768px) 768px, 100vw"
           className="aspect-[16/9] rounded-[var(--radius-section)] mb-12 shadow-[0_30px_80px_-30px_rgba(26,20,16,0.35)]"

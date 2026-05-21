@@ -135,7 +135,7 @@ export default function FeaturedDishes() {
                   <div className="card-img aspect-[4/3]">
                     <SmartImage
                       src={dish.image}
-                      alt={`${dish.name} at Al-Baghdady`}
+                      alt={`${dish.name} — ${dish.category.toLowerCase()} at Al-Baghdady, halal Iraqi bakery & café in Richardson, TX`}
                       sizes="(min-width: 768px) 320px, 280px"
                       className="w-full h-full"
                     />
