@@ -56,17 +56,31 @@ const BASE_KEYWORDS = [
   "baklava bakery",
   "baklava dessert",
 
-  // Kanafa / Kunafa / Knafeh
-  "kanafa",
-  "kanafa Dallas",
+  // Knafeh / Kunafa / Kanafa — "knafeh" is the most-searched spelling in TX
+  // (Google Trends: knafeh 31 > kunafa 14 > kanafa 1), so lead with it.
+  "knafeh",
+  "knafeh dallas",
+  "knafeh near me",
   "kunafa",
   "kunafa Dallas",
-  "knafeh",
+  "kanafa",
 
-  // Other core dishes
-  "fatayer",
+  // Manakish family (lead with "manakish" — most common US spelling)
   "manakish",
   "manakeesh",
+  "manoushe",
+  "mankosha",
+  "zaatar bread",
+  "zaatar flatbread",
+
+  // Fatayer family (+ English equivalents)
+  "fatayer",
+  "sfeeha",
+  "spinach pie dallas",
+  "lebanese spinach pie",
+  "meat pie richardson",
+
+  // Bread
   "iraqi samoon",
   "samoon bread Dallas",
   "halal bread",

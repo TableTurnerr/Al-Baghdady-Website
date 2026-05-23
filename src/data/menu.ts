@@ -87,7 +87,7 @@ export const MENU: MenuCategory[] = [
       {
         name: "Beef & Egg (لحم وبيض)",
         description:
-          "Tender beef shawarma topped with a perfectly cooked egg. Savory, satisfying, ready to fuel your whole morning.",
+          "Tender thin-sliced spiced beef topped with a perfectly cooked egg. Savory, satisfying, ready to fuel your whole morning.",
         price: "$16.99 / plate · $7.99 / sandwich",
       },
       {
@@ -168,7 +168,7 @@ export const MENU: MenuCategory[] = [
       {
         name: "Kanafa",
         description:
-          "Sticky shredded phyllo with melted cheese, soaked in rose-water syrup and topped with crushed pistachios.",
+          "Knafeh (kunafa) — sticky shredded phyllo with melted cheese, soaked in rose-water syrup and topped with crushed pistachios.",
         price: "$15.00",
         popular: true,
         image: "/Images/specialties/kunafa.webp",
@@ -275,7 +275,7 @@ export const MENU: MenuCategory[] = [
     id: "appetizers",
     name: "Appetizers",
     description: "Hot starters and Iraqi street-food classics, made fresh daily.",
-    image: "/Images/dish-1.webp",
+    image: "/Images/assorted-baklava-tray.webp",
     items: [
       {
         name: "Sour Kibbeh (Bowl)",

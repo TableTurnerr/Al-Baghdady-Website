@@ -19,7 +19,7 @@ export const SPECIALTIES: Specialty[] = [
   {
     slug: "bread",
     name: "Bread",
-    metaTitle: "Bread in Richardson, TX | Al-Baghdady — Iraqi Bakery & Café",
+    metaTitle: "Bread in Richardson, TX | Al-Baghdady Iraqi Bakery",
     metaDescription:
       "Fresh Iraqi samoon bread baked daily in our traditional tandoor — crisp outside, soft inside. Pickup and delivery across Richardson and Dallas.",
     keywords: [
@@ -33,6 +33,7 @@ export const SPECIALTIES: Specialty[] = [
       "arabic bread dallas",
       "arabic flatbread dallas",
       "iraqi samoon richardson",
+      "iraqi bread near me",
     ],
     heroEyebrow: "FRESH DAILY",
     heroHeadline: "Authentic bread in Richardson, TX",
@@ -58,7 +59,7 @@ export const SPECIALTIES: Specialty[] = [
         answer:
           "Yes, you can buy fresh samoon by the loaf for pickup or delivery. Order online or stop by — every loaf is baked the day you eat it.",
       },
-      // DRAFT (2026-05-20) — keyword-coverage FAQ (halal bread / halal bread shop). Pending Hasham/client brand-voice review.
+      // Keyword-coverage FAQ (halal bread / halal bread shop).
       {
         question: "Is your bread halal?",
         answer:
@@ -69,7 +70,7 @@ export const SPECIALTIES: Specialty[] = [
   {
     slug: "chai",
     name: "Chai",
-    metaTitle: "Chai in Richardson, TX | Al-Baghdady — Iraqi Bakery & Café",
+    metaTitle: "Chai in Richardson, TX | Al-Baghdady Iraqi Bakery",
     metaDescription:
       "Traditional Iraqi karak chai brewed the old way — black tea slow-steeped with cardamom, milk and a touch of sweetness. Pickup and delivery across Richardson, TX.",
     keywords: [
@@ -112,7 +113,7 @@ export const SPECIALTIES: Specialty[] = [
   {
     slug: "burma",
     name: "Burma",
-    metaTitle: "Burma in Richardson, TX | Al-Baghdady — Iraqi Bakery & Café",
+    metaTitle: "Burma in Richardson, TX | Al-Baghdady Iraqi Bakery",
     metaDescription:
       "Hand-rolled Iraqi burma — crisp phyllo wrapped tight with fresh pistachios and honey syrup. Pickup and delivery across Richardson and Dallas.",
     keywords: [
@@ -156,7 +157,7 @@ export const SPECIALTIES: Specialty[] = [
   {
     slug: "lady-fingers",
     name: "Lady Fingers",
-    metaTitle: "Lady Fingers in Richardson, TX | Al-Baghdady — Iraqi Bakery & Café",
+    metaTitle: "Lady Fingers in Richardson, TX | Al-Baghdady Iraqi Bakery",
     metaDescription:
       "Iraqi Znood El Sit ladyfingers — delicate phyllo, fresh pistachios, honey syrup. Hand-rolled daily. Pickup and delivery across Richardson, TX.",
     keywords: [
@@ -201,7 +202,7 @@ export const SPECIALTIES: Specialty[] = [
   {
     slug: "samosa",
     name: "Samosa",
-    metaTitle: "Samosa in Richardson, TX | Al-Baghdady — Iraqi Bakery & Café",
+    metaTitle: "Samosa in Richardson, TX | Al-Baghdady Iraqi Bakery",
     metaDescription:
       "Hand-folded Iraqi samosas — meat or veg, crispy and golden. Perfect snack, appetizer, or tray for events. Pickup and delivery in Richardson, TX.",
     keywords: [
@@ -246,22 +247,22 @@ export const SPECIALTIES: Specialty[] = [
   {
     slug: "kunafa",
     name: "Kunafa",
-    metaTitle: "Kunafa in Richardson, TX | Al-Baghdady — Iraqi Bakery & Café",
+    metaTitle: "Kunafa in Richardson, TX | Al-Baghdady Iraqi Bakery",
     metaDescription:
       "Hot, fresh kunafa made to order — shredded phyllo, melted cheese, warm honey syrup. Pickup and delivery across Richardson and Dallas.",
     keywords: [
+      "knafeh dallas",
+      "knafeh near me",
+      "knafeh richardson tx",
+      "best knafeh dallas",
       "kunafa richardson tx",
       "kunafa dallas",
       "kunafa near me",
-      "kanafa richardson",
-      "kanafa dallas",
-      "knafeh dallas",
-      "knafeh richardson tx",
+      "cheese knafeh dallas",
+      "hot knafeh near me",
       "iraqi kunafa richardson",
-      "cheese kunafa dallas",
-      "hot kunafa near me",
-      "best kunafa dallas",
       "pistachio kunafa richardson",
+      "kanafa richardson",
       "middle eastern dessert dallas",
       "arabic sweets dallas",
     ],
@@ -269,7 +270,7 @@ export const SPECIALTIES: Specialty[] = [
     heroHeadline: "Delicious kunafa in Richardson, TX",
     primaryBlock: {
       heading: "Hot, Fresh Kunafa — Ready To Order",
-      body: "Kunafa is one of the Middle East's most-loved desserts, and we make ours the way it's meant to be eaten — hot from the oven. Our handmade kunafa layers shredded phyllo with melted cheese, finished with warm honey syrup and chopped pistachios. Stretchy, fragrant, and made fresh to order. Try our authentic Iraqi kunafa today.",
+      body: "Kunafa — also spelled knafeh — is one of the Middle East's most-loved desserts, and we make ours the way it's meant to be eaten: hot from the oven. Our handmade knafeh layers shredded phyllo with melted cheese, finished with warm honey syrup and chopped pistachios. Stretchy, fragrant, and made fresh to order. Try our authentic Iraqi knafeh today.",
     },
     image: "/Images/specialties/kunafa.webp",
     relatedMenuItemNames: ["Kanafa"],
@@ -294,7 +295,7 @@ export const SPECIALTIES: Specialty[] = [
   {
     slug: "baklava",
     name: "Baklava",
-    metaTitle: "Baklava in Richardson, TX | Al-Baghdady — Iraqi Bakery & Café",
+    metaTitle: "Baklava in Richardson, TX | Al-Baghdady Iraqi Bakery",
     metaDescription:
       "100-year-old Iraqi baklava — paper-thin phyllo, fresh pistachios and walnuts, signature honey syrup. Pickup and delivery across Richardson, TX.",
     keywords: [
@@ -348,7 +349,7 @@ export const SPECIALTIES: Specialty[] = [
         answer:
           "Yes — assorted baklava trays are one of our most-requested items for Eid, weddings, Ramadan iftars and corporate events. Custom sizes available; order at least 24 hours ahead through our [catering page](/catering/).",
       },
-      // DRAFT (2026-05-20) — keyword-coverage FAQ (greek/turkish baklava, filo/phyllo). Pending Hasham/client brand-voice review.
+      // Keyword-coverage FAQ (greek/turkish baklava, filo/phyllo).
       {
         question: "Is baklava Greek, Turkish, or Iraqi — and is it filo or phyllo?",
         answer:
@@ -359,7 +360,7 @@ export const SPECIALTIES: Specialty[] = [
   {
     slug: "breakfast",
     name: "Breakfast",
-    metaTitle: "Breakfast in Richardson, TX | Al-Baghdady — Iraqi Bakery & Café",
+    metaTitle: "Breakfast in Richardson, TX | Al-Baghdady Iraqi Bakery",
     metaDescription:
       "Authentic Iraqi breakfast in Richardson — Kahi & Qeimar, Baqila, Kubba, Albaghdady Plate, samoon and chai. Every morning except Monday.",
     keywords: [
@@ -411,7 +412,7 @@ export const SPECIALTIES: Specialty[] = [
   {
     slug: "manakish",
     name: "Manakish",
-    metaTitle: "Manakish in Richardson, TX | Al-Baghdady — Iraqi Bakery & Café",
+    metaTitle: "Manakish in Richardson, TX | Al-Baghdady Iraqi Bakery",
     metaDescription:
       "Manakish baked fresh daily — za'atar, cheese, or meat on soft golden flatbread. Pickup and delivery across Richardson and Dallas.",
     keywords: [
@@ -427,12 +428,16 @@ export const SPECIALTIES: Specialty[] = [
       "middle eastern flatbread dallas",
       "halal manakish near me",
       "arabic flatbread richardson",
+      "manoushe",
+      "zaatar bread",
+      "zaatar flatbread",
+      "mankosha",
     ],
     heroEyebrow: "BAKED FRESH DAILY",
     heroHeadline: "Manakish in Richardson, TX",
     primaryBlock: {
       heading: "Baked-the-Old-Way Manakish",
-      body: "Manakish, a Middle Eastern breakfast favorite, is baked fresh at Albaghdady every day. Our handmade manakish features soft, golden flatbread topped with za'atar, melted cheese, or seasoned meat — the perfect savory pairing with hot chai. Try our authentic manakish today for a taste of traditional Middle Eastern flavors.",
+      body: "Manakish, a Middle Eastern breakfast favorite, is baked fresh at Albaghdady every day. Our handmade manakish features soft, golden flatbread topped with za'atar (the classic zaatar bread), melted cheese, or seasoned meat — the perfect savory pairing with hot chai. Try our authentic manakish today for a taste of traditional Middle Eastern flavors.",
     },
     image: "/Images/specialties/manakish.webp",
     relatedMenuItemNames: ["Manakish"],
@@ -457,7 +462,7 @@ export const SPECIALTIES: Specialty[] = [
   {
     slug: "fatayer",
     name: "Fatayer",
-    metaTitle: "Fatayer in Richardson, TX | Al-Baghdady — Iraqi Bakery & Café",
+    metaTitle: "Fatayer in Richardson, TX | Al-Baghdady Iraqi Bakery",
     metaDescription:
       "Hand-folded fatayer baked fresh daily — spinach, cheese, or seasoned meat. Pickup and delivery across Richardson and the Dallas area.",
     keywords: [
@@ -474,12 +479,19 @@ export const SPECIALTIES: Specialty[] = [
       "cheese pies richardson",
       "savory pies dallas",
       "iraqi savory pies richardson",
+      "sfeeha",
+      "sfiha",
+      "spinach pie dallas",
+      "lebanese spinach pie",
+      "meat pie richardson",
+      "lebanese meat pie",
+      "cheese pie",
     ],
     heroEyebrow: "HAND-FOLDED, BAKED FRESH",
     heroHeadline: "Fatayer in Richardson, TX",
     primaryBlock: {
       heading: "Hand-Folded Fatayer, Baked Fresh Daily",
-      body: "Fatayer, a beloved Middle Eastern savory pastry, is hand-folded and baked fresh at Albaghdady every day. Our authentic fatayer comes filled with spinach (sabanekh), cheese, or seasoned ground meat — soft, golden, and perfect with chai. Try our handmade fatayer today for a true taste of Middle Eastern tradition.",
+      body: "Fatayer, a beloved Middle Eastern savory pastry, is hand-folded and baked fresh at Albaghdady every day. Our authentic fatayer comes filled with spinach (sabanekh), cheese, or seasoned ground meat — the Iraqi and Levantine answer to the spinach pie and meat pie — soft, golden, and perfect with chai. Try our handmade fatayer today for a true taste of Middle Eastern tradition.",
     },
     image: "/Images/specialties/fatayer.webp",
     relatedMenuItemNames: ["Fatayer — Spinach", "Fatayer — Cheese", "Fatayer — Meat"],
@@ -504,7 +516,7 @@ export const SPECIALTIES: Specialty[] = [
   {
     slug: "halal-food",
     name: "Halal Food",
-    metaTitle: "Halal Food in Richardson, TX | Al-Baghdady — Iraqi Bakery & Café",
+    metaTitle: "Halal Food in Richardson, TX | Al-Baghdady Iraqi Bakery",
     metaDescription:
       "Every dish 100% halal — Iraqi bakery, breakfast, and sweets. Zabihah-verified family bakery in Richardson, TX since 2012.",
     keywords: [

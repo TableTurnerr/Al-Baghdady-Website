@@ -23,6 +23,9 @@ const ALTERNATE_NAMES = [
   "Albaghdady Bakery and Cafe",
   "Albaghdady Restaurant",
   "Al Baghdady Bakery",
+  "Al-Baghdadi",
+  "Albaghdadi",
+  "Al Baghdadi",
   "Salam Grill",
 ];
 

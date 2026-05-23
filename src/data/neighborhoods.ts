@@ -38,7 +38,7 @@ export const NEIGHBORHOODS: Neighborhood[] = [
     driveTime: "12 minutes from downtown Plano",
     intro:
       "Plano residents have been driving to Al-Baghdady for over a decade for authentic Iraqi baking they can't find anywhere closer. We're a short drive south on Greenville Ave, and we deliver across Plano daily.",
-    body: "Whether you're stopping in for a traditional Iraqi breakfast, a box of baklava and kunafa, or a custom sweets order for an Eid celebration, Al-Baghdady serves Plano with the same family recipes that have earned us 1,892 verified reviews. Our in-house bakery makes everything from scratch — samoon baked throughout the day, kahi and qeimar every morning, baklava, mabrouma and kunafa made fresh. We also cater corporate breakfasts and weddings across the Plano area.",
+    body: "Whether you're stopping in for a traditional Iraqi breakfast, a box of baklava and kunafa, or a custom sweets order for an Eid celebration, Al-Baghdady serves Plano with the same family recipes that have earned us 1,899 verified reviews. Our in-house bakery makes everything from scratch — samoon baked throughout the day, kahi and qeimar every morning, baklava, mabrouma and kunafa made fresh. We also cater corporate breakfasts and weddings across the Plano area.",
     popularDishes: ["Baklava", "Kanafa", "Kahi & Qeimar", "Mabrouma"],
   },
   {
@@ -101,7 +101,7 @@ export const NEIGHBORHOODS: Neighborhood[] = [
     state: "TX",
     metaTitle: "Iraqi Bakery North Dallas — Halal Sweets & Breakfast | Al-Baghdady",
     metaDescription:
-      "Authentic Iraqi bakery and breakfast in North Dallas — fresh samoon, baklava, kunafa, mabrouma and traditional Iraqi breakfast. 1,892 reviews, Zabihah-verified halal.",
+      "Authentic Iraqi bakery and breakfast in North Dallas — fresh samoon, baklava, kunafa, mabrouma and traditional Iraqi breakfast. 1,899 reviews, Zabihah-verified halal.",
     keywords: [
       "iraqi food north dallas",
       "halal bakery north dallas",
@@ -115,10 +115,10 @@ export const NEIGHBORHOODS: Neighborhood[] = [
     ],
     heroHeadline: "Iraqi Bakery & Breakfast for North Dallas",
     heroSubheadline:
-      "The most-reviewed Iraqi bakery in Dallas. 1,892 reviews. 4.4 stars. Halal across the menu.",
+      "The most-reviewed Iraqi bakery in Dallas. 1,899 reviews. 4.4 stars. Halal across the menu.",
     driveTime: "15 minutes from North Dallas",
     intro:
-      "When North Dallas diners search for authentic Iraqi sweets and breakfast, they find Al-Baghdady. With 1,892 verified reviews, we're the most-reviewed Iraqi bakery in the DFW area.",
+      "When North Dallas diners search for authentic Iraqi sweets and breakfast, they find Al-Baghdady. With 1,899 verified reviews, we're the most-reviewed Iraqi bakery in the DFW area.",
     body: "Authentic Iraqi baking is rare in North Dallas — there are 50+ Mediterranean spots, but only a handful that make real Iraqi sweets like mabrouma, burma and bird's nest, or a traditional Iraqi breakfast of kahi, qeimar and baqila. Al-Baghdady has been doing it the right way for over a decade: family recipes since 1919, fresh samoon from the tandoor all day, and a full in-house bakery for baklava, kunafa and ladyfingers. Reviewers consistently call us 'the best Iraqi food in Dallas' and we cater across all of North Dallas.",
     popularDishes: ["Kanafa", "Baklava", "Kahi & Qeimar", "Mabrouma"],
   },
@@ -182,7 +182,7 @@ export const NEIGHBORHOODS: Neighborhood[] = [
     state: "TX",
     metaTitle: "Iraqi Bakery Far North Dallas — Halal Sweets | Al-Baghdady",
     metaDescription:
-      "Searching for the best Iraqi bakery near you in Far North Dallas? Al-Baghdady serves 1,892-review halal Iraqi sweets, breakfast and a full Arabic bakery.",
+      "Searching for the best Iraqi bakery near you in Far North Dallas? Al-Baghdady serves 1,899-review halal Iraqi sweets, breakfast and a full Arabic bakery.",
     keywords: [
       "best iraqi food near me",
       "iraqi bakery far north dallas",
@@ -196,11 +196,11 @@ export const NEIGHBORHOODS: Neighborhood[] = [
     ],
     heroHeadline: "Best Iraqi Bakery in Far North Dallas",
     heroSubheadline:
-      "1,892 reviews. 4.4 stars. The DFW area's most-reviewed Iraqi bakery.",
+      "1,899 reviews. 4.4 stars. The DFW area's most-reviewed Iraqi bakery.",
     driveTime: "15 minutes from Far North Dallas",
     intro:
       "Far North Dallas diners searching for authentic Iraqi sweets and breakfast don't have to settle for generic Mediterranean. Al-Baghdady is a short drive south and bakes the real thing.",
-    body: "Authentic Iraqi baking — samoon, kanafa, baklava, mabrouma, burma — is genuinely rare in DFW, and Al-Baghdady is one of the only bakeries doing it across a full traditional menu. With 1,892 verified reviews and Zabihah-verified halal sourcing, we're the trusted choice for Far North Dallas's halal-conscious diners and Iraqi-food lovers. Delivery available across Far North Dallas.",
+    body: "Authentic Iraqi baking — samoon, kanafa, baklava, mabrouma, burma — is genuinely rare in DFW, and Al-Baghdady is one of the only bakeries doing it across a full traditional menu. With 1,899 verified reviews and Zabihah-verified halal sourcing, we're the trusted choice for Far North Dallas's halal-conscious diners and Iraqi-food lovers. Delivery available across Far North Dallas.",
     popularDishes: ["Kanafa", "Baklava", "Kahi & Qeimar", "Ladyfingers (Znood Al Sit)"],
   },
   {
