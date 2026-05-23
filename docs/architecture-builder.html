@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Al-Baghdady — Architecture Builder</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<style>
+  :root{
+    --maroon:#8B1A1A; --maroon-deep:#6f1414; --gold:#C9A84C; --gold-dark:#a8862f;
+    --cream:#FBF7EF; --sand:#F3E9D7; --card:#fff; --ink:#241a14; --muted:#7a6c5d;
+    --line:#e7dcc8; --shadow:0 18px 48px -26px rgba(40,26,16,.45);
+    --green:#2f8f4e; --amber:#d98a1f;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:Inter,system-ui,sans-serif;color:var(--ink);
+    background:radial-gradient(1200px 600px at 85% -12%, #fff6e6 0%, transparent 60%),linear-gradient(180deg,#fdfaf3,#f4ecdd);
+    min-height:100vh;padding:28px 22px 90px;line-height:1.5}
+  .wrap{max-width:1180px;margin:0 auto}
+  h1,h2,h3{font-family:Fraunces,Georgia,serif;font-weight:600;letter-spacing:-.01em}
+  .eyebrow{font-size:11px;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:var(--gold-dark)}
+  button,select,input{font-family:inherit}
+  button{cursor:pointer;border:1px solid var(--line);background:#fff;color:var(--ink);padding:8px 13px;border-radius:9px;font-size:12.5px;font-weight:600;transition:.15s;display:inline-flex;align-items:center;gap:6px}
+  button:hover{border-color:var(--gold);background:#fffaf0}
+  button.primary{background:var(--maroon);color:#fff;border-color:var(--maroon)}
+  button.primary:hover{background:var(--maroon-deep)}
+  button.mini{padding:5px 9px;font-size:11.5px}
+  button.ghost{background:transparent}
+  /* top bar */
+  .topbar{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;margin-bottom:8px}
+  .clientbox{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+  .brandbar{display:inline-flex;align-items:center;gap:9px;padding:7px 15px;border-radius:999px;background:var(--maroon);color:#fff;font-weight:600;font-size:12.5px}
+  .brandbar .dot{width:8px;height:8px;border-radius:50%;background:var(--gold)}
+  select#client-select{border:1px solid var(--line);border-radius:9px;padding:8px 12px;font-size:13px;font-weight:600;color:var(--maroon);background:#fffdf9}
+  .toolbar{display:flex;gap:7px;flex-wrap:wrap;align-items:center}
+  /* dropdown menu (export) */
+  .menu{position:relative}
+  .menu-list{position:absolute;right:0;top:calc(100% + 6px);background:#fff;border:1px solid var(--line);border-radius:11px;box-shadow:var(--shadow);padding:5px;min-width:210px;z-index:60;display:none}
+  .menu-list.show{display:block}
+  .menu-list button{width:100%;justify-content:flex-start;border:none;background:transparent;border-radius:7px;font-weight:500}
+  .menu-list button:hover{background:#fff4dd}
+  header.hero{margin:14px 0 18px}
+  header.hero h1{font-size:clamp(22px,3.2vw,34px);color:var(--maroon)}
+  header.hero p{color:var(--muted);font-size:13.5px;max-width:600px}
+  /* stats */
+  .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:13px;margin:14px 0 12px}
+  .stat{background:var(--card);border:1px solid var(--line);border-radius:15px;padding:16px;text-align:center;box-shadow:var(--shadow)}
+  .stat .num{font-family:Fraunces,serif;font-size:32px;font-weight:700;color:var(--maroon);line-height:1}
+  .stat.gold .num{color:var(--gold-dark)} .stat.green .num{color:var(--green)}
+  .stat .lbl{font-size:11px;color:var(--muted);margin-top:6px;font-weight:500}
+  .progress{background:var(--card);border:1px solid var(--line);border-radius:13px;padding:13px 16px;margin-bottom:24px;box-shadow:var(--shadow)}
+  .progress .ptop{display:flex;justify-content:space-between;font-size:12px;font-weight:600;color:var(--muted);margin-bottom:7px}
+  .bar{height:9px;background:var(--sand);border-radius:999px;overflow:hidden}
+  .bar i{display:block;height:100%;background:linear-gradient(90deg,var(--gold),var(--green));border-radius:999px;transition:width .5s cubic-bezier(.22,1,.36,1)}
+  /* layout */
+  .grid{display:grid;grid-template-columns:350px 1fr;gap:22px;align-items:start}
+  @media(max-width:900px){.grid{grid-template-columns:1fr}.stats{grid-template-columns:repeat(2,1fr)}}
+  section.block{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:22px;margin-bottom:22px;box-shadow:var(--shadow)}
+  section.block>h2{font-size:19px;color:var(--maroon);margin-bottom:3px}
+  section.block>.sub{color:var(--muted);font-size:12.5px;margin-bottom:16px}
+  .blockhead{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:14px}
+  /* accordion */
+  .acc{border:1px solid var(--line);border-radius:12px;margin-bottom:11px;background:#fffdf9;transition:border-color .25s,box-shadow .25s}
+  .acc.open{border-color:var(--gold);box-shadow:0 10px 26px -18px rgba(40,26,16,.45)}
+  .acc-head{display:flex;justify-content:space-between;align-items:center;cursor:pointer;padding:13px 15px;user-select:none}
+  .acc-title{font-size:12px;text-transform:uppercase;letter-spacing:.11em;color:var(--muted);font-weight:600;transition:color .2s}
+  .acc.open .acc-title{color:var(--maroon)}
+  .acc-meta{display:flex;align-items:center;gap:10px}
+  .acc-meta .count{font-size:12px;color:var(--gold-dark);font-weight:700;background:#fff4dd;padding:2px 9px;border-radius:999px;min-width:24px;text-align:center}
+  .chev{font-size:10px;color:var(--gold-dark);transition:transform .38s cubic-bezier(.22,1,.36,1)}
+  .acc.open .chev{transform:rotate(180deg)}
+  .acc-body{display:grid;grid-template-rows:0fr;transition:grid-template-rows .4s cubic-bezier(.22,1,.36,1)}
+  .acc.open .acc-body{grid-template-rows:1fr}
+  .acc-clip{overflow:hidden;min-height:0}
+  .acc.open.done .acc-clip{overflow:visible}
+  .acc-inner{padding:0 13px 13px}
+  .bulk{display:flex;gap:6px;margin-bottom:9px}
+  /* rows */
+  .row{display:flex;align-items:center;gap:6px;margin-bottom:6px;animation:pop .22s ease}
+  @keyframes pop{from{opacity:0;transform:translateY(-4px)}to{opacity:1;transform:none}}
+  .row .drag{cursor:grab;color:#c9bca8;font-size:13px;padding:0 2px}
+  .row input.name{flex:1;border:1px solid var(--line);border-radius:8px;padding:7px 10px;font-size:13px;color:var(--ink);background:#fffdf9;min-width:0}
+  .row input.name:focus{outline:none;border-color:var(--gold)}
+  .row .del{padding:6px 9px;color:#b04a4a;border-color:#eccfcf;font-size:12px}
+  .row .del:hover{background:#fdeeee;border-color:#d99}
+  .row.dragging{opacity:.4}
+  .addrow{display:flex;gap:6px;margin-top:8px}
+  .ac-wrap{position:relative;flex:1;min-width:0}
+  .ac-wrap input{width:100%;border:1px dashed var(--gold);border-radius:8px;padding:8px 11px;font-size:13px;background:#fffaf0}
+  .ac-wrap input:focus{outline:none;border-style:solid}
+  /* autocomplete (fixed → never clipped) */
+  .ac-list{position:fixed;background:#fff;border:1px solid var(--gold);border-radius:11px;box-shadow:var(--shadow);max-height:240px;overflow:auto;z-index:90;padding:5px;display:none}
+  .ac-list.show{display:block;animation:acin .18s ease}
+  @keyframes acin{from{opacity:0;transform:translateY(-6px)}to{opacity:1;transform:none}}
+  .ac-item{padding:8px 11px;border-radius:8px;font-size:13px;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:8px}
+  .ac-item:hover,.ac-item.active{background:#fff4dd}
+  .ac-item .add-ic{color:var(--gold-dark);font-weight:700;opacity:.55}
+  .ac-empty{padding:9px 11px;font-size:12px;color:var(--muted)}
+  /* tree */
+  .node{display:inline-flex;align-items:center;gap:8px;padding:7px 13px;border-radius:9px;font-size:13px;font-weight:500}
+  .node.root{background:var(--maroon);color:#fff;font-weight:600;align-self:flex-start;font-size:14.5px}
+  .branch{margin-left:22px;border-left:2px solid var(--line);padding-left:20px;margin-top:9px;display:flex;flex-direction:column;gap:9px}
+  .leaf{background:var(--sand);align-self:flex-start;border:1px solid var(--line)}
+  .leaf.hub{background:#fff;border:1.5px solid var(--gold);color:var(--gold-dark);font-weight:600}
+  .children{margin-left:20px;border-left:2px dashed #e0d3ba;padding-left:16px;margin-top:7px;display:flex;flex-wrap:wrap;gap:6px}
+  .pill{font-size:11.5px;padding:4px 10px;border-radius:999px;background:#fff;border:1px solid var(--line);color:var(--muted)}
+  .pill.city{border-color:#e3c9c9;color:var(--maroon)} .pill.topic{border-color:#ecdcae;color:var(--gold-dark)}
+  /* mesh */
+  #mesh-wrap{position:relative;display:grid;grid-template-columns:1fr 1fr;min-height:440px}
+  #mesh-svg{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;z-index:1}
+  .mesh-line{fill:none;stroke:var(--gold);stroke-width:1;opacity:.26}
+  .mesh-col{display:flex;flex-direction:column;justify-content:center;gap:9px;z-index:2;position:relative}
+  .mesh-col.right{align-items:flex-end}
+  .mesh-col h3{font-size:12px;text-transform:uppercase;letter-spacing:.12em;color:var(--muted);margin-bottom:4px}
+  .city-node,.dish-node{padding:7px 14px;border-radius:9px;font-size:12.5px;font-weight:600;box-shadow:0 6px 16px -11px rgba(40,26,16,.5)}
+  .city-node{background:#fff;border:1.5px solid var(--maroon);color:var(--maroon)}
+  .dish-node{background:var(--maroon);color:#fff}
+  .mesh-mid{position:absolute;left:50%;top:8px;transform:translateX(-50%);z-index:3;background:var(--gold);color:#3a2c08;font-weight:700;font-size:11.5px;padding:5px 13px;border-radius:999px;box-shadow:var(--shadow)}
+  .mesh-empty{grid-column:1/-1;display:flex;align-items:center;justify-content:center;color:var(--muted);font-size:13px;font-style:italic}
+  /* matrix */
+  .matrix-tools{display:flex;gap:7px;flex-wrap:wrap;align-items:center;margin-bottom:12px}
+  .search{border:1px solid var(--line);border-radius:9px;padding:7px 11px;font-size:12.5px;background:#fffdf9;min-width:150px}
+  .search:focus{outline:none;border-color:var(--gold)}
+  .matrix{overflow:auto;border-radius:12px;border:1px solid var(--line);max-height:540px}
+  table{border-collapse:collapse;width:100%;font-size:11.5px}
+  th,td{border:1px solid var(--line);padding:7px 9px;text-align:left;white-space:nowrap}
+  thead th{background:var(--maroon);color:#fff;font-weight:600;position:sticky;top:0;z-index:2;cursor:pointer}
+  thead th:first-child{cursor:default}
+  tbody th{background:var(--sand);color:var(--maroon);font-weight:600;position:sticky;left:0;cursor:pointer}
+  thead th:hover,tbody th:hover{filter:brightness(1.08)}
+  td{cursor:pointer;user-select:none;transition:.1s}
+  td.planned{background:#fff;color:var(--muted)}
+  td.building{background:#fdf0db;color:var(--amber);font-weight:600}
+  td.live{background:#e9f6ee;color:var(--green);font-weight:600}
+  td:hover{outline:1.5px solid var(--gold);outline-offset:-1.5px}
+  .legend{display:flex;gap:16px;flex-wrap:wrap;margin-top:13px;font-size:12px;color:var(--muted)}
+  .legend span{display:inline-flex;align-items:center;gap:6px}
+  .sw{width:13px;height:13px;border-radius:4px;display:inline-block;border:1px solid var(--line)}
+  .hint{font-size:11.5px;color:var(--muted);margin-top:9px;font-style:italic}
+  footer{text-align:center;color:var(--muted);font-size:11.5px;margin-top:24px}
+  /* toast */
+  #toast{position:fixed;bottom:22px;left:50%;transform:translateX(-50%) translateY(20px);background:var(--ink);color:#fff;padding:11px 20px;border-radius:999px;font-size:13px;font-weight:600;box-shadow:var(--shadow);opacity:0;pointer-events:none;transition:.3s;z-index:200}
+  #toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <!-- TOP BAR -->
+  <div class="topbar">
+    <div class="clientbox">
+      <span class="brandbar"><span class="dot"></span>Tableturnerr</span>
+      <select id="client-select" onchange="switchClient(this.value)"></select>
+      <button class="mini" onclick="newClient()">+ Client</button>
+      <button class="mini ghost" onclick="renameClient()">Rename</button>
+      <button class="mini ghost" onclick="dupClient()">Duplicate</button>
+      <button class="mini ghost" onclick="delClient()">Delete</button>
+    </div>
+    <div class="toolbar">
+      <button class="mini ghost" onclick="setAllAcc(true)">Expand all</button>
+      <button class="mini ghost" onclick="setAllAcc(false)">Collapse all</button>
+      <div class="menu">
+        <button class="mini" onclick="toggleMenu(event)">⤓ Export ▾</button>
+        <div class="menu-list" id="export-menu">
+          <button onclick="exportJSON()">JSON (full plan)</button>
+          <button onclick="exportCSV()">CSV (page matrix)</button>
+          <button onclick="exportURLs()">URL list (.txt)</button>
+          <button onclick="exportData()">Data-file seed (cities + dishes)</button>
+        </div>
+      </div>
+      <button class="mini" onclick="document.getElementById('importFile').click()">⤒ Import</button>
+      <input type="file" id="importFile" accept="application/json" style="display:none" onchange="importJSON(event)" />
+      <button class="mini ghost" onclick="resetClient()">↺ Reset</button>
+      <button class="primary mini" onclick="window.print()">⎙ Print</button>
+    </div>
+  </div>
+
+  <header class="hero">
+    <div class="eyebrow">Architecture Builder</div>
+    <h1 id="hero-title">Al-Baghdady</h1>
+    <p>Edit cities, dishes and pages on the left — the tree, mesh and page matrix update live. Pick from smart suggestions, track build status, switch between clients, and export the plan. Saved in your browser.</p>
+  </header>
+
+  <div class="stats">
+    <div class="stat"><div class="num" id="s-live">0</div><div class="lbl">Live pages</div></div>
+    <div class="stat gold"><div class="num" id="s-mesh">0</div><div class="lbl">Mesh pages (cities × dishes)</div></div>
+    <div class="stat green"><div class="num" id="s-built">0</div><div class="lbl">Mesh pages live</div></div>
+    <div class="stat"><div class="num" id="s-total">0</div><div class="lbl">Total footprint</div></div>
+  </div>
+  <div class="progress">
+    <div class="ptop"><span>Mesh build progress</span><span id="p-label">0 / 0</span></div>
+    <div class="bar"><i id="p-bar" style="width:0%"></i></div>
+  </div>
+
+  <div class="grid">
+    <!-- LEFT: EDITORS -->
+    <div>
+      <section class="block">
+        <h2>Edit the Plan</h2>
+        <div class="sub">Click a field for suggestions, or type your own. Slugs auto-generate.</div>
+        <div id="editors"></div>
+      </section>
+    </div>
+
+    <!-- RIGHT: VISUALS -->
+    <div>
+      <section class="block">
+        <div class="eyebrow">Structure</div><h2>Site Map</h2>
+        <div class="sub">Live pages, hubs and their children.</div>
+        <div class="tree" id="tree"></div>
+      </section>
+
+      <section class="block">
+        <div class="eyebrow">Growth Engine</div><h2>City × Dish Mesh</h2>
+        <div class="sub">Every city links to every dish — fully meshed.</div>
+        <div id="mesh-wrap">
+          <div class="mesh-mid" id="mesh-badge"></div>
+          <svg id="mesh-svg" preserveAspectRatio="none"></svg>
+          <div class="mesh-col left"><h3>Cities</h3><div id="mesh-cities" style="display:flex;flex-direction:column;gap:9px"></div></div>
+          <div class="mesh-col right"><h3>Dishes</h3><div id="mesh-dishes" style="display:flex;flex-direction:column;gap:9px;align-items:flex-end"></div></div>
+        </div>
+      </section>
+
+      <section class="block">
+        <div class="blockhead">
+          <div><div class="eyebrow">The Output</div><h2 style="margin:2px 0">Page Matrix</h2></div>
+          <input class="search" id="matrix-search" placeholder="🔍 filter cities / dishes…" oninput="renderMatrix()" />
+        </div>
+        <div class="matrix-tools">
+          <span style="font-size:12px;color:var(--muted);font-weight:600">Mark all:</span>
+          <button class="mini" onclick="markAll('planned')">Planned</button>
+          <button class="mini" onclick="markAll('building')">Building</button>
+          <button class="mini" onclick="markAll('live')">Live</button>
+        </div>
+        <div class="matrix"><table id="matrix"></table></div>
+        <div class="legend">
+          <span><span class="sw" style="background:#fff"></span> Planned</span>
+          <span><span class="sw" style="background:#fdf0db"></span> Building</span>
+          <span><span class="sw" style="background:#e9f6ee"></span> Live</span>
+        </div>
+        <div class="hint">Click a cell to cycle status · click a city row or dish column header to toggle the whole line · URL pattern /[dish]-in-[city]/</div>
+      </section>
+    </div>
+  </div>
+
+  <footer>Tableturnerr · Architecture Builder · multi-client · edits saved locally in this browser</footer>
+</div>
+<div id="toast"></div>
+
+<script>
+const KEY="albaghdady_arch_v3";
+const slug=s=>s.toLowerCase().trim().replace(/&/g,'and').replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'');
+const KINDS=[["cities","Cities / Regions","Add a city…"],["dishes","Signature Dishes","Add a dish…"],["pages","Main Pages","Add a page…"],["topics","Specialty Topics","Add a topic…"]];
+
+const SUGGEST={
+  cities:["Plano","Richardson","Garland","Addison","North Dallas","Allen","McKinney","Far North Dallas","Irving","Carrollton","Frisco","Dallas","Wylie","Murphy","Sachse","Rowlett","Coppell","Lewisville","The Colony","Little Elm","Prosper","Fairview","Parker","Mesquite","Grand Prairie","Arlington","Euless","Bedford","Grapevine","Flower Mound","Farmers Branch"],
+  dishes:["Baklava","Kanafa","Kahi & Qeimar","Mabrouma","Samoon","Manakish","Fatayer","Burma","Lady Fingers","Awama","Bird's Nest","Dehena","Pistachio Mabrouma","Kubba","Baqila","Qeimar & Debes","Samosa","Karak Chai","Yemeni Coffee","Sour Kibbeh"],
+  pages:["Menu","Bakery","Catering","Iraqi Cuisine","Our Story","Return Policy","Reviews","Gallery","About","Contact","FAQ","Order Online"],
+  topics:["Bread","Chai","Burma","Lady Fingers","Samosa","Kunafa","Baklava","Breakfast","Manakish","Fatayer","Halal Food","Iraqi Sweets","Catering","Tandoor Bread"]
+};
+
+const DEFAULT_CLIENT=()=>({
+  name:"Al-Baghdady",
+  pages:["Menu","Bakery","Catering","Iraqi Cuisine","Our Story","Return Policy"],
+  topics:["Bread","Chai","Burma","Lady Fingers","Samosa","Kunafa","Baklava","Breakfast","Manakish","Fatayer","Halal Food"],
+  cities:["Plano","Garland","Addison","North Dallas","Allen","McKinney","Far North Dallas","Irving","Carrollton","Frisco"],
+  dishes:["Baklava","Kanafa","Kahi & Qeimar","Mabrouma","Samoon","Manakish","Fatayer"],
+  matrix:{}
+});
+
+let store=loadStore();
+let state=store.clients[store.active];
+let accOpen={cities:true,dishes:true,pages:false,topics:false};
+
+function loadStore(){
+  try{const s=JSON.parse(localStorage.getItem(KEY)); if(s&&s.clients&&s.active&&s.clients[s.active]) return s;}catch(e){}
+  return {active:"Al-Baghdady",clients:{"Al-Baghdady":DEFAULT_CLIENT()}};
+}
+function saveStore(){ localStorage.setItem(KEY,JSON.stringify(store)); }
+function save(){ saveStore(); }
+
+/* ---------- toast ---------- */
+let toastT;
+function toast(msg){ const t=document.getElementById('toast'); t.textContent=msg; t.classList.add('show'); clearTimeout(toastT); toastT=setTimeout(()=>t.classList.remove('show'),1700); }
+
+/* ---------- clients ---------- */
+function refreshClientSelect(){
+  const sel=document.getElementById('client-select');
+  sel.innerHTML=Object.keys(store.clients).map(c=>`<option ${c===store.active?'selected':''}>${c}</option>`).join('');
+  document.getElementById('hero-title').textContent=store.active;
+}
+function switchClient(name){ store.active=name; state=store.clients[name]; save(); render(); refreshClientSelect(); toast('Switched to '+name); }
+function newClient(){ const n=prompt('New client name:'); if(!n) return; if(store.clients[n]){alert('That client already exists.');return;} store.clients[n]={name:n,pages:[],topics:[],cities:[],dishes:[],matrix:{}}; store.active=n; state=store.clients[n]; save(); render(); refreshClientSelect(); toast('Created '+n); }
+function dupClient(){ const n=prompt('Duplicate as:',store.active+' copy'); if(!n) return; if(store.clients[n]){alert('Name taken.');return;} store.clients[n]=JSON.parse(JSON.stringify(state)); store.clients[n].name=n; store.active=n; state=store.clients[n]; save(); render(); refreshClientSelect(); toast('Duplicated → '+n); }
+function renameClient(){ const n=prompt('Rename client:',store.active); if(!n||n===store.active) return; if(store.clients[n]){alert('Name taken.');return;} store.clients[n]=state; store.clients[n].name=n; delete store.clients[store.active]; store.active=n; save(); render(); refreshClientSelect(); toast('Renamed to '+n); }
+function delClient(){ if(Object.keys(store.clients).length<=1){alert('Keep at least one client.');return;} if(!confirm('Delete client "'+store.active+'"?'))return; delete store.clients[store.active]; store.active=Object.keys(store.clients)[0]; state=store.clients[store.active]; save(); render(); refreshClientSelect(); toast('Deleted'); }
+function resetClient(){ if(!confirm('Reset "'+store.active+'" to the default Al-Baghdady plan?'))return; store.clients[store.active]=DEFAULT_CLIENT(); store.clients[store.active].name=store.active; state=store.clients[store.active]; save(); render(); toast('Reset'); }
+
+/* ---------- items ---------- */
+function addItem(kind){ const i=document.getElementById('add-'+kind),v=i.value.trim(); if(!v)return; state[kind].push(v); i.value=''; render(); save(); acRender(kind); i.focus(); }
+function editItem(kind,idx,val){ state[kind][idx]=val; save(); if(kind==='cities'||kind==='dishes'){renderMesh();renderMatrix();renderStats();} else renderTree(); }
+function delItem(kind,idx){ state[kind].splice(idx,1); render(); save(); }
+function clearKind(kind){ if(!state[kind].length)return; if(!confirm('Clear all '+kind+'?'))return; state[kind]=[]; render(); save(); toast('Cleared '+kind); }
+function addAll(kind){ const have=new Set(state[kind].map(x=>x.toLowerCase())); SUGGEST[kind].forEach(o=>{if(!have.has(o.toLowerCase()))state[kind].push(o);}); render(); save(); toast('Added all '+kind); }
+
+/* ---------- autocomplete (fixed-position, never clipped) ---------- */
+let acActive=null;
+function acRender(kind){
+  const i=document.getElementById('add-'+kind),l=document.getElementById('ac-'+kind); if(!i||!l)return;
+  const q=i.value.trim().toLowerCase(), have=new Set(state[kind].map(x=>x.toLowerCase()));
+  const opts=(SUGGEST[kind]||[]).filter(o=>!have.has(o.toLowerCase())&&o.toLowerCase().includes(q));
+  l.innerHTML=opts.length
+    ? opts.map(o=>`<div class="ac-item" data-kind="${kind}" data-val="${o.replace(/"/g,'&quot;')}">${o}<span class="add-ic">+</span></div>`).join('')
+    : '<div class="ac-empty">'+(q?'No match — press + or Enter to add &ldquo;'+i.value.replace(/</g,'&lt;')+'&rdquo;':'All suggestions added — type your own')+'</div>';
+}
+function acPos(kind){ const i=document.getElementById('add-'+kind),l=document.getElementById('ac-'+kind); const r=i.getBoundingClientRect(); l.style.left=r.left+'px'; l.style.top=(r.bottom+5)+'px'; l.style.width=r.width+'px'; }
+function acShow(kind){ acRender(kind); acPos(kind); const l=document.getElementById('ac-'+kind); l.classList.add('show'); acActive=kind; }
+function acHideAll(){ document.querySelectorAll('.ac-list.show').forEach(l=>l.classList.remove('show')); acActive=null; }
+function acPick(kind,val){ state[kind].push(val); const i=document.getElementById('add-'+kind); i.value=''; render(); save(); acRender(kind); acPos(kind); i.focus(); }
+function acKey(e,kind){ if(e.key==='Enter'){addItem(kind);} else if(e.key==='Escape'){acHideAll();} }
+
+/* ---------- renderers ---------- */
+function renderEditors(){
+  document.getElementById('editors').innerHTML=KINDS.map(([kind,title,ph])=>`
+    <div class="acc${accOpen[kind]?' open done':''}" data-kind="${kind}">
+      <div class="acc-head" onclick="toggleAcc('${kind}')">
+        <span class="acc-title">${title}</span>
+        <span class="acc-meta"><span class="count" id="c-${kind}">0</span><span class="chev">▾</span></span>
+      </div>
+      <div class="acc-body"><div class="acc-clip"><div class="acc-inner">
+        <div class="bulk"><button class="mini" onclick="addAll('${kind}')">+ Add all suggestions</button><button class="mini ghost" onclick="clearKind('${kind}')">Clear</button></div>
+        <div id="list-${kind}"></div>
+        <div class="addrow"><div class="ac-wrap"><input id="add-${kind}" placeholder="${ph}" autocomplete="off" onfocus="acShow('${kind}')" oninput="acShow('${kind}')" onkeydown="acKey(event,'${kind}')" /><div class="ac-list" id="ac-${kind}"></div></div><button class="primary" onclick="addItem('${kind}')">+</button></div>
+      </div></div></div>
+    </div>`).join('');
+  KINDS.forEach(([kind])=>{
+    document.getElementById('list-'+kind).innerHTML=state[kind].map((v,idx)=>
+      `<div class="row" draggable="true" data-kind="${kind}" data-idx="${idx}">
+         <span class="drag">⋮⋮</span>
+         <input class="name" value="${String(v).replace(/"/g,'&quot;')}" oninput="editItem('${kind}',${idx},this.value)" />
+         <button class="del" onclick="delItem('${kind}',${idx})" title="remove">✕</button>
+       </div>`).join('');
+    document.getElementById('c-'+kind).textContent=state[kind].length;
+  });
+  enableDrag();
+}
+function toggleAcc(kind){ accOpen[kind]=!accOpen[kind]; const el=document.querySelector('.acc[data-kind="'+kind+'"]'); el.classList.toggle('open',accOpen[kind]); el.classList.remove('done'); if(accOpen[kind]){ el.addEventListener('transitionend',function h(){el.classList.add('done');el.removeEventListener('transitionend',h);}); } save(); }
+function setAllAcc(open){ KINDS.forEach(([k])=>accOpen[k]=open); renderEditors(); }
+
+function renderTree(){
+  const pages=state.pages.map(p=>`<span class="node leaf">${p} &nbsp;/${slug(p)}/</span>`).join('')||'<span class="node leaf" style="opacity:.5">no pages yet</span>';
+  document.getElementById('tree').innerHTML=`
+    <span class="node root">Home &nbsp;/</span>
+    <div class="branch">${pages}
+      <div><span class="node leaf hub">Service Areas &nbsp;/near/ · ${state.cities.length}</span><div class="children">${state.cities.map(c=>`<span class="pill city">${c}</span>`).join('')||'<span class="pill">—</span>'}</div></div>
+      <div><span class="node leaf hub">Specialties &nbsp;/specialties/ · ${state.topics.length}</span><div class="children">${state.topics.map(t=>`<span class="pill topic">${t}</span>`).join('')||'<span class="pill">—</span>'}</div></div>
+    </div>`;
+}
+function renderMesh(){
+  const cw=document.getElementById('mesh-cities'),dw=document.getElementById('mesh-dishes');
+  if(!state.cities.length||!state.dishes.length){ document.getElementById('mesh-svg').innerHTML=''; cw.innerHTML='';dw.innerHTML='';
+    document.getElementById('mesh-badge').textContent=(state.cities.length*state.dishes.length)+' pages';
+    cw.innerHTML='<span style="color:#b6a890;font-size:12.5px;font-style:italic">add cities & dishes…</span>'; return; }
+  cw.innerHTML=state.cities.map(c=>`<span class="city-node">${c}</span>`).join('');
+  dw.innerHTML=state.dishes.map(d=>`<span class="dish-node">${d}</span>`).join('');
+  document.getElementById('mesh-badge').textContent=`${state.cities.length} × ${state.dishes.length} = ${state.cities.length*state.dishes.length} pages`;
+  setTimeout(drawMesh,30);
+}
+function drawMesh(){
+  const wrap=document.getElementById('mesh-wrap'),svg=document.getElementById('mesh-svg');
+  const cs=[...document.querySelectorAll('.city-node')],ds=[...document.querySelectorAll('.dish-node')];
+  const wb=wrap.getBoundingClientRect();let p='';
+  cs.forEach(c=>{const cb=c.getBoundingClientRect();const x1=cb.right-wb.left,y1=cb.top-wb.top+cb.height/2;
+    ds.forEach(d=>{const db=d.getBoundingClientRect();const x2=db.left-wb.left,y2=db.top-wb.top+db.height/2;const mx=(x1+x2)/2;
+      p+=`<path class="mesh-line" d="M${x1},${y1} C${mx},${y1} ${mx},${y2} ${x2},${y2}"/>`;});});
+  svg.innerHTML=p;
+}
+function renderMatrix(){
+  const q=(document.getElementById('matrix-search')?.value||'').toLowerCase();
+  const cities=state.cities.filter(c=>!q||c.toLowerCase().includes(q));
+  const dishes=state.dishes.filter(d=>!q||d.toLowerCase().includes(q));
+  const t=document.getElementById('matrix');
+  if(!state.cities.length||!state.dishes.length){ t.innerHTML='<tbody><tr><td style="border:none;padding:20px;color:#b6a890;font-style:italic">Add cities and dishes to generate the page matrix.</td></tr></tbody>'; return; }
+  let h='<thead><tr><th>City \\ Dish</th>'+dishes.map(d=>`<th onclick="cycleCol('${d.replace(/'/g,"\\'")}')" title="toggle column">${d}</th>`).join('')+'</tr></thead><tbody>';
+  cities.forEach(c=>{ h+=`<tr><th onclick="cycleRow('${c.replace(/'/g,"\\'")}')" title="toggle row">${c}</th>`+dishes.map(d=>{
+    const k=slug(d)+'__'+slug(c),st=state.matrix[k]||'planned';
+    return `<td class="${st}" onclick="cycleCell('${k}')">${d} in ${c}</td>`;}).join('')+'</tr>'; });
+  h+='</tbody>'; t.innerHTML=h;
+}
+function renderStats(){
+  const live=1+state.pages.length+1+state.cities.length+1+state.topics.length;
+  const mesh=state.cities.length*state.dishes.length;
+  const built=Object.values(state.matrix).filter(v=>v==='live').length;
+  document.getElementById('s-live').textContent=live;
+  document.getElementById('s-mesh').textContent=mesh;
+  document.getElementById('s-built').textContent=built;
+  document.getElementById('s-total').textContent=live+mesh;
+  const pct=mesh?Math.round(built/mesh*100):0;
+  document.getElementById('p-bar').style.width=pct+'%';
+  document.getElementById('p-label').textContent=built+' / '+mesh+' ('+pct+'%)';
+}
+function render(){ renderEditors(); renderTree(); renderMesh(); renderMatrix(); renderStats(); }
+
+/* ---------- matrix status ---------- */
+function cycleCell(k){ const c=state.matrix[k]||'planned'; const n=c==='planned'?'building':c==='building'?'live':'planned'; if(n==='planned')delete state.matrix[k]; else state.matrix[k]=n; renderMatrix(); renderStats(); save(); }
+function setRow(city,st){ state.dishes.forEach(d=>{const k=slug(d)+'__'+slug(city); if(st==='planned')delete state.matrix[k]; else state.matrix[k]=st;}); renderMatrix(); renderStats(); save(); }
+function cycleRow(city){ const allLive=state.dishes.every(d=>state.matrix[slug(d)+'__'+slug(city)]==='live'); setRow(city,allLive?'planned':'live'); }
+function setCol(dish,st){ state.cities.forEach(c=>{const k=slug(dish)+'__'+slug(c); if(st==='planned')delete state.matrix[k]; else state.matrix[k]=st;}); renderMatrix(); renderStats(); save(); }
+function cycleCol(dish){ const allLive=state.cities.every(c=>state.matrix[slug(dish)+'__'+slug(c)]==='live'); setCol(dish,allLive?'planned':'live'); }
+function markAll(st){ state.matrix={}; if(st!=='planned'){ state.cities.forEach(c=>state.dishes.forEach(d=>state.matrix[slug(d)+'__'+slug(c)]=st)); } renderMatrix(); renderStats(); save(); toast('Marked all '+st); }
+
+/* ---------- drag reorder ---------- */
+let dragEl=null;
+function enableDrag(){
+  document.querySelectorAll('.row[draggable]').forEach(r=>{
+    r.addEventListener('dragstart',()=>{dragEl=r;r.classList.add('dragging');});
+    r.addEventListener('dragend',()=>{r.classList.remove('dragging');dragEl=null;});
+    r.addEventListener('dragover',e=>{e.preventDefault(); if(!dragEl||dragEl===r||dragEl.dataset.kind!==r.dataset.kind)return;
+      const kind=r.dataset.kind,from=+dragEl.dataset.idx,to=+r.dataset.idx;
+      const arr=state[kind]; arr.splice(to,0,arr.splice(from,1)[0]); save(); renderEditors(); renderTree(); renderMesh(); renderMatrix();});
+  });
+}
+
+/* ---------- export / import ---------- */
+function dl(name,text,type){ const b=new Blob([text],{type:type||'text/plain'}); const a=document.createElement('a'); a.href=URL.createObjectURL(b); a.download=name; a.click(); }
+function exportJSON(){ dl(slug(store.active)+'-architecture.json',JSON.stringify({client:store.active,...state},null,2),'application/json'); toast('Exported JSON'); }
+function exportCSV(){ let c='City,'+state.dishes.join(',')+'\n'; state.cities.forEach(ci=>{c+=ci+','+state.dishes.map(d=>state.matrix[slug(d)+'__'+slug(ci)]||'planned').join(',')+'\n';}); dl(slug(store.active)+'-matrix.csv',c,'text/csv'); toast('Exported CSV'); }
+function exportURLs(){ let u=[]; state.cities.forEach(c=>state.dishes.forEach(d=>u.push('/'+slug(d)+'-in-'+slug(c)+'/'))); dl(slug(store.active)+'-urls.txt',u.join('\n')); toast(u.length+' URLs exported'); }
+function exportData(){ const t=`// ${store.active} — generated by Architecture Builder\nexport const CITIES = ${JSON.stringify(state.cities.map(c=>({name:c,slug:slug(c)})),null,2)};\n\nexport const DISHES = ${JSON.stringify(state.dishes.map(d=>({name:d,slug:slug(d)})),null,2)};\n`; dl(slug(store.active)+'-data.ts',t,'text/plain'); toast('Exported data seed'); }
+function importJSON(e){ const f=e.target.files[0]; if(!f)return; const r=new FileReader(); r.onload=()=>{try{const s=JSON.parse(r.result); if(!s.cities)throw 0; const nm=s.client||s.name||'Imported'; store.clients[nm]={name:nm,pages:s.pages||[],topics:s.topics||[],cities:s.cities||[],dishes:s.dishes||[],matrix:s.matrix||{}}; store.active=nm; state=store.clients[nm]; save(); render(); refreshClientSelect(); toast('Imported '+nm);}catch(err){alert('Invalid JSON file.');}}; r.readAsText(f); e.target.value=''; }
+
+/* ---------- menus / global ---------- */
+function toggleMenu(e){ e.stopPropagation(); document.getElementById('export-menu').classList.toggle('show'); }
+document.addEventListener('mousedown',e=>{ const it=e.target.closest('.ac-item'); if(it){e.preventDefault();acPick(it.dataset.kind,it.dataset.val);} });
+document.addEventListener('click',e=>{ if(!e.target.closest('.ac-wrap'))acHideAll(); if(!e.target.closest('.menu'))document.getElementById('export-menu').classList.remove('show'); });
+window.addEventListener('scroll',()=>{ if(acActive)acPos(acActive); },true);
+window.addEventListener('resize',()=>{ drawMesh(); if(acActive)acPos(acActive); });
+window.addEventListener('load',()=>{ refreshClientSelect(); render(); setTimeout(drawMesh,350); });
+</script>
+</body>
+</html>

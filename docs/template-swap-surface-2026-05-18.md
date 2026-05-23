@@ -197,7 +197,7 @@ Group by purpose, not by file. The current tenant's assets are real photos; repl
 | **Bakery interior / production** | `/Images/bakery.webp` | Used on `/bakery/`, bread/manakish/fatayer specialty placeholders, `Menu` "Bread" + "Manakish & Fatayer" category cards. |
 | **Storefront** | `/Images/storefront.webp` | Used on the homepage `OurLocation` block. |
 | **Logo** | `/Images/logo.webp` | Header, footer, schema `Organization.logo`, `Restaurant.logo`. ~256×256 ideal. |
-| **Featured dishes** (homepage `FeaturedDishes`) | `/Images/dish-1.webp` … `dish-4.webp` | Square or 4:3. Currently 4 photos cycled across `popular: true` menu items. |
+| **Dish / sweets photos** (`/iraqi-cuisine/` image rotation + Appetizers category card) | `/Images/assorted-baklava-tray.webp`, `pistachio-baklava-closeup.webp`, `baklava-awama-platter.webp`, `baklava-box-storefront.webp` | Descriptive names (renamed 2026-05-20 from generic `dish-1…4`). All are baklava/sweets shots — note the Appetizers category card (`menu.ts`) currently uses the sweets tray, a content mismatch worth a real appetizer photo. |
 | **Gallery** (homepage gallery, schema `image[]`) | `/Images/gallery/*.webp` (15 files) | Mixed aspect; the gallery handles any size. Photos: baklava-pistachio-copper, baklava-tiered-tray, sweets-platter-lamps, zalabia-rings/tray, baklava-boxed, baklava-pistachio-plate, dessert-tray-box, ladyfingers-pistachio. Six are referenced by URL in `schema.ts:103-110` as `PRIMARY_IMAGES` — keep filenames stable or update that constant. |
 | **Specialty hero images** | `/Images/specialties/<slug>.webp` | Convention from `specialties.ts:18-21`. Today only `baklava`, `burma`, `lady-fingers`, `halal-food` exist. Others fall back to gallery/hero photos. Aim for 1600×900 landscape. |
 | **Menu category image** | `/Images/menu/bakery-sweets.webp` | One file today; category cards reference these in `menu.ts` `image` fields. |
@@ -319,7 +319,7 @@ Follow top to bottom. Each step is independent unless noted.
 13. **Replacement assets** — drop into `/public/Images/`:
     - `logo.webp` — new brand logo (~256×256).
     - `hero.webp` — wide hero photo.
-    - `bakery.webp` (or rename in `menu.ts` / specialty references), `storefront.webp`, `dish-1`…`dish-4.webp`.
+    - `bakery.webp` (or rename in `menu.ts` / specialty references), `storefront.webp`, and the descriptive dish/sweets photos (`assorted-baklava-tray.webp`, `pistachio-baklava-closeup.webp`, `baklava-awama-platter.webp`, `baklava-box-storefront.webp`).
     - `/Images/gallery/*.webp` — replace the 15 gallery files; or remove and update `PRIMARY_IMAGES` in `schema.ts`.
     - `/Images/specialties/<slug>.webp` — one per specialty.
     - `/Images/instagram/post-{1..6}.webp` — Instagram strip.
