@@ -90,7 +90,7 @@ export default function OurStoryPage() {
             For over a decade now, our small breakfast place beside the barber shop has been a quiet landmark — a place loyal customers drive across Greenville Ave for, and where new neighbors discover their first bite of real Iraqi baking.
           </p>
 
-          <h2 className="!mt-12 !mb-4">Come See Us in the Morning, When the Bread is Hottest</h2>
+          <h2 className="!mt-12 !mb-4">Come See Us — Fresh Iraqi Bread Every Morning</h2>
           <p>
             The best time to find us is early, when the bread is freshest and the trays are just out. Come in for breakfast — a warm <em>samoon</em>, a piece of <em>baklava</em>, a <em>ladyfinger</em> with your chai — and let the day start the way it should and end your day with delicious kunafa in the evening.
           </p>

@@ -16,7 +16,7 @@ export default function BakerySpotlight() {
 
         <div>
           <div className="eyebrow">Since 1919 · Four Generations</div>
-          <h2 className="mb-6">A dessert for every craving.</h2>
+          <h2 className="mb-6">Iraqi Sweets &amp; Desserts for Every Craving</h2>
           <p className="text-lg text-[var(--color-text-muted)] mb-8 leading-relaxed">
             Our menu is built on the authentic Iraqi recipes our family has baked for four generations. From kunafa, manakish, ladyfingers, and fatayer to the baklava that put our name on the map, every item is made the same way it&apos;s been made since 1919.
           </p>

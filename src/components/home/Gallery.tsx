@@ -107,7 +107,7 @@ export default function Gallery() {
       <div className="container-pad">
         <div className="text-center mb-12 max-w-2xl mx-auto">
           <div className="eyebrow">Gallery</div>
-          <h2 className="mb-4">A closer look at the counter.</h2>
+          <h2 className="mb-4">Iraqi Sweets &amp; Bakery Gallery — Baklava, Kunafa &amp; Samoon in Richardson, TX</h2>
           <p className="text-[var(--color-text-muted)]">
             From pistachio baklava we&apos;ve been laying down since 1919 to the
             zalabia rings that come out crisp every morning.

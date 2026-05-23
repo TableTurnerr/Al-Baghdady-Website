@@ -1,12 +1,13 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { createMetadata } from "@/data/metadata";
-import { breadcrumbSchema, webPageSchema } from "@/data/schema";
+import { breadcrumbSchema, webPageSchema, faqSchema } from "@/data/schema";
 import SchemaInjector from "@/components/shared/SchemaInjector";
 import BreadcrumbNav from "@/components/layout/BreadcrumbNav";
 import ThemeBtn from "@/components/shared/ThemeBtn";
 import QRHover from "@/components/shared/QRHover";
 import SmartImage from "@/components/shared/SmartImage";
+import FAQSection from "@/components/home/FAQSection";
 import { RESTAURANT } from "@/data/restaurant";
 import { MENU } from "@/data/menu";
 import { SPECIALTIES } from "@/data/specialties";
@@ -31,6 +32,25 @@ const bakerySpecialties = BAKERY_SPECIALTY_SLUGS
   .map((slug) => SPECIALTIES.find((s) => s.slug === slug))
   .filter((s): s is NonNullable<typeof s> => s !== undefined);
 
+// Bakery FAQs — FAQPage schema + featured snippets.
+const BAKERY_FAQS = [
+  {
+    question: "Are your Iraqi sweets baked fresh in-house?",
+    answer:
+      "Yes — everything is baked in-house, daily. Our bakers fire the tandoor for fresh samoon each morning, layer phyllo by hand for baklava and burma, and make kunafa to order. Nothing is frozen or shipped in.",
+  },
+  {
+    question: "Can I order a custom dessert tray for an event?",
+    answer:
+      "Yes — custom Iraqi sweets trays are one of our specialties for Eid, weddings, baby showers and corporate events. Mix baklava, kunafa, ladyfingers, burma and mabrouma, sized to your guest count. Order ahead through our [catering page](/catering/).",
+  },
+  {
+    question: "Can I walk in, or should I order ahead?",
+    answer:
+      "Walk in any time for whatever's in the case that day. For large orders, custom trays or a specific sweet, we recommend ordering a day ahead so we can have it ready and fresh.",
+  },
+];
+
 export const metadata: Metadata = createMetadata({
   title: "Iraqi Bakery Richardson TX — Fresh Sweets & Bread | Al-Baghdady",
   description:
@@ -47,6 +67,8 @@ export const metadata: Metadata = createMetadata({
     "turkish baklava dallas",
     "fatayer dallas",
     "manakish dallas",
+    "zaatar bread",
+    "spinach pie dallas",
     "burma dallas",
     "mabrouma dallas",
     "lady fingers dallas",
@@ -76,6 +98,7 @@ export default function BakeryPage() {
               "In-house Arabic bakery in Richardson, TX. Fresh samoon from the tandoor, kunafa, baklava, ladyfingers (znood al sit), burma, fatayer, manakish — baked daily using family recipes from Baghdad since 1919.",
             primaryImage: "/Images/gallery/baklava-pistachio-copper.webp",
           }),
+          faqSchema(BAKERY_FAQS),
         ]}
       />
       <BreadcrumbNav
@@ -97,7 +120,7 @@ export default function BakeryPage() {
       </section>
 
       <section className="container-pad pb-16 md:pb-24">
-        <h2 className="mb-8">What&apos;s in the case today.</h2>
+        <h2 className="mb-8">Fresh Iraqi Sweets in the Case Today</h2>
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {featuredBakeryItems.map((item) => (
             <article key={item.name} className="card p-0">
@@ -125,7 +148,7 @@ export default function BakeryPage() {
         </div>
 
         <div className="mt-20 max-w-3xl">
-          <h2 className="mb-3">Browse our specialties</h2>
+          <h2 className="mb-3">Browse Our Iraqi Bakery Specialties</h2>
           <p className="text-[var(--color-text-muted)] mb-8 leading-relaxed">
             Each one has its own page — story, recipe, and how to order.
           </p>
@@ -153,7 +176,7 @@ export default function BakeryPage() {
           ))}
         </div>
 
-        {/* DRAFT (2026-05-21) — topical SEO content for the bakery page. Pending Hasham/client brand-voice review. */}
+        {/* Topical SEO content for the bakery page. */}
         <div className="mt-20 max-w-3xl">
           <div className="eyebrow">Our Bakery</div>
           <h2 className="mb-5">An Authentic Iraqi &amp; Arabic Bakery in Richardson, TX</h2>
@@ -176,11 +199,18 @@ export default function BakeryPage() {
               Whether you want a single piece with your chai or a full sweets tray for Eid, a wedding or a
               Ramadan iftar, everything is 100% halal and Zabihah-verified.
             </p>
+            <p>
+              Can&apos;t make it to Richardson? We deliver fresh Iraqi sweets and bread to{" "}
+              <Link href="/near/plano-tx/" className="link-underline text-[var(--color-text)]">Plano</Link>,{" "}
+              <Link href="/near/frisco-tx/" className="link-underline text-[var(--color-text)]">Frisco</Link>,{" "}
+              <Link href="/near/garland-tx/" className="link-underline text-[var(--color-text)]">Garland</Link> and{" "}
+              <Link href="/near/" className="link-underline text-[var(--color-text)]">neighborhoods across DFW</Link> — order online for pickup or doorstep delivery.
+            </p>
           </div>
         </div>
 
         <div className="bg-[var(--color-warm-white)] rounded-[var(--radius-section)] p-10 md:p-16 mt-16 text-center border border-[var(--color-border)]">
-          <h2 className="mb-4">Custom dessert trays for your celebration.</h2>
+          <h2 className="mb-4">Custom Iraqi Dessert Trays for Your Celebration</h2>
           <p className="text-[var(--color-text-muted)] max-w-2xl mx-auto mb-8 leading-relaxed">
             Hosting an Eid party, wedding, baby shower or corporate event? Our custom trays make
             beautiful, traditional centerpieces. Mix kanafa, baklava, ladyfingers and ma&apos;amoul,
@@ -194,6 +224,12 @@ export default function BakeryPage() {
           </div>
         </div>
       </section>
+
+      <FAQSection
+        faqs={BAKERY_FAQS}
+        eyebrow="Bakery Questions"
+        title="Frequently Asked Questions About Our Bakery"
+      />
     </>
   );
 }

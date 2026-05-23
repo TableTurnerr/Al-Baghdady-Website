@@ -5,11 +5,13 @@ import { createMetadata } from "@/data/metadata";
 import {
   breadcrumbSchema,
   cateringServiceSchema,
+  faqSchema,
   webPageSchema,
 } from "@/data/schema";
 import SchemaInjector from "@/components/shared/SchemaInjector";
 import BreadcrumbNav from "@/components/layout/BreadcrumbNav";
 import CateringForm from "@/components/catering/CateringForm";
+import FAQSection from "@/components/home/FAQSection";
 
 export const metadata: Metadata = createMetadata({
   title: "Iraqi Catering Dallas — Halal Weddings, Eid | Al-Baghdady",
@@ -61,6 +63,25 @@ const STEPS = [
   },
 ];
 
+// Catering FAQs — FAQPage schema + featured snippets.
+const CATERING_FAQS = [
+  {
+    question: "How far in advance should I place a catering order?",
+    answer:
+      "As early as you can. For sweets trays and dessert boxes we ask for at least 48 hours' notice; for large weddings or corporate events, a week or more helps us plan. Smaller last-minute orders are sometimes possible — just call and ask.",
+  },
+  {
+    question: "Do you cater savory food, or only sweets?",
+    answer:
+      "Both. Alongside our baklava, kunafa and ladyfinger trays, we cater savory [fatayer](/specialties/fatayer/) and [manakish](/specialties/manakish/), fresh [samoon](/specialties/bread/), samosas, and urns of [karak chai](/specialties/chai/) — a full Iraqi spread.",
+  },
+  {
+    question: "Can you accommodate dietary needs like vegetarian or nut-free?",
+    answer:
+      "Yes — we have vegetarian options (spinach and cheese fatayer, cheese manakish, samoon) and can flag nut-free items. Tell us your needs when you inquire and we'll build the spread around them. Everything is 100% halal and Zabihah-verified.",
+  },
+];
+
 export default function CateringPage() {
   return (
     <>
@@ -78,6 +99,7 @@ export default function CateringPage() {
               "Authentic Iraqi dessert and savory catering across DFW — baklava trays, kunafa platters, fatayer boxes, manakish, ladyfingers, samoon and full Iraqi sweets spreads for Eid, weddings, Ramadan iftars and corporate events. Halal certified.",
             primaryImage: "/Images/gallery/sweets-platter-lamps.webp",
           }),
+          faqSchema(CATERING_FAQS),
         ]}
       />
       <BreadcrumbNav
@@ -101,7 +123,7 @@ export default function CateringPage() {
       <section className="container-pad pb-12">
         <div className="grid lg:grid-cols-2 gap-10 items-start">
           <div>
-            <h2 className="mb-6">What We Cater</h2>
+            <h2 className="mb-6">Iraqi Sweets &amp; Savories We Cater</h2>
             <ul className="space-y-3">
               {SERVICES.map((s) => (
                 <li key={s} className="flex items-start gap-3">
@@ -111,7 +133,7 @@ export default function CateringPage() {
               ))}
             </ul>
 
-            <h2 className="!mt-12 !mb-6">How It Works</h2>
+            <h2 className="!mt-12 !mb-6">How Our Iraqi Catering Works</h2>
             <div className="space-y-5">
               {STEPS.map((step) => (
                 <div key={step.n} className="flex gap-4">
@@ -139,7 +161,7 @@ export default function CateringPage() {
         </div>
       </section>
 
-      {/* DRAFT (2026-05-21) — topical SEO content + internal links for the catering page. Pending Hasham/client brand-voice review. */}
+      {/* Topical SEO content + internal links for the catering page. */}
       <section className="container-pad pb-16 max-w-3xl">
         <div className="eyebrow">Catering Across DFW</div>
         <h2 className="mb-5">Halal Iraqi &amp; Middle Eastern Catering for Every Occasion</h2>
@@ -163,8 +185,21 @@ export default function CateringPage() {
             <Link href="/menu/" className="link-underline text-[var(--color-text)]">menu</Link> for ideas, then send your date and
             guest count above — everything is baked the day of your event and is 100% halal and Zabihah-verified.
           </p>
+          <p>
+            We deliver and set up catering across the metroplex — including{" "}
+            <Link href="/near/mckinney-tx/" className="link-underline text-[var(--color-text)]">McKinney</Link>,{" "}
+            <Link href="/near/irving-tx/" className="link-underline text-[var(--color-text)]">Irving</Link> and{" "}
+            <Link href="/near/addison-tx/" className="link-underline text-[var(--color-text)]">Addison</Link>. See all the{" "}
+            <Link href="/near/" className="link-underline text-[var(--color-text)]">DFW areas we serve</Link>.
+          </p>
         </div>
       </section>
+
+      <FAQSection
+        faqs={CATERING_FAQS}
+        eyebrow="Catering Questions"
+        title="Frequently Asked Questions About Catering"
+      />
     </>
   );
 }

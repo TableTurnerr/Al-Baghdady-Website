@@ -145,7 +145,7 @@ export default function IraqiCuisinePage() {
       <section className="container-pad pb-16 md:pb-24">
         <div className="grid gap-6">
           {DISHES.map((dish, i) => {
-            const images = ["/Images/hero.webp", "/Images/dish-1.webp", "/Images/dish-2.webp", "/Images/dish-3.webp", "/Images/dish-4.webp", "/Images/bakery.webp"];
+            const images = ["/Images/hero.webp", "/Images/assorted-baklava-tray.webp", "/Images/pistachio-baklava-closeup.webp", "/Images/baklava-awama-platter.webp", "/Images/baklava-box-storefront.webp", "/Images/bakery.webp"];
             const reverse = i % 2 === 1;
             const specialtyLink = SPECIALTY_LINKS[dish.name];
             return (
@@ -182,7 +182,7 @@ export default function IraqiCuisinePage() {
           })}
         </div>
 
-        {/* DRAFT (2026-05-21) — closing topical content + internal links. Pending Hasham/client brand-voice review. */}
+        {/* Closing topical content + internal links. */}
         <div className="max-w-3xl mt-20">
           <div className="eyebrow">Visit Us</div>
           <h2 className="mb-5">Taste Authentic Iraqi Cuisine in Richardson, TX</h2>
@@ -196,6 +196,13 @@ export default function IraqiCuisinePage() {
             <Link href="/specialties/kunafa/" className="link-underline text-[var(--color-text)]">kunafa</Link>, or order a full Iraqi
             spread for your next event through our{" "}
             <Link href="/catering/" className="link-underline text-[var(--color-text)]">catering</Link> team. Come hungry — leave full.
+          </p>
+          <p className="text-[var(--color-text-muted)] leading-relaxed mt-4">
+            We serve Iraqi food and bakery favorites across the Dallas–Fort Worth area, from{" "}
+            <Link href="/near/north-dallas-tx/" className="link-underline text-[var(--color-text)]">North Dallas</Link> and{" "}
+            <Link href="/near/addison-tx/" className="link-underline text-[var(--color-text)]">Addison</Link> to{" "}
+            <Link href="/near/irving-tx/" className="link-underline text-[var(--color-text)]">Irving</Link> — see{" "}
+            <Link href="/near/" className="link-underline text-[var(--color-text)]">all the neighborhoods we serve</Link>.
           </p>
         </div>
 

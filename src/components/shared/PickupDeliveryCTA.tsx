@@ -8,7 +8,6 @@ type Props = {
 
 // Single shared pickup/delivery CTA. Replaces the 11 near-identical per-specialty pickup
 // paragraphs (doorway-content pattern). Page uniqueness lives in primaryBlock + FAQs, not here.
-// DRAFT copy — pending Hasham/client brand-voice review.
 export default function PickupDeliveryCTA({ itemName }: Props) {
   const heading = itemName
     ? `Order ${itemName} for Pickup or Delivery`

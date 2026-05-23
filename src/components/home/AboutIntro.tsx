@@ -1,10 +1,9 @@
 import Link from "next/link";
 
 /**
- * DRAFT (2026-05-21) — topical homepage SEO content + internal links to the
- * specialty/menu/catering pages. Pending Hasham/client brand-voice review.
- * The homepage is the highest-authority page, so these internal links help
- * distribute authority across the specialty mesh.
+ * Topical homepage SEO content + internal links to the specialty/menu/catering
+ * pages. The homepage is the highest-authority page, so these internal links
+ * help distribute authority across the specialty mesh.
  */
 export default function AboutIntro() {
   return (
@@ -35,6 +34,13 @@ export default function AboutIntro() {
             spread for Eid, a wedding or a Ramadan iftar through{" "}
             <Link href="/catering/" className="link-underline text-[var(--color-text)]">catering</Link>. Every item is 100% halal
             and Zabihah-verified.
+          </p>
+          <p>
+            Beyond Richardson, we serve Iraqi sweets, bread and catering across the metroplex — from{" "}
+            <Link href="/near/plano-tx/" className="link-underline text-[var(--color-text)]">Plano</Link> and{" "}
+            <Link href="/near/allen-tx/" className="link-underline text-[var(--color-text)]">Allen</Link> to{" "}
+            <Link href="/near/carrollton-tx/" className="link-underline text-[var(--color-text)]">Carrollton</Link> and{" "}
+            <Link href="/near/" className="link-underline text-[var(--color-text)]">other DFW neighborhoods</Link>.
           </p>
         </div>
       </div>

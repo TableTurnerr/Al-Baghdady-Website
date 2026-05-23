@@ -105,7 +105,7 @@ export default function FeaturedDishes() {
         <div className="flex items-end justify-between mb-10 flex-wrap gap-4">
           <div>
             <div className="eyebrow">Most Loved</div>
-            <h2>Featured dishes.</h2>
+            <h2>Most-Loved Iraqi Dishes &amp; Sweets</h2>
           </div>
           <Link
             href="/menu/"

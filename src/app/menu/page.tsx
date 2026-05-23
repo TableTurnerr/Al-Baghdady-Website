@@ -3,13 +3,14 @@ import Link from "next/link";
 import { Sunrise } from "lucide-react";
 import { createMetadata } from "@/data/metadata";
 import { MENU } from "@/data/menu";
-import { menuSchema, breadcrumbSchema, webPageSchema } from "@/data/schema";
+import { menuSchema, breadcrumbSchema, webPageSchema, faqSchema } from "@/data/schema";
 import SchemaInjector from "@/components/shared/SchemaInjector";
 import BreadcrumbNav from "@/components/layout/BreadcrumbNav";
 import ThemeBtn from "@/components/shared/ThemeBtn";
 import QRHover from "@/components/shared/QRHover";
 import CategoryNav from "@/components/menu/CategoryNav";
 import MenuItemCard from "@/components/menu/MenuItemCard";
+import FAQSection from "@/components/home/FAQSection";
 import { RESTAURANT } from "@/data/restaurant";
 
 function fmtTime(t: string) {
@@ -20,6 +21,24 @@ function fmtTime(t: string) {
 }
 
 const BREAKFAST_RANGE = `${fmtTime(RESTAURANT.breakfastHours.open)} – ${fmtTime(RESTAURANT.breakfastHours.close)}`;
+
+// Menu FAQs — FAQPage schema + featured snippets.
+const MENU_FAQS = [
+  {
+    question: "What's on the menu at Al-Baghdady?",
+    answer:
+      "Our menu spans the full Iraqi bakery and breakfast tradition: fresh samoon and tandoor bread, savory fatayer and manakish, a daily case of baklava, kunafa, burma and ladyfingers, plus a sit-down Iraqi breakfast every morning except Monday. Browse the categories above or explore our [specialties](/specialties/).",
+  },
+  {
+    question: "Can I order from the menu for pickup or delivery?",
+    answer:
+      "Yes — order online for same-day pickup at our Richardson store or delivery across the Dallas–Fort Worth area. You can also call us to place an order or ask about a specific dish.",
+  },
+  {
+    question: "Do you serve Iraqi breakfast all day, or only in the morning?",
+    answer: `Iraqi breakfast is a morning service — every day except Monday, ${BREAKFAST_RANGE}. The bakery case of baklava, kunafa, samoon and Iraqi sweets is available all day, every day we're open.`,
+  },
+];
 
 export const metadata: Metadata = createMetadata({
   title: "Menu — Iraqi Bakery, Breakfast & Sweets | Al-Baghdady",
@@ -59,6 +78,7 @@ export default function MenuPage() {
               "Browse the Al-Baghdady menu — traditional Iraqi breakfast, fresh samoon and tandoor bread, manakish and fatayer, baklava, kunafa, mabrouma and Iraqi sweets. 100% halal, Richardson TX.",
             primaryImage: "/Images/menu/bakery-sweets.webp",
           }),
+          faqSchema(MENU_FAQS),
         ]}
       />
       <BreadcrumbNav
@@ -116,7 +136,7 @@ export default function MenuPage() {
         </section>
       ))}
 
-      {/* DRAFT (2026-05-21) — topical SEO content + internal links to specialty pages. Pending Hasham/client brand-voice review. */}
+      {/* Topical SEO content + internal links to specialty pages. */}
       <section className="container-pad section-pad border-t border-[var(--color-border)]">
         <div className="max-w-3xl">
           <div className="eyebrow">More About Our Kitchen</div>
@@ -153,6 +173,12 @@ export default function MenuPage() {
           </div>
         </div>
       </section>
+
+      <FAQSection
+        faqs={MENU_FAQS}
+        eyebrow="Menu Questions"
+        title="Frequently Asked Questions About Our Menu"
+      />
     </>
   );
 }
