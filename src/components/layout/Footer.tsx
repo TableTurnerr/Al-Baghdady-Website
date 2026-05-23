@@ -13,6 +13,7 @@ const QUICK_LINKS = [
   { href: "/bakery/", label: "Bakery" },
   { href: "/catering/", label: "Catering" },
   { href: "/near/", label: "Service Areas" },
+  { href: "/faq/", label: "FAQ" },
   { href: "/?review=open", label: "Leave a Review" },
   { href: "/return-policy/", label: "Return Policy" },
 ];

@@ -32,7 +32,7 @@ Edit data once and it propagates across pages, JSON-LD schema, sitemap and foote
 
 1. **`restaurant.ts`** — NAP, hours, socials, geo, areas served, ratingValue/reviewCount. Imported by nearly every component.
 2. **`menu.ts`** — Categories with items. Drives `/menu`, homepage `FeaturedDishes` (filters `popular: true`), and `Menu` JSON-LD.
-3. **`faqs.ts`** — Single FAQ array. The standalone `/faq` route was removed; the homepage `FAQSection` shows `FAQS.slice(0, 6)` and injects `FAQPage` schema.
+3. **`faqs.ts`** — Single FAQ array. The homepage `FAQSection` shows `FAQS.slice(0, 6)` with `FAQPage` schema; the standalone `/faq/` route renders the full set with its own `FAQPage` schema for long-tail coverage. Both reuse the `FAQSection` component (it takes a `faqs` prop).
 4. **`neighborhoods.ts`** — Configs for `/near/[city]` dynamic route. `generateStaticParams()` reads this array.
 5. **`reviews.ts`** — Curated quotes shown on the homepage `Reviews` section. Live review *submission* is implemented via `ReviewModal` + Cloudflare Turnstile → POST to `NEXT_PUBLIC_REVIEW_API_URL` (TableTurnerr ParentSite); curated quotes in this file are the editorially-controlled set rendered on the page.
 6. **`schema.ts`** — Pure functions returning JSON-LD objects (`organizationSchema`, `restaurantSchema`, `menuSchema`, `faqSchema`, `breadcrumbSchema`, etc.). All schema is generated from the data files above.
