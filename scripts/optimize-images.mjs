@@ -7,10 +7,10 @@ const IMAGES_DIR = new URL("../public/Images/", import.meta.url).pathname.replac
 const TARGETS = {
   "hero.jpg":   { width: 1600, quality: 78 },
   "bakery.jpg": { width: 1400, quality: 78 },
-  "dish-1.jpg": { width: 1200, quality: 78 },
-  "dish-2.jpg": { width: 1200, quality: 78 },
-  "dish-3.jpg": { width: 1200, quality: 78 },
-  "dish-4.jpg": { width: 1200, quality: 78 },
+  "assorted-baklava-tray.jpg":     { width: 1200, quality: 78 },
+  "pistachio-baklava-closeup.jpg": { width: 1200, quality: 78 },
+  "baklava-awama-platter.jpg":     { width: 1200, quality: 78 },
+  "baklava-box-storefront.jpg":    { width: 1200, quality: 78 },
   "logo.jpg":   { width: 400,  quality: 88 },
 };
 
