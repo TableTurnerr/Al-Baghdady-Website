@@ -14,7 +14,7 @@ const IMAGES: GalleryImage[] = [
   {
     src: "/Images/gallery/baklava-pistachio-copper.webp",
     alt: "Pistachio baklava layered on a hammered copper dish, surrounded by raw pistachios",
-    caption: "Pistachio baklava — our four-generation signature",
+    caption: "Pistachio baklava, our four-generation signature",
   },
   {
     src: "/Images/gallery/sweets-platter-lamps.webp",
@@ -29,12 +29,12 @@ const IMAGES: GalleryImage[] = [
   {
     src: "/Images/gallery/zalabia-rings.webp",
     alt: "Two golden zalabia rings, crisp and syrup-soaked, plated on green ceramic",
-    caption: "Zalabia rings — crisp outside, syrup-soaked through",
+    caption: "Zalabia rings, crisp outside, syrup-soaked through",
   },
   {
     src: "/Images/gallery/baklava-tiered-tray.webp",
     alt: "A three-tier copper stand of mixed Iraqi sweets served with a small pot of qahwa",
-    caption: "Tiered trays built for the table — perfect for catering",
+    caption: "Tiered trays built for the table, perfect for catering",
   },
   {
     src: "/Images/gallery/baklava-boxed.webp",
@@ -54,7 +54,7 @@ const IMAGES: GalleryImage[] = [
   {
     src: "/Images/gallery/ladyfingers-pistachio.webp",
     alt: "Crisp phyllo ladyfinger rolls dusted with pistachio on a ridged glass plate",
-    caption: "Ladyfingers — rolled, fried crisp, dusted with pistachio",
+    caption: "Ladyfingers, rolled, fried crisp, dusted with pistachio",
   },
 ];
 
@@ -107,7 +107,7 @@ export default function Gallery() {
       <div className="container-pad">
         <div className="text-center mb-12 max-w-2xl mx-auto">
           <div className="eyebrow">Gallery</div>
-          <h2 className="mb-4">Iraqi Sweets &amp; Bakery Gallery — Baklava, Kunafa &amp; Samoon in Richardson, TX</h2>
+          <h2 className="mb-4">Iraqi Sweets &amp; Bakery Gallery, Baklava, Kunafa &amp; Samoon in Richardson, TX</h2>
           <p className="text-[var(--color-text-muted)]">
             From pistachio baklava we&apos;ve been laying down since 1919 to the
             zalabia rings that come out crisp every morning.
@@ -141,7 +141,7 @@ export default function Gallery() {
                 className="absolute inset-0 transition-opacity duration-500 opacity-60 group-hover:opacity-100"
                 style={{
                   background:
-                    "linear-gradient(180deg, rgba(26,20,16,0) 40%, rgba(26,20,16,0.55) 75%, rgba(26,20,16,0.85) 100%)",
+                    "linear-gradient(180deg, rgba(26, 20, 16, 0) 40%, rgba(26, 20, 16, 0.55) 75%, rgba(26, 20, 16, 0.85) 100%)",
                 }}
               />
 
@@ -150,7 +150,7 @@ export default function Gallery() {
                   className="text-[0.95rem] leading-snug font-medium text-left"
                   style={{
                     color: "#FFFFFF",
-                    textShadow: "0 1px 2px rgba(0,0,0,0.45)",
+                    textShadow: "0 1px 2px rgba(0, 0, 0, 0.45)",
                   }}
                 >
                   {img.caption}
@@ -217,12 +217,12 @@ export default function Gallery() {
             />
             <div
               className="text-center mt-4 text-sm px-6"
-              style={{ color: "rgba(255,255,255,0.92)" }}
+              style={{ color: "rgba(255, 255, 255, 0.92)" }}
             >
               {IMAGES[lightboxIdx].caption}
               <span
                 className="block text-xs mt-1"
-                style={{ color: "rgba(255,255,255,0.55)" }}
+                style={{ color: "rgba(255, 255, 255, 0.55)" }}
               >
                 {lightboxIdx + 1} / {IMAGES.length}
               </span>

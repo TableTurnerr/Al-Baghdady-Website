@@ -27,7 +27,7 @@ export const MENU: MenuCategory[] = [
       {
         name: "Albaghdady Plate (طبق البغدادي)",
         description:
-          "Our signature breakfast spread. Ground meat kabab, golden potatoes, eggplant tomato stew, and two pieces of handmade kubbah — all on one tray.",
+          "Our signature breakfast spread. Ground meat kabab, golden potatoes, eggplant tomato stew, and two pieces of handmade kubbah, all on one tray.",
         price: "$23.99",
         popular: true,
         image: "/Images/specialties/albaghdady-plate.webp",
@@ -51,7 +51,7 @@ export const MENU: MenuCategory[] = [
       {
         name: "Kubba (كبة)",
         description:
-          "Four hand-rolled pieces of Iraqi kubba — bulgur shells stuffed with seasoned meat, onions, and herbs, fried until golden and crisp.",
+          "Four hand-rolled pieces of Iraqi kubba, bulgur shells stuffed with seasoned meat, onions, and herbs, fried until golden and crisp.",
         price: "$15.99 / plate · $7.99 / sandwich",
       },
       {
@@ -114,13 +114,13 @@ export const MENU: MenuCategory[] = [
     id: "bakery-sweets",
     name: "Bakery & Iraqi Sweets",
     description:
-      "Baked fresh in our in-house bakery — baklava, kunafa, mabrouma, ladyfingers and more.",
+      "Baked fresh in our in-house bakery, baklava, kunafa, mabrouma, ladyfingers and more.",
     image: "/Images/menu/bakery-sweets.webp",
     items: [
       {
         name: "Pistachio Mabrouma",
         description:
-          "A premium version of our house mabrouma — loaded with fresh-ground pistachios throughout, baked deep gold and finished with syrup.",
+          "A premium version of our house mabrouma, loaded with fresh-ground pistachios throughout, baked deep gold and finished with syrup.",
         price: "$25.00",
       },
       {
@@ -168,7 +168,7 @@ export const MENU: MenuCategory[] = [
       {
         name: "Kanafa",
         description:
-          "Knafeh (kunafa) — sticky shredded phyllo with melted cheese, soaked in rose-water syrup and topped with crushed pistachios.",
+          "Knafeh (kunafa), sticky shredded phyllo with melted cheese, soaked in rose-water syrup and topped with crushed pistachios.",
         price: "$15.00",
         popular: true,
         image: "/Images/specialties/kunafa.webp",
@@ -176,19 +176,19 @@ export const MENU: MenuCategory[] = [
       {
         name: "Ladyfingers (Znood Al Sit)",
         description:
-          "Znood Al Sit — crisp phyllo rolls filled with sweet cream and dipped in our family's honey syrup, finished with pistachios. One of Iraq's most elegant desserts.",
+          "Znood Al Sit, crisp phyllo rolls filled with sweet cream and dipped in our family's honey syrup, finished with pistachios. One of Iraq's most elegant desserts.",
         price: "$12.00",
       },
       {
         name: "Awama (Luqaimat)",
         description:
-          "Bite-sized fried dough fritters, crisp on the outside, soft inside, soaked in our family's honey syrup. A celebration favorite at every Iraqi gathering — most often spotted on Eid and wedding trays.",
+          "Bite-sized fried dough fritters, crisp on the outside, soft inside, soaked in our family's honey syrup. A celebration favorite at every Iraqi gathering, most often spotted on Eid and wedding trays.",
         price: "$12.00",
       },
       {
         name: "Dehena (Iraqi Dessert)",
         description:
-          "A traditional Iraqi sweet made with date syrup and butter — warm, rich, and deeply comforting. A true taste of Baghdad.",
+          "A traditional Iraqi sweet made with date syrup and butter, warm, rich, and deeply comforting. A true taste of Baghdad.",
         price: "$12.00",
       },
     ],
@@ -211,25 +211,25 @@ export const MENU: MenuCategory[] = [
       {
         name: "Tandoor Bread (6 pc)",
         description:
-          "Traditional Iraqi flatbread baked in our clay tandoor until soft, chewy, and lightly charred. The everyday bread of Iraq — perfect with stews, dips, breakfast plates, or warm on its own.",
+          "Traditional Iraqi flatbread baked in our clay tandoor until soft, chewy, and lightly charred. The everyday bread of Iraq, perfect with stews, dips, breakfast plates, or warm on its own.",
         price: "$6.99",
       },
       {
         name: "Iraqi Bread (3 pc)",
         description:
-          "Classic round Iraqi-style bread, hand-shaped and baked fresh daily in our Richardson bakery. Soft and warm — perfect for scooping stews, dips, and qeimar.",
+          "Classic round Iraqi-style bread, hand-shaped and baked fresh daily in our Richardson bakery. Soft and warm, perfect for scooping stews, dips, and qeimar.",
         price: "$3.99",
       },
       {
         name: "Bread (1 pc)",
         description:
-          "A single piece of our freshly baked halal Iraqi bread — warm from the oven, ready to pair with any breakfast plate or dip.",
+          "A single piece of our freshly baked halal Iraqi bread, warm from the oven, ready to pair with any breakfast plate or dip.",
         price: "$1.99",
       },
       {
         name: "Samoon (1 pc)",
         description:
-          "A single piece of our signature Iraqi samoon — the diamond-shaped tandoor bread, crisp outside and pillowy soft inside, baked fresh throughout the day.",
+          "A single piece of our signature Iraqi samoon, the diamond-shaped tandoor bread, crisp outside and pillowy soft inside, baked fresh throughout the day.",
         price: "$1.25",
       },
     ],
@@ -244,27 +244,27 @@ export const MENU: MenuCategory[] = [
       {
         name: "Manakish",
         description:
-          "Flatbread topped with za'atar, cheese, or meat — Middle Eastern breakfast at its most authentic. A weekend staple in our Richardson bakery.",
+          "Flatbread topped with za'atar, cheese, or meat, Middle Eastern breakfast at its most authentic. A weekend staple in our Richardson bakery.",
         price: "$3.50",
         popular: true,
         image: "/Images/specialties/manakish.webp",
       },
       {
-        name: "Fatayer — Spinach",
+        name: "Fatayer (Spinach)",
         description:
           "Hand-folded savory pies with spinach filling, baked fresh daily. Soft, golden, perfect with chai.",
         price: "$3.50 / pc",
         vegetarian: true,
       },
       {
-        name: "Fatayer — Cheese",
+        name: "Fatayer (Cheese)",
         description:
           "Hand-folded savory pies stuffed with melted cheese, baked fresh daily until soft and golden. A vegetarian favorite, perfect with hot chai.",
         price: "$3.50 / pc",
         vegetarian: true,
       },
       {
-        name: "Fatayer — Meat",
+        name: "Fatayer (Meat)",
         description:
           "Hand-folded savory pies filled with seasoned ground meat, onions and spices, baked fresh daily until golden. A hearty Middle Eastern classic.",
         price: "$3.50 / pc",
@@ -300,13 +300,13 @@ export const MENU: MenuCategory[] = [
       {
         name: "Samosa",
         description:
-          "Hand-folded and pan-fried golden. Choose from seasoned ground meat or vegetable filling — crispy on the outside, savory inside. Perfect as a quick snack, an appetizer, or by the tray for your next gathering.",
+          "Hand-folded and pan-fried golden. Choose from seasoned ground meat or vegetable filling, crispy on the outside, savory inside. Perfect as a quick snack, an appetizer, or by the tray for your next gathering.",
         price: "$2.75 / pc",
       },
       {
         name: "Egg Roll",
         description:
-          "Crispy hand-rolled pastry with a savory filling, fried golden and served hot — a quick, crunchy bite or party-tray favorite.",
+          "Crispy hand-rolled pastry with a savory filling, fried golden and served hot, a quick, crunchy bite or party-tray favorite.",
         price: "$1.99 / pc",
       },
     ],
@@ -320,7 +320,7 @@ export const MENU: MenuCategory[] = [
       {
         name: "Karak Chai",
         description:
-          "Our signature variety. Rich, creamy black tea slowly steeped with cardamom, milk, and a touch of sweetness — the way Iraqi mornings are meant to start.",
+          "Our signature variety. Rich, creamy black tea slowly steeped with cardamom, milk, and a touch of sweetness, the way Iraqi mornings are meant to start.",
         price: "$3.99",
         popular: true,
         image: "/Images/specialties/chai.webp",
@@ -328,13 +328,13 @@ export const MENU: MenuCategory[] = [
       {
         name: "Yemeni Coffee",
         description:
-          "Aromatic spiced coffee brewed Yemeni-style — warm, fragrant, and deeply satisfying.",
+          "Aromatic spiced coffee brewed Yemeni-style, warm, fragrant, and deeply satisfying.",
         price: "$3.99",
       },
       {
         name: "Apricot Drink (Torshana)",
         description:
-          "A traditional Iraqi dried-apricot drink — sweet, tangy, and refreshing. A Ramadan and celebration staple.",
+          "A traditional Iraqi dried-apricot drink, sweet, tangy, and refreshing. A Ramadan and celebration staple.",
         price: "$4.99",
       },
       {
@@ -354,7 +354,7 @@ export const MENU: MenuCategory[] = [
   {
     id: "ice-cream",
     name: "Ice Cream",
-    description: "Cool off with our classic ice cream — available by the cone or cup.",
+    description: "Cool off with our classic ice cream, available by the cone or cup.",
     image: "/Images/hero.webp",
     items: [
       {
@@ -369,7 +369,7 @@ export const MENU: MenuCategory[] = [
       },
       {
         name: "Ice Cream Cup",
-        description: "Creamy ice cream served in a cup — no cone, just the good stuff.",
+        description: "Creamy ice cream served in a cup, no cone, just the good stuff.",
         price: "$3.00",
       },
     ],

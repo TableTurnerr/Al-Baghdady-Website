@@ -8,9 +8,9 @@ import BreadcrumbNav from "@/components/layout/BreadcrumbNav";
 import FAQSection from "@/components/home/FAQSection";
 
 export const metadata: Metadata = createMetadata({
-  title: "FAQ — Iraqi Bakery, Breakfast & Catering | Al-Baghdady",
+  title: "FAQ, Iraqi Bakery, Breakfast & Catering | Al-Baghdady",
   description:
-    "Answers about Al-Baghdady — halal sourcing, hours, Iraqi breakfast, baklava and knafeh orders, catering, pickup and delivery across Richardson and Dallas.",
+    "Answers about Al-Baghdady, halal sourcing, hours, Iraqi breakfast, baklava and knafeh orders, catering, pickup and delivery across Richardson and Dallas.",
   path: "/faq/",
   keywords: [
     "al-baghdady faq",
@@ -34,9 +34,9 @@ export default function FaqPage() {
           faqSchema(FAQS),
           webPageSchema({
             url: "/faq/",
-            name: "FAQ — Iraqi Bakery, Breakfast & Catering | Al-Baghdady",
+            name: "FAQ, Iraqi Bakery, Breakfast & Catering | Al-Baghdady",
             description:
-              "Answers about Al-Baghdady — halal sourcing, hours, Iraqi breakfast, baklava and knafeh orders, catering, pickup and delivery across Richardson and Dallas.",
+              "Answers about Al-Baghdady, halal sourcing, hours, Iraqi breakfast, baklava and knafeh orders, catering, pickup and delivery across Richardson and Dallas.",
             primaryImage: "/Images/hero.webp",
           }),
         ]}
@@ -52,7 +52,7 @@ export default function FaqPage() {
         <div className="eyebrow">Got Questions?</div>
         <h1 className="mb-5">Frequently Asked Questions</h1>
         <p className="text-lg text-[var(--color-text-muted)] leading-relaxed">
-          Everything you might want to know about {RESTAURANT.name} — our halal Iraqi bakery and
+          Everything you might want to know about {RESTAURANT.name}, our halal Iraqi bakery and
           breakfast café in {RESTAURANT.address.city}, {RESTAURANT.address.state}. Hours, catering,
           delivery, and the sweets and breakfast we&apos;re known for. Can&apos;t find your answer?{" "}
           <a href={`tel:${RESTAURANT.phoneRaw}`} className="faq-link">Call us at {RESTAURANT.phone}</a>.
