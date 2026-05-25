@@ -6,6 +6,8 @@ import { createMetadata } from "@/data/metadata";
 import { breadcrumbSchema, restaurantSchema, webPageSchema } from "@/data/schema";
 import { NEIGHBORHOODS } from "@/data/neighborhoods";
 import { RESTAURANT } from "@/data/restaurant";
+import { DISHES } from "@/data/dishes";
+import { MATRIX_ALLOWLIST, meshSlug } from "@/data/matrix";
 import SchemaInjector from "@/components/shared/SchemaInjector";
 import BreadcrumbNav from "@/components/layout/BreadcrumbNav";
 import ThemeBtn from "@/components/shared/ThemeBtn";
@@ -98,7 +100,7 @@ export default async function NeighborhoodPage({
             alt={`Iraqi bakery and sweets at ${RESTAURANT.name}, serving ${n.city}, ${n.state}`}
             priority
             sizes="(min-width: 1024px) 50vw, 100vw"
-            className="aspect-[4/5] rounded-[var(--radius-section)] shadow-[0_30px_80px_-30px_rgba(26,20,16,0.35)]"
+            className="aspect-[4/5] rounded-[var(--radius-section)] shadow-[0_30px_80px_-30px_rgba(26, 20, 16, 0.35)]"
           />
         </div>
       </section>
@@ -123,10 +125,34 @@ export default async function NeighborhoodPage({
         </div>
       </section>
 
+      {MATRIX_ALLOWLIST.some((e) => e.citySlug === n.slug) && (
+        <section className="container-pad section-pad max-w-3xl">
+          <h2 className="mb-5">Order by the Dish in {n.city}</h2>
+          <p className="text-[var(--color-text-muted)] mb-6">
+            Our most-loved sweets and breads, baked fresh in Richardson and delivered across {n.city}:
+          </p>
+          <div className="flex flex-wrap gap-2">
+            {MATRIX_ALLOWLIST.filter((e) => e.citySlug === n.slug).map((e) => {
+              const dish = DISHES.find((d) => d.slug === e.dishSlug);
+              if (!dish) return null;
+              return (
+                <Link
+                  key={e.dishSlug}
+                  href={`/${meshSlug(e.dishSlug, e.citySlug)}/`}
+                  className="px-4 py-2 rounded-full border border-[var(--color-border)] bg-white text-sm font-medium text-[var(--color-text)] hover:border-[var(--color-primary)] hover:text-[var(--color-primary)] transition-colors"
+                >
+                  {dish.name} in {n.city}
+                </Link>
+              );
+            })}
+          </div>
+        </section>
+      )}
+
       <section className="container-pad section-pad text-center max-w-2xl mx-auto">
         <h2 className="mb-4">Visit Us From {n.city}</h2>
         <p className="text-[var(--color-text-muted)] mb-8">
-          We&apos;re at {RESTAURANT.address.full} — {n.driveTime.toLowerCase()}. Free parking, halal across the
+          We&apos;re at {RESTAURANT.address.full}, {n.driveTime.toLowerCase()}. Free parking, halal across the
           menu, and an in-house bakery for fresh samoon, kanafa and dessert trays.
         </p>
         <div className="flex flex-wrap gap-3 justify-center">
@@ -145,7 +171,7 @@ export default async function NeighborhoodPage({
         <div className="container-pad max-w-5xl">
           <h2 className="mb-3 text-center">Other DFW Neighborhoods We Serve</h2>
           <p className="text-center text-[var(--color-text-muted)] mb-8">
-            Authentic Iraqi food, halal bakery and catering — across the metroplex.
+            Authentic Iraqi food, halal bakery and catering, across the metroplex.
           </p>
           <div className="flex flex-wrap gap-2 justify-center">
             {NEIGHBORHOODS.filter((other) => other.slug !== n.slug).map((other) => (
