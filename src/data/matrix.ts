@@ -14,6 +14,8 @@
 
 import { DISHES, type Dish } from "./dishes";
 import { NEIGHBORHOODS, type Neighborhood } from "./neighborhoods";
+import { MENU } from "./menu";
+import { type FAQ } from "./faqs";
 
 export type MatrixEntry = {
   dishSlug: string;
@@ -332,4 +334,108 @@ export function resolveMeshEntry(slug: string): ResolvedMeshEntry | null {
   const neighborhood = NEIGHBORHOODS.find((n) => n.slug === parsed.citySlug);
   if (!dish || !neighborhood) return null;
   return { dish, neighborhood };
+}
+
+/* ------------------------------------------------------------------ *
+ * Composition helpers — turn structured dish + city data into genuinely
+ * unique page content, so a new tenant fills records (not N×M paragraphs).
+ * All deterministic: the same slug always renders the same output.
+ * ------------------------------------------------------------------ */
+
+/** Stable string hash for deterministic-but-varied selection (image/review rotation). */
+function hashStr(s: string): number {
+  let h = 0;
+  for (let i = 0; i < s.length; i++) h = (Math.imul(h, 31) + s.charCodeAt(i)) >>> 0;
+  return h;
+}
+
+function sentenceCase(s: string): string {
+  return s.length === 0 ? s : s[0].toUpperCase() + s.slice(1);
+}
+
+/** Lowest price among a dish's related menu items, as a "$X.XX" string, or null if none priced. */
+export function priceFromMenu(dish: Dish): string | null {
+  const names = new Set(dish.relatedMenuItemNames ?? []);
+  if (names.size === 0) return null;
+  let min = Infinity;
+  for (const category of MENU) {
+    for (const item of category.items) {
+      if (!names.has(item.name)) continue;
+      const n = parseFloat(item.price.replace(/[^0-9.]/g, ""));
+      if (!Number.isNaN(n) && n < min) min = n;
+    }
+  }
+  return min === Infinity ? null : `$${min.toFixed(2)}`;
+}
+
+/**
+ * Hero image for a (dish, city) pair. For dishes with a gallery this rotates by
+ * city so the same dish doesn't show an identical photo on all of its city pages.
+ */
+export function pickHeroImage(dish: Dish, citySlug: string): string {
+  const images = [dish.heroImage, ...(dish.gallery ?? [])];
+  return images[hashStr(`${dish.slug}-${citySlug}`) % images.length];
+}
+
+/** Genuinely city-specific delivery paragraph, composed from real local landmarks. */
+export function composeLocalDelivery(dish: Dish, n: Neighborhood): string {
+  const dishLower = dish.name.toLowerCase();
+  const lm = n.landmarks ?? [];
+  const near =
+    lm.length >= 2
+      ? `whether you're near ${lm[0]} or ${lm[1]}`
+      : lm.length === 1
+        ? `from ${lm[0]} to the rest of ${n.city}`
+        : `across ${n.city}`;
+  const serving = dish.servingNote ? `, ${dish.servingNote}` : " and ready";
+  return `${sentenceCase(near)}, we deliver fresh ${dishLower} throughout ${n.city}. Everything is baked each morning at our Richardson bakery, ${n.driveTime}, so pickup is just as easy. Order online for delivery across ${n.city}, or call ahead and we'll have your ${dishLower} boxed${serving}.`;
+}
+
+/** Three to four interpolated, factual FAQs unique to the (dish, city) pair. */
+export function dishCityFaqs(dish: Dish, n: Neighborhood): FAQ[] {
+  const dishLower = dish.name.toLowerCase();
+  const lm = n.landmarks ?? [];
+  const localBit = lm.length >= 2 ? `, from ${lm[0]} to ${lm[1]},` : "";
+  const price = priceFromMenu(dish);
+  const serving = dish.servingNote ?? "by the piece or the tray";
+
+  const faqs: FAQ[] = [
+    {
+      question: `Do you deliver ${dish.name} to ${n.city}?`,
+      answer: `Yes. We bake our ${dishLower} fresh every morning in Richardson and deliver across ${n.city}${localBit} and the wider Dallas-Fort Worth area. You can also pick it up at our bakery, ${n.driveTime}.`,
+    },
+  ];
+
+  if (price) {
+    faqs.push({
+      question: `How much is ${dish.name} in ${n.city}?`,
+      answer: `Our ${dishLower} starts at ${price}, available ${serving}. See current pricing for every variety on our menu.`,
+    });
+  }
+
+  faqs.push({
+    question: `Is your ${dish.name} halal?`,
+    answer: `Yes. Everything we make is 100% halal and Zabihah-verified, including our ${dishLower}.`,
+  });
+
+  faqs.push({
+    question: `Can I order ${dish.name} for an event in ${n.city}?`,
+    answer: `Absolutely. We cater ${dishLower} ${serving} for weddings, Eid, Ramadan iftars and corporate events across ${n.city}. Reach out through our catering page and we'll plan the order with you.`,
+  });
+
+  return faqs;
+}
+
+/** Other allowlisted dishes available in the same city (for the "more in this city" grid). */
+export function dishesInCity(citySlug: string, exceptDishSlug?: string): MatrixEntry[] {
+  return MATRIX_ALLOWLIST.filter(
+    (e) => e.citySlug === citySlug && e.dishSlug !== exceptDishSlug
+  );
+}
+
+/** The same dish in other allowlisted cities (for the "in nearby cities" grid). */
+export function sameDishOtherCities(dishSlug: string, exceptCitySlug?: string): MatrixEntry[] {
+  return MATRIX_ALLOWLIST.filter(
+    (e) => e.dishSlug === dishSlug && e.citySlug !== exceptCitySlug
+  );
 }
