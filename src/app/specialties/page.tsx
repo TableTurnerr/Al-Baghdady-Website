@@ -11,8 +11,8 @@ import ThemeBtn from "@/components/shared/ThemeBtn";
 import SmartImage from "@/components/shared/SmartImage";
 
 export const metadata: Metadata = createMetadata({
-  title: "Our Specialties — Iraqi Sweets, Breakfast & Halal Café",
-  description: `Explore our specialties — baklava, kunafa, ladyfingers, fatayer, manakish, Iraqi breakfast and more. Hand-baked daily at ${RESTAURANT.name} in ${RESTAURANT.address.city}, ${RESTAURANT.address.state}.`,
+  title: "Our Specialties, Iraqi Sweets, Breakfast & Halal Café",
+  description: `Explore our specialties, baklava, kunafa, ladyfingers, fatayer, manakish, Iraqi breakfast and more. Hand-baked daily at ${RESTAURANT.name} in ${RESTAURANT.address.city}, ${RESTAURANT.address.state}.`,
   path: "/specialties/",
   keywords: [
     "iraqi specialties dallas",
@@ -59,8 +59,8 @@ export default function SpecialtiesIndexPage() {
           specialtiesListSchema(),
           webPageSchema({
             url: "/specialties/",
-            name: "Our Specialties — Iraqi Sweets, Breakfast & Halal Café",
-            description: `Explore our specialties — baklava, kunafa, ladyfingers, fatayer, manakish, Iraqi breakfast and more. Hand-baked daily at ${RESTAURANT.name} in ${RESTAURANT.address.city}, ${RESTAURANT.address.state}.`,
+            name: "Our Specialties, Iraqi Sweets, Breakfast & Halal Café",
+            description: `Explore our specialties, baklava, kunafa, ladyfingers, fatayer, manakish, Iraqi breakfast and more. Hand-baked daily at ${RESTAURANT.name} in ${RESTAURANT.address.city}, ${RESTAURANT.address.state}.`,
             primaryImage: "/Images/gallery/sweets-platter-lamps.webp",
           }),
         ]}
@@ -76,7 +76,7 @@ export default function SpecialtiesIndexPage() {
         <div className="eyebrow">Our Craft</div>
         <h1 className="mb-6">Our Iraqi Bakery &amp; Breakfast Specialties</h1>
         <p className="text-lg text-[var(--color-text-muted)] leading-relaxed">
-          Hand-baked daily — the dishes our family has made since {RESTAURANT.familyRecipeSince}.
+          Hand-baked daily, the dishes our family has made since {RESTAURANT.familyRecipeSince}.
         </p>
       </section>
 
@@ -92,7 +92,7 @@ export default function SpecialtiesIndexPage() {
                 <div className="card-img aspect-[4/3]">
                   <SmartImage
                     src={s.image}
-                    alt={`${s.name} at ${RESTAURANT.name}`}
+                    alt={`${s.name}, authentic Iraqi specialty at ${RESTAURANT.name}, halal bakery & café in ${RESTAURANT.address.city}, ${RESTAURANT.address.state}`}
                     sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
                     className="w-full h-full"
                   />

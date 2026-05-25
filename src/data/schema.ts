@@ -23,6 +23,9 @@ const ALTERNATE_NAMES = [
   "Albaghdady Bakery and Cafe",
   "Albaghdady Restaurant",
   "Al Baghdady Bakery",
+  "Al-Baghdadi",
+  "Albaghdadi",
+  "Al Baghdadi",
   "Salam Grill",
 ];
 
@@ -508,6 +511,72 @@ export function breadcrumbSchema(items: { name: string; url: string }[]) {
       name: item.name,
       item: item.url.startsWith("http") ? item.url : `${BASE_URL}${item.url}`,
     })),
+  };
+}
+
+export type DishProductInput = {
+  /** Path or absolute URL of the leaf page. */
+  url: string;
+  /** Dish display name, e.g. "Baklava". */
+  name: string;
+  /** City display name, e.g. "Plano". */
+  cityName: string;
+  description: string;
+  /** Path or absolute URL of the product image. */
+  image: string;
+  aliases?: string[];
+  ingredients?: string[];
+  /** Lowest price as a display string ("$15.00") or null when unknown. Drives the Offer. */
+  priceFrom?: string | null;
+};
+
+/**
+ * Product + Offer for a (dish, city) mesh leaf. Intentionally omits aggregateRating:
+ * the 1,899 reviews belong to the business (carried by restaurantSchema/localBusinessSchema),
+ * not to a specific dish, so attaching them here would risk a misleading-snippet flag.
+ */
+export function dishProductSchema({
+  url,
+  name,
+  cityName,
+  description,
+  image,
+  aliases,
+  ingredients,
+  priceFrom,
+}: DishProductInput) {
+  const absoluteUrl = url.startsWith("http") ? url : `${BASE_URL}${url}`;
+  const imageUrl = image.startsWith("http") ? image : `${BASE_URL}${image}`;
+  const price = priceFrom ? priceFrom.replace(/[^0-9.]/g, "") : null;
+
+  return {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    "@id": `${absoluteUrl}#product`,
+    name: `${name} in ${cityName}`,
+    ...(aliases && aliases.length > 0 && { alternateName: aliases }),
+    description,
+    image: imageUrl,
+    category: "Middle Eastern bakery",
+    brand: { "@id": `${BASE_URL}/#brand` },
+    ...(ingredients && ingredients.length > 0 && {
+      additionalProperty: ingredients.map((value) => ({
+        "@type": "PropertyValue",
+        name: "Ingredient",
+        value,
+      })),
+    }),
+    ...(price && {
+      offers: {
+        "@type": "Offer",
+        price,
+        priceCurrency: "USD",
+        availability: "https://schema.org/InStock",
+        url: absoluteUrl,
+        areaServed: { "@type": "City", name: cityName },
+        seller: { "@id": `${BASE_URL}/#restaurant` },
+      },
+    }),
   };
 }
 

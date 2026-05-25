@@ -9,6 +9,8 @@ import QRHover from "../shared/QRHover";
 type Post = {
   id: string;
   caption: string;
+  /** Descriptive alt text for SEO/accessibility, captions are display-only and can be hashtag-heavy. */
+  alt: string;
   image: string;
   url: string;
   coAuthor?: string;
@@ -18,36 +20,42 @@ const POSTS: Post[] = [
   {
     id: "1",
     caption: "#dfweats #foodiefinds #yum #delicious #explore #followforfollowback",
+    alt: "Iraqi sweets and bakery favorites at Al-Baghdady, halal Iraqi bakery in Richardson, TX",
     image: "/Images/instagram/post-1.webp",
     url: "https://www.instagram.com/p/DGElI-UOZ5q/",
   },
   {
     id: "2",
     caption: "Albaghdady Bakery & Sweets Richardson, TX Fresh, authentic",
+    alt: "Fresh authentic Iraqi sweets at Albaghdady Bakery & Sweets in Richardson, TX",
     image: "/Images/instagram/post-2.webp",
     url: "https://www.instagram.com/p/DXb1QfjtwdQ/",
   },
   {
     id: "3",
     caption: "This is where to get authentic middle eastern",
+    alt: "Authentic Middle Eastern food and Iraqi sweets at Al-Baghdady in Richardson, TX",
     image: "/Images/instagram/post-3.webp",
     url: "https://www.instagram.com/p/C7XimM_vLn0/",
   },
   {
     id: "4",
-    caption: "IRAQI BREAKFAST DFW — We went back",
+    caption: "IRAQI BREAKFAST DFW, We went back",
+    alt: "Traditional Iraqi breakfast at Al-Baghdady, serving DFW from Richardson, TX",
     image: "/Images/instagram/post-4.webp",
     url: "https://www.instagram.com/p/DRh6XRJiWNa/",
   },
   {
     id: "5",
     caption: "Albaghdady is now serving authentic Iraqi breakfast",
+    alt: "Authentic Iraqi breakfast spread, Kahi, Qeimar and samoon, at Al-Baghdady in Richardson, TX",
     image: "/Images/instagram/post-5.webp",
     url: "https://www.instagram.com/p/DRcx94JjmSW/",
   },
   {
     id: "6",
-    caption: "Richardson, TX — We are back",
+    caption: "Richardson, TX, We are back",
+    alt: "Iraqi bakery and café favorites at Al-Baghdady in Richardson, TX",
     image: "/Images/instagram/post-6.webp",
     url: "https://www.instagram.com/p/DRK_1-FEZbU/",
   },
@@ -119,7 +127,7 @@ export default function InstagramSection() {
                   >
                     <SmartImage
                       src={post.image}
-                      alt={post.caption}
+                      alt={post.alt}
                       sizes="(min-width: 968px) 33vw, (min-width: 640px) 50vw, 100vw"
                       className="w-full h-full"
                       style={{
@@ -132,7 +140,7 @@ export default function InstagramSection() {
                       className="absolute inset-0 z-10 transition-opacity duration-400"
                       style={{
                         background:
-                          "linear-gradient(180deg, rgba(26,20,16,0) 35%, rgba(26,20,16,0.55) 75%, rgba(26,20,16,0.85) 100%)",
+                          "linear-gradient(180deg, rgba(26, 20, 16, 0) 35%, rgba(26, 20, 16, 0.55) 75%, rgba(26, 20, 16, 0.85) 100%)",
                         opacity: isHovered ? 1 : shouldCompress ? 0 : 0.7,
                       }}
                     />
@@ -140,7 +148,7 @@ export default function InstagramSection() {
                     <div
                       className="absolute top-4 right-4 z-20 w-9 h-9 rounded-full flex items-center justify-center transition-all duration-400"
                       style={{
-                        background: isHovered ? "var(--color-primary)" : "rgba(255,255,255,0.92)",
+                        background: isHovered ? "var(--color-primary)" : "rgba(255, 255, 255, 0.92)",
                         color: isHovered ? "white" : "var(--color-text)",
                         opacity: shouldCompress ? 0 : 1,
                         transform: isHovered ? "scale(1.05)" : "scale(1)",

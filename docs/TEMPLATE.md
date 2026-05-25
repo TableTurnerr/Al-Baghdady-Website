@@ -113,7 +113,7 @@ Required image paths:
 - `/public/Images/icon-192.png`, `/public/Images/icon-512.png` (PWA icons)
 - `/public/Images/menu/[category-id].webp` (one per menu category)
 - `/public/Images/specialties/[slug].webp` (optional, falls back gracefully)
-- `/public/Images/dish-1.webp` through `/public/Images/dish-N.webp` (homepage carousel — only used if individual items don't have images)
+- `/public/Images/<descriptive-dish-name>.webp` (e.g. `assorted-baklava-tray.webp`) — dish/sweets photos for the cuisine-guide rotation and category cards. Use descriptive, keyword-bearing filenames (not `dish-1`, `dish-2`) for image SEO.
 
 All images: WebP preferred (smaller, modern). JPEG fallback acceptable for OG card.
 

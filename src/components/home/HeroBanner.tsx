@@ -1,6 +1,5 @@
 import { Star, Sunrise } from "lucide-react";
 import ThemeBtn from "../shared/ThemeBtn";
-import SmartImage from "../shared/SmartImage";
 import QRHover from "../shared/QRHover";
 import HeroStatusBadge from "./HeroStatusBadge";
 import { RESTAURANT } from "@/data/restaurant";
@@ -72,13 +71,23 @@ export default function HeroBanner() {
         </div>
 
         <div className="relative animate-fade-in">
-          <SmartImage
-            src="/Images/hero.webp"
-            alt="Fresh pistachio baklava on a plate at Al-Baghdady, an Iraqi bakery in Richardson, TX"
-            priority
-            sizes="(min-width: 1024px) 50vw, 100vw"
-            className="aspect-[4/5] rounded-[28px] shadow-[0_30px_80px_-30px_rgba(26,20,16,0.35)]"
-          />
+          {/* Above-the-fold LCP element: a plain, immediately-visible prioritized <img> in
+              server HTML. SmartImage gates the image at opacity-0 until its JS onLoad fires,
+              which delayed homepage LCP to ~12.7s (see perf.md). Keep SmartImage below the fold. */}
+          <div className="relative aspect-[4/5] rounded-[28px] overflow-hidden shadow-[0_30px_80px_-30px_rgba(26,20,16,0.35)]">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src="/Images/hero.webp"
+              alt="Fresh pistachio baklava on a plate at Al-Baghdady, an Iraqi bakery in Richardson, TX"
+              width={1200}
+              height={1500}
+              fetchPriority="high"
+              loading="eager"
+              decoding="async"
+              sizes="(min-width: 1024px) 50vw, 100vw"
+              className="absolute inset-0 w-full h-full object-cover object-center"
+            />
+          </div>
 
           <HeroStatusBadge />
 

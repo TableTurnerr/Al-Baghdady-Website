@@ -2,6 +2,7 @@ import type { MetadataRoute } from "next";
 import { RESTAURANT } from "@/data/restaurant";
 import { NEIGHBORHOODS } from "@/data/neighborhoods";
 import { SPECIALTIES } from "@/data/specialties";
+import { MATRIX_ALLOWLIST, meshSlug } from "@/data/matrix";
 
 // Required by Next 15 when `output: "export"` is set in next.config.ts.
 export const dynamic = "force-static";
@@ -18,6 +19,8 @@ const STATIC_ROUTES: { path: string; priority: Priority; changeFrequency: Change
   { path: "/catering/",        priority: 0.8,  changeFrequency: "monthly" },
   { path: "/near/",            priority: 0.75, changeFrequency: "monthly" },
   { path: "/specialties/",     priority: 0.75, changeFrequency: "monthly" },
+  { path: "/faq/",             priority: 0.7,  changeFrequency: "monthly" },
+  { path: "/press/",           priority: 0.7,  changeFrequency: "monthly" },
   { path: "/return-policy/",   priority: 0.3,  changeFrequency: "monthly" },
 ];
 
@@ -49,5 +52,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.7,
   }));
 
-  return [...staticEntries, ...neighborhoodEntries, ...specialtyEntries];
+  const matrixEntries: MetadataRoute.Sitemap = MATRIX_ALLOWLIST.map((e) => ({
+    url: join(`/${meshSlug(e.dishSlug, e.citySlug)}/`),
+    lastModified,
+    changeFrequency: "monthly",
+    priority: 0.6,
+  }));
+
+  return [...staticEntries, ...neighborhoodEntries, ...specialtyEntries, ...matrixEntries];
 }

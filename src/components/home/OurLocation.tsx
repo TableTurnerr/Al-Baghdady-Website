@@ -25,7 +25,7 @@ export default function OurLocation() {
       <div className="container-pad">
         <div className="text-center max-w-2xl mx-auto mb-14">
           <div className="eyebrow">Find Us</div>
-          <h2>Visit us in Richardson.</h2>
+          <h2>Visit Our Iraqi Bakery in Richardson, TX</h2>
         </div>
 
         <div className="grid lg:grid-cols-3 gap-5">

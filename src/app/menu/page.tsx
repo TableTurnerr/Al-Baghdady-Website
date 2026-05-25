@@ -1,14 +1,16 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { Sunrise } from "lucide-react";
 import { createMetadata } from "@/data/metadata";
 import { MENU } from "@/data/menu";
-import { menuSchema, breadcrumbSchema, webPageSchema } from "@/data/schema";
+import { menuSchema, breadcrumbSchema, webPageSchema, faqSchema } from "@/data/schema";
 import SchemaInjector from "@/components/shared/SchemaInjector";
 import BreadcrumbNav from "@/components/layout/BreadcrumbNav";
 import ThemeBtn from "@/components/shared/ThemeBtn";
 import QRHover from "@/components/shared/QRHover";
 import CategoryNav from "@/components/menu/CategoryNav";
 import MenuItemCard from "@/components/menu/MenuItemCard";
+import FAQSection from "@/components/home/FAQSection";
 import { RESTAURANT } from "@/data/restaurant";
 
 function fmtTime(t: string) {
@@ -20,10 +22,28 @@ function fmtTime(t: string) {
 
 const BREAKFAST_RANGE = `${fmtTime(RESTAURANT.breakfastHours.open)} – ${fmtTime(RESTAURANT.breakfastHours.close)}`;
 
+// Menu FAQs, FAQPage schema + featured snippets.
+const MENU_FAQS = [
+  {
+    question: "What's on the menu at Al-Baghdady?",
+    answer:
+      "Our menu spans the full Iraqi bakery and breakfast tradition: fresh samoon and tandoor bread, savory fatayer and manakish, a daily case of baklava, kunafa, burma and ladyfingers, plus a sit-down Iraqi breakfast every morning except Monday. Browse the categories above or explore our [specialties](/specialties/).",
+  },
+  {
+    question: "Can I order from the menu for pickup or delivery?",
+    answer:
+      "Yes, order online for same-day pickup at our Richardson store or delivery across the Dallas–Fort Worth area. You can also call us to place an order or ask about a specific dish.",
+  },
+  {
+    question: "Do you serve Iraqi breakfast all day, or only in the morning?",
+    answer: `Iraqi breakfast is a morning service, every day except Monday, ${BREAKFAST_RANGE}. The bakery case of baklava, kunafa, samoon and Iraqi sweets is available all day, every day we're open.`,
+  },
+];
+
 export const metadata: Metadata = createMetadata({
-  title: "Menu — Iraqi Bakery, Breakfast & Sweets | Al-Baghdady",
+  title: "Menu, Iraqi Bakery, Breakfast & Sweets | Al-Baghdady",
   description:
-    "Browse the Al-Baghdady menu — traditional Iraqi breakfast, fresh samoon and tandoor bread, manakish and fatayer, baklava, kunafa, mabrouma and Iraqi sweets. 100% halal, Richardson TX.",
+    "Browse the Al-Baghdady menu, traditional Iraqi breakfast, fresh samoon and tandoor bread, manakish and fatayer, baklava, kunafa, mabrouma and Iraqi sweets. 100% halal, Richardson TX.",
   path: "/menu/",
   keywords: [
     "al baghdady menu",
@@ -53,11 +73,12 @@ export default function MenuPage() {
           ]),
           webPageSchema({
             url: "/menu/",
-            name: "Menu — Iraqi Bakery, Breakfast & Sweets | Al-Baghdady",
+            name: "Menu, Iraqi Bakery, Breakfast & Sweets | Al-Baghdady",
             description:
-              "Browse the Al-Baghdady menu — traditional Iraqi breakfast, fresh samoon and tandoor bread, manakish and fatayer, baklava, kunafa, mabrouma and Iraqi sweets. 100% halal, Richardson TX.",
+              "Browse the Al-Baghdady menu, traditional Iraqi breakfast, fresh samoon and tandoor bread, manakish and fatayer, baklava, kunafa, mabrouma and Iraqi sweets. 100% halal, Richardson TX.",
             primaryImage: "/Images/menu/bakery-sweets.webp",
           }),
+          faqSchema(MENU_FAQS),
         ]}
       />
       <BreadcrumbNav
@@ -114,6 +135,50 @@ export default function MenuPage() {
           </div>
         </section>
       ))}
+
+      {/* Topical SEO content + internal links to specialty pages. */}
+      <section className="container-pad section-pad border-t border-[var(--color-border)]">
+        <div className="max-w-3xl">
+          <div className="eyebrow">More About Our Kitchen</div>
+          <h2 className="mb-5">Authentic Iraqi Bakery &amp; Breakfast in Richardson, TX</h2>
+          <div className="space-y-4 text-[var(--color-text-muted)] leading-relaxed">
+            <p>
+              Al-Baghdady is a family-run halal Iraqi bakery and breakfast café in Richardson, serving
+              the Dallas–Fort Worth area with recipes carried from Baghdad. Every morning our bakers fire
+              fresh{" "}
+              <Link href="/specialties/bread/" className="link-underline text-[var(--color-text)]">samoon and tandoor bread</Link>, hand-fold{" "}
+              <Link href="/specialties/fatayer/" className="link-underline text-[var(--color-text)]">fatayer</Link>, and stretch{" "}
+              <Link href="/specialties/manakish/" className="link-underline text-[var(--color-text)]">manakish</Link>, the savory
+              backbone of a traditional Iraqi breakfast.
+            </p>
+            <p>
+              Our in-house bakery is best known for Iraqi sweets: paper-thin{" "}
+              <Link href="/specialties/baklava/" className="link-underline text-[var(--color-text)]">baklava</Link> layered with
+              pistachios and walnuts, hot{" "}
+              <Link href="/specialties/kunafa/" className="link-underline text-[var(--color-text)]">kunafa</Link> with melted cheese
+              and syrup, cigar-rolled{" "}
+              <Link href="/specialties/burma/" className="link-underline text-[var(--color-text)]">burma</Link>, and cream-filled{" "}
+              <Link href="/specialties/lady-fingers/" className="link-underline text-[var(--color-text)]">ladyfingers (znood al sit)</Link>.
+              Pair any of them with a glass of cardamom{" "}
+              <Link href="/specialties/chai/" className="link-underline text-[var(--color-text)]">karak chai</Link>.
+            </p>
+            <p>
+              Come in for a sit-down{" "}
+              <Link href="/specialties/breakfast/" className="link-underline text-[var(--color-text)]">Iraqi breakfast</Link>, Kahi
+              &amp; Qeimar, Baqila, Kubba and the signature Albaghdady Plate, or order baklava and kunafa
+              trays for pickup, delivery and{" "}
+              <Link href="/catering/" className="link-underline text-[var(--color-text)]">catering</Link> across Richardson, Plano,
+              Garland and the wider DFW area. Every item on our menu is 100% halal and Zabihah-verified.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <FAQSection
+        faqs={MENU_FAQS}
+        eyebrow="Menu Questions"
+        title="Frequently Asked Questions About Our Menu"
+      />
     </>
   );
 }

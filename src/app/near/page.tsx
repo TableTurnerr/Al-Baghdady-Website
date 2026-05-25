@@ -10,9 +10,9 @@ import BreadcrumbNav from "@/components/layout/BreadcrumbNav";
 import ThemeBtn from "@/components/shared/ThemeBtn";
 
 export const metadata: Metadata = createMetadata({
-  title: "DFW Service Areas — Iraqi Food & Catering | Al-Baghdady",
+  title: "DFW Service Areas, Iraqi Food & Catering | Al-Baghdady",
   description:
-    "Al-Baghdady serves authentic Iraqi food, halal bakery, and catering across the Dallas-Fort Worth metroplex — Richardson, Plano, Garland, Addison, Carrollton, Frisco, Allen, McKinney, Irving, Far North Dallas. Delivery and dine-in.",
+    "Al-Baghdady serves authentic Iraqi food, halal bakery, and catering across the Dallas-Fort Worth metroplex, Richardson, Plano, Garland, Addison, Carrollton, Frisco, Allen, McKinney, Irving, Far North Dallas. Delivery and dine-in.",
   path: "/near/",
   keywords: [
     "iraqi food dfw service areas",
@@ -49,7 +49,7 @@ export default function ServiceAreasIndex() {
           serviceAreasItemListSchema(),
           webPageSchema({
             url: "/near/",
-            name: "DFW Service Areas — Iraqi Food & Catering | Al-Baghdady",
+            name: "DFW Service Areas, Iraqi Food & Catering | Al-Baghdady",
             description:
               "Al-Baghdady serves authentic Iraqi food, halal bakery, and catering across the Dallas-Fort Worth metroplex.",
             primaryImage: "/Images/hero.webp",
@@ -65,11 +65,11 @@ export default function ServiceAreasIndex() {
 
       <section className="container-pad py-10 md:py-16 max-w-3xl">
         <div className="eyebrow">Across the DFW Metroplex</div>
-        <h1 className="mb-6">Iraqi Food, Halal Bakery &amp; Catering — Serving DFW</h1>
+        <h1 className="mb-6">Iraqi Food, Halal Bakery &amp; Catering, Serving DFW</h1>
         <p className="text-lg text-[var(--color-text-muted)] leading-relaxed">
           From our home in Richardson, we serve authentic Iraqi food, fresh-baked bakery items,
           and full catering across the Dallas-Fort Worth metroplex. Click your city for the
-          neighborhood&apos;s dedicated page — drive times, popular dishes, and delivery info.
+          neighborhood&apos;s dedicated page, drive times, popular dishes, and delivery info.
         </p>
         <div className="flex flex-wrap gap-3 mt-6">
           <ThemeBtn href="/menu/" variant="primary">View Full Menu</ThemeBtn>

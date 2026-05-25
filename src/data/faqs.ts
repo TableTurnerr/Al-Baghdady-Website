@@ -13,12 +13,12 @@ export const FAQS: FAQ[] = [
   {
     question: "Where are you located?",
     answer:
-      `We're at ${RESTAURANT.address.full} — minutes from [Plano](/near/plano-tx/), [Garland](/near/garland-tx/), [Addison](/near/addison-tx/), [North Dallas](/near/north-dallas-tx/), [Irving](/near/irving-tx/) and [Frisco](/near/frisco-tx/). Free parking on site.`,
+      `We're at ${RESTAURANT.address.full}, minutes from [Plano](/near/plano-tx/), [Garland](/near/garland-tx/), [Addison](/near/addison-tx/), [North Dallas](/near/north-dallas-tx/), [Irving](/near/irving-tx/) and [Frisco](/near/frisco-tx/). Free parking on site.`,
   },
   {
     question: "Do you offer catering for weddings and corporate events?",
     answer:
-      `Yes — Al-Baghdady caters weddings, corporate lunches, Ramadan iftars, Eid celebrations and private events across DFW. We're especially known for [baklava and kunafa trays](/specialties/baklava/), [fatayer boxes](/specialties/fatayer/) and full Iraqi sweets spreads. Visit our [Catering page](/catering/) or call ${RESTAURANT.phone} for a quote.`,
+      `Yes, Al-Baghdady caters weddings, corporate lunches, Ramadan iftars, Eid celebrations and private events across DFW. We're especially known for [baklava and kunafa trays](/specialties/baklava/), [fatayer boxes](/specialties/fatayer/) and full Iraqi sweets spreads. Visit our [Catering page](/catering/) or call ${RESTAURANT.phone} for a quote.`,
   },
   {
     question: "What is samoon bread?",
@@ -28,22 +28,22 @@ export const FAQS: FAQ[] = [
   {
     question: "What is kanafa?",
     answer:
-      "Kanafa (also spelled kunafa) is a beloved Iraqi-Levantine dessert — shredded phyllo dough layered with melted cheese, soaked in syrup and topped with crushed pistachios. We make [our kanafa fresh to order](/specialties/kunafa/) so it arrives hot from the oven.",
+      "Kanafa (also spelled kunafa) is a beloved Iraqi-Levantine dessert, shredded phyllo dough layered with melted cheese, soaked in syrup and topped with crushed pistachios. We make [our kanafa fresh to order](/specialties/kunafa/) so it arrives hot from the oven.",
   },
   {
     question: "Do you have a bakery on site?",
     answer:
-      "Yes. [Our in-house bakery](/bakery/) makes fresh [samoon](/specialties/bread/), [kunafa](/specialties/kunafa/), [baklava](/specialties/baklava/), [ladyfingers (znood al sit)](/specialties/lady-fingers/), burma, mabrouma, [fatayer](/specialties/fatayer/) and [manakish](/specialties/manakish/) — all from family recipes since 1919. Custom trays available for [catering](/catering/).",
+      "Yes. [Our in-house bakery](/bakery/) makes fresh [samoon](/specialties/bread/), [kunafa](/specialties/kunafa/), [baklava](/specialties/baklava/), [ladyfingers (znood al sit)](/specialties/lady-fingers/), burma, mabrouma, [fatayer](/specialties/fatayer/) and [manakish](/specialties/manakish/), all from family recipes since 1919. Custom trays available for [catering](/catering/).",
   },
   {
     question: "Do you offer delivery?",
     answer:
-      "Yes — order delivery directly through our website or via Postmates. We deliver across Richardson, [Plano](/near/plano-tx/), [Garland](/near/garland-tx/), [Addison](/near/addison-tx/) and most of [North Dallas](/near/north-dallas-tx/).",
+      "Yes, order delivery directly through our website or via Postmates. We deliver across Richardson, [Plano](/near/plano-tx/), [Garland](/near/garland-tx/), [Addison](/near/addison-tx/) and most of [North Dallas](/near/north-dallas-tx/).",
   },
   {
     question: "Do you take reservations?",
     answer:
-      `We don't take reservations — Al-Baghdady is walk-ins only. Most parties are seated within 15 minutes. For large catering or group orders, please call ${RESTAURANT.phone}.`,
+      `We don't take reservations, Al-Baghdady is walk-ins only. Most parties are seated within 15 minutes. For large catering or group orders, please call ${RESTAURANT.phone}.`,
   },
   {
     question: "Are you family-friendly?",
@@ -58,12 +58,12 @@ export const FAQS: FAQ[] = [
   {
     question: "What's the difference between Iraqi and Mediterranean food?",
     answer:
-      "Iraqi cuisine has its own distinct character — unique breads like samoon and tandoor bread, a beloved morning tradition of kahi & qeimar and baqila, and a bakery heritage of mabrouma, burma and bird's nest rooted in Mesopotamian baking. While there's overlap with Lebanese and Mediterranean sweets, [dishes like samoon, kahi and mabrouma](/iraqi-cuisine/) are uniquely Iraqi.",
+      "Iraqi cuisine has its own distinct character, unique breads like samoon and tandoor bread, a beloved morning tradition of kahi & qeimar and baqila, and a bakery heritage of mabrouma, burma and bird's nest rooted in Mesopotamian baking. While there's overlap with Lebanese and Mediterranean sweets, [dishes like samoon, kahi and mabrouma](/iraqi-cuisine/) are uniquely Iraqi.",
   },
   {
     question: "Do you offer custom dessert trays for parties?",
     answer:
-      "Yes — we make [custom trays of baklava, kanafa, mabrouma and ladyfingers](/bakery/) for [weddings, Eid and Ramadan](/catering/) and any celebration. Call ahead at least 24 hours.",
+      "Yes, we make [custom trays of baklava, kanafa, mabrouma and ladyfingers](/bakery/) for [weddings, Eid and Ramadan](/catering/) and any celebration. Call ahead at least 24 hours.",
   },
   {
     question: "What are your hours?",
@@ -83,7 +83,7 @@ export const FAQS: FAQ[] = [
   {
     question: "Do you serve breakfast?",
     answer:
-      "Yes — [Iraqi breakfast](/menu/) is one of our specialties. Every day except Monday, from 10:00 AM to 12:30 PM, we serve traditional breakfast plates like Albaghdady Plate, Kahi & Qeimar, Baqila, fresh Kubba and warm samoon from our tandoor, all paired with hot chai. Walk in any morning Tue–Sun.",
+      "Yes, [Iraqi breakfast](/menu/) is one of our specialties. Every day except Monday, from 10:00 AM to 12:30 PM, we serve traditional breakfast plates like Albaghdady Plate, Kahi & Qeimar, Baqila, fresh Kubba and warm samoon from our tandoor, all paired with hot chai. Walk in any morning Tue–Sun.",
   },
   {
     question: "Are there really two Al-Baghdady locations?",
@@ -103,6 +103,6 @@ export const FAQS: FAQ[] = [
   {
     question: "What is mabrouma?",
     answer:
-      "Mabrouma is one of the showpiece sweets in our [bakery case](/bakery/) — long strands of phyllo coiled tight around fresh pistachios, baked deep gold and finished with syrup. We make it plain, with cream, and in a premium pistachio-loaded version.",
+      "Mabrouma is one of the showpiece sweets in our [bakery case](/bakery/), long strands of phyllo coiled tight around fresh pistachios, baked deep gold and finished with syrup. We make it plain, with cream, and in a premium pistachio-loaded version.",
   },
 ];

@@ -5,16 +5,16 @@
  * client confirmation on Tuesday 2026-05-19. Once confirmed:
  *   - Fill `intro` and `body` with copy from docs/content-source.md
  *   - Confirm `heroImage` paths against /public/Images/specialties/ or /public/Images/gallery/
- *   - Populate `keywords` per dish (mirror the NEIGHBORHOODS keyword shape — long-tail, city-agnostic)
+ *   - Populate `keywords` per dish (mirror the NEIGHBORHOODS keyword shape, long-tail, city-agnostic)
  *
- * Do NOT use this list to add menu items — the bakery/breakfast menu in `menu.ts` is the
+ * Do NOT use this list to add menu items, the bakery/breakfast menu in `menu.ts` is the
  * authoritative serving list. These entries are SEO/content surfaces only.
  */
 
 export type Dish = {
   slug: string;
   name: string;
-  /** Alternate spellings and English-equivalents — used in copy and JSON-LD `alternateName`. */
+  /** Alternate spellings and English-equivalents, used in copy and JSON-LD `alternateName`. */
   aliases: string[];
   /** Path under /public/. TODO Tuesday: confirm or swap to /Images/specialties/<slug>.webp. */
   heroImage: string;
@@ -26,6 +26,24 @@ export type Dish = {
   relatedSpecialtySlug?: string;
   /** Names of menu items in `menu.ts` that should appear in the related-items section. */
   relatedMenuItemNames?: string[];
+
+  /* --- Structured fields below drive auto-composed, non-duplicative copy on the
+     city × dish mesh. Optional so a new tenant can fill them incrementally. --- */
+
+  /** Flavor/style variants ("pistachio", "walnut", "za'atar"). Rendered as chips and woven into copy. */
+  variants?: string[];
+  /** Core ingredients, used in the dish-story block and Product schema. */
+  ingredients?: string[];
+  /** One sentence on how it's made/served fresh. Differentiates from generic copy. */
+  prepNote?: string;
+  /** How it's sold ("by the piece or the tray"). */
+  servingNote?: string;
+  /** Dish slugs that pair well, surfaced as "goes well with" links. */
+  pairsWith?: string[];
+  /** Extra real image paths under /public/. Used for the gallery and per-city hero rotation. */
+  gallery?: string[];
+  /** Dietary tags beyond the always-on "Halal" (e.g. "Vegetarian"). */
+  dietary?: string[];
 };
 
 export const DISHES: Dish[] = [
@@ -34,63 +52,121 @@ export const DISHES: Dish[] = [
     name: "Baklava",
     aliases: ["Baqlawa", "Iraqi Baklava", "Arabic Baklava"],
     heroImage: "/Images/specialties/baklava.webp",
-    keywords: [],
-    intro: "",
+    keywords: ["baklava", "baklava near me", "pistachio baklava", "turkish baklava", "iraqi baklava", "baklava delivery", "baklava tray"],
+    intro:
+      "Baklava is the crown of the Iraqi sweets case, paper-thin phyllo layered with fresh pistachios and walnuts, baked golden and soaked in our family's honey syrup. We've made it the same way since 1919, sold by the piece or by the tray, in pistachio, walnut, and mixed.",
     relatedSpecialtySlug: "baklava",
+    relatedMenuItemNames: ["Pistachio Baklava", "Mixed Baklava", "Walnut Baklava"],
+    variants: ["pistachio", "walnut", "mixed"],
+    ingredients: ["paper-thin phyllo", "fresh-ground pistachios", "walnuts", "family honey syrup"],
+    prepNote: "Layered and baked in small batches, then cut and boxed to order.",
+    servingNote: "by the piece or the tray",
+    pairsWith: ["knafeh", "mabrouma"],
+    gallery: [
+      "/Images/gallery/baklava-pistachio-copper.webp",
+      "/Images/gallery/baklava-tiered-tray.webp",
+      "/Images/gallery/baklava-pistachio-plate.webp",
+    ],
+    dietary: ["Vegetarian"],
   },
   {
-    slug: "kanafa",
-    name: "Kanafa",
-    aliases: ["Kunafa", "Kunafeh", "Knafeh", "Kanafeh"],
-    heroImage: "/Images/gallery/kunafa.webp",
-    keywords: [],
-    intro: "",
+    slug: "knafeh",
+    name: "Knafeh",
+    aliases: ["Kunafa", "Kanafa", "Kunafeh", "Kanafeh"],
+    heroImage: "/Images/specialties/kunafa.webp",
+    keywords: ["knafeh", "knafeh near me", "kunafa", "cheese knafeh", "hot knafeh", "iraqi knafeh", "knafeh delivery"],
+    intro:
+      "Knafeh (also spelled kunafa) is the Middle East's favorite warm dessert, shredded phyllo over melted cheese, soaked in rose-water syrup and crowned with crushed pistachios. We make ours fresh to order so it arrives hot: crisp on top, stretchy and gooey in the middle.",
     relatedSpecialtySlug: "kunafa",
+    relatedMenuItemNames: ["Kanafa"],
+    variants: ["cheese-filled"],
+    ingredients: ["shredded phyllo", "melted cheese", "rose-water syrup", "crushed pistachios"],
+    prepNote: "Made fresh to order so it arrives hot, crisp on top and stretchy in the middle.",
+    servingNote: "by the piece or the half-tray",
+    pairsWith: ["baklava", "mabrouma"],
+    dietary: ["Vegetarian"],
   },
   {
     slug: "kahi-and-qeimar",
     name: "Kahi & Qeimar",
     aliases: ["Kahi w Qeimar", "Khagineh", "Iraqi Cream Pastry"],
-    heroImage: "/Images/gallery/kahi.webp",
-    keywords: [],
-    intro: "",
+    heroImage: "/Images/specialties/kahi-qeimar.webp",
+    keywords: ["kahi and qeimar", "iraqi breakfast pastry", "qeimar dallas"],
+    intro:
+      "Kahi & Qeimar is Iraq's most-loved sweet breakfast, flaky, golden, syrup-brushed kahi pastry served with rich clotted cream (qeimar). We make it fresh every morning; for many regulars it's the first thing they order.",
     relatedSpecialtySlug: "breakfast",
+    relatedMenuItemNames: ["Kahi & Qeimar (كاهي وقيمر)"],
   },
   {
     slug: "mabrouma",
     name: "Mabrouma",
     aliases: ["Mabroumeh", "Rolled Baklava", "Pistachio Mabrouma"],
-    heroImage: "/Images/gallery/mabrouma.webp",
-    keywords: [],
-    intro: "",
+    heroImage: "/Images/specialties/burma.webp",
+    keywords: ["mabrouma", "rolled baklava", "pistachio mabrouma"],
+    intro:
+      "Mabrouma is the showpiece of the Iraqi sweets case, long strands of phyllo coiled tight around fresh pistachios, baked deep gold and finished with syrup. We make it plain, with cream, and in a premium pistachio-loaded version.",
     relatedSpecialtySlug: "baklava",
+    relatedMenuItemNames: ["Mabrouma with Cream", "Pistachio Mabrouma"],
   },
   {
     slug: "samoon",
     name: "Samoon",
     aliases: ["Iraqi Bread", "Tandoor Bread", "Samoun"],
-    heroImage: "/Images/gallery/samoon.webp",
-    keywords: [],
-    intro: "",
+    heroImage: "/Images/specialties/bread.webp",
+    keywords: ["samoon", "iraqi bread", "tandoor bread", "fresh bread"],
+    intro:
+      "Samoon is Iraq's traditional diamond-shaped bread, baked fresh throughout the day in our tandoor, crisp outside and pillowy soft inside. It's the everyday bread of an Iraqi table.",
     relatedSpecialtySlug: "bread",
+    relatedMenuItemNames: ["Iraqi Samoon (4 pc)", "Tandoor Bread (6 pc)"],
   },
   {
     slug: "manakish",
     name: "Manakish",
-    aliases: ["Manakeesh", "Manaeesh", "Za'atar Flatbread"],
-    heroImage: "/Images/gallery/manakish.webp",
-    keywords: [],
-    intro: "",
+    aliases: ["Manakeesh", "Manoushe", "Za'atar Bread", "Za'atar Flatbread"],
+    heroImage: "/Images/specialties/manakish.webp",
+    keywords: ["manakish", "manoushe", "zaatar bread", "zaatar flatbread", "cheese manakish", "manakish near me"],
+    intro:
+      "Manakish is hand-stretched flatbread baked fresh to order and topped with za'atar, cheese, or seasoned meat, the savory anchor of a Middle Eastern breakfast. Often searched as za'atar bread, it's a weekend staple in our Richardson bakery.",
     relatedSpecialtySlug: "manakish",
+    relatedMenuItemNames: ["Manakish"],
+    variants: ["za'atar", "cheese", "meat"],
+    ingredients: ["hand-stretched dough", "za'atar", "olive oil", "cheese or seasoned meat"],
+    prepNote: "Hand-stretched and baked to order on the bakery's stone deck.",
+    servingNote: "by the piece or the dozen",
+    pairsWith: ["fatayer", "samosa"],
   },
   {
     slug: "fatayer",
     name: "Fatayer",
-    aliases: ["Fatayir", "Sfeeha", "Iraqi Hand Pies"],
-    heroImage: "/Images/gallery/fatayer.webp",
-    keywords: [],
-    intro: "",
+    aliases: ["Fatayir", "Sfeeha", "Spinach Pie", "Iraqi Hand Pies"],
+    heroImage: "/Images/specialties/fatayer.webp",
+    keywords: ["fatayer", "sfeeha", "spinach pie", "meat pie", "cheese fatayer", "fatayer near me"],
+    intro:
+      "Fatayer are hand-folded savory pies baked fresh daily, spinach (sabanekh), cheese, or seasoned meat tucked into soft golden dough. Known elsewhere as sfeeha or simply spinach and meat pies, they're perfect by the box for an office breakfast or by the tray for a gathering.",
     relatedSpecialtySlug: "fatayer",
+    relatedMenuItemNames: ["Fatayer (Spinach)", "Fatayer (Cheese)", "Fatayer (Meat)"],
+    variants: ["spinach", "cheese", "meat"],
+    ingredients: ["soft golden dough", "spinach (sabanekh)", "cheese", "seasoned ground meat"],
+    prepNote: "Hand-folded and baked fresh daily.",
+    servingNote: "by the piece or the tray",
+    pairsWith: ["manakish", "samosa"],
+  },
+  {
+    slug: "samosa",
+    name: "Samosa",
+    aliases: ["Samosas", "Sambousek", "Halal Samosa"],
+    heroImage: "/Images/specialties/samosa.webp",
+    keywords: ["samosa", "samosa near me", "halal samosa", "fried samosa", "vegetable samosa", "meat samosa", "samosa delivery"],
+    intro:
+      "Samosas are golden, crispy hand-folded pastries, filled with seasoned meat or spiced vegetables and pan-fried until shatteringly crisp. A perfect snack, appetizer, or party tray, made fresh at our Richardson bakery.",
+    relatedSpecialtySlug: "samosa",
+    relatedMenuItemNames: ["Samosa"],
+    variants: ["meat", "vegetable"],
+    ingredients: ["thin crisp pastry", "seasoned ground meat or spiced vegetables"],
+    prepNote: "Hand-folded and pan-fried to order until shatteringly crisp.",
+    servingNote: "by the piece or the tray",
+    pairsWith: ["fatayer", "manakish"],
+    dietary: ["Vegetarian"],
   },
 ];
 
