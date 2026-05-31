@@ -21,8 +21,8 @@ export default function GlobalError({ error, reset }: Props) {
         style={{
           margin: 0,
           minHeight: "100vh",
-          background: "#F7F4EE",
-          color: "#111110",
+          background: "#F2F4EF",
+          color: "#13211A",
           fontFamily:
             "system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif",
           display: "flex",
@@ -40,7 +40,7 @@ export default function GlobalError({ error, reset }: Props) {
               fontWeight: 600,
               letterSpacing: "0.18em",
               textTransform: "uppercase",
-              color: "#8B1A1A",
+              color: "#0F5132",
               marginBottom: "1.25rem",
             }}
           >
@@ -67,19 +67,19 @@ export default function GlobalError({ error, reset }: Props) {
               justifyContent: "center",
               gap: "0.75rem",
               margin: "1.75rem 0",
-              color: "#A88838",
+              color: "#A6741F",
             }}
           >
-            <span style={{ height: 1, width: 48, background: "#A88838", opacity: 0.6 }} />
+            <span style={{ height: 1, width: 48, background: "#A6741F", opacity: 0.6 }} />
             <span style={{ fontSize: "0.75rem", fontStyle: "italic" }}>◆</span>
-            <span style={{ height: 1, width: 48, background: "#A88838", opacity: 0.6 }} />
+            <span style={{ height: 1, width: 48, background: "#A6741F", opacity: 0.6 }} />
           </div>
 
           <p
             style={{
               fontSize: "1.0625rem",
               lineHeight: 1.6,
-              color: "#6B6258",
+              color: "#4F6358",
               margin: "0 auto",
             }}
           >
@@ -92,7 +92,7 @@ export default function GlobalError({ error, reset }: Props) {
               style={{
                 marginTop: "1rem",
                 fontSize: "0.75rem",
-                color: "#6B6258",
+                color: "#4F6358",
                 opacity: 0.7,
                 fontFamily:
                   "ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', monospace",
@@ -116,7 +116,7 @@ export default function GlobalError({ error, reset }: Props) {
               style={{
                 padding: "0.85rem 1.6rem",
                 borderRadius: 9999,
-                background: "#111110",
+                background: "#13211A",
                 color: "#FFFFFF",
                 fontWeight: 500,
                 fontSize: "0.9375rem",
@@ -132,10 +132,10 @@ export default function GlobalError({ error, reset }: Props) {
                 padding: "0.85rem 1.6rem",
                 borderRadius: 9999,
                 background: "transparent",
-                color: "#111110",
+                color: "#13211A",
                 fontWeight: 500,
                 fontSize: "0.9375rem",
-                border: "1px solid #111110",
+                border: "1px solid #13211A",
                 textDecoration: "none",
               }}
             >
@@ -151,7 +151,7 @@ export default function GlobalError({ error, reset }: Props) {
                 marginTop: "2rem",
                 fontSize: "0.875rem",
                 fontWeight: 500,
-                color: "#6B6258",
+                color: "#4F6358",
                 textDecoration: "none",
               }}
             >

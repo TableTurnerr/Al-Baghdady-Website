@@ -57,7 +57,7 @@ export default function NotFound() {
         className="pointer-events-none absolute -bottom-40 -right-32 h-[32rem] w-[32rem] rounded-full opacity-50 blur-3xl"
         style={{
           background:
-            "radial-gradient(closest-side, rgba(139,26,26,0.28), transparent 70%)",
+            "radial-gradient(closest-side, rgba(15,81,50,0.28), transparent 70%)",
         }}
       />
 

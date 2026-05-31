@@ -136,7 +136,7 @@ We deliver across Richardson, Plano, Garland, Addison, Carrollton, Frisco, and t
 
 **Baqila (باقلاء بالدهن)** — Iraq's most-loved breakfast. Tender fava beans simmered in their own broth, served with eggs, crispy fried onions, and warm bread soaked in the broth. A national tradition, served the way it's meant to be.
 
-**Bastirma (باسترما بالبيض)** — Spiced cured beef sausage, sizzled with eggs until the edges crisp. A Middle Eastern breakfast classic with deep, smoky flavor in every bite.
+**Basturma (باسترما بالبيض)** — Spiced cured beef sausage, sizzled with eggs until the edges crisp. A Middle Eastern breakfast classic with deep, smoky flavor in every bite.
 
 **Potato with Egg (بطاطا مع بيض)** — Simple, comforting, and exactly what you want on a busy morning. Pan-fried potatoes scrambled with farm-fresh eggs. Pairs perfectly with hot chai.
 

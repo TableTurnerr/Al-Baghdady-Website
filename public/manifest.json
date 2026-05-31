@@ -4,8 +4,8 @@
   "description": "Authentic Iraqi cuisine and Arabic bakery in Richardson, TX. Halal certified. Family owned.",
   "start_url": "/",
   "display": "standalone",
-  "background_color": "#FDF6EC",
-  "theme_color": "#8B1A1A",
+  "background_color": "#EFEAE0",
+  "theme_color": "#0F5132",
   "icons": [
     {
       "src": "/favicon-192.webp",
