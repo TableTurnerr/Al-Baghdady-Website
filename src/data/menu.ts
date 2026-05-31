@@ -53,6 +53,7 @@ export const MENU: MenuCategory[] = [
         description:
           "Four hand-rolled pieces of Iraqi kubba, bulgur shells stuffed with seasoned meat, onions, and herbs, fried until golden and crisp.",
         price: "$15.99 / plate · $7.99 / sandwich",
+        image: "/Images/menu/kubba.webp",
       },
       {
         name: "Qeimar & Debes (قيمر ودبس)",
@@ -73,10 +74,11 @@ export const MENU: MenuCategory[] = [
         price: "$15.99 / plate · $7.99 / sandwich",
       },
       {
-        name: "Bastirma (باسترما بالبيض)",
+        name: "Basturma (باسترما بالبيض)",
         description:
           "Spiced cured beef sausage sizzled with eggs until the edges crisp. Deep, smoky flavor in every bite.",
         price: "$14.99 / plate · $7.99 / sandwich",
+        image: "/Images/menu/basturma.webp",
       },
       {
         name: "Lamb Liver (معلاك غنم)",
@@ -122,18 +124,21 @@ export const MENU: MenuCategory[] = [
         description:
           "A premium version of our house mabrouma, loaded with fresh-ground pistachios throughout, baked deep gold and finished with syrup.",
         price: "$25.00",
+        image: "/Images/menu/pistachio-mabrouma.webp",
       },
       {
         name: "Bird's Nest (Osh Al Asfour)",
         description:
           "Delicate shredded phyllo nests filled with pistachios and soaked in floral syrup. A beautiful and festive Iraqi sweet.",
         price: "$21.99",
+        image: "/Images/menu/birds-nest.webp",
       },
       {
         name: "Burma (Turkish Style)",
         description:
           "Long, cigar-rolled phyllo packed with pistachios and finished with syrup. Crisp, nutty, and one of the lesser-known Iraqi sweets.",
         price: "$20.00",
+        image: "/Images/specialties/burma.webp",
       },
       {
         name: "Mabrouma with Cream",
@@ -164,6 +169,7 @@ export const MENU: MenuCategory[] = [
         description:
           "A traditional baklava variety made with fresh walnuts. Layers of paper-thin phyllo, walnuts, and our family's signature honey syrup. The recipe we've been making since 1919.",
         price: "$15.99",
+        image: "/Images/assorted-baklava-tray.webp",
       },
       {
         name: "Kanafa",
@@ -178,18 +184,21 @@ export const MENU: MenuCategory[] = [
         description:
           "Znood Al Sit, crisp phyllo rolls filled with sweet cream and dipped in our family's honey syrup, finished with pistachios. One of Iraq's most elegant desserts.",
         price: "$12.00",
+        image: "/Images/specialties/lady-fingers.webp",
       },
       {
         name: "Awama (Luqaimat)",
         description:
           "Bite-sized fried dough fritters, crisp on the outside, soft inside, soaked in our family's honey syrup. A celebration favorite at every Iraqi gathering, most often spotted on Eid and wedding trays.",
         price: "$12.00",
+        image: "/Images/menu/awama.webp",
       },
       {
         name: "Dehena (Iraqi Dessert)",
         description:
           "A traditional Iraqi sweet made with date syrup and butter, warm, rich, and deeply comforting. A true taste of Baghdad.",
         price: "$12.00",
+        image: "/Images/menu/dehena.webp",
       },
     ],
   },
@@ -219,6 +228,7 @@ export const MENU: MenuCategory[] = [
         description:
           "Classic round Iraqi-style bread, hand-shaped and baked fresh daily in our Richardson bakery. Soft and warm, perfect for scooping stews, dips, and qeimar.",
         price: "$3.99",
+        image: "/Images/menu/iraqi-bread.webp",
       },
       {
         name: "Bread (1 pc)",
@@ -231,6 +241,7 @@ export const MENU: MenuCategory[] = [
         description:
           "A single piece of our signature Iraqi samoon, the diamond-shaped tandoor bread, crisp outside and pillowy soft inside, baked fresh throughout the day.",
         price: "$1.25",
+        image: "/Images/menu/samoon-single.webp",
       },
     ],
   },
@@ -255,6 +266,7 @@ export const MENU: MenuCategory[] = [
           "Hand-folded savory pies with spinach filling, baked fresh daily. Soft, golden, perfect with chai.",
         price: "$3.50 / pc",
         vegetarian: true,
+        image: "/Images/specialties/fatayer.webp",
       },
       {
         name: "Fatayer (Cheese)",
@@ -262,12 +274,14 @@ export const MENU: MenuCategory[] = [
           "Hand-folded savory pies stuffed with melted cheese, baked fresh daily until soft and golden. A vegetarian favorite, perfect with hot chai.",
         price: "$3.50 / pc",
         vegetarian: true,
+        image: "/Images/specialties/fatayer.webp",
       },
       {
         name: "Fatayer (Meat)",
         description:
           "Hand-folded savory pies filled with seasoned ground meat, onions and spices, baked fresh daily until golden. A hearty Middle Eastern classic.",
         price: "$3.50 / pc",
+        image: "/Images/specialties/fatayer.webp",
       },
     ],
   },
@@ -296,12 +310,14 @@ export const MENU: MenuCategory[] = [
           "Hearty chickpea soup seasoned with cumin and lemon, served with toasted bread. A classic Iraqi street-food staple.",
         price: "$3.99",
         vegetarian: true,
+        image: "/Images/menu/leblebi.webp",
       },
       {
         name: "Samosa",
         description:
           "Hand-folded and pan-fried golden. Choose from seasoned ground meat or vegetable filling, crispy on the outside, savory inside. Perfect as a quick snack, an appetizer, or by the tray for your next gathering.",
         price: "$2.75 / pc",
+        image: "/Images/specialties/samosa.webp",
       },
       {
         name: "Egg Roll",
@@ -336,6 +352,7 @@ export const MENU: MenuCategory[] = [
         description:
           "A traditional Iraqi dried-apricot drink, sweet, tangy, and refreshing. A Ramadan and celebration staple.",
         price: "$4.99",
+        image: "/Images/menu/apricot-torshana.webp",
       },
       {
         name: "Raisin Juice",

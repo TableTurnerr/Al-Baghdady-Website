@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { Star, Leaf } from "lucide-react";
 import type { MenuItem } from "@/data/menu";
+import SmartImage from "@/components/shared/SmartImage";
 
 type MenuItemCardProps = {
   item: MenuItem;
@@ -17,6 +18,14 @@ export default function MenuItemCard({
 }: MenuItemCardProps) {
   const content = (
     <>
+      {item.image && (
+        <SmartImage
+          src={item.image}
+          alt={item.name}
+          sizes="(min-width: 1024px) 400px, (min-width: 768px) 50vw, 100vw"
+          className="aspect-[4/3] rounded-xl mb-5"
+        />
+      )}
       {categoryLabel && (
         <div className="text-[11px] font-semibold text-[var(--color-text-muted)] uppercase tracking-[0.15em] mb-2">
           {categoryLabel}
