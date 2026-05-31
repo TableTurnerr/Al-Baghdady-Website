@@ -2,8 +2,7 @@ import type { Metadata } from "next";
 import { RESTAURANT } from "./restaurant";
 
 const BASE_URL = RESTAURANT.url;
-// TODO: replace with dedicated 1200×630 OG card when client provides a branded version.
-const DEFAULT_OG = `${BASE_URL}/Images/hero.webp`;
+const DEFAULT_OG = `${BASE_URL}/Images/og-card.webp`;
 
 export type PageMetaInput = {
   title: string;
