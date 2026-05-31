@@ -57,7 +57,7 @@ App Router error boundaries are wired up: `app/error.tsx` (per-segment runtime e
 
 ### Styling
 
-Tailwind CSS 4 with custom theme tokens in `/src/styles/globals.css` (`@theme` block). The design system is a **light theme only** — cream/sand backgrounds, maroon (`--color-primary: #8B1A1A`) and gold (`--color-gold: #C9A84C`) accents. Reusable utility classes: `.btn-primary`, `.btn-secondary`, `.btn-gold`, `.card`, `.container-pad`, `.section-pad`, `.eyebrow`. Prefer these over inline Tailwind for spacing/buttons to keep visual consistency.
+Tailwind CSS 4 with custom theme tokens in `/src/styles/globals.css` (`@theme` block). The design system is a **light theme only** — cream/sand backgrounds, emerald (`--color-primary: #0F5132`) and gold (`--color-gold: #C8902E`) accents. Reusable utility classes: `.btn-primary`, `.btn-secondary`, `.btn-gold`, `.card`, `.container-pad`, `.section-pad`, `.eyebrow`. Prefer these over inline Tailwind for spacing/buttons to keep visual consistency.
 
 `Inter` (body) and `Fraunces` (display, headings) are loaded via `next/font` in `src/app/layout.tsx`. Headings reference the display font inline via `style={{ fontFamily: 'var(--font-display)' }}` because Tailwind 4's `@theme` font tokens aren't picked up automatically by class names in this setup.
 

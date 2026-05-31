@@ -155,7 +155,7 @@ export function createMetadata({
     },
     manifest: "/manifest.json",
     other: {
-      "theme-color": "#8B1A1A",
+      "theme-color": "#0F5132",
     },
   };
 }

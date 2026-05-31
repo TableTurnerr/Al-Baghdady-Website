@@ -23,7 +23,7 @@ export default function Error({ error, reset }: Props) {
         className="pointer-events-none absolute -top-40 -left-32 h-[32rem] w-[32rem] rounded-full opacity-60 blur-3xl"
         style={{
           background:
-            "radial-gradient(closest-side, rgba(139,26,26,0.30), transparent 70%)",
+            "radial-gradient(closest-side, rgba(15,81,50,0.30), transparent 70%)",
         }}
       />
       <div

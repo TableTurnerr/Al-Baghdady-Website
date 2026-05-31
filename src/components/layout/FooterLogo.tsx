@@ -68,7 +68,7 @@ export default function FooterLogo({ version }: Props) {
             maxWidth: "260px",
           }}
         >
-          <div style={{ color: "#C9A84C", fontWeight: 700 }}>DEV MODE</div>
+          <div style={{ color: "#C8902E", fontWeight: 700 }}>DEV MODE</div>
           <div>version: v{version}</div>
           <div>env: {process.env.NODE_ENV}</div>
           <div>path: {typeof window !== "undefined" ? window.location.pathname : ""}</div>

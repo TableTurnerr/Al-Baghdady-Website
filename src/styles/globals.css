@@ -1,17 +1,17 @@
 @import "tailwindcss";
 
 @theme {
-  --color-primary: #8B1A1A;
-  --color-primary-dark: #6B1414;
-  --color-primary-light: #B22222;
-  --color-gold: #C9A84C;
-  --color-gold-dark: #A88838;
+  --color-primary: #0F5132;
+  --color-primary-dark: #0B3D27;
+  --color-primary-light: #198754;
+  --color-gold: #C8902E;
+  --color-gold-dark: #A6741F;
   --color-cream: #FFFFFF;
-  --color-sand: #F7F4EE;
-  --color-warm-white: #FAFAF7;
-  --color-text: #111110;
-  --color-text-muted: #6B6258;
-  --color-border: #ECE7DD;
+  --color-sand: #F2F4EF;
+  --color-warm-white: #FAFBF7;
+  --color-text: #13211A;
+  --color-text-muted: #4F6358;
+  --color-border: #E2E8DF;
 
   --font-display: var(--font-inter), system-ui, -apple-system, sans-serif;
   --font-body: var(--font-inter), system-ui, -apple-system, sans-serif;
@@ -22,22 +22,22 @@
   --radius-section: 28px;
   --radius-button: 9999px;
 
-  --shadow-soft: 0 1px 2px rgba(17, 17, 16, 0.04), 0 8px 24px -12px rgba(17, 17, 16, 0.08);
-  --shadow-lift: 0 2px 4px rgba(17, 17, 16, 0.06), 0 20px 40px -16px rgba(17, 17, 16, 0.16);
+  --shadow-soft: 0 1px 2px rgba(19, 33, 26, 0.04), 0 8px 24px -12px rgba(19, 33, 26, 0.08);
+  --shadow-lift: 0 2px 4px rgba(19, 33, 26, 0.06), 0 20px 40px -16px rgba(19, 33, 26, 0.16);
 }
 
 :root {
-  --color-primary: #8B1A1A;
-  --color-primary-dark: #6B1414;
-  --color-gold: #C9A84C;
+  --color-primary: #0F5132;
+  --color-primary-dark: #0B3D27;
+  --color-gold: #C8902E;
   --color-cream: #FFFFFF;
-  --color-sand: #F7F4EE;
-  --color-warm-white: #FAFAF7;
-  --color-text: #111110;
-  --color-text-muted: #6B6258;
-  --color-border: #ECE7DD;
-  --shadow-soft: 0 1px 2px rgba(17, 17, 16, 0.04), 0 8px 24px -12px rgba(17, 17, 16, 0.08);
-  --shadow-lift: 0 2px 4px rgba(17, 17, 16, 0.06), 0 20px 40px -16px rgba(17, 17, 16, 0.16);
+  --color-sand: #F2F4EF;
+  --color-warm-white: #FAFBF7;
+  --color-text: #13211A;
+  --color-text-muted: #4F6358;
+  --color-border: #E2E8DF;
+  --shadow-soft: 0 1px 2px rgba(19, 33, 26, 0.04), 0 8px 24px -12px rgba(19, 33, 26, 0.08);
+  --shadow-lift: 0 2px 4px rgba(19, 33, 26, 0.06), 0 20px 40px -16px rgba(19, 33, 26, 0.16);
 }
 
 html, body {
@@ -101,7 +101,7 @@ a { color: inherit; text-decoration: none; transition: color 0.2s ease; }
 .btn-primary:hover {
   background: var(--color-primary);
   transform: translateY(-1px);
-  box-shadow: 0 10px 24px -10px rgba(139, 26, 26, 0.5);
+  box-shadow: 0 10px 24px -10px rgba(15, 81, 50, 0.5);
 }
 .btn-primary:active { transform: translateY(0); }
 
@@ -338,11 +338,11 @@ a { color: inherit; text-decoration: none; transition: color 0.2s ease; }
   background-color: var(--color-sand);
   background-image: linear-gradient(
     110deg,
-    rgba(236, 231, 221, 0)    0%,
-    rgba(236, 231, 221, 0)   30%,
+    rgba(226, 232, 223, 0)    0%,
+    rgba(226, 232, 223, 0)   30%,
     rgba(255, 255, 255, 0.85) 50%,
-    rgba(236, 231, 221, 0)   70%,
-    rgba(236, 231, 221, 0)  100%
+    rgba(226, 232, 223, 0)   70%,
+    rgba(226, 232, 223, 0)  100%
   );
   background-size: 200% 100%;
   background-repeat: no-repeat;
